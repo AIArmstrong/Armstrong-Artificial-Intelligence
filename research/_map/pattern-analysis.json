@@ -1,0 +1,13 @@
+{
+  "candidates": [],
+  "cross_project_metrics": {
+    "total_projects": 0,
+    "total_technologies": 0,
+    "technology_distribution": {},
+    "average_quality_by_tech": {},
+    "pattern_coverage": {},
+    "promotion_candidates": 0
+  },
+  "recommendations": [],
+  "analysis_timestamp": "2025-07-15T07:23:42.435964"
+}

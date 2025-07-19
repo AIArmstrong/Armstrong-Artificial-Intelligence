@@ -1,0 +1,24 @@
+{
+  "semantic_index": [],
+  "metadata": {
+    "created": "2025-07-14T11:15:00Z",
+    "last_updated": "2025-07-14T11:15:00Z",
+    "total_entries": 0,
+    "embedding_model": "openai/text-embedding-3-small",
+    "vector_dimensions": 1536
+  },
+  "search_capabilities": {
+    "semantic_search": true,
+    "keyword_search": true,
+    "cross_reference_search": true,
+    "similarity_threshold": 0.8
+  },
+  "index_structure": {
+    "id": "unique identifier",
+    "content": "searchable text content",
+    "source": "path to original file",
+    "type": "general | project-specific",
+    "embeddings": "vector representation",
+    "metadata": "additional search context"
+  }
+}

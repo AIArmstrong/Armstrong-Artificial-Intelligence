@@ -1,0 +1,110 @@
+version: '3.8'
+
+services:
+  research-engine:
+    build: 
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - RESEARCH_DIR=/app/research
+      - MCP_SERVER_MODE=true
+      - LOG_LEVEL=info
+    volumes:
+      - ../:/app/research
+      - research-logs:/app/logs
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - research-network
+    restart: unless-stopped
+
+  mcp-filesystem:
+    image: node:18-alpine
+    command: npx @modelcontextprotocol/server-filesystem /app/research
+    volumes:
+      - ../:/app/research
+    networks:
+      - research-network
+    environment:
+      - MCP_SERVER_NAME=filesystem
+      - MCP_SERVER_PORT=3001
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  mcp-git:
+    image: node:18-alpine
+    command: npx @modelcontextprotocol/server-git /app/research
+    volumes:
+      - ../:/app/research
+    networks:
+      - research-network
+    environment:
+      - MCP_SERVER_NAME=git
+      - MCP_SERVER_PORT=3002
+    ports:
+      - "3002:3002"
+    restart: unless-stopped
+
+  mcp-puppeteer:
+    image: node:18-alpine
+    command: npx @modelcontextprotocol/server-puppeteer
+    networks:
+      - research-network
+    environment:
+      - MCP_SERVER_NAME=puppeteer
+      - MCP_SERVER_PORT=3003
+    ports:
+      - "3003:3003"
+    restart: unless-stopped
+
+  mcp-brave-search:
+    image: node:18-alpine
+    command: npx @modelcontextprotocol/server-brave-search
+    networks:
+      - research-network
+    environment:
+      - MCP_SERVER_NAME=brave-search
+      - MCP_SERVER_PORT=3004
+      - BRAVE_API_KEY=${BRAVE_API_KEY}
+    ports:
+      - "3004:3004"
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - research-network
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=research_engine
+      - POSTGRES_USER=research
+      - POSTGRES_PASSWORD=research_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - research-network
+    restart: unless-stopped
+
+volumes:
+  research-logs:
+  redis-data:
+  postgres-data:
+
+networks:
+  research-network:
+    driver: bridge

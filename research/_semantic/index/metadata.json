@@ -1,0 +1,8 @@
+{
+  "last_indexed": "2025-07-15T07:34:41.275682",
+  "total_chunks": 0,
+  "embedding_model": "openai/text-embedding-3-small",
+  "embedding_dimensions": 1536,
+  "chunk_size": 500,
+  "chunk_overlap": 50
+}

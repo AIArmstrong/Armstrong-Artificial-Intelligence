@@ -1,0 +1,29 @@
+{
+  "cache_system": "supabase",
+  "connection": {
+    "url": "${SUPABASE_URL}",
+    "anon_key": "${SUPABASE_ANON_KEY}",
+    "service_key": "${SUPABASE_SERVICE_KEY}"
+  },
+  "tables": {
+    "cache_entries": "aai_cache_entries",
+    "cache_tags": "aai_cache_tags", 
+    "search_index": "aai_cache_search_index",
+    "states": "aai_conversation_states"
+  },
+  "search": {
+    "enabled": true,
+    "full_text_search": true,
+    "similarity_threshold": 0.7
+  },
+  "cache_policies": {
+    "max_entries": 10000,
+    "auto_cleanup": true,
+    "retention_days": 30
+  },
+  "indexing": {
+    "auto_tag": true,
+    "content_analysis": true,
+    "relationship_mapping": true
+  }
+}

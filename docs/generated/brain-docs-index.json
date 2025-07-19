@@ -1,0 +1,141 @@
+{
+  "created": "2025-07-14T08:21:34.926681",
+  "total_files": 2,
+  "by_type": {
+    ".md": [
+      "brain/docs/explain.md",
+      "brain/docs/explain-archive/README.md"
+    ]
+  },
+  "by_size": {
+    "medium": [
+      "brain/docs/explain.md"
+    ],
+    "small": [
+      "brain/docs/explain-archive/README.md"
+    ]
+  },
+  "summaries": [
+    {
+      "source_file": "brain/docs/explain.md",
+      "content_type": ".md",
+      "size": 7059,
+      "modified": "2025-07-14T08:21:16.940283",
+      "key_concepts": [
+        {
+          "type": "headers",
+          "items": [
+            "Decision Log & Rationale Tracking",
+            "\ud83d\udcda Decision Index",
+            "AAI System Overhaul - Implementation Decisions",
+            "Brain-Centric Architecture",
+            "Archive context-base",
+            "Supabase Over Local MySQL",
+            "Remove Phantom References",
+            "Workflow Intelligence Enhancement Plan",
+            "\ud83d\udd04 Neural Feedback Loop System",
+            "Decision Outcome Validation",
+            "Neural Rationale Patterns",
+            "Learning Loop Integration"
+          ]
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "[\ud83d\udd34 Critical] **Brain-Centric Architecture** (2025-07-13)",
+            "[\ud83d\udd34 Critical] **Archive context-base** (2025-07-13)  ",
+            "[\ud83d\udd34 Critical] **Workflow Intelligence Enhancement Plan** (2025-07-13)",
+            "[\ud83d\udfe1 Major] **Supabase Over Local MySQL** (2025-07-13)",
+            "[\ud83d\udfe1 Major] **Remove Phantom References** (2025-07-13)",
+            "Creates clear hierarchy with brain as master controller",
+            "Separates volatile cache from persistent state  ",
+            "Enables advanced features like intent recognition and learning",
+            "Maintains compatibility with existing context engineering",
+            "Flat file structure (rejected - too chaotic)"
+          ]
+        },
+        {
+          "type": "emphasized",
+          "items": [
+            "Brain-Centric Architecture",
+            "Archive context-base",
+            "Workflow Intelligence Enhancement Plan",
+            "Supabase Over Local MySQL",
+            "Remove Phantom References",
+            "Date",
+            "Impact",
+            "Status",
+            "Trigger",
+            "Related Files"
+          ]
+        },
+        {
+          "type": "code_blocks",
+          "count": 0
+        }
+      ],
+      "embeddings": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "summary_generated": "2025-07-14T08:21:34.915634",
+      "text_summary": "Title: Decision Log & Rationale Tracking\n\n## \ud83d\udcda Decision Index\n- [\ud83d\udd34 Critical] **Brain-Centric Architecture** (2025-07-13)\n- [\ud83d\udd34 Critical] **Archive context-base** (2025-07-13)  \n- [\ud83d\udd34 Critical] **Workflow Intelligence Enhancement Plan** (2025-07-13)\n- [\ud83d\udfe1 Major] **Supabase Over Local MySQL** (2025-07-13)\n- [\ud83d\udfe1 Major] **Remove Phantom References** (2025-07-13)\n\n---\n\n## AAI System Overhaul - Implementation Decisions\n\n### Brain-Centric Architecture\n**Date**: 2025-07-13\n**Impact**: \ud83d\udd34 Critical\n**Status**: \u2705 Active\n**Trigger**: Initial system design\n**Related Files**: brain/Claude.md, brain/modules/\n**Tags**: #architecture #brain #core-system\n\n**Decision**: Centralize intelligence in `/brain/` folder structure\n\n**Reasoning**: \n- Creates clear hierarchy with brain as master controller\n- Separates volatile cache from persistent state  \n- Enables advanced features like intent recognition and learning\n- Maintains compatibility with existing context engineering\n\n**Alternatives Considered**:\n- Flat file structure (rejected - too chaotic)\n- Integration into existing folders (rejected - unclear ownership)\n\n### Archive context-base\n**Date**: 2025-07-13\n**Impact**: \ud83d\udd34 Critical\n**Status**: \u2705 Active\n**Trigger**: System cleanup phase\n**Related Files**: archive/original-seed-template/, .claude/commands/\n**Tags**: #architecture #cleanup #migration\n\n**Decision**: Move context-base to archive/original-seed-template/\n\n**Reasoning**:\n- All essential components already extracted to AAI structure\n- Keeps original as reference without cluttering main directory\n- Prevents naming conflicts and confusion\n- Maintains clean high-level overview\n\n**Alternatives Considered**:\n- Rename to context-engine (rejected - unnecessary complexity)\n- Delete entirely (rejected - loses reference value)\n- Keep in place (rejected - directory bloat)\n\n### Supabase Over Local MySQL\n**Date**: 2025-07-13\n**Impact**: \ud83d\udfe1 Major\n**Status**: \u2705 Active\n**Trigger**: Database selection\n**Related Files**: brain/cache/config.json, .env\n**Tags**: #database #cache #infrastructure\n\n**Decision**: Use Supabase for cache/state persistence\n\n**Reasoning**:\n- User already has credentials and setup\n- Built-in full-text search capabilities\n- API-driven integration easier than local database\n- Automatic backups and scaling\n- PostgreSQL more robust for text search than MySQL\n\n**Alternatives Considered**:\n- Local MySQL (rejected - setup complexity)\n- File-based storage (rejected - no search capabilities)\n\n### Remove Phantom References\n**Date**: 2025-07-13\n**Impact**: \ud83d\udfe1 Major\n**Status**: \u2705 Active\n**Trigger**: File audit\n**Related Files**: brain/Claude.md\n**Tags**: #cleanup #file-references #maintenance\n\n**Decision**: Remove TASK.md, PLANNING.md, phase files from Claude.md\n\n**Reasoning**:\n- Files never existed in the first place\n- Would cause errors and confusion\n- TodoWrite tool provides better task management\n- User has no need for static task files\n\n**Alternatives Considered**:\n- Create the missing files (rejected - unnecessary bloat)\n- Leave references (rejected - broken functionality)\n\n### Workflow Intelligence Enhancement Plan\n**Date**: 2025-07-13\n**Impact**: \ud83d\udd34 Critical\n**Status**: \u2705 Completed (All 3 Phases)\n**Trigger**: System optimization phase\n**Related Files**: brain/workflows/*.md, brain/modules/embeddings-engine.md, brain/modules/success-scoring.md, brain/modules/critical-anchors.md, brain/logs/dashboards/learning-loop.md\n**Tags**: #workflow #ai-intelligence #embeddings #learning #completed\n\n**Decision**: Implement 3-phase workflow enhancement plan for true AI cognition\n\n**Phase 1 Completed**: Intent clustering, prompt recipes, reversal tracking\n**Phase 2 Completed**: Semantic embeddings, correlation mapping, tag evolution\n**Phase 3 Completed**: Success scoring, critical anchors, learning loop dashboard\n\n**Reasoning**:\n- Current workflows are basic - need semantic understanding\n- OpenRouter embeddings enable intent similarity matching\n- Pattern recognition through reusable prompt recipes\n- Learning from mistakes via reversal tracking\n- Systems thinking through decision correlation mapping\n\n**Implementation Results**:\n- Intent clusters track 5 major pattern types (95% success rate)\n- Prompt recipes provide 6 reusable mental macros (85-95% impact)\n- Reversal tracking prevents repeated mistakes (3 reversals documented)\n- Embeddings engine enables semantic intent matching (>90% target accuracy)\n- Decision correlation mapping creates systems thinking approach\n- Tag family trees auto-evolve taxonomy based on usage patterns\n- Success scoring system provides quantitative performance tracking (70% impact)\n- Critical tag anchors enable priority routing for mission-critical decisions (75% impact)\n- Learning loop dashboard tracks AI intelligence evolution (80% impact)\n- **Overall System Intelligence**: 88% maturity with 92% pattern recognition\n\n**Alternatives Considered**:\n- Keep simple workflows (rejected - missed opportunity for intelligence)\n- Implement all at once (rejected - too risky, phased approach better)\n- Use different embedding provider (rejected - OpenRouter already integrated)\n\n---\n\n## \ud83d\udd04 Neural Feedback Loop System\n\n### Decision Outcome Validation\nTrack actual results vs predicted outcomes to enhance neural reasoning:\n\n| Decision ID | Predicted Impact | Actual Outcome | Confidence Score | Validation Status | Learning Signal |\n|-------------|-----------------|----------------|------------------|-------------------|-----------------|\n| brain-arch | \ud83d\udd34 Critical | \u2705 Success | 95% | \u2705 Validated | Architecture patterns work |\n| archive-ctx | \ud83d\udd34 Critical | \u2705 Success | 90% | \u2705 Validated | Cleanup approach effective |\n| supabase-db | \ud83d\udfe1 Major | \u2705 Success | 85% | \u2705 Validated | Database choice correct |\n| remove-refs | \ud83d\udfe1 Major | \u2705 Success | 88% | \u2705 Validated | Reference cleanup vital |\n| workflow-int | \ud83d\udd34 Critical | \u2705 Success | 88% | \u2705 Validated | Intelligence enhancement works |\n\n### Neural Rationale Patterns\n**WHY Analysis**: Common reasoning patterns that lead to success:\n- **Structural Clarity**: Decisions emphasizing clear architecture \u2192 95% success rate\n- **Separation of Concerns**: Isolating components \u2192 90% success rate  \n- **User-Centric Design**: Focusing on user needs \u2192 88% success rate\n- **Incremental Implementation**: Phased approach \u2192 92% success rate\n\n**Anti-Patterns**: Reasoning that leads to failure:\n- **Premature Optimization**: Focusing on performance before functionality \u2192 60% failure rate\n- **Over-Engineering**: Complex solutions for simple problems \u2192 45% failure rate\n- **Ignoring Context**: Not considering existing system constraints \u2192 70% failure rate\n\n### Learning Loop Integration\nEach decision feeds back into neural reasoning:\n1. **Intent Recognition** \u2192 Pattern matching against successful decisions\n2. **Confidence Calibration** \u2192 Adjust confidence based on outcome validation\n3. **Rationale Refinement** \u2192 Strengthen successful WHY patterns\n4. **Anti-Pattern Avoidance** \u2192 Flag decisions matching failure patterns\n\n---\n*Decision rationale tracking with neural feedback loops for continuous learning*. Contains 1 sections. ..."
+    },
+    {
+      "source_file": "brain/docs/explain-archive/README.md",
+      "content_type": ".md",
+      "size": 578,
+      "modified": "2025-07-13T17:26:59.931005",
+      "key_concepts": [
+        {
+          "type": "headers",
+          "items": [
+            "Explain.md Archive Directory",
+            "Purpose",
+            "Archive Format",
+            "Archive Process"
+          ]
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "explain.md exceeds 500 lines",
+            "Phase completion triggers archival",
+            "Quarterly cleanup occurs",
+            "Manual archival requested"
+          ]
+        },
+        {
+          "type": "emphasized",
+          "items": []
+        },
+        {
+          "type": "code_blocks",
+          "count": 0
+        }
+      ],
+      "embeddings": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "summary_generated": "2025-07-14T08:21:34.915887",
+      "text_summary": "Title: Explain.md Archive Directory\n\n## Purpose\nStore archived decision logs when:\n- explain.md exceeds 500 lines\n- Phase completion triggers archival\n- Quarterly cleanup occurs\n- Manual archival requested\n\n## Archive Format\nFiles are named: `YYYY-MM-ProjectName.md`\n\nExample: `2025-07-AAI-System-Overhaul.md`\n\n## Archive Process\n1. Extract completed/old decisions from explain.md\n2. Keep summary stub in main file with \ud83d\udce6 Archived status\n3. Full details preserved here\n4. Update decision index to point to archive\n\n---\n*Keeping explain.md lean while preserving full decision history*. Contains 1 sections. ..."
+    }
+  ]
+}

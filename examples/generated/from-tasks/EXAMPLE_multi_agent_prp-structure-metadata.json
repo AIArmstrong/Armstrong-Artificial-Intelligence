@@ -1,0 +1,19 @@
+{
+  "id": "EXAMPLE_multi_agent_prp-structure",
+  "title": "Example_Multi_Agent_Prp Structure Template",
+  "description": "PRP structure template from successful implementation",
+  "category": "structure-templates",
+  "tags": [
+    "#structure",
+    "#template",
+    "#prp"
+  ],
+  "complexity": "beginner",
+  "source_prp": "EXAMPLE_multi_agent_prp",
+  "generated_from": "successful_prp_implementation",
+  "created": "2025-07-15T19:17:00.195845",
+  "technologies": [
+    "python"
+  ],
+  "pattern_type": "structure"
+}

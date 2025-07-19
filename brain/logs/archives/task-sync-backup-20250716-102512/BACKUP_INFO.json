@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-07-16T15:25:12.136268+00:00",
+  "reason": "Unified task manager sync",
+  "files_backed_up": [
+    "queue.json",
+    "master-task-registry.json"
+  ],
+  "backup_location": "/mnt/c/Users/Brandon/AAI/brain/logs/archives/task-sync-backup-20250716-102512"
+}

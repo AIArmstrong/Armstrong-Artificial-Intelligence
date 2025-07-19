@@ -1,0 +1,175 @@
+{
+  "test_repositories": [
+    {
+      "name": "hello-world",
+      "url": "https://github.com/octocat/Hello-World.git",
+      "language": "C",
+      "complexity": "simple",
+      "expected_features": 1,
+      "expected_security_score": 0.9,
+      "description": "Simple C program - minimal complexity"
+    },
+    {
+      "name": "python-sample",
+      "url": "https://github.com/microsoft/python-sample-vscode-flask-tutorial.git",
+      "language": "Python",
+      "complexity": "medium",
+      "expected_features": 5,
+      "expected_security_score": 0.8,
+      "description": "Flask web application with multiple modules"
+    },
+    {
+      "name": "javascript-algorithms",
+      "url": "https://github.com/trekhleb/javascript-algorithms.git",
+      "language": "JavaScript",
+      "complexity": "high",
+      "expected_features": 50,
+      "expected_security_score": 0.85,
+      "description": "Large collection of algorithms and data structures"
+    },
+    {
+      "name": "go-micro",
+      "url": "https://github.com/micro/micro.git",
+      "language": "Go",
+      "complexity": "high",
+      "expected_features": 30,
+      "expected_security_score": 0.9,
+      "description": "Go microservices framework"
+    },
+    {
+      "name": "rust-book-examples",
+      "url": "https://github.com/rust-lang/book.git",
+      "language": "Rust",
+      "complexity": "medium",
+      "expected_features": 20,
+      "expected_security_score": 0.95,
+      "description": "Rust language book with examples"
+    },
+    {
+      "name": "tensorflow-examples",
+      "url": "https://github.com/tensorflow/examples.git",
+      "language": "Python",
+      "complexity": "high",
+      "expected_features": 40,
+      "expected_security_score": 0.7,
+      "description": "Machine learning examples - complex dependencies"
+    },
+    {
+      "name": "docker-compose-samples",
+      "url": "https://github.com/docker/awesome-compose.git",
+      "language": "YAML",
+      "complexity": "medium",
+      "expected_features": 15,
+      "expected_security_score": 0.8,
+      "description": "Docker compose examples and configurations"
+    },
+    {
+      "name": "react-components",
+      "url": "https://github.com/brillout/awesome-react-components.git",
+      "language": "JavaScript",
+      "complexity": "low",
+      "expected_features": 5,
+      "expected_security_score": 0.9,
+      "description": "React component library documentation"
+    }
+  ],
+  "validation_criteria": {
+    "minimum_features_detected": 1,
+    "security_score_threshold": 0.5,
+    "analysis_timeout_seconds": 300,
+    "required_agents": [
+      "CodeStructureAgent",
+      "SecurityAuditAgent", 
+      "QualityAssessmentAgent",
+      "PerformanceProfilerAgent"
+    ]
+  },
+  "test_scenarios": [
+    {
+      "name": "basic_functionality",
+      "description": "Test basic repository cloning and analysis",
+      "repositories": ["hello-world", "python-sample"],
+      "success_criteria": {
+        "analysis_completes": true,
+        "features_detected": ">=1",
+        "no_critical_errors": true
+      }
+    },
+    {
+      "name": "multi_language_support",
+      "description": "Test analysis across different programming languages",
+      "repositories": ["python-sample", "javascript-algorithms", "go-micro", "rust-book-examples"],
+      "success_criteria": {
+        "all_languages_detected": true,
+        "language_specific_features": true,
+        "consistent_scoring": true
+      }
+    },
+    {
+      "name": "security_analysis",
+      "description": "Test security vulnerability detection",
+      "repositories": ["tensorflow-examples", "javascript-algorithms"],
+      "success_criteria": {
+        "security_scan_completes": true,
+        "dependency_check_runs": true,
+        "secret_detection_active": true
+      }
+    },
+    {
+      "name": "performance_stress_test",
+      "description": "Test with large, complex repositories",
+      "repositories": ["javascript-algorithms", "tensorflow-examples"],
+      "success_criteria": {
+        "completes_within_timeout": true,
+        "memory_usage_reasonable": true,
+        "accurate_complexity_scoring": true
+      }
+    },
+    {
+      "name": "integration_recommendation",
+      "description": "Test feature extraction and integration recommendations",
+      "repositories": ["python-sample", "go-micro"],
+      "success_criteria": {
+        "features_ranked": true,
+        "integration_stubs_generated": true,
+        "compatibility_scores_calculated": true
+      }
+    }
+  ],
+  "test_execution_order": [
+    "basic_functionality",
+    "multi_language_support", 
+    "security_analysis",
+    "integration_recommendation",
+    "performance_stress_test"
+  ],
+  "expected_results": {
+    "hello-world": {
+      "total_features": "1-3",
+      "primary_language": "C",
+      "security_issues": "0-1",
+      "integration_value": "low"
+    },
+    "python-sample": {
+      "total_features": "5-10",
+      "primary_language": "Python",
+      "security_issues": "0-3",
+      "integration_value": "medium",
+      "patterns_detected": ["MVC", "Web Framework"]
+    },
+    "javascript-algorithms": {
+      "total_features": "40-60",
+      "primary_language": "JavaScript", 
+      "security_issues": "0-5",
+      "integration_value": "high",
+      "patterns_detected": ["Algorithm Library", "Educational"]
+    },
+    "go-micro": {
+      "total_features": "25-35",
+      "primary_language": "Go",
+      "security_issues": "0-2", 
+      "integration_value": "high",
+      "patterns_detected": ["Microservices", "Framework"]
+    }
+  }
+}

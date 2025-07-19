@@ -1,0 +1,42 @@
+{
+  "ai-powered-crm-system": {
+    "extracted_on": "2025-07-14T08:20:16.187704",
+    "patterns": {
+      "context_patterns": [
+        {
+          "pattern": "comprehensive_context",
+          "description": "PRP includes detailed context requirements",
+          "value": "Reduces implementation errors by providing complete context"
+        }
+      ],
+      "structure_patterns": [
+        {
+          "pattern": "comprehensive_structure",
+          "description": "Well-structured PRP with multiple sections",
+          "value": "Provides complete project context and requirements"
+        }
+      ],
+      "validation_patterns": []
+    }
+  },
+  "EXAMPLE_multi_agent_prp": {
+    "extracted_on": "2025-07-14T08:20:16.291013",
+    "patterns": {
+      "context_patterns": [
+        {
+          "pattern": "comprehensive_context",
+          "description": "PRP includes detailed context requirements",
+          "value": "Reduces implementation errors by providing complete context"
+        }
+      ],
+      "structure_patterns": [
+        {
+          "pattern": "comprehensive_structure",
+          "description": "Well-structured PRP with multiple sections",
+          "value": "Provides complete project context and requirements"
+        }
+      ],
+      "validation_patterns": []
+    }
+  }
+}

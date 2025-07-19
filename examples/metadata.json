@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "created": "2025-07-14T08:00:00Z",
+  "last_updated": "2025-07-14T08:00:00Z",
+  "purpose": "Intelligent example repository with self-recommendation and scoring",
+  "structure": {
+    "working/": {
+      "description": "Tested, working code examples organized by category",
+      "metadata_required": true,
+      "success_tracking": true
+    },
+    "tests/": {
+      "description": "Test files that prove examples work",
+      "unit/": "Unit tests for individual examples",
+      "integration/": "Integration test scenarios"
+    },
+    "templates/": {
+      "description": "Boilerplate patterns and starter code",
+      "prp-starters/": "Common PRP implementation patterns",
+      "api-patterns/": "API integration templates"
+    },
+    "mocks/": {
+      "description": "Reusable testing components",
+      "api-responses/": "Mock API data and responses",
+      "fixtures/": "Test data fixtures"
+    },
+    "generated/": {
+      "description": "Auto-generated examples from successful implementations",
+      "from-tasks/": "Examples extracted from task completions",
+      "patterns/": "Common patterns identified automatically"
+    }
+  },
+  "recommendation_engine": {
+    "enabled": true,
+    "embedding_model": "openrouter",
+    "similarity_threshold": 0.7,
+    "last_index_update": "2025-07-14T08:00:00Z"
+  },
+  "scoring_system": {
+    "enabled": true,
+    "factors": [
+      "usage_frequency",
+      "success_rate",
+      "recency",
+      "complexity_match",
+      "feedback_score"
+    ],
+    "retirement_threshold": 2.0,
+    "promotion_threshold": 4.0
+  },
+  "statistics": {
+    "total_examples": 0,
+    "successful_recommendations": 0,
+    "example_usage_count": 0,
+    "average_success_rate": 0.0,
+    "last_cleanup": "2025-07-14T08:00:00Z",
+    "last_scoring_update": "2025-07-14T08:34:43.852498",
+    "total_examples_scored": 0,
+    "feedback_entries_processed": 0,
+    "usage_patterns_analyzed": 0,
+    "last_generation": "2025-07-15T19:17:00.221769",
+    "total_generated": 2,
+    "generation_source": "prp_patterns"
+  },
+  "examples": {
+    "ai-powered-crm-system-structure": {
+      "id": "ai-powered-crm-system-structure",
+      "title": "Ai Powered Crm System Structure Template",
+      "description": "PRP structure template from successful implementation",
+      "category": "structure-templates",
+      "tags": [
+        "#structure",
+        "#template",
+        "#prp"
+      ],
+      "complexity": "beginner",
+      "source_prp": "ai-powered-crm-system",
+      "generated_from": "successful_prp_implementation",
+      "created": "2025-07-15T19:17:00.173145",
+      "technologies": [
+        "python"
+      ],
+      "pattern_type": "structure"
+    },
+    "EXAMPLE_multi_agent_prp-structure": {
+      "id": "EXAMPLE_multi_agent_prp-structure",
+      "title": "Example_Multi_Agent_Prp Structure Template",
+      "description": "PRP structure template from successful implementation",
+      "category": "structure-templates",
+      "tags": [
+        "#structure",
+        "#template",
+        "#prp"
+      ],
+      "complexity": "beginner",
+      "source_prp": "EXAMPLE_multi_agent_prp",
+      "generated_from": "successful_prp_implementation",
+      "created": "2025-07-15T19:17:00.195845",
+      "technologies": [
+        "python"
+      ],
+      "pattern_type": "structure"
+    }
+  }
+}

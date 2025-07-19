@@ -1,0 +1,49 @@
+# GitHub Repository Analyzer Dependencies
+
+# Core dependencies
+docker>=7.1.0
+GitPython>=3.1.44
+tree-sitter>=0.21.3
+tree-sitter-languages>=1.10.2
+
+# Security analysis
+bandit>=1.7.9
+safety>=3.2.7
+semgrep>=1.45.0
+
+# Code analysis
+ast-decompiler>=0.7.0
+lizard>=1.17.10  # Complexity analysis
+radon>=6.0.1    # Code metrics
+
+# Data handling
+SQLite>=3.40.0  # Usually built-in
+pydantic>=2.8.2
+dataclasses-json>=0.6.7
+
+# HTTP requests
+requests>=2.32.3
+urllib3>=2.2.2
+
+# Development and testing
+pytest>=8.3.2
+pytest-asyncio>=0.23.8
+pytest-mock>=3.14.0
+black>=24.8.0
+flake8>=7.1.1
+mypy>=1.11.1
+
+# Optional - for enhanced analysis
+tree-sitter-python>=0.21.0
+tree-sitter-javascript>=0.21.2
+tree-sitter-typescript>=0.21.0
+tree-sitter-go>=0.21.0
+tree-sitter-rust>=0.21.2
+tree-sitter-java>=0.21.0
+
+# Environment management
+python-dotenv>=1.0.1
+
+# AAI ecosystem dependencies (if needed)
+# openai>=1.40.0  # For OpenRouter integration
+# anthropic>=0.34.0  # For Claude integration

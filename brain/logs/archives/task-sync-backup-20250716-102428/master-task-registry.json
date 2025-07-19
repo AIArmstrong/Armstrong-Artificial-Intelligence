@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "created": "2025-07-15T12:00:00Z",
+    "last_updated": "2025-07-16T00:15:00Z",
+    "version": "1.1.0",
+    "description": "Unified task registry - single source of truth for all AAI tasks",
+    "sync_sources": [
+      "brain/workflows/task-execution-order.md",
+      "brain/logs/queue.json", 
+      "ideas/idea_registry.md",
+      "research/research-queue.json"
+    ]
+  },
+  "task_categories": {
+    "systematic": {
+      "description": "22 systematic tasks from task-execution-order.md",
+      "source": "brain/workflows/task-execution-order.md",
+      "total": 22,
+      "completed": 5,
+      "pending": 17
+    },
+    "queue": {
+      "description": "Queue tasks from brain/logs/queue.json",
+      "source": "brain/logs/queue.json",
+      "total": 30,
+      "completed": 18,
+      "pending": 12
+    },
+    "creative": {
+      "description": "Creative ideas from idea registry",
+      "source": "ideas/idea_registry.md",
+      "total": 6,
+      "completed": 0,
+      "pending": 6
+    },
+    "research": {
+      "description": "Research queue tasks",
+      "source": "research/research-queue.json",
+      "total": 0,
+      "completed": 0,
+      "pending": 0
+    }
+  },
+  "summary": {
+    "total_tasks": 58,
+    "by_status": {
+      "pending": 35,
+      "completed": 23,
+      "in_progress": 0,
+      "blocked": 0
+    },
+    "by_priority": {
+      "critical": 0,
+      "high": 29,
+      "medium": 29,
+      "low": 0
+    }
+  },
+  "tasks": {
+    "systematic": {
+      "sys-001": {
+        "title": "research-build-engine",
+        "description": "Build intelligent research engine with context scraping",
+        "category": "Foundation",
+        "priority": "high",
+        "status": "completed"
+      },
+      "sys-002": {
+        "title": "research-auto-scrape-triggers",
+        "description": "Build automated scrape triggers from context",
+        "category": "Foundation",
+        "priority": "high",
+        "status": "pending"
+      },
+      "sys-003": {
+        "title": "prp-validity-assessment",
+        "description": "Create PRP validity assessment engine",
+        "category": "Foundation",
+        "priority": "high",
+        "status": "pending"
+      },
+      "sys-004": {
+        "title": "prp-context-enforcement",
+        "description": "Build PRP context enforcement engine",
+        "category": "Foundation",
+        "priority": "high",
+        "status": "pending"
+      },
+      "sys-005": {
+        "title": "prp-auto-generate",
+        "description": "Build Auto-PRP generation with context scoping",
+        "category": "Foundation",
+        "priority": "high",
+        "status": "pending"
+      }
+    }
+  }
+}

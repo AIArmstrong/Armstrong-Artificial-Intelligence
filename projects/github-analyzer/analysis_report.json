@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "repo_url": "https://github.com/penwyp/ClaudePreference.git",
+    "repo_name": "ClaudePreference",
+    "analysis_timestamp": "2025-07-19T10:26:48.316803",
+    "analysis_duration": 0.8577148914337158
+  },
+  "structure_analysis": {
+    "total_files": 90,
+    "file_types": {
+      ".md": 60,
+      ".sample": 14,
+      ".pack": 1,
+      ".rev": 1,
+      ".idx": 1
+    },
+    "directories": [
+      "commands",
+      "docs",
+      "objects",
+      "refs",
+      "info",
+      "hooks",
+      "branches",
+      "logs",
+      "en",
+      "zh",
+      "info",
+      "pack",
+      "heads",
+      "remotes",
+      "tags",
+      "refs",
+      "origin",
+      "heads",
+      "remotes",
+      "origin",
+      "commands",
+      "commands"
+    ],
+    "size_mb": 0.3585348129272461,
+    "has_readme": true,
+    "has_license": false,
+    "has_tests": true
+  },
+  "technology_analysis": {
+    "languages": [],
+    "frameworks": [],
+    "tools": [],
+    "confidence": "medium"
+  },
+  "agent_analysis": {
+    "structure": {
+      "success": true,
+      "execution_time": 0.0069773197174072266,
+      "errors": [],
+      "warnings": [],
+      "summary": {
+        "languages_detected": [],
+        "total_functions": 0,
+        "total_classes": 0,
+        "architecture_patterns": [],
+        "file_structure_score": 0.2
+      }
+    },
+    "security": {
+      "success": true,
+      "execution_time": 0.0037767887115478516,
+      "errors": [],
+      "warnings": [],
+      "summary": {
+        "security_score": 0.7,
+        "vulnerabilities_count": 0,
+        "secret_leaks_count": 0,
+        "dependency_issues_count": 0,
+        "license_compatible": null
+      }
+    },
+    "quality": {
+      "success": true,
+      "execution_time": 0.016036510467529297,
+      "errors": [],
+      "warnings": [],
+      "summary": {
+        "overall_score": 0.575,
+        "test_coverage": 0.0,
+        "documentation_score": 0.5,
+        "technical_debt_items": 0,
+        "average_complexity": 0.0
+      }
+    },
+    "performance": {
+      "success": true,
+      "execution_time": 0.003659486770629883,
+      "errors": [],
+      "warnings": [],
+      "summary": {
+        "performance_score": 1.0,
+        "bottlenecks_count": 0,
+        "optimization_opportunities": 0,
+        "resource_intensive_files": 0
+      }
+    }
+  },
+  "integration_assessment": {
+    "overall_suitability": "low",
+    "integration_complexity": "high",
+    "value_score": 0,
+    "risk_factors": [],
+    "opportunities": []
+  },
+  "recommendations": [],
+  "issues_found": []
+}

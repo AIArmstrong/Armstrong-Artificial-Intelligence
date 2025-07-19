@@ -1,0 +1,31 @@
+{
+  "scoring_rules": {
+    "general": {
+      "min_score": 0.90,
+      "description": "General research must be pristine, high-quality for cross-project reuse",
+      "factors": {
+        "source_authority": 0.3,
+        "recency": 0.2,
+        "completeness": 0.3,
+        "peer_validation": 0.2
+      }
+    },
+    "project_specific": {
+      "min_score": 0.75,
+      "description": "Project research can tolerate more uncertainty, scoped and reviewed quickly",
+      "factors": {
+        "relevance": 0.4,
+        "implementation_clarity": 0.3,
+        "edge_case_coverage": 0.3
+      }
+    }
+  },
+  "entries": [],
+  "metadata": {
+    "created": "2025-07-14T11:15:00Z",
+    "last_updated": "2025-07-14T11:15:00Z",
+    "total_scored": 0,
+    "average_general_score": 0,
+    "average_project_score": 0
+  }
+}

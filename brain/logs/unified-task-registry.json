@@ -1,0 +1,820 @@
+{
+  "metadata": {
+    "created": "2025-07-16T15:46:31.378672+00:00",
+    "last_updated": "2025-07-17T00:20:00Z",
+    "version": "2.1.0",
+    "description": "Unified task registry - single source of truth",
+    "sync_log": [
+      "[2025-07-16T15:46:31.313133+00:00] Starting unified task registry synchronization",
+      "[2025-07-16T15:46:31.326555+00:00] Backed up queue.json",
+      "[2025-07-16T15:46:31.346848+00:00] Backed up master-task-registry.json",
+      "[2025-07-16T15:46:31.369882+00:00] Loaded 36 tasks from queue.json",
+      "[2025-07-16T15:46:31.378593+00:00] Loaded 0 tasks from master registry",
+      "[2025-07-17T00:20:00Z] Added today's session tasks and tomorrow's email campaign priorities"
+    ],
+    "total_tasks": 43
+  },
+  "summary": {
+    "by_status": {
+      "pending": 19,
+      "completed": 24
+    },
+    "by_priority": {
+      "high": 32,
+      "medium": 6,
+      "critical": 5
+    },
+    "by_category": {
+      "queue": 36,
+      "session": 4,
+      "tomorrow": 3
+    },
+    "by_source": {
+      "queue": 36,
+      "session_2025_07_17": 7
+    }
+  },
+  "tasks": {
+    "testing_create_framework": {
+      "id": "testing_create_framework",
+      "title": "Create comprehensive testing framework for AAI + SuperClaude",
+      "description": "Build validation protocols and performance benchmarks",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#testing",
+        "#framework",
+        "#integration"
+      ],
+      "estimated_duration": "3-4 hours",
+      "created": "2025-07-14T12:00:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "jarvis_design_protocols": {
+      "id": "jarvis_design_protocols",
+      "title": "Design Jarvis-level potential testing protocols",
+      "description": "Create comprehensive validation and benchmarking systems",
+      "priority": "medium",
+      "status": "pending",
+      "tags": [
+        "#jarvis",
+        "#testing",
+        "#protocols"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T12:00:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "olympus_import_wsl": {
+      "id": "olympus_import_wsl",
+      "title": "Import Project Olympus to WSL:Ubuntu directory",
+      "description": "Import Project Olympus to another VS Code directory in WSL:Ubuntu",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#olympus",
+        "#import",
+        "#setup"
+      ],
+      "estimated_duration": "1-2 hours",
+      "created": "2025-07-14T20:30:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "olympus_migrate_ideas": {
+      "id": "olympus_migrate_ideas",
+      "title": "Copy ideas from Project Olympus into AAI",
+      "description": "Copy ideas from Project Olympus into AAI directory",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#olympus",
+        "#ideas",
+        "#migration"
+      ],
+      "estimated_duration": "1-2 hours",
+      "created": "2025-07-14T20:30:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "manus_import_docs": {
+      "id": "manus_import_docs",
+      "title": "Bring over Manus ideas with documentation",
+      "description": "Bring over Manus ideas with documentation in AAI directory to begin research",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#manus",
+        "#research",
+        "#documentation"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T20:30:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "superclaude_develop_innovation": {
+      "id": "superclaude_develop_innovation",
+      "title": "Develop SuperClaude innovation engine",
+      "description": "Look at using SuperClaude to develop an innovation engine and command which uses SuperClaude functionality",
+      "priority": "medium",
+      "status": "pending",
+      "tags": [
+        "#superclaude",
+        "#innovation",
+        "#engine"
+      ],
+      "estimated_duration": "3-4 hours",
+      "created": "2025-07-14T20:30:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "superclaude_test_manus": {
+      "id": "superclaude_test_manus",
+      "title": "Test innovation engine on Manus Ideas",
+      "description": "Test SuperClaude innovation engine on Manus Ideas for generating even more ideas",
+      "priority": "medium",
+      "status": "pending",
+      "tags": [
+        "#superclaude",
+        "#testing",
+        "#manus"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T20:30:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "jina_scrape_solopreneur": {
+      "id": "jina_scrape_solopreneur",
+      "title": "Test Jina scraper on Manus Solopreneur documentation",
+      "description": "Test Jina scraper on Manus documentation of Solopreneur ideas to validate scraping capabilities",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#jina",
+        "#scraping",
+        "#manus",
+        "#solopreneur"
+      ],
+      "estimated_duration": "1-2 hours",
+      "created": "2025-07-14T07:25:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "examples_auto_generation": {
+      "id": "examples_auto_generation",
+      "title": "Build auto-example generation from successful PRPs",
+      "description": "Extract working code patterns from successful PRP implementations and generate templates",
+      "priority": "medium",
+      "status": "pending",
+      "tags": [
+        "#examples",
+        "#generation",
+        "#prp"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T08:00:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "prps_enhance_folder": {
+      "id": "prps_enhance_folder",
+      "title": "Enhance PRPs/ folder structure and organization",
+      "description": "Improve PRP folder organization with categories, status tracking, and success metrics",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#prps",
+        "#organization",
+        "#structure"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-15T11:15:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "idea_catcher_program": {
+      "id": "idea_catcher_program",
+      "title": "Build rapid idea capture and organization system",
+      "description": "Create quick idea input system with voice/text capture, auto-categorization, and game plan generation",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#ideation",
+        "#capture",
+        "#productivity"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-15T11:15:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "review_prp_examples": {
+      "id": "review_prp_examples",
+      "title": "Review PRP CRM and Multi-Agent examples for implementation",
+      "description": "Look into PRPs/ai-powered-crm-system.md and PRPs/EXAMPLE_multi_agent_prp.md for potential implementation as test cases",
+      "priority": "medium",
+      "status": "pending",
+      "tags": [
+        "#prp",
+        "#examples",
+        "#implementation",
+        "#review"
+      ],
+      "estimated_duration": "1-2 hours",
+      "created": "2025-07-15T19:30:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "sys_002": {
+      "id": "sys_002",
+      "title": "research-auto-scrape-triggers",
+      "description": "Build automated scrape triggers from context",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#systematic",
+        "#Foundation"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-15T12:00:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "sys_003": {
+      "id": "sys_003",
+      "title": "prp-validity-assessment",
+      "description": "Create PRP validity assessment engine",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#systematic",
+        "#Foundation"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-15T12:00:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "sys_004": {
+      "id": "sys_004",
+      "title": "prp-context-enforcement",
+      "description": "Build PRP context enforcement engine",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#systematic",
+        "#Foundation"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-15T12:00:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "sys_005": {
+      "id": "sys_005",
+      "title": "prp-auto-generate",
+      "description": "Build Auto-PRP generation with context scoping",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#systematic",
+        "#Foundation"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-15T12:00:00Z",
+      "completed": null,
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "critical_001": {
+      "id": "critical_001",
+      "title": "Update Protection Protocols in Intent Engine",
+      "description": "Fix intent-engine.md to prevent protected file violations like Claude.md direct edits",
+      "priority": "critical",
+      "status": "completed",
+      "tags": [
+        "#security",
+        "#protection",
+        "#learning"
+      ],
+      "estimated_duration": "30min",
+      "created": "2025-07-13T18:45:00Z",
+      "completed": "2025-07-13T19:35:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "critical_002": {
+      "id": "critical_002",
+      "title": "Implement Supabase Cache Integration",
+      "description": "Build actual API connections for cache/state persistence referenced in modules",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#integration",
+        "#cache",
+        "#api"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-13T18:45:00Z",
+      "completed": "2025-07-13T19:40:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "critical_003": {
+      "id": "critical_003",
+      "title": "Implement OpenRouter API Python Code",
+      "description": "Build actual Python implementation for embeddings and contradiction detection",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#api",
+        "#embeddings",
+        "#implementation"
+      ],
+      "estimated_duration": "3-4 hours",
+      "created": "2025-07-13T18:45:00Z",
+      "completed": "2025-07-13T19:45:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "docs_create_official": {
+      "id": "docs_create_official",
+      "title": "Create docs_official/ structure for source truth documentation",
+      "description": "Set up official documentation repository with anthropic/, openai/, libraries/ folders and version tracking",
+      "priority": "critical",
+      "status": "completed",
+      "tags": [
+        "#docs",
+        "#foundation",
+        "#source-truth"
+      ],
+      "estimated_duration": "30-45 minutes",
+      "created": "2025-07-14T07:45:00Z",
+      "completed": "2025-07-16T00:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "youtube_subagent_research": {
+      "id": "youtube_subagent_research",
+      "title": "Research YouTube video on sub-agents for AAI implementation",
+      "description": "Analyze transcription of https://youtu.be/rA7DbDCJhl8?si=PcPsuf1PW5YySRr2 and implement sub-agent concepts into AAI workspace for 24/7 coding capability using seamless orchestrator workflow",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#research",
+        "#youtube",
+        "#subagents",
+        "#workflow",
+        "#implementation"
+      ],
+      "estimated_duration": "3-4 hours",
+      "created": "2025-07-15T20:45:00Z",
+      "completed": "2025-07-15T21:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "docs_enhance_structure": {
+      "id": "docs_enhance_structure",
+      "title": "Create improvement plan for docs/ folder",
+      "description": "Implement structured documentation system for knowledge base and API docs",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#documentation",
+        "#improvement",
+        "#structure"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T12:00:00Z",
+      "completed": "2025-07-15T14:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "examples_implement_patterns": {
+      "id": "examples_implement_patterns",
+      "title": "Enhance examples/ folder with working code patterns",
+      "description": "Add reference implementations, test cases, and integration examples",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#examples",
+        "#patterns",
+        "#testing"
+      ],
+      "estimated_duration": "3-4 hours",
+      "created": "2025-07-14T12:00:00Z",
+      "completed": "2025-07-15T16:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "ideas_develop_pipeline": {
+      "id": "ideas_develop_pipeline",
+      "title": "Develop ideas/ registry into active innovation pipeline",
+      "description": "Transform into scored idea management with automated research triggers",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#innovation",
+        "#scoring",
+        "#pipeline"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T12:00:00Z",
+      "completed": "2025-07-15T18:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "prp_automate_workflow": {
+      "id": "prp_automate_workflow",
+      "title": "Enhance PRPs system with automated workflow generation",
+      "description": "Add validation loops and automated PRP creation capabilities",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#prps",
+        "#automation",
+        "#validation"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T12:00:00Z",
+      "completed": "2025-07-15T15:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "research_build_engine": {
+      "id": "research_build_engine",
+      "title": "Build intelligent research engine with context scraping",
+      "description": "Implement automated documentation gathering and caching system",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#research",
+        "#scraping",
+        "#caching"
+      ],
+      "estimated_duration": "4-5 hours",
+      "created": "2025-07-14T12:00:00Z",
+      "completed": "2025-07-15T17:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "sop_build_generator": {
+      "id": "sop_build_generator",
+      "title": "Build Auto-generated SOP system from successful tasks",
+      "description": "Create SOP generator that monitors queue.json completions and converts high-scoring tasks to reproducible SOPs",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#sop",
+        "#automation",
+        "#documentation"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T07:45:00Z",
+      "completed": "2025-07-15T13:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "prp_docs_pipeline": {
+      "id": "prp_docs_pipeline",
+      "title": "Build PRP to Docs integration pipeline",
+      "description": "Auto-document successful PRPs with context, validation results, and reusable patterns",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#prp",
+        "#documentation",
+        "#integration"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T07:45:00Z",
+      "completed": "2025-07-15T12:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "summary_extract_semantic": {
+      "id": "summary_extract_semantic",
+      "title": "Build Summary Extractor with OpenRouter embeddings",
+      "description": "Create semantic extraction system using OpenRouter embeddings to auto-extract summaries from examples/ and explain.md",
+      "priority": "medium",
+      "status": "completed",
+      "tags": [
+        "#embeddings",
+        "#summary",
+        "#openrouter"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T07:45:00Z",
+      "completed": "2025-07-15T11:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "examples_create_structure": {
+      "id": "examples_create_structure",
+      "title": "Create examples structure with metadata foundation",
+      "description": "Set up /tests/, /working/, /templates/, /mocks/ directories with comprehensive metadata system",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#examples",
+        "#structure",
+        "#metadata"
+      ],
+      "estimated_duration": "1-2 hours",
+      "created": "2025-07-14T08:00:00Z",
+      "completed": "2025-07-15T10:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "examples_build_recommendation": {
+      "id": "examples_build_recommendation",
+      "title": "Build self-recommendation engine with gap analysis",
+      "description": "Create semantic matching system using embeddings to recommend examples and identify gaps",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#examples",
+        "#recommendation",
+        "#embeddings"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-14T08:00:00Z",
+      "completed": "2025-07-15T09:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "examples_feedback_scoring": {
+      "id": "examples_feedback_scoring",
+      "title": "Integrate feedback scoring system",
+      "description": "Link examples to feedback-learning.md and score-tracker.md for effectiveness tracking",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#examples",
+        "#feedback",
+        "#scoring"
+      ],
+      "estimated_duration": "1-2 hours",
+      "created": "2025-07-14T08:00:00Z",
+      "completed": "2025-07-15T08:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "projects_enhance_structure": {
+      "id": "projects_enhance_structure",
+      "title": "Build out projects/ folder with structured project management",
+      "description": "Create comprehensive project structure with templates, tracking, and integration capabilities",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#projects",
+        "#structure",
+        "#management"
+      ],
+      "estimated_duration": "3-4 hours",
+      "created": "2025-07-15T11:15:00Z",
+      "completed": "2025-07-15T19:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "templates_enhance_system": {
+      "id": "templates_enhance_system",
+      "title": "Enhance templates/ folder with reusable template system",
+      "description": "Create structured template library with metadata, versioning, and auto-generation",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#templates",
+        "#reusable",
+        "#system"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-15T11:15:00Z",
+      "completed": "2025-07-15T20:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "superclaude_validate_commands": {
+      "id": "superclaude_validate_commands",
+      "title": "Expand SuperClaude integration and test multi-agent capabilities",
+      "description": "Validate 19 commands, 9 personas, and introspection modes",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#superclaude",
+        "#integration",
+        "#multi-agent"
+      ],
+      "estimated_duration": "4-5 hours",
+      "created": "2025-07-14T12:00:00Z",
+      "completed": "2025-07-15T22:00:00Z",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "sys_001": {
+      "id": "sys_001",
+      "title": "research-build-engine",
+      "description": "Build intelligent research engine with context scraping",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#systematic",
+        "#Foundation"
+      ],
+      "estimated_duration": "2-3 hours",
+      "created": "2025-07-15T12:00:00Z",
+      "completed": "2025-07-16T15:25:12.173384+00:00",
+      "source": "queue",
+      "category": "queue",
+      "dependencies": []
+    },
+    "ssh_n8n_recovery": {
+      "id": "ssh_n8n_recovery",
+      "title": "SSH Key Setup and n8n Service Recovery",
+      "description": "Generate SSH keys, fix authorized_keys formatting, restore n8n service via docker-compose",
+      "priority": "critical",
+      "status": "completed",
+      "tags": [
+        "#infrastructure",
+        "#ssh",
+        "#n8n",
+        "#docker"
+      ],
+      "estimated_duration": "2 hours",
+      "created": "2025-07-16T23:00:00Z",
+      "completed": "2025-07-16T23:50:00Z",
+      "source": "session_2025_07_17",
+      "category": "session",
+      "dependencies": []
+    },
+    "n8n_troubleshooting_sop": {
+      "id": "n8n_troubleshooting_sop",
+      "title": "Create n8n Troubleshooting SOP",
+      "description": "Comprehensive troubleshooting documentation with automated restart procedures",
+      "priority": "high",
+      "status": "completed",
+      "tags": [
+        "#documentation",
+        "#sop",
+        "#n8n",
+        "#troubleshooting"
+      ],
+      "estimated_duration": "1 hour",
+      "created": "2025-07-16T23:40:00Z",
+      "completed": "2025-07-16T23:50:00Z",
+      "source": "session_2025_07_17",
+      "category": "session",
+      "dependencies": ["ssh_n8n_recovery"]
+    },
+    "prp_readiness_validation_fix": {
+      "id": "prp_readiness_validation_fix",
+      "title": "Fix PRP Readiness Validation Script",
+      "description": "Debug and fix validate_prp_readiness.py: add .env loading, default gates, import mapping",
+      "priority": "critical",
+      "status": "completed",
+      "tags": [
+        "#validation",
+        "#debugging",
+        "#prp",
+        "#script-fix"
+      ],
+      "estimated_duration": "1 hour",
+      "created": "2025-07-17T00:00:00Z",
+      "completed": "2025-07-17T00:15:00Z",
+      "source": "session_2025_07_17",
+      "category": "session",
+      "dependencies": []
+    },
+    "email_campaign_readiness_assessment": {
+      "id": "email_campaign_readiness_assessment",
+      "title": "Email Campaign PRP Readiness Assessment",
+      "description": "Complete assessment showing 80% readiness, only Python dependencies missing",
+      "priority": "critical",
+      "status": "completed",
+      "tags": [
+        "#prp-readiness",
+        "#email-campaign",
+        "#assessment",
+        "#validation"
+      ],
+      "estimated_duration": "30 minutes",
+      "created": "2025-07-17T00:10:00Z",
+      "completed": "2025-07-17T00:15:00Z",
+      "source": "session_2025_07_17",
+      "category": "session",
+      "dependencies": ["prp_readiness_validation_fix"]
+    },
+    "install_email_campaign_deps": {
+      "id": "install_email_campaign_deps",
+      "title": "Install Python Dependencies for Email Campaign",
+      "description": "Install fastapi, pydantic, httpx, google-auth-oauthlib, google-api-python-client, uvicorn",
+      "priority": "critical",
+      "status": "pending",
+      "tags": [
+        "#dependencies",
+        "#email-campaign",
+        "#python",
+        "#installation"
+      ],
+      "estimated_duration": "5-10 minutes",
+      "created": "2025-07-17T00:15:00Z",
+      "completed": null,
+      "source": "session_2025_07_17",
+      "category": "tomorrow",
+      "dependencies": [],
+      "fix_command": "python3 -m pip install fastapi pydantic httpx google-auth-oauthlib google-api-python-client uvicorn"
+    },
+    "test_supabase_connectivity": {
+      "id": "test_supabase_connectivity",
+      "title": "Test Supabase Database Connectivity",
+      "description": "Verify database access for email campaign project during implementation",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#supabase",
+        "#database",
+        "#connectivity",
+        "#email-campaign"
+      ],
+      "estimated_duration": "5 minutes",
+      "created": "2025-07-17T00:15:00Z",
+      "completed": null,
+      "source": "session_2025_07_17",
+      "category": "tomorrow",
+      "dependencies": ["install_email_campaign_deps"]
+    },
+    "verify_n8n_operational": {
+      "id": "verify_n8n_operational",
+      "title": "Verify n8n Service Operational Before Execution",
+      "description": "Confirm n8n service status and accessibility before email campaign execution",
+      "priority": "high",
+      "status": "pending",
+      "tags": [
+        "#n8n",
+        "#verification",
+        "#email-campaign",
+        "#pre-execution"
+      ],
+      "estimated_duration": "2 minutes",
+      "created": "2025-07-17T00:15:00Z",
+      "completed": null,
+      "source": "session_2025_07_17",
+      "category": "tomorrow",
+      "dependencies": []
+    }
+  }
+}

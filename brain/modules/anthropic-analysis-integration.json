@@ -1,0 +1,94 @@
+{
+  "analysis_workflows": {
+    "code_analysis": {
+      "required_docs": [
+        "prompt-engineering/be-clear-and-direct.md",
+        "claude/tool-use.md"
+      ],
+      "patterns": [
+        "Use clear, specific prompts for code analysis",
+        "Structure analysis requests with explicit goals",
+        "Reference tool use patterns for integration analysis"
+      ],
+      "integration_points": [
+        "Apply prompt engineering guidelines to analysis requests",
+        "Use tool use documentation for API integrations",
+        "Follow model capability guidelines for task assignment"
+      ]
+    },
+    "security_analysis": {
+      "required_docs": [
+        "api/errors.md",
+        "prompt-engineering/chain-of-thought.md"
+      ],
+      "patterns": [
+        "Use chain-of-thought reasoning for security assessment",
+        "Reference error handling patterns for vulnerability detection",
+        "Apply systematic thinking to threat modeling"
+      ],
+      "integration_points": [
+        "Use structured reasoning for security analysis",
+        "Apply error handling knowledge to vulnerability assessment",
+        "Reference best practices for secure implementations"
+      ]
+    },
+    "performance_analysis": {
+      "required_docs": [
+        "models/choosing-a-model.md",
+        "claude/pricing.md"
+      ],
+      "patterns": [
+        "Consider model capabilities for performance assessment",
+        "Apply cost-benefit analysis using pricing information",
+        "Use appropriate model selection for analysis depth"
+      ],
+      "integration_points": [
+        "Select optimal models for different analysis types",
+        "Balance analysis depth with cost considerations",
+        "Apply model-specific capabilities to performance evaluation"
+      ]
+    },
+    "architecture_analysis": {
+      "required_docs": [
+        "claude/overview.md",
+        "prompt-engineering/overview.md"
+      ],
+      "patterns": [
+        "Use comprehensive prompt engineering for architectural assessment",
+        "Apply systematic thinking to system design evaluation",
+        "Reference Claude capabilities for analysis scope"
+      ],
+      "integration_points": [
+        "Structure architectural analysis with clear prompts",
+        "Use Claude reasoning capabilities for system evaluation",
+        "Apply prompt engineering principles to complex analysis"
+      ]
+    }
+  },
+  "response_enhancement": {
+    "clarity_guidelines": {
+      "source": "prompt-engineering/be-clear-and-direct.md",
+      "applications": [
+        "Structure responses with clear sections",
+        "Use specific, actionable language",
+        "Provide concrete examples and evidence"
+      ]
+    },
+    "reasoning_patterns": {
+      "source": "prompt-engineering/chain-of-thought.md",
+      "applications": [
+        "Show reasoning steps in complex analysis",
+        "Break down problems systematically",
+        "Provide confidence scores with reasoning"
+      ]
+    },
+    "tool_integration": {
+      "source": "claude/tool-use.md",
+      "applications": [
+        "Reference tool capabilities in responses",
+        "Suggest appropriate tool combinations",
+        "Provide tool-specific guidance"
+      ]
+    }
+  }
+}

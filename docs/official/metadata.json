@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "created": "2025-07-14T07:45:00Z",
+  "last_updated": "2025-07-14T07:45:00Z",
+  "purpose": "Source truth documentation repository for AAI system",
+  "structure": {
+    "anthropic/": {
+      "description": "Claude documentation, API references, best practices",
+      "sources": ["docs.anthropic.com", "claude.ai/docs", "PDFs"],
+      "last_sync": null
+    },
+    "openai/": {
+      "description": "GPT documentation, API references, integration guides",
+      "sources": ["platform.openai.com", "help.openai.com", "cookbooks"],
+      "last_sync": null
+    },
+    "libraries/": {
+      "description": "Third-party library documentation and integration guides",
+      "sources": ["GitHub repos", "Official docs", "Community guides"],
+      "last_sync": null
+    }
+  },
+  "tracking": {
+    "total_documents": 0,
+    "last_version_check": "2025-07-14T07:45:00Z",
+    "update_frequency": "weekly"
+  }
+}

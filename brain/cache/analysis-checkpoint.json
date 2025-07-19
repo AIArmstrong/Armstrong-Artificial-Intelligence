@@ -1,0 +1,30 @@
+{
+  "timestamp": 1752667066.188457,
+  "tasks": [
+    {
+      "id": "quality-2",
+      "agent_name": "Code Quality Agent",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "result": {
+        "agent": "Code Quality Agent",
+        "focus": "code_quality",
+        "findings": [
+          "analyze_orchestrator.py: File is very large (713 lines)",
+          "anthropic-docs-integration.py: Long function detected (83 lines)",
+          "anthropic-docs-integration.py: Long function detected (54 lines)",
+          "prp-example-generator.py: File is very large (620 lines)",
+          "prp-scaffold.py: File is very large (610 lines)"
+        ],
+        "score": 0.5,
+        "issues_found": 5,
+        "recommendations": [
+          "Consider breaking down large files into smaller modules",
+          "Refactor long functions for better maintainability",
+          "Add type hints and documentation"
+        ]
+      }
+    }
+  ]
+}

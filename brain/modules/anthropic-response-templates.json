@@ -1,0 +1,53 @@
+{
+  "analysis_response": {
+    "structure": [
+      "## Executive Summary",
+      "## Detailed Analysis",
+      "### Code Quality Assessment",
+      "### Security Evaluation",
+      "### Performance Review",
+      "### Architecture Assessment",
+      "## Recommendations",
+      "## Implementation Guide",
+      "## References"
+    ],
+    "guidelines": [
+      "Be clear and direct in findings",
+      "Use chain-of-thought reasoning for complex analysis",
+      "Provide specific, actionable recommendations",
+      "Reference official documentation when applicable"
+    ]
+  },
+  "tool_integration_response": {
+    "structure": [
+      "## Tool Recommendation",
+      "## Integration Approach",
+      "## Implementation Steps",
+      "## Best Practices",
+      "## Troubleshooting",
+      "## References"
+    ],
+    "guidelines": [
+      "Reference official tool use documentation",
+      "Provide concrete implementation examples",
+      "Include error handling considerations",
+      "Suggest monitoring and validation approaches"
+    ]
+  },
+  "error_analysis_response": {
+    "structure": [
+      "## Error Classification",
+      "## Root Cause Analysis",
+      "## Impact Assessment",
+      "## Resolution Steps",
+      "## Prevention Measures",
+      "## References"
+    ],
+    "guidelines": [
+      "Use systematic error analysis approach",
+      "Reference API error documentation",
+      "Provide clear resolution steps",
+      "Include preventive measures"
+    ]
+  }
+}

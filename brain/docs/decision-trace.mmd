@@ -1,0 +1,54 @@
+graph LR
+    %% AAI System Neural Decision Flow - Auto-Generated 2025-07-14 08:22
+    A[Initial AAI System]
+B[Brain-Centric Architecture]
+C[Archive context-base]
+D[Supabase Over Local MySQL]
+E[Remove Phantom References]
+F[Workflow Intelligence Enhancement Plan]
+    
+    %% Decision Flow
+    A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+    
+    %% Neural Rationale Connections (WHY paths)
+    A -.->|"WHY: Creates clear hierarchy with brain as master controller"| B
+B -.->|"WHY: All essential components already extracted to AAI structure"| C
+C -.->|"WHY: User already has credentials and setup"| D
+D -.->|"WHY: Files never existed in the first place"| E
+E -.->|"WHY: Current workflows are basic - need semantic understanding"| F
+    
+    %% Confidence Scoring (stroke-width = confidence level)
+    classDef critical fill:#ff6b6b,stroke:#c92a2a,stroke-width:4px,color:#fff
+    classDef major fill:#ffd43b,stroke:#fab005,stroke-width:3px
+    classDef minor fill:#51cf66,stroke:#37b24d,stroke-width:2px
+    classDef validated fill:#40c057,stroke:#2f9e44,stroke-width:4px,color:#fff
+    classDef unvalidated fill:#868e96,stroke:#495057,stroke-width:1px
+    
+    %% Apply confidence-based styles
+    class B,C,F critical
+    class D,E major
+    class  minor
+    
+    %% Feedback Loop Indicators
+    F --> K[Decision Outcome Tracker]
+    K -.->|"Feedback Loop"| B
+    K -.->|"Learning Signal"| C
+    
+    %% Decision Links with Confidence Scores
+    click B "#brain-centric-architecture|confidence:95%"
+click C "#archive-context-base|confidence:95%"
+click D "#supabase-over-local-mysql|confidence:85%"
+click E "#remove-phantom-references|confidence:85%"
+click F "#workflow-intelligence-enhancement-plan|confidence:95%"
+    
+    %% Neural Network Metadata
+    subgraph Legend["🧠 Neural Rationale Legend"]
+        L1[Solid Lines = Decision Flow]
+        L2[Dotted Lines = WHY Rationale]
+        L3[Thickness = Confidence Level]
+        L4[Color = Validation Status]
+    end

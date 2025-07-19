@@ -1,0 +1,40 @@
+{
+  "intent_engine": {
+    "trigger": "analysis_request",
+    "action": "load_anthropic_analysis_patterns",
+    "docs_reference": [
+      "prompt-engineering/be-clear-and-direct.md"
+    ]
+  },
+  "prompt_recipes": {
+    "trigger": "prompt_generation",
+    "action": "apply_anthropic_prompt_guidelines",
+    "docs_reference": [
+      "prompt-engineering/overview.md",
+      "prompt-engineering/chain-of-thought.md"
+    ]
+  },
+  "decision_neural": {
+    "trigger": "complex_decision",
+    "action": "apply_structured_reasoning",
+    "docs_reference": [
+      "prompt-engineering/chain-of-thought.md"
+    ]
+  },
+  "openrouter_integration": {
+    "trigger": "model_selection",
+    "action": "apply_model_selection_criteria",
+    "docs_reference": [
+      "models/choosing-a-model.md",
+      "models/overview.md"
+    ]
+  },
+  "superclaude_bridge": {
+    "trigger": "command_execution",
+    "action": "apply_tool_use_patterns",
+    "docs_reference": [
+      "claude/tool-use.md",
+      "claude/tool-use-examples.md"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version_tracking": {},
+  "metadata": {
+    "created": "2025-07-14T11:15:00Z",
+    "last_updated": "2025-07-14T11:15:00Z",
+    "total_versions": 0,
+    "active_versions": 0
+  },
+  "naming_convention": {
+    "pattern": "{topic}-{source}-{date}.md",
+    "example": "openai-api-official-2024-01.md",
+    "date_format": "YYYY-MM"
+  }
+}

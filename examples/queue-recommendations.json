@@ -1,0 +1,838 @@
+[
+  {
+    "timestamp": "2025-07-14T08:34:19.993241",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "docs-enhance-structure",
+    "task_title": "Create improvement plan for docs/ folder"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.000136",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "examples-implement-patterns",
+    "task_title": "Enhance examples/ folder with working code patterns"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.005490",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "ideas-develop-pipeline",
+    "task_title": "Develop ideas/ registry into active innovation pipeline"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.014042",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "superclaude-validate-commands",
+    "task_title": "Expand SuperClaude integration and test multi-agent capabilities"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.021698",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "testing-create-framework",
+    "task_title": "Create comprehensive testing framework for AAI + SuperClaude"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.029798",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "prp-automate-workflow",
+    "task_title": "Enhance PRPs system with automated workflow generation"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.036224",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "research-build-engine",
+    "task_title": "Build intelligent research engine with context scraping"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.040878",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "jarvis-design-protocols",
+    "task_title": "Design Jarvis-level potential testing protocols"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.045563",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "olympus-import-wsl",
+    "task_title": "Import Project Olympus to WSL:Ubuntu directory"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.051660",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "olympus-migrate-ideas",
+    "task_title": "Copy ideas from Project Olympus into AAI"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.056934",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "manus-import-docs",
+    "task_title": "Bring over Manus ideas with documentation"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.061843",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "superclaude-develop-innovation",
+    "task_title": "Develop SuperClaude innovation engine"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.069683",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "superclaude-test-manus",
+    "task_title": "Test innovation engine on Manus Ideas"
+  },
+  {
+    "timestamp": "2025-07-14T08:34:20.074812",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "jina-scrape-solopreneur",
+    "task_title": "Test Jina scraper on Manus Solopreneur documentation"
+  },
+  {
+    "timestamp": "2025-07-14T08:33:18.312283",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "docs-create-official",
+    "task_title": "Create docs_official/ structure for source truth documentation"
+  },
+  {
+    "timestamp": "2025-07-14T08:33:18.319464",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "sop-build-generator",
+    "task_title": "Build Auto-generated SOP system from successful tasks"
+  },
+  {
+    "timestamp": "2025-07-14T08:33:18.325818",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "prp-docs-pipeline",
+    "task_title": "Build PRP to Docs integration pipeline"
+  },
+  {
+    "timestamp": "2025-07-14T08:33:18.333695",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "summary-extract-semantic",
+    "task_title": "Build Summary Extractor with OpenRouter embeddings"
+  },
+  {
+    "timestamp": "2025-07-14T08:33:18.340508",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "examples-create-structure",
+    "task_title": "Create examples structure with metadata foundation"
+  },
+  {
+    "timestamp": "2025-07-14T08:33:18.347522",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "examples-build-recommendation",
+    "task_title": "Build self-recommendation engine with gap analysis"
+  },
+  {
+    "timestamp": "2025-07-14T08:33:18.354442",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "examples-feedback-scoring",
+    "task_title": "Integrate feedback scoring system"
+  },
+  {
+    "timestamp": "2025-07-14T08:33:18.360681",
+    "requirements": {
+      "technologies": [],
+      "apis": [],
+      "complexity": "intermediate"
+    },
+    "similar_examples": [],
+    "gaps": [
+      {
+        "type": "complexity",
+        "missing": [
+          "intermediate"
+        ],
+        "priority": "medium",
+        "description": "Missing intermediate level examples"
+      }
+    ],
+    "recommendations": [
+      {
+        "type": "create_examples",
+        "priority": "medium",
+        "description": "Create 1 missing examples",
+        "gaps": [
+          {
+            "type": "complexity",
+            "missing": [
+              "intermediate"
+            ],
+            "priority": "medium",
+            "description": "Missing intermediate level examples"
+          }
+        ]
+      }
+    ],
+    "task_id": "examples-auto-generation",
+    "task_title": "Build auto-example generation from successful PRPs"
+  }
+]

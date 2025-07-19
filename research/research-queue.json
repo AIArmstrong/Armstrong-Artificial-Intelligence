@@ -1,0 +1,16 @@
+{
+  "queue": [],
+  "metadata": {
+    "created": "2025-07-14T11:15:00Z",
+    "last_updated": "2025-07-14T11:15:00Z",
+    "total_pending": 0,
+    "total_completed": 0
+  },
+  "settings": {
+    "auto_trigger_on_prp": true,
+    "auto_trigger_on_idea_threshold": 0.8,
+    "general_research_score_threshold": 0.90,
+    "project_research_score_threshold": 0.75,
+    "max_queue_size": 20
+  }
+}

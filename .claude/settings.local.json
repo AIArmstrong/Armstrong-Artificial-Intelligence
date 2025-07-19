@@ -1,0 +1,4685 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(source:*)",
+      "Bash(find:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(tree:*)",
+      "Bash(ruff:*)",
+      "Bash(touch:*)",
+      "Bash(cat:*)",
+      "Bash(ruff check:*)",
+      "Bash(pytest:*)",
+      "Bash(python:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(python3 -m pytest:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:jina.ai)",
+      "WebFetch(domain:seogrove.ai)",
+      "Bash(php:*)",
+      "WebFetch(domain:ai.pydantic.dev)",
+      "WebFetch(domain:platform.openai.com)",
+      "Fetch",
+      "Bash(cp:*)",
+      "Bash(chmod:*)",
+      "Bash(git add:*)",
+      "Bash(git reset:*)",
+      "Bash(git restore:*)",
+      "Bash(./quick-setup.sh:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(rm:*)",
+      "Bash(git init:*)",
+      "Bash(git commit:*)",
+      "Bash(/mnt/c/Users/Brandon/AAI/research/scripts/create-symlinks.sh:*)",
+      "Bash(/mnt/c/Users/Brandon/AAI/research/scripts/validate-symlinks.sh:*)",
+      "WebFetch(domain:docs.jina.ai)",
+      "Bash(git clone:*)",
+      "Bash(pip install:*)",
+      "Bash(./supabase/scripts/install_dependencies.sh:*)",
+      "Bash(ping:*)",
+      "Bash(curl:*)",
+      "Bash(diff:*)",
+      "Bash(claude doctor)",
+      "WebFetch(domain:r.jina.ai)",
+      "Bash(python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py*)",
+      "Bash(claude --debug)",
+      "Bash(nmap:*)",
+      "Bash(ssh:*)",
+      "WebFetch(domain:n8n.olympus-council.xyz)",
+      "Bash(pip3 list:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(command:*)",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash([ -s \"$NVM_DIR/nvm.sh\" ])",
+      "Bash(. \"$NVM_DIR/nvm.sh\")",
+      "Bash(nvm install:*)",
+      "Bash(nvm use:*)",
+      "WebFetch(domain:twitter.com)",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(iotop:*)",
+      "mcp__ide__executeCode",
+      "Bash(top:*)",
+      "Bash(iostat:*)",
+      "WebFetch(domain:pypi.org)",
+      "Bash(pip3 install:*)"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /mnt/c/Users/Brandon/AAI/.claude/hooks/claude-md-checker.py"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "research_entries": [],
+  "metadata": {
+    "created": "2025-07-14T11:15:00Z",
+    "last_updated": "2025-07-14T11:15:00Z",
+    "total_entries": 0,
+    "total_technologies": 0
+  },
+  "structure": {
+    "knowledge_base": "/research/_knowledge-base/",
+    "general": "/research/general/",
+    "projects": "/research/projects/",
+    "mapping": "/research/_map/",
+    "validation": "/research/validation/",
+    "semantic": "/research/_semantic/"
+  },
+  "neovim-dashboard": {
+    "file": "/mnt/c/Users/Brandon/AAI/research/_knowledge-base/neovim-dashboard/neovim-dashboard-general.md",
+    "technology": "neovim-dashboard",
+    "type": "general",
+    "quality_score": 0.85,
+    "created": "2025-07-15 08:45:45",
+    "tags": [
+      "neovim",
+      "dashboard",
+      "terminal",
+      "ascii-art",
+      "customization"
+    ]
+  }
+}

@@ -1,0 +1,654 @@
+{
+  "name": "Real Estate Failed Listing Campaign - Enhanced",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9-18 * * 1-6"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1200,
+        300
+      ],
+      "id": "schedule-trigger",
+      "name": "Daily Campaign Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "Failed"
+            },
+            {
+              "lookupColumn": "Last_Contacted",
+              "lookupValue": "",
+              "condition": "empty"
+            }
+          ]
+        },
+        "options": {
+          "rangeDefinition": "detectAutomatically"
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -1000,
+        300
+      ],
+      "id": "get-failed-listings",
+      "name": "Get Failed Listings"
+    },
+    {
+      "parameters": {
+        "batchSize": 10,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -800,
+        300
+      ],
+      "id": "limit-daily-volume",
+      "name": "Limit Hourly Volume (10 max)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate day-aware greeting\nconst dayGreetings = {\n  'Monday': 'Hope you had a good weekend!',\n  'Tuesday': 'Hope your week is going well!', \n  'Wednesday': 'Hope you\\'re having a productive week!',\n  'Thursday': 'Hope your week is wrapping up nicely!',\n  'Friday': 'Hope you have a great weekend ahead!'\n};\n\nconst today = new Date().toLocaleDateString('en-US', { weekday: 'long' });\nconst greeting = dayGreetings[today] || 'Hope your day is going well!';\n\n// Build personalized email content\nconst propertyAddress = $input.item.json['Property Address'];\nconst agentEmail = $input.item.json['Agent Email'];\nconst listingPrice = $input.item.json['Listing Price'];\n\nconst emailSubject = `Quick question about ${propertyAddress}`;\n\nconst emailBody = `Hello,\n\n${greeting} I noticed you had the listing for ${propertyAddress} that recently came off the market.\n\nI'm always looking to connect with local agents and wondered if you'd be open to a quick chat sometime? I work with investors who are sometimes interested in properties that didn't sell the first time around.\n\nNo pressure at all - just thought it might be worth connecting since we're both in the same market.\n\nBest regards,\nBrandon Armstrong\nArmstrong Acquisitions\nbrandon@armstrongacquisitions.net`;\n\nreturn {\n  agent_email: agentEmail,\n  property_address: propertyAddress,\n  listing_price: listingPrice,\n  email_subject: emailSubject,\n  email_body: emailBody,\n  campaign_type: 'initial_outreach',\n  scheduled_date: new Date().toISOString(),\n  status: 'draft'\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -600,
+        300
+      ],
+      "id": "generate-personalized-email",
+      "name": "Generate Personalized Email"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "email_review_queue",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Agent_Email": "={{ $json.agent_email }}",
+            "Property_Address": "={{ $json.property_address }}",
+            "Email_Subject": "={{ $json.email_subject }}",
+            "Email_Body": "={{ $json.email_body }}",
+            "Campaign_Type": "={{ $json.campaign_type }}",
+            "Status": "={{ $json.status }}",
+            "Created_Date": "={{ $json.scheduled_date }}",
+            "Approved": "FALSE"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -400,
+        300
+      ],
+      "id": "save-for-review",
+      "name": "Save for Review"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression", 
+              "expression": "0 10 * * 1-5"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        500
+      ],
+      "id": "approval-check-trigger",
+      "name": "Check Approved Emails"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "email_review_queue",
+          "mode": "list"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Approved",
+              "lookupValue": "TRUE"
+            },
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "draft"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        0,
+        500
+      ],
+      "id": "get-approved-emails",
+      "name": "Get Approved Emails"
+    },
+    {
+      "parameters": {
+        "to": "={{ $json.Agent_Email }}",
+        "subject": "={{ $json.Email_Subject }}",
+        "emailType": "text",
+        "message": "={{ $json.Email_Body }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        200,
+        500
+      ],
+      "id": "send-approved-email",
+      "name": "Send Approved Email"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "email_review_queue",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Status": "sent",
+            "Sent_Date": "={{ $now }}"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        400,
+        500
+      ],
+      "id": "mark-as-sent",
+      "name": "Mark as Sent"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Last_Contacted": "={{ $now }}",
+            "Campaign_Status": "initial_sent"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        600,
+        500
+      ],
+      "id": "update-contact-status",
+      "name": "Update Contact Status"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 10 * * 1-6"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        800
+      ],
+      "id": "follow-up-trigger",
+      "name": "Follow-up Check"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Campaign_Status",
+              "lookupValue": "initial_sent"
+            },
+            {
+              "lookupColumn": "Days_Since_Contact",
+              "lookupValue": ">=2"
+            },
+            {
+              "lookupColumn": "Response_Received",
+              "lookupValue": "FALSE"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        0,
+        800
+      ],
+      "id": "get-follow-up-candidates",
+      "name": "Get Follow-up Candidates"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate follow-up email content based on follow-up stage\nconst propertyAddress = $input.item.json['Property Address'];\nconst agentEmail = $input.item.json['Agent Email'];\nconst originalListingPrice = parseFloat($input.item.json['Listing Price']);\nconst followUpCount = parseInt($input.item.json['Follow_Up_Count'] || 0) + 1;\n\nlet followUpSubject, followUpBody, campaignType;\n\nif (followUpCount === 1) {\n  // First follow-up: 62.5% offer + 1.25% commission\n  const offerPrice = Math.round(originalListingPrice * 0.625);\n  const commissionAmount = Math.round(originalListingPrice * 0.0125);\n  \n  followUpSubject = `Following up on ${propertyAddress}`;\n  followUpBody = `Hello,\n\nI reached out a couple days ago about ${propertyAddress} and wanted to follow up briefly.\n\nI understand you're probably busy, but if you ever have a few minutes to chat about potential opportunities with investors, I'd appreciate it.\n\nFeel free to reach out anytime - no rush.\n\nBest regards,\nBrandon Armstrong\nArmstrong Acquisitions\nbrandon@armstrongacquisitions.net`;\n  \n  campaignType = 'follow_up_1';\n  \n} else if (followUpCount === 2) {\n  // Second follow-up: Specific 62.5% offer\n  const offerPrice = Math.round(originalListingPrice * 0.625);\n  const commissionAmount = Math.round(originalListingPrice * 0.0125);\n  \n  followUpSubject = `Potential opportunity for ${propertyAddress}`;\n  followUpBody = `Hello,\n\nI've reached out a couple times about ${propertyAddress} and thought I'd be more specific about what I'm looking for.\n\nI work with investors who are interested in properties that didn't sell initially. For ${propertyAddress}, we could potentially offer $${offerPrice.toLocaleString()} (62.5% of the original listing price) with a $${commissionAmount.toLocaleString()} commission (1.25% of the original listing price).\n\nThis would be a quick cash transaction if it makes sense for your client.\n\nWould you be open to a brief conversation about this?\n\nBest regards,\nBrandon Armstrong\nArmstrong Acquisitions\nbrandon@armstrongacquisitions.net`;\n  \n  campaignType = 'follow_up_2_offer';\n  \n} else if (followUpCount === 3) {\n  // Third follow-up: Bump to 65% offer\n  const offerPrice = Math.round(originalListingPrice * 0.65);\n  const commissionAmount = Math.round(originalListingPrice * 0.0125);\n  \n  followUpSubject = `Improved offer for ${propertyAddress}`;\n  followUpBody = `Hello,\n\nI wanted to reach out one more time about ${propertyAddress} with an improved offer.\n\nAfter reviewing the property further, we could potentially go up to $${offerPrice.toLocaleString()} (65% of the original listing price) with the same $${commissionAmount.toLocaleString()} commission.\n\nThis would still be a quick cash transaction. If this might work for your client, I'd love to discuss it further.\n\nIf not, no worries at all - I completely understand.\n\nBest regards,\nBrandon Armstrong\nArmstrong Acquisitions\nbrandon@armstrongacquisitions.net`;\n  \n  campaignType = 'follow_up_3_final';\n  \n} else {\n  // Stop follow-ups after 3\n  return null;\n}\n\nreturn {\n  agent_email: agentEmail,\n  property_address: propertyAddress,\n  email_subject: followUpSubject,\n  email_body: followUpBody,\n  campaign_type: campaignType,\n  follow_up_count: followUpCount,\n  scheduled_date: new Date().toISOString(),\n  status: 'draft'\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        200,
+        800
+      ],
+      "id": "generate-follow-up",
+      "name": "Generate Follow-up Email"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "email_review_queue",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Agent_Email": "={{ $json.agent_email }}",
+            "Property_Address": "={{ $json.property_address }}",
+            "Email_Subject": "={{ $json.email_subject }}",
+            "Email_Body": "={{ $json.email_body }}",
+            "Campaign_Type": "={{ $json.campaign_type }}",
+            "Status": "={{ $json.status }}",
+            "Created_Date": "={{ $json.scheduled_date }}",
+            "Approved": "FALSE"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        400,
+        800
+      ],
+      "id": "save-follow-up-for-review",
+      "name": "Save Follow-up for Review"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/response-webhook",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -200,
+        1100
+      ],
+      "id": "response-webhook",
+      "name": "Response Webhook"
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.body.email_content }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "Interested",
+              "description": "Positive response, wants to discuss further"
+            },
+            {
+              "category": "Not Interested",
+              "description": "Polite decline, not interested in working together"
+            },
+            {
+              "category": "Counter Offer",
+              "description": "Suggests different terms or approach"
+            },
+            {
+              "category": "Request Info",
+              "description": "Asks for more details about services or process"
+            },
+            {
+              "category": "Unsubscribe",
+              "description": "Requests to stop receiving emails"
+            },
+            {
+              "category": "Auto Reply",
+              "description": "Out of office or automated response"
+            },
+            {
+              "category": "Spam Complaint",
+              "description": "Negative response, considers email spam"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1100
+      ],
+      "id": "classify-response",
+      "name": "Classify Response"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "responses",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Agent_Email": "={{ $json.body.sender_email }}",
+            "Response_Type": "={{ $json.category }}",
+            "Response_Content": "={{ $json.body.email_content }}",
+            "Confidence_Score": "={{ $json.confidence }}",
+            "Received_Date": "={{ $now }}",
+            "Requires_Follow_Up": "={{ $json.category === 'Interested' || $json.category === 'Request Info' ? 'TRUE' : 'FALSE' }}"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        200,
+        1100
+      ],
+      "id": "log-response",
+      "name": "Log Response"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Response_Received": "TRUE",
+            "Response_Type": "={{ $json.category }}",
+            "Last_Response_Date": "={{ $now }}"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        400,
+        1100
+      ],
+      "id": "update-response-status",
+      "name": "Update Response Status"
+    }
+  ],
+  "connections": {
+    "Daily Campaign Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Failed Listings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Failed Listings": {
+      "main": [
+        [
+          {
+            "node": "Limit Daily Volume (5 max)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit Daily Volume (5 max)": {
+      "main": [
+        [
+          {
+            "node": "Generate Personalized Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Personalized Email": {
+      "main": [
+        [
+          {
+            "node": "Save for Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Approved Emails": {
+      "main": [
+        [
+          {
+            "node": "Get Approved Emails",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Approved Emails": {
+      "main": [
+        [
+          {
+            "node": "Send Approved Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Approved Email": {
+      "main": [
+        [
+          {
+            "node": "Mark as Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark as Sent": {
+      "main": [
+        [
+          {
+            "node": "Update Contact Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Follow-up Check": {
+      "main": [
+        [
+          {
+            "node": "Get Follow-up Candidates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Follow-up Candidates": {
+      "main": [
+        [
+          {
+            "node": "Generate Follow-up Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Follow-up Email": {
+      "main": [
+        [
+          {
+            "node": "Save Follow-up for Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Response Webhook": {
+      "main": [
+        [
+          {
+            "node": "Classify Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Response": {
+      "main": [
+        [
+          {
+            "node": "Log Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Response": {
+      "main": [
+        [
+          {
+            "node": "Update Response Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

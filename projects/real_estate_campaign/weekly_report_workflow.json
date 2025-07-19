@@ -1,0 +1,288 @@
+{
+  "name": "Weekly Campaign Report",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -800,
+        300
+      ],
+      "id": "weekly-trigger",
+      "name": "Weekly Report Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate date ranges for weekly report\nconst today = new Date();\nconst lastWeek = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);\n\nconst formatDate = (date) => {\n  return date.toISOString().split('T')[0];\n};\n\nreturn {\n  report_start_date: formatDate(lastWeek),\n  report_end_date: formatDate(today),\n  report_week: `Week of ${formatDate(lastWeek)}`\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -600,
+        300
+      ],
+      "id": "calculate-dates",
+      "name": "Calculate Report Dates"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "email_review_queue",
+          "mode": "list"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Sent_Date",
+              "lookupValue": "={{ $json.report_start_date }}",
+              "condition": "gte"
+            },
+            {
+              "lookupColumn": "Sent_Date", 
+              "lookupValue": "={{ $json.report_end_date }}",
+              "condition": "lte"
+            },
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "sent"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -400,
+        200
+      ],
+      "id": "get-sent-emails",
+      "name": "Get Sent Emails"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "responses",
+          "mode": "list"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Received_Date",
+              "lookupValue": "={{ $json.report_start_date }}",
+              "condition": "gte"
+            },
+            {
+              "lookupColumn": "Received_Date",
+              "lookupValue": "={{ $json.report_end_date }}",
+              "condition": "lte"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -400,
+        400
+      ],
+      "id": "get-responses",
+      "name": "Get Responses"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate weekly KPIs\nconst sentEmails = $input.first().json || [];\nconst responses = $input.last().json || [];\n\n// Email metrics\nconst totalSent = sentEmails.length;\nconst initialOutreach = sentEmails.filter(e => e.Campaign_Type === 'initial_outreach').length;\nconst followUp1 = sentEmails.filter(e => e.Campaign_Type === 'follow_up_1').length;\nconst followUp2 = sentEmails.filter(e => e.Campaign_Type === 'follow_up_2_offer').length;\nconst followUp3 = sentEmails.filter(e => e.Campaign_Type === 'follow_up_3_final').length;\n\n// Response metrics\nconst totalResponses = responses.length;\nconst responseRate = totalSent > 0 ? ((totalResponses / totalSent) * 100).toFixed(2) : 0;\n\n// Response types\nconst interested = responses.filter(r => r.Response_Type === 'Interested').length;\nconst notInterested = responses.filter(r => r.Response_Type === 'Not Interested').length;\nconst counterOffer = responses.filter(r => r.Response_Type === 'Counter Offer').length;\nconst requestInfo = responses.filter(r => r.Response_Type === 'Request Info').length;\nconst unsubscribe = responses.filter(r => r.Response_Type === 'Unsubscribe').length;\nconst autoReply = responses.filter(r => r.Response_Type === 'Auto Reply').length;\nconst spamComplaint = responses.filter(r => r.Response_Type === 'Spam Complaint').length;\n\n// Quality metrics\nconst positiveResponses = interested + counterOffer + requestInfo;\nconst negativeResponses = notInterested + unsubscribe + spamComplaint;\nconst neutralResponses = autoReply;\n\nconst positiveRate = totalResponses > 0 ? ((positiveResponses / totalResponses) * 100).toFixed(2) : 0;\nconst negativeRate = totalResponses > 0 ? ((negativeResponses / totalResponses) * 100).toFixed(2) : 0;\n\n// Calculate conversion funnel\nconst conversionRate = totalSent > 0 ? ((positiveResponses / totalSent) * 100).toFixed(2) : 0;\n\nreturn {\n  report_period: $('Calculate Report Dates').item.json.report_week,\n  \n  // Email volume metrics\n  total_sent: totalSent,\n  initial_outreach: initialOutreach,\n  follow_up_1: followUp1,\n  follow_up_2_offer: followUp2,\n  follow_up_3_final: followUp3,\n  \n  // Response metrics\n  total_responses: totalResponses,\n  response_rate: `${responseRate}%`,\n  \n  // Response breakdown\n  interested: interested,\n  not_interested: notInterested,\n  counter_offer: counterOffer,\n  request_info: requestInfo,\n  unsubscribe: unsubscribe,\n  auto_reply: autoReply,\n  spam_complaint: spamComplaint,\n  \n  // Quality metrics\n  positive_responses: positiveResponses,\n  negative_responses: negativeResponses,\n  neutral_responses: neutralResponses,\n  positive_rate: `${positiveRate}%`,\n  negative_rate: `${negativeRate}%`,\n  conversion_rate: `${conversionRate}%`,\n  \n  // Generate insights\n  key_insights: [\n    `${responseRate}% overall response rate`,\n    `${positiveRate}% of responses were positive`,\n    `${conversionRate}% conversion rate (positive responses / total sent)`,\n    spamComplaint > 0 ? `⚠️ ${spamComplaint} spam complaints received` : '✅ No spam complaints',\n    unsubscribe > 0 ? `${unsubscribe} unsubscribe requests` : '✅ No unsubscribe requests'\n  ]\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -200,
+        300
+      ],
+      "id": "calculate-kpis",
+      "name": "Calculate KPIs"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Create a professional weekly email campaign report based on the following data:\n\n{{ JSON.stringify($json, null, 2) }}\n\nFormat this as a comprehensive weekly report with:\n1. Executive summary\n2. Key performance indicators\n3. Response analysis\n4. Actionable insights\n5. Recommendations for next week\n\nMake it professional but easy to read.",
+        "options": {
+          "systemMessage": "You are a marketing analytics specialist creating weekly campaign reports. Focus on actionable insights and clear metrics presentation."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        0,
+        300
+      ],
+      "id": "generate-report",
+      "name": "Generate Report"
+    },
+    {
+      "parameters": {
+        "to": "brandon@armstrongacquisitions.net",
+        "subject": "Weekly Campaign Report - {{ $('Calculate KPIs').item.json.report_period }}",
+        "emailType": "text",
+        "message": "{{ $json.text }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        200,
+        300
+      ],
+      "id": "send-report",
+      "name": "Send Weekly Report"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1k9V5gE-ViBykBIM5ZtxxciqsxvaI8aSu7WhDvAT0R5s",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "weekly_reports",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Report_Week": "={{ $('Calculate KPIs').item.json.report_period }}",
+            "Total_Sent": "={{ $('Calculate KPIs').item.json.total_sent }}",
+            "Total_Responses": "={{ $('Calculate KPIs').item.json.total_responses }}",
+            "Response_Rate": "={{ $('Calculate KPIs').item.json.response_rate }}",
+            "Positive_Responses": "={{ $('Calculate KPIs').item.json.positive_responses }}",
+            "Negative_Responses": "={{ $('Calculate KPIs').item.json.negative_responses }}",
+            "Conversion_Rate": "={{ $('Calculate KPIs').item.json.conversion_rate }}",
+            "Spam_Complaints": "={{ $('Calculate KPIs').item.json.spam_complaint }}",
+            "Unsubscribes": "={{ $('Calculate KPIs').item.json.unsubscribe }}",
+            "Generated_Date": "={{ $now }}"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        400,
+        300
+      ],
+      "id": "save-report-data",
+      "name": "Save Report Data"
+    }
+  ],
+  "connections": {
+    "Weekly Report Trigger": {
+      "main": [
+        [
+          {
+            "node": "Calculate Report Dates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Report Dates": {
+      "main": [
+        [
+          {
+            "node": "Get Sent Emails",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Responses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Sent Emails": {
+      "main": [
+        [
+          {
+            "node": "Calculate KPIs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Responses": {
+      "main": [
+        [
+          {
+            "node": "Calculate KPIs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate KPIs": {
+      "main": [
+        [
+          {
+            "node": "Generate Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Report": {
+      "main": [
+        [
+          {
+            "node": "Send Weekly Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Weekly Report": {
+      "main": [
+        [
+          {
+            "node": "Save Report Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
