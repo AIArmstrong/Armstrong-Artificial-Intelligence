@@ -1,0 +1,815 @@
+"""
+Core Reasoning Engine using DeepSeek R1
+
+Orchestrates structured reasoning with confidence scoring,
+evidence analysis, and AAI-compliant response generation.
+"""
+import asyncio
+import time
+import uuid
+import re
+from typing import List, Dict, Any, Optional, Tuple
+from datetime import datetime
+import logging
+
+from .models import (
+    ReasoningStep, ReasoningChain, ReasoningMethod, ReasoningDepth,
+    ConfidenceAnalysis, AlternativePerspective, ReasoningLimitation,
+    DocumentAnalysisRequest, ReasoningResponse
+)
+from .config import R1ReasoningConfig
+from inference.model_router import ModelRouter, InferenceRequest
+
+logger = logging.getLogger(__name__)
+
+
+class ReasoningEngine:
+    """
+    Core reasoning engine powered by DeepSeek R1.
+    
+    Features:
+    - Structured reasoning chain generation
+    - AAI confidence scoring (70-95%)
+    - Evidence quality assessment  
+    - Alternative perspective generation
+    - Limitation identification
+    - Assumption risk analysis
+    """
+    
+    def __init__(self, config: R1ReasoningConfig = None):
+        """Initialize reasoning engine"""
+        self.config = config or R1ReasoningConfig()
+        self.model_router = ModelRouter(self.config)
+        
+        # Reasoning templates for different analysis types
+        self.reasoning_templates = {
+            ReasoningDepth.QUICK: self._get_quick_template(),
+            ReasoningDepth.THOROUGH: self._get_thorough_template(),
+            ReasoningDepth.EXHAUSTIVE: self._get_exhaustive_template()
+        }
+        
+        # Performance tracking
+        self.reasoning_history: List[Dict[str, Any]] = []
+        self.confidence_calibration: Dict[str, float] = {}
+    
+    async def generate_reasoning_chain(self,
+                                     query: str,
+                                     context: List[str] = None,
+                                     reasoning_depth: ReasoningDepth = ReasoningDepth.THOROUGH,
+                                     domain_context: str = None) -> ReasoningChain:
+        """
+        Generate structured reasoning chain for a query.
+        
+        Args:
+            query: The question or problem to analyze
+            context: Supporting context information
+            reasoning_depth: Depth of analysis required
+            domain_context: Domain-specific context (technical, business, etc.)
+            
+        Returns:
+            ReasoningChain with structured steps and confidence scores
+        """
+        start_time = time.time()
+        request_id = str(uuid.uuid4())
+        
+        try:
+            # Build reasoning prompt based on depth and domain
+            reasoning_prompt = self._build_reasoning_prompt(
+                query=query,
+                context=context or [],
+                depth=reasoning_depth,
+                domain_context=domain_context
+            )
+            
+            # Execute reasoning with DeepSeek R1
+            inference_request = InferenceRequest(
+                prompt=reasoning_prompt,
+                model_type="reasoning",
+                max_tokens=self._get_max_tokens_for_depth(reasoning_depth),
+                temperature=self.config.REASONING_TEMPERATURE,
+                timeout_seconds=self.config.TIMEOUT_SECONDS
+            )
+            
+            response = await self.model_router.route_inference(inference_request)
+            
+            if not response.success:
+                raise Exception(f"Reasoning inference failed: {response.error_message}")
+            
+            # Parse reasoning chain from model output
+            reasoning_chain = await self._parse_reasoning_chain(
+                output=response.text,
+                query=query,
+                model_confidence=response.confidence_score
+            )
+            
+            # Enhance with quality analysis
+            reasoning_chain = await self._enhance_reasoning_quality(reasoning_chain)
+            
+            # Calculate processing time
+            reasoning_time_ms = int((time.time() - start_time) * 1000)
+            reasoning_chain.reasoning_time_ms = reasoning_time_ms
+            
+            # Log for learning
+            self._log_reasoning_result(request_id, query, reasoning_chain, response)
+            
+            return reasoning_chain
+            
+        except Exception as e:
+            logger.error(f"Reasoning generation failed: {e}")
+            
+            # Return minimal reasoning chain with error handling
+            return ReasoningChain(
+                query=query,
+                steps=[
+                    ReasoningStep(
+                        step_number=1,
+                        description="Error in reasoning generation",
+                        reasoning=f"Unable to generate reasoning: {str(e)}",
+                        confidence=0.70
+                    )
+                ],
+                final_conclusion="I apologize, but I encountered an error while analyzing your query. Please try rephrasing or contact support.",
+                overall_confidence=0.70,
+                reasoning_method=ReasoningMethod.DEDUCTIVE,
+                evidence_quality=0.0,
+                assumption_risk=1.0,
+                complexity_score=0.0,
+                reasoning_time_ms=int((time.time() - start_time) * 1000)
+            )
+    
+    async def analyze_document_query(self, request: DocumentAnalysisRequest) -> ReasoningResponse:
+        """
+        Analyze a query with document context for comprehensive reasoning.
+        
+        Args:
+            request: Document analysis request with query and parameters
+            
+        Returns:
+            Complete reasoning response with analysis and alternatives
+        """
+        start_time = time.time()
+        request_id = str(uuid.uuid4())
+        
+        try:
+            # Generate core reasoning chain
+            reasoning_chain = await self.generate_reasoning_chain(
+                query=request.query,
+                reasoning_depth=request.reasoning_depth
+            )
+            
+            # Generate confidence analysis
+            confidence_analysis = await self._generate_confidence_analysis(reasoning_chain)
+            
+            # Generate alternative perspectives if requested
+            alternatives = []
+            if request.include_alternatives:
+                alternatives = await self._generate_alternative_perspectives(
+                    query=request.query,
+                    reasoning_chain=reasoning_chain
+                )
+            
+            # Identify limitations if requested
+            limitations = []
+            if request.include_limitations:
+                limitations = await self._identify_reasoning_limitations(reasoning_chain)
+            
+            # Generate follow-up questions
+            follow_up_questions = await self._generate_follow_up_questions(
+                query=request.query,
+                reasoning_chain=reasoning_chain
+            )
+            
+            # Calculate total processing time
+            processing_time_ms = int((time.time() - start_time) * 1000)
+            
+            return ReasoningResponse(
+                answer=reasoning_chain.final_conclusion,
+                reasoning_chain=reasoning_chain,
+                confidence_analysis=confidence_analysis,
+                alternative_perspectives=alternatives,
+                limitations=limitations,
+                follow_up_questions=follow_up_questions,
+                processing_time_ms=processing_time_ms,
+                model_used=self.config.REASONING_MODEL,
+                request_id=request_id
+            )
+            
+        except Exception as e:
+            logger.error(f"Document analysis failed: {e}")
+            
+            # Return error response with AAI compliance
+            return ReasoningResponse(
+                answer="I apologize, but I encountered an error during analysis. Please try again or rephrase your query.",
+                reasoning_chain=ReasoningChain(
+                    query=request.query,
+                    steps=[],
+                    final_conclusion="Analysis failed due to technical error",
+                    overall_confidence=0.70
+                ),
+                confidence_analysis=ConfidenceAnalysis(overall=0.70),
+                alternative_perspectives=[],
+                limitations=[
+                    ReasoningLimitation(
+                        limitation_type="technical_error",
+                        description=str(e),
+                        impact_level="high"
+                    )
+                ],
+                follow_up_questions=[],
+                processing_time_ms=int((time.time() - start_time) * 1000),
+                model_used=self.config.REASONING_MODEL,
+                request_id=request_id
+            )
+    
+    def _build_reasoning_prompt(self,
+                              query: str,
+                              context: List[str],
+                              depth: ReasoningDepth,
+                              domain_context: str = None) -> str:
+        """Build optimized reasoning prompt for DeepSeek R1"""
+        
+        # Get template based on depth
+        template = self.reasoning_templates[depth]
+        
+        # Add domain-specific instructions
+        domain_instructions = ""
+        if domain_context:
+            domain_instructions = self._get_domain_instructions(domain_context)
+        
+        # Combine context information
+        context_section = ""
+        if context:
+            context_section = "## Context Information\n" + "\n".join(f"- {ctx}" for ctx in context) + "\n\n"
+        
+        # Format the complete prompt
+        prompt = template.format(
+            domain_instructions=domain_instructions,
+            context_section=context_section,
+            query=query,
+            min_confidence=int(self.config.AAI_MIN_CONFIDENCE * 100),
+            max_confidence=int(self.config.AAI_MAX_CONFIDENCE * 100)
+        )
+        
+        return prompt
+    
+    def _get_quick_template(self) -> str:
+        """Get template for quick reasoning"""
+        return """You are an AI assistant that provides structured reasoning and analysis.
+
+{domain_instructions}
+
+## Task Instructions
+Provide a QUICK analysis with 2-3 reasoning steps. Focus on the most critical aspects.
+
+## Confidence Scoring
+- Use confidence scores between {min_confidence}% and {max_confidence}%
+- Base confidence on evidence strength and reasoning certainty
+- Higher confidence for well-supported conclusions
+
+## Response Format
+### Reasoning Steps
+1. **[Step Title]** (Confidence: XX%)
+   - Reasoning: [Your analysis]
+   - Evidence: [Supporting evidence]
+
+### Conclusion
+**Final Answer:** [Your conclusion] (Overall Confidence: XX%)
+
+{context_section}## Query
+{query}
+
+### Response"""
+
+    def _get_thorough_template(self) -> str:
+        """Get template for thorough reasoning"""
+        return """You are an AI assistant that provides structured reasoning and analysis.
+
+{domain_instructions}
+
+## Task Instructions
+Provide a THOROUGH analysis with 4-6 reasoning steps. Include evidence evaluation and assumption identification.
+
+## Confidence Scoring Guidelines
+- Use confidence scores between {min_confidence}% and {max_confidence}%
+- Consider evidence quality, reasoning logic, and potential uncertainties
+- Lower confidence for assumptions, higher for verified facts
+
+## Response Format
+### Reasoning Steps
+1. **[Step Title]** (Confidence: XX%)
+   - Reasoning: [Detailed analysis]
+   - Evidence: [Supporting evidence and sources]
+   - Assumptions: [Key assumptions made]
+
+### Analysis Summary
+- **Reasoning Method:** [Deductive/Inductive/Abductive]
+- **Evidence Quality:** [Assessment of evidence strength]
+- **Key Assumptions:** [Critical assumptions identified]
+
+### Conclusion
+**Final Answer:** [Comprehensive conclusion] (Overall Confidence: XX%)
+
+{context_section}## Query
+{query}
+
+### Response"""
+
+    def _get_exhaustive_template(self) -> str:
+        """Get template for exhaustive reasoning"""
+        return """You are an AI assistant that provides structured reasoning and analysis.
+
+{domain_instructions}
+
+## Task Instructions
+Provide an EXHAUSTIVE analysis with 6-10 reasoning steps. Include comprehensive evidence evaluation, assumption analysis, and alternative perspectives.
+
+## Confidence Scoring Guidelines
+- Use confidence scores between {min_confidence}% and {max_confidence}%
+- Provide detailed confidence justification for each step
+- Consider multiple perspectives and uncertainties
+
+## Response Format
+### Reasoning Steps
+1. **[Step Title]** (Confidence: XX%)
+   - Reasoning: [Comprehensive analysis]
+   - Evidence: [Detailed evidence evaluation]
+   - Assumptions: [Explicit assumptions and their impact]
+   - Confidence Rationale: [Why this confidence level]
+
+### Comprehensive Analysis
+- **Reasoning Method:** [Primary reasoning approach used]
+- **Evidence Quality Assessment:** [Detailed evidence evaluation]
+- **Assumption Risk Analysis:** [Impact of key assumptions]
+- **Alternative Perspectives:** [Other possible viewpoints]
+- **Limitations:** [Acknowledged limitations of analysis]
+
+### Conclusion
+**Final Answer:** [Detailed conclusion with nuanced analysis] (Overall Confidence: XX%)
+**Confidence Justification:** [Detailed explanation of overall confidence]
+
+{context_section}## Query
+{query}
+
+### Response"""
+
+    def _get_domain_instructions(self, domain: str) -> str:
+        """Get domain-specific reasoning instructions"""
+        domain_map = {
+            "technical": """
+## Technical Analysis Guidelines
+- Focus on technical feasibility, implementation details, and system constraints
+- Consider performance, scalability, and maintenance implications
+- Evaluate technical trade-offs and alternatives
+""",
+            "business": """
+## Business Analysis Guidelines
+- Consider cost-benefit analysis, ROI, and business impact
+- Evaluate market conditions, competitive landscape, and strategic alignment
+- Focus on stakeholder needs and business objectives
+""",
+            "strategic": """
+## Strategic Analysis Guidelines
+- Take long-term perspective with consideration of trends and future scenarios
+- Evaluate strategic alignment, competitive advantages, and risk factors
+- Consider multiple stakeholder perspectives and organizational capabilities
+""",
+            "comparative": """
+## Comparative Analysis Guidelines
+- Systematically compare options across multiple criteria
+- Use structured evaluation frameworks and scoring methods
+- Highlight key differentiators and trade-offs
+"""
+        }
+        
+        return domain_map.get(domain.lower(), "")
+    
+    def _get_max_tokens_for_depth(self, depth: ReasoningDepth) -> int:
+        """Get appropriate token limit based on reasoning depth"""
+        depth_tokens = {
+            ReasoningDepth.QUICK: 1024,
+            ReasoningDepth.THOROUGH: 2048,
+            ReasoningDepth.EXHAUSTIVE: 4096
+        }
+        return depth_tokens.get(depth, 2048)
+    
+    async def _parse_reasoning_chain(self,
+                                   output: str,
+                                   query: str,
+                                   model_confidence: float) -> ReasoningChain:
+        """Parse structured reasoning chain from model output"""
+        
+        reasoning_steps = []
+        final_conclusion = ""
+        reasoning_method = ReasoningMethod.DEDUCTIVE
+        evidence_quality = 0.5
+        assumption_risk = 0.5
+        
+        try:
+            # Clean up output
+            output = re.sub(r'### Response\s*', '', output)
+            lines = output.split('\n')
+            
+            current_step = None
+            in_conclusion = False
+            step_counter = 0
+            
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                
+                # Parse reasoning steps
+                step_match = re.match(r'(\d+)\.\s*\*\*(.+?)\*\*.*?(\d+)%', line)
+                if step_match:
+                    step_counter += 1
+                    confidence = max(0.70, min(0.95, int(step_match.group(3)) / 100))
+                    
+                    current_step = ReasoningStep(
+                        step_number=step_counter,
+                        description=step_match.group(2),
+                        reasoning="",
+                        confidence=confidence,
+                        evidence=[],
+                        assumptions=[]
+                    )
+                    reasoning_steps.append(current_step)
+                    continue
+                
+                # Parse step details
+                if current_step and not in_conclusion:
+                    if line.startswith('- Reasoning:'):
+                        current_step.reasoning = line[12:].strip()
+                    elif line.startswith('- Evidence:'):
+                        current_step.evidence = [line[11:].strip()]
+                    elif line.startswith('- Assumptions:'):
+                        current_step.assumptions = [line[14:].strip()]
+                
+                # Parse conclusion section
+                if '### Conclusion' in line or '**Final Answer:**' in line:
+                    in_conclusion = True
+                    continue
+                
+                if in_conclusion and line.startswith('**Final Answer:**'):
+                    conclusion_match = re.search(r'\*\*Final Answer:\*\*\s*(.+?)(?:\(Overall Confidence:\s*(\d+)%\))?', line)
+                    if conclusion_match:
+                        final_conclusion = conclusion_match.group(1).strip()
+                
+                # Parse reasoning method
+                if 'Reasoning Method:' in line:
+                    method_text = line.split('Reasoning Method:')[1].strip().lower()
+                    if 'inductive' in method_text:
+                        reasoning_method = ReasoningMethod.INDUCTIVE
+                    elif 'abductive' in method_text:
+                        reasoning_method = ReasoningMethod.ABDUCTIVE
+                    elif 'comparative' in method_text:
+                        reasoning_method = ReasoningMethod.COMPARATIVE
+                    elif 'causal' in method_text:
+                        reasoning_method = ReasoningMethod.CAUSAL
+            
+            # Calculate overall confidence
+            if reasoning_steps:
+                step_confidences = [step.confidence for step in reasoning_steps]
+                overall_confidence = sum(step_confidences) / len(step_confidences)
+                
+                # Adjust based on model confidence
+                overall_confidence = (overall_confidence + model_confidence) / 2
+                overall_confidence = max(0.70, min(0.95, overall_confidence))
+                
+                # Calculate quality metrics
+                evidence_quality = min(1.0, overall_confidence * 1.1)
+                assumption_risk = max(0.0, 1.0 - overall_confidence)
+            else:
+                overall_confidence = max(0.70, model_confidence)
+            
+        except Exception as e:
+            logger.warning(f"Failed to parse reasoning chain: {e}")
+            
+            # Fallback parsing
+            overall_confidence = max(0.70, model_confidence)
+            if not reasoning_steps:
+                reasoning_steps = [
+                    ReasoningStep(
+                        step_number=1,
+                        description="Analysis of the query",
+                        reasoning=output[:500] + "..." if len(output) > 500 else output,
+                        confidence=overall_confidence
+                    )
+                ]
+            
+            if not final_conclusion:
+                final_conclusion = "Based on the analysis, I've provided my reasoning above."
+        
+        return ReasoningChain(
+            query=query,
+            steps=reasoning_steps,
+            final_conclusion=final_conclusion,
+            overall_confidence=overall_confidence,
+            reasoning_method=reasoning_method,
+            evidence_quality=evidence_quality,
+            assumption_risk=assumption_risk,
+            complexity_score=len(reasoning_steps) / 10.0  # Rough complexity measure
+        )
+    
+    async def _enhance_reasoning_quality(self, reasoning_chain: ReasoningChain) -> ReasoningChain:
+        """Enhance reasoning chain with quality analysis"""
+        
+        # Validate confidence scores
+        for step in reasoning_chain.steps:
+            if step.confidence < 0.70:
+                step.confidence = 0.70
+            elif step.confidence > 0.95:
+                step.confidence = 0.95
+        
+        # Recalculate overall confidence
+        if reasoning_chain.steps:
+            avg_confidence = sum(step.confidence for step in reasoning_chain.steps) / len(reasoning_chain.steps)
+            reasoning_chain.overall_confidence = max(0.70, min(0.95, avg_confidence))
+        
+        # Enhance evidence quality assessment
+        evidence_count = sum(len(step.evidence) for step in reasoning_chain.steps)
+        reasoning_chain.evidence_quality = min(1.0, evidence_count / len(reasoning_chain.steps) if reasoning_chain.steps else 0.0)
+        
+        # Enhance assumption risk assessment
+        assumption_count = sum(len(step.assumptions) for step in reasoning_chain.steps)
+        reasoning_chain.assumption_risk = min(1.0, assumption_count / len(reasoning_chain.steps) if reasoning_chain.steps else 0.0)
+        
+        return reasoning_chain
+    
+    async def _generate_confidence_analysis(self, reasoning_chain: ReasoningChain) -> ConfidenceAnalysis:
+        """Generate detailed confidence analysis"""
+        
+        overall = reasoning_chain.overall_confidence
+        reasoning_confidence = overall
+        evidence_confidence = reasoning_chain.evidence_quality
+        assumption_certainty = 1.0 - reasoning_chain.assumption_risk
+        
+        # Calculate source reliability (placeholder - would use actual source data)
+        source_reliability = min(1.0, evidence_confidence * 1.2)
+        
+        # Calculate reasoning coherence based on step consistency
+        if len(reasoning_chain.steps) > 1:
+            confidences = [step.confidence for step in reasoning_chain.steps]
+            confidence_variance = sum((c - overall) ** 2 for c in confidences) / len(confidences)
+            reasoning_coherence = max(0.0, 1.0 - confidence_variance)
+        else:
+            reasoning_coherence = 0.8
+        
+        return ConfidenceAnalysis(
+            overall=overall,
+            reasoning_confidence=reasoning_confidence,
+            evidence_confidence=evidence_confidence,
+            source_reliability=source_reliability,
+            assumption_certainty=assumption_certainty,
+            reasoning_coherence=reasoning_coherence
+        )
+    
+    async def _generate_alternative_perspectives(self,
+                                               query: str,
+                                               reasoning_chain: ReasoningChain) -> List[AlternativePerspective]:
+        """Generate alternative perspectives on the reasoning"""
+        
+        # Build prompt for alternative perspective generation
+        alt_prompt = f"""Given this reasoning chain for the query: "{query}"
+
+Original conclusion: {reasoning_chain.final_conclusion}
+
+Generate 2-3 alternative perspectives or viewpoints that could lead to different conclusions. For each alternative:
+1. State the alternative perspective
+2. Provide reasoning for this viewpoint  
+3. Assess likelihood (0-100%)
+4. Provide confidence (70-95%)
+
+Format:
+**Alternative 1:** [perspective]
+Reasoning: [why this perspective is valid]
+Likelihood: XX%
+Confidence: XX%"""
+
+        try:
+            inference_request = InferenceRequest(
+                prompt=alt_prompt,
+                model_type="reasoning",
+                max_tokens=1024,
+                temperature=0.4  # Slightly higher for creativity
+            )
+            
+            response = await self.model_router.route_inference(inference_request)
+            
+            if response.success:
+                return self._parse_alternative_perspectives(response.text)
+            
+        except Exception as e:
+            logger.warning(f"Failed to generate alternative perspectives: {e}")
+        
+        # Return default alternatives
+        return [
+            AlternativePerspective(
+                perspective="Alternative viewpoint may exist based on different priorities or constraints",
+                reasoning="Different stakeholders might prioritize different factors",
+                confidence=0.75,
+                likelihood=0.5
+            )
+        ]
+    
+    def _parse_alternative_perspectives(self, output: str) -> List[AlternativePerspective]:
+        """Parse alternative perspectives from model output"""
+        alternatives = []
+        
+        try:
+            sections = re.split(r'\*\*Alternative \d+:\*\*', output)
+            
+            for i, section in enumerate(sections[1:], 1):  # Skip first empty section
+                lines = section.strip().split('\n')
+                if not lines:
+                    continue
+                
+                perspective = lines[0].strip()
+                reasoning = ""
+                likelihood = 0.5
+                confidence = 0.75
+                
+                for line in lines[1:]:
+                    line = line.strip()
+                    if line.startswith('Reasoning:'):
+                        reasoning = line[10:].strip()
+                    elif line.startswith('Likelihood:'):
+                        likelihood_match = re.search(r'(\d+)%', line)
+                        if likelihood_match:
+                            likelihood = int(likelihood_match.group(1)) / 100
+                    elif line.startswith('Confidence:'):
+                        conf_match = re.search(r'(\d+)%', line)
+                        if conf_match:
+                            confidence = max(0.70, min(0.95, int(conf_match.group(1)) / 100))
+                
+                if perspective and reasoning:
+                    alternatives.append(AlternativePerspective(
+                        perspective=perspective,
+                        reasoning=reasoning,
+                        confidence=confidence,
+                        likelihood=likelihood
+                    ))
+                    
+        except Exception as e:
+            logger.warning(f"Failed to parse alternative perspectives: {e}")
+        
+        return alternatives
+    
+    async def _identify_reasoning_limitations(self, reasoning_chain: ReasoningChain) -> List[ReasoningLimitation]:
+        """Identify limitations in the reasoning"""
+        
+        limitations = []
+        
+        # Check for common limitations
+        if reasoning_chain.evidence_quality < 0.6:
+            limitations.append(ReasoningLimitation(
+                limitation_type="evidence_quality",
+                description="Limited evidence available for comprehensive analysis",
+                impact_level="medium",
+                mitigation="Seek additional sources and evidence"
+            ))
+        
+        if reasoning_chain.assumption_risk > 0.7:
+            limitations.append(ReasoningLimitation(
+                limitation_type="assumption_risk",
+                description="Analysis relies heavily on assumptions that may not hold",
+                impact_level="high",
+                mitigation="Validate key assumptions before acting on conclusions"
+            ))
+        
+        if len(reasoning_chain.steps) < 3:
+            limitations.append(ReasoningLimitation(
+                limitation_type="analysis_depth",
+                description="Analysis may benefit from deeper examination",
+                impact_level="low",
+                mitigation="Consider more detailed analysis if decision is critical"
+            ))
+        
+        return limitations
+    
+    async def _generate_follow_up_questions(self,
+                                          query: str,
+                                          reasoning_chain: ReasoningChain) -> List[str]:
+        """Generate relevant follow-up questions"""
+        
+        follow_ups = []
+        
+        # Add assumption-based questions
+        for step in reasoning_chain.steps:
+            if step.assumptions:
+                follow_ups.append(f"What if the assumption about {step.assumptions[0][:50]}... doesn't hold?")
+        
+        # Add evidence-based questions
+        if reasoning_chain.evidence_quality < 0.7:
+            follow_ups.append("What additional evidence would strengthen this analysis?")
+        
+        # Add depth questions
+        follow_ups.append("What are the potential long-term implications of this conclusion?")
+        follow_ups.append("How might different stakeholders view this analysis?")
+        
+        return follow_ups[:5]  # Limit to 5 questions
+    
+    def _log_reasoning_result(self,
+                            request_id: str,
+                            query: str,
+                            reasoning_chain: ReasoningChain,
+                            inference_response):
+        """Log reasoning result for learning and improvement"""
+        
+        self.reasoning_history.append({
+            "request_id": request_id,
+            "query": query,
+            "query_length": len(query),
+            "steps_generated": len(reasoning_chain.steps),
+            "overall_confidence": reasoning_chain.overall_confidence,
+            "evidence_quality": reasoning_chain.evidence_quality,
+            "assumption_risk": reasoning_chain.assumption_risk,
+            "reasoning_time_ms": reasoning_chain.reasoning_time_ms,
+            "model_used": inference_response.model_used,
+            "backend_used": inference_response.backend_used.value,
+            "timestamp": datetime.now().isoformat()
+        })
+        
+        # Keep only last 100 results
+        self.reasoning_history = self.reasoning_history[-100:]
+    
+    def get_reasoning_metrics(self) -> Dict[str, Any]:
+        """Get reasoning performance metrics"""
+        if not self.reasoning_history:
+            return {"message": "No reasoning history available"}
+        
+        recent = self.reasoning_history[-10:]  # Last 10 requests
+        
+        return {
+            "total_requests": len(self.reasoning_history),
+            "average_confidence": sum(r["overall_confidence"] for r in recent) / len(recent),
+            "average_response_time_ms": sum(r["reasoning_time_ms"] for r in recent) / len(recent),
+            "average_steps": sum(r["steps_generated"] for r in recent) / len(recent),
+            "average_evidence_quality": sum(r["evidence_quality"] for r in recent) / len(recent),
+            "average_assumption_risk": sum(r["assumption_risk"] for r in recent) / len(recent),
+            "most_common_backend": max(set(r["backend_used"] for r in recent), 
+                                     key=lambda x: sum(1 for r in recent if r["backend_used"] == x))
+        }
+
+
+async def test_reasoning_engine():
+    """Test reasoning engine functionality"""
+    
+    engine = ReasoningEngine()
+    
+    # Test basic reasoning chain generation
+    print("Testing reasoning chain generation...")
+    
+    reasoning_chain = await engine.generate_reasoning_chain(
+        query="Should our company adopt microservices architecture?",
+        context=[
+            "Current monolithic application serves 50,000 users",
+            "Development team has 15 developers",
+            "Average response time is 200ms",
+            "Deployment takes 30 minutes"
+        ],
+        reasoning_depth=ReasoningDepth.THOROUGH,
+        domain_context="technical"
+    )
+    
+    print(f"Query: {reasoning_chain.query}")
+    print(f"Steps generated: {len(reasoning_chain.steps)}")
+    print(f"Overall confidence: {reasoning_chain.overall_confidence:.2%}")
+    print(f"Reasoning method: {reasoning_chain.reasoning_method}")
+    print(f"Processing time: {reasoning_chain.reasoning_time_ms}ms")
+    
+    for i, step in enumerate(reasoning_chain.steps, 1):
+        print(f"\nStep {i}: {step.description}")
+        print(f"  Confidence: {step.confidence:.2%}")
+        print(f"  Reasoning: {step.reasoning[:100]}...")
+    
+    print(f"\nConclusion: {reasoning_chain.final_conclusion}")
+    
+    # Test document analysis
+    print("\n" + "="*50)
+    print("Testing document analysis...")
+    
+    request = DocumentAnalysisRequest(
+        query="What are the key benefits of using FastAPI over Django?",
+        reasoning_depth=ReasoningDepth.THOROUGH,
+        include_alternatives=True,
+        include_limitations=True
+    )
+    
+    response = await engine.analyze_document_query(request)
+    
+    print(f"Analysis complete in {response.processing_time_ms}ms")
+    print(f"Overall confidence: {response.confidence_analysis.overall:.2%}")
+    print(f"Alternative perspectives: {len(response.alternative_perspectives)}")
+    print(f"Limitations identified: {len(response.limitations)}")
+    print(f"Follow-up questions: {len(response.follow_up_questions)}")
+    
+    # Show metrics
+    print("\n" + "="*50)
+    print("Reasoning metrics:")
+    metrics = engine.get_reasoning_metrics()
+    for key, value in metrics.items():
+        print(f"  {key}: {value}")
+
+
+if __name__ == "__main__":
+    asyncio.run(test_reasoning_engine())

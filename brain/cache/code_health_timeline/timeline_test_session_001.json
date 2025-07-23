@@ -1,0 +1,92 @@
+{
+  "target_path": "/tmp/tmp60ng05e_",
+  "session_id": "test_session_001",
+  "timestamp": "2025-07-21T08:42:21.327754",
+  "current_health": {
+    "timestamp": "2025-07-21T08:42:21.325218",
+    "overall_score": 0.8,
+    "maintainability": 0.9,
+    "complexity": 0.8,
+    "test_coverage": 1.0,
+    "security": 0.8,
+    "debt_ratio": 0.0,
+    "files_analyzed": 1,
+    "critical_issues": 0
+  },
+  "predictions": [
+    {
+      "date": "2025-08-20T08:42:21.327639",
+      "predicted_score": 0.78,
+      "confidence": 0.8,
+      "risk_factors": [],
+      "recommendations": [
+        "Continue monitoring health trends",
+        "Maintain current development practices"
+      ]
+    },
+    {
+      "date": "2025-09-19T08:42:21.327653",
+      "predicted_score": 0.76,
+      "confidence": 0.7,
+      "risk_factors": [],
+      "recommendations": [
+        "Continue monitoring health trends",
+        "Maintain current development practices"
+      ]
+    },
+    {
+      "date": "2025-10-19T08:42:21.327660",
+      "predicted_score": 0.7400000000000001,
+      "confidence": 0.6,
+      "risk_factors": [],
+      "recommendations": [
+        "Continue monitoring health trends",
+        "Maintain current development practices"
+      ]
+    },
+    {
+      "date": "2025-11-18T08:42:21.327664",
+      "predicted_score": 0.7200000000000001,
+      "confidence": 0.5,
+      "risk_factors": [],
+      "recommendations": [
+        "Continue monitoring health trends",
+        "Maintain current development practices"
+      ]
+    },
+    {
+      "date": "2025-12-18T08:42:21.327668",
+      "predicted_score": 0.7000000000000001,
+      "confidence": 0.4,
+      "risk_factors": [],
+      "recommendations": [
+        "Continue monitoring health trends",
+        "Maintain current development practices"
+      ]
+    },
+    {
+      "date": "2026-01-17T08:42:21.327673",
+      "predicted_score": 0.6800000000000002,
+      "confidence": 0.3,
+      "risk_factors": [],
+      "recommendations": [
+        "Continue monitoring health trends",
+        "Maintain current development practices"
+      ]
+    }
+  ],
+  "debt_forecast": {
+    "current_debt_ratio": 0.0,
+    "projected_debt_ratio": 0.6800000000000002,
+    "debt_growth_rate_per_month": 0.11333333333333336,
+    "critical_threshold_month": null,
+    "estimated_refactoring_effort_days": 5,
+    "debt_categories": {
+      "complexity_debt": 0.0,
+      "test_debt": 0.0,
+      "maintainability_debt": 0.0
+    }
+  },
+  "processing_time": 0.002975,
+  "confidence": 0.7599999999999999
+}

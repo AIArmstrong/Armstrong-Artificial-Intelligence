@@ -1,0 +1,422 @@
+{
+  "analysis_summary": {
+    "aai_commands_analyzed": 22,
+    "claude_pref_commands_analyzed": 17,
+    "highly_compatible_pairs": 0,
+    "moderately_compatible_pairs": 6,
+    "unique_commands": 11
+  },
+  "compatibility_matrix": [
+    {
+      "claude_pref_command": "m-debate-code",
+      "aai_equivalent": "improve",
+      "compatibility": "\u26a0\ufe0f Medium",
+      "similarity_score": "0.54",
+      "shared_functionality": "review, analy",
+      "new_functionality": "code, debate",
+      "integration_notes": "Extend improve with flags for m-debate-code features"
+    },
+    {
+      "claude_pref_command": "m-review-code",
+      "aai_equivalent": "improve",
+      "compatibility": "\u26a0\ufe0f Medium",
+      "similarity_score": "0.53",
+      "shared_functionality": "review, analy",
+      "new_functionality": "quality, assess",
+      "integration_notes": "Extend improve with flags for m-review-code features"
+    },
+    {
+      "claude_pref_command": "m-debate-architecture",
+      "aai_equivalent": "improve",
+      "compatibility": "\u26a0\ufe0f Medium",
+      "similarity_score": "0.51",
+      "shared_functionality": "review, analy",
+      "new_functionality": "strategic, architecture",
+      "integration_notes": "Extend improve with flags for m-debate-architecture features"
+    },
+    {
+      "claude_pref_command": "m-tdd-planner",
+      "aai_equivalent": "update-tactical-hud",
+      "compatibility": "\u26a0\ufe0f Medium",
+      "similarity_score": "0.48",
+      "shared_functionality": "test",
+      "new_functionality": "tdd, plan, develop",
+      "integration_notes": "Extend update-tactical-hud with flags for m-tdd-planner features"
+    },
+    {
+      "claude_pref_command": "m-bug-fix",
+      "aai_equivalent": "test",
+      "compatibility": "\u26a0\ufe0f Medium",
+      "similarity_score": "0.47",
+      "shared_functionality": "analy",
+      "new_functionality": "fix, debug, troubleshoot",
+      "integration_notes": "Extend test with flags for m-bug-fix features"
+    },
+    {
+      "claude_pref_command": "m-orchestrated-dev",
+      "aai_equivalent": "test",
+      "compatibility": "\u26a0\ufe0f Medium",
+      "similarity_score": "0.40",
+      "shared_functionality": "",
+      "new_functionality": "research, review, workflow, multi-agent, orchestrat",
+      "integration_notes": "Extend test with flags for m-orchestrated-dev features"
+    },
+    {
+      "claude_pref_command": "m-test-generation",
+      "aai_equivalent": "update-tactical-hud",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.20",
+      "shared_functionality": "generate, test",
+      "new_functionality": "coverage, automat",
+      "integration_notes": "Consider m-test-generation for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-task-planner",
+      "aai_equivalent": "git",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.13",
+      "shared_functionality": "workflow, analy",
+      "new_functionality": "structure, plan",
+      "integration_notes": "Consider m-task-planner for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-project-cleanup",
+      "aai_equivalent": "cleanup",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.12",
+      "shared_functionality": "cleanup",
+      "new_functionality": "organize, maintain",
+      "integration_notes": "Consider m-project-cleanup for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-document-update",
+      "aai_equivalent": "document",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.10",
+      "shared_functionality": "document",
+      "new_functionality": "update, workflow",
+      "integration_notes": "Consider m-document-update for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-review-completion",
+      "aai_equivalent": "sync-neural-graph",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.10",
+      "shared_functionality": "review, workflow",
+      "new_functionality": "complete",
+      "integration_notes": "Consider m-review-completion for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-branch-prune",
+      "aai_equivalent": "cleanup",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.09",
+      "shared_functionality": "cleanup",
+      "new_functionality": "branch, prune",
+      "integration_notes": "Consider m-branch-prune for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-merge-branch",
+      "aai_equivalent": "git",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.07",
+      "shared_functionality": "workflow",
+      "new_functionality": "merge, branch",
+      "integration_notes": "Consider m-merge-branch for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-next-task",
+      "aai_equivalent": "git",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.07",
+      "shared_functionality": "workflow",
+      "new_functionality": "task, recommend",
+      "integration_notes": "Consider m-next-task for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-next-context",
+      "aai_equivalent": "git",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.07",
+      "shared_functionality": "workflow",
+      "new_functionality": "switch, context",
+      "integration_notes": "Consider m-next-context for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-commit-push",
+      "aai_equivalent": "git",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.06",
+      "shared_functionality": "workflow",
+      "new_functionality": "commit, push, automat",
+      "integration_notes": "Consider m-commit-push for advanced namespace or future addition"
+    },
+    {
+      "claude_pref_command": "m-security-scan",
+      "aai_equivalent": "analyze",
+      "compatibility": "\u274c Low",
+      "similarity_score": "0.03",
+      "shared_functionality": "scan",
+      "new_functionality": "audit, vulnerab, security",
+      "integration_notes": "Consider m-security-scan for advanced namespace or future addition"
+    }
+  ],
+  "integration_recommendations": {
+    "highly_compatible": [],
+    "moderately_compatible": [
+      {
+        "claude_pref_command": "m-orchestrated-dev",
+        "aai_command": "test",
+        "similarity_score": 0.4,
+        "integration_type": "extend_with_flags",
+        "shared_functions": [],
+        "new_functions": [
+          "research",
+          "review",
+          "workflow",
+          "multi-agent",
+          "orchestrat"
+        ],
+        "recommendation": "Extend test with new flags to support m-orchestrated-dev functionality"
+      },
+      {
+        "claude_pref_command": "m-bug-fix",
+        "aai_command": "test",
+        "similarity_score": 0.47380952380952385,
+        "integration_type": "extend_with_flags",
+        "shared_functions": [
+          "analy"
+        ],
+        "new_functions": [
+          "fix",
+          "debug",
+          "troubleshoot"
+        ],
+        "recommendation": "Extend test with new flags to support m-bug-fix functionality"
+      },
+      {
+        "claude_pref_command": "m-review-code",
+        "aai_command": "improve",
+        "similarity_score": 0.5324675324675325,
+        "integration_type": "extend_with_flags",
+        "shared_functions": [
+          "review",
+          "analy"
+        ],
+        "new_functions": [
+          "quality",
+          "assess"
+        ],
+        "recommendation": "Extend improve with new flags to support m-review-code functionality"
+      },
+      {
+        "claude_pref_command": "m-debate-architecture",
+        "aai_command": "improve",
+        "similarity_score": 0.5142857142857143,
+        "integration_type": "extend_with_flags",
+        "shared_functions": [
+          "review",
+          "analy"
+        ],
+        "new_functions": [
+          "strategic",
+          "architecture"
+        ],
+        "recommendation": "Extend improve with new flags to support m-debate-architecture functionality"
+      },
+      {
+        "claude_pref_command": "m-debate-code",
+        "aai_command": "improve",
+        "similarity_score": 0.5428571428571429,
+        "integration_type": "extend_with_flags",
+        "shared_functions": [
+          "review",
+          "analy"
+        ],
+        "new_functions": [
+          "code",
+          "debate"
+        ],
+        "recommendation": "Extend improve with new flags to support m-debate-code functionality"
+      },
+      {
+        "claude_pref_command": "m-tdd-planner",
+        "aai_command": "update-tactical-hud",
+        "similarity_score": 0.48000000000000004,
+        "integration_type": "extend_with_flags",
+        "shared_functions": [
+          "test"
+        ],
+        "new_functions": [
+          "tdd",
+          "plan",
+          "develop"
+        ],
+        "recommendation": "Extend update-tactical-hud with new flags to support m-tdd-planner functionality"
+      }
+    ],
+    "unique_commands": [
+      {
+        "claude_pref_command": "m-commit-push",
+        "best_aai_match": "git",
+        "similarity_score": 0.05714285714285714,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "commit",
+          "push",
+          "automat",
+          "workflow"
+        ],
+        "recommendation": "Consider m-commit-push as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-security-scan",
+        "best_aai_match": "analyze",
+        "similarity_score": 0.02857142857142857,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "security",
+          "scan",
+          "audit",
+          "vulnerab"
+        ],
+        "recommendation": "Consider m-security-scan as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-test-generation",
+        "best_aai_match": "update-tactical-hud",
+        "similarity_score": 0.2,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "test",
+          "generate",
+          "coverage",
+          "automat"
+        ],
+        "recommendation": "Consider m-test-generation as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-task-planner",
+        "best_aai_match": "git",
+        "similarity_score": 0.13333333333333333,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "plan",
+          "analy",
+          "workflow",
+          "structure"
+        ],
+        "recommendation": "Consider m-task-planner as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-document-update",
+        "best_aai_match": "document",
+        "similarity_score": 0.1,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "document",
+          "update",
+          "workflow"
+        ],
+        "recommendation": "Consider m-document-update as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-project-cleanup",
+        "best_aai_match": "cleanup",
+        "similarity_score": 0.11944444444444446,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "cleanup",
+          "maintain",
+          "organize"
+        ],
+        "recommendation": "Consider m-project-cleanup as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-merge-branch",
+        "best_aai_match": "git",
+        "similarity_score": 0.06666666666666667,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "merge",
+          "branch",
+          "workflow"
+        ],
+        "recommendation": "Consider m-merge-branch as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-branch-prune",
+        "best_aai_match": "cleanup",
+        "similarity_score": 0.08888888888888889,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "prune",
+          "cleanup",
+          "branch"
+        ],
+        "recommendation": "Consider m-branch-prune as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-next-task",
+        "best_aai_match": "git",
+        "similarity_score": 0.06666666666666667,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "workflow",
+          "recommend",
+          "task"
+        ],
+        "recommendation": "Consider m-next-task as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-next-context",
+        "best_aai_match": "git",
+        "similarity_score": 0.06666666666666667,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "context",
+          "switch",
+          "workflow"
+        ],
+        "recommendation": "Consider m-next-context as unique functionality - review for advanced namespace"
+      },
+      {
+        "claude_pref_command": "m-review-completion",
+        "best_aai_match": "sync-neural-graph",
+        "similarity_score": 0.1,
+        "integration_type": "create_new_or_advanced",
+        "functionality": [
+          "review",
+          "complete",
+          "workflow"
+        ],
+        "recommendation": "Consider m-review-completion as unique functionality - review for advanced namespace"
+      }
+    ],
+    "recommendations": []
+  },
+  "implementation_phases": {
+    "phase_1_immediate": [
+      "Extend highly compatible commands with new functionality",
+      "Add parameter flags to existing commands",
+      "Update command descriptions and help text"
+    ],
+    "phase_2_short_term": [
+      "Implement moderate compatibility extensions",
+      "Add alias support for ClaudePreference naming",
+      "Create backwards compatibility layer"
+    ],
+    "phase_3_evaluation": [
+      "Review unique commands for strategic value",
+      "Consider advanced namespace implementation",
+      "Plan gradual rollout of selected unique features"
+    ]
+  },
+  "risk_assessment": {
+    "compatibility_risk": "Low - Most changes are additive",
+    "user_confusion_risk": "Medium - New flags may require documentation",
+    "system_complexity_risk": "Low - Existing command structure preserved",
+    "maintenance_overhead": "Low - Leveraging existing infrastructure",
+    "recommended_approach": "Gradual phased rollout with extensive testing"
+  }
+}

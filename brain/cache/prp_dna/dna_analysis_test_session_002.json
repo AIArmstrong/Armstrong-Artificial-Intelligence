@@ -1,0 +1,17 @@
+{
+  "session_id": "test_session_002",
+  "feature_description": "FastAPI user authentication system",
+  "timestamp": "2025-07-21T08:42:21.692162",
+  "total_prps_analyzed": 3,
+  "patterns_extracted": 53,
+  "high_success_patterns": 3,
+  "adaptive_learnings": [
+    "Average success rate of similar patterns: 90.7%",
+    "Estimated implementation time based on patterns: 2.6 days",
+    "Found 3 frequently-used patterns - high reliability expected",
+    "Primary pattern category: security",
+    "3 patterns used recently - active and proven"
+  ],
+  "confidence": 0.87,
+  "processing_time": 0.304486
+}

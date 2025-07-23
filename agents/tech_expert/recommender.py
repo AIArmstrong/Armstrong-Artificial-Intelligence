@@ -1,0 +1,952 @@
+"""
+Tech Stack Recommendation System
+
+Implements intelligent technology stack suggestion logic with confidence scoring,
+rationale generation, and comprehensive analysis for optimal architectural decisions.
+"""
+
+import logging
+import asyncio
+from typing import Dict, List, Any, Optional, Tuple
+from datetime import datetime
+from functools import lru_cache
+
+try:
+    from .models import (
+        ProjectRequirements, TechRecommendation, TechStackRecommendationSet,
+        ApplicationType, UserScale, ExperienceLevel, TechCategory
+    )
+except ImportError:
+    from agents.tech_expert.models.models import (
+        ProjectRequirements, TechRecommendation, TechStackRecommendationSet,
+        ApplicationType, UserScale, ExperienceLevel, TechCategory
+    )
+
+logger = logging.getLogger(__name__)
+
+
+class TechStackRecommender:
+    """
+    Intelligent technology stack recommendation engine.
+    
+    Features:
+    - Context-aware technology selection
+    - Experience-based recommendations
+    - Cost and complexity analysis
+    - AAI-compliant confidence scoring
+    - Comprehensive rationale generation
+    """
+    
+    def __init__(self):
+        """Initialize tech stack recommender"""
+        
+        self.name = "Tech Stack Recommender"
+        self.version = "1.0.0"
+        
+        # Technology database
+        self.tech_database = self._initialize_tech_database()
+        
+        # Recommendation rules and weights
+        self.scoring_weights = {
+            "experience_match": 0.3,
+            "scalability_fit": 0.25,
+            "ecosystem_strength": 0.2,
+            "learning_curve": 0.15,
+            "cost_efficiency": 0.1
+        }
+        
+        # Performance tracking
+        self.total_recommendations = 0
+        self.recommendation_feedback = {}
+        
+        logger.info("Tech Stack Recommender initialized")
+    
+    def _initialize_tech_database(self) -> Dict[TechCategory, Dict[str, Dict[str, Any]]]:
+        """Initialize comprehensive technology database"""
+        
+        return {
+            TechCategory.FRONTEND: {
+                "React.js": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.9,
+                    "ecosystem_strength": 0.95,
+                    "cost": "low",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.REAL_TIME_APP],
+                    "scale_fit": [UserScale.SMALL, UserScale.MEDIUM, UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["Large ecosystem", "Component reusability", "Strong community", "Job market"],
+                    "cons": ["Learning curve", "Rapid updates", "Bundle size"],
+                    "alternatives": ["Vue.js", "Angular", "Svelte"]
+                },
+                "Vue.js": {
+                    "learning_curve": ExperienceLevel.BEGINNER,
+                    "scalability": 0.8,
+                    "ecosystem_strength": 0.8,
+                    "cost": "low",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.STATIC_SITE],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM],
+                    "pros": ["Easy learning curve", "Great documentation", "Progressive adoption"],
+                    "cons": ["Smaller ecosystem", "Less job market"],
+                    "alternatives": ["React.js", "Angular", "Svelte"]
+                },
+                "Angular": {
+                    "learning_curve": ExperienceLevel.ADVANCED,
+                    "scalability": 0.95,
+                    "ecosystem_strength": 0.9,
+                    "cost": "medium",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.MICROSERVICES],
+                    "scale_fit": [UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["Enterprise-ready", "TypeScript built-in", "Comprehensive framework"],
+                    "cons": ["Steep learning curve", "Opinionated", "Complex for small projects"],
+                    "alternatives": ["React.js", "Vue.js"]
+                },
+                "Svelte": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.7,
+                    "ecosystem_strength": 0.6,
+                    "cost": "low",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.STATIC_SITE],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL],
+                    "pros": ["No runtime", "Small bundle size", "Great performance"],
+                    "cons": ["Smaller ecosystem", "Less mature", "Limited job market"],
+                    "alternatives": ["React.js", "Vue.js"]
+                }
+            },
+            
+            TechCategory.BACKEND: {
+                "Node.js": {
+                    "learning_curve": ExperienceLevel.BEGINNER,
+                    "scalability": 0.8,
+                    "ecosystem_strength": 0.9,
+                    "cost": "low",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.API_SERVICE, ApplicationType.REAL_TIME_APP],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM, UserScale.LARGE],
+                    "pros": ["JavaScript everywhere", "Fast development", "Great for APIs", "Real-time support"],
+                    "cons": ["Single-threaded", "Not ideal for CPU-intensive tasks"],
+                    "alternatives": ["Python", "Java", "Go"]
+                },
+                "Python": {
+                    "learning_curve": ExperienceLevel.BEGINNER,
+                    "scalability": 0.85,
+                    "ecosystem_strength": 0.95,
+                    "cost": "low",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.API_SERVICE, ApplicationType.AI_SERVICE, ApplicationType.DATA_PIPELINE],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM, UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["Easy to learn", "Excellent for AI/ML", "Rich ecosystem", "Rapid development"],
+                    "cons": ["Performance limitations", "GIL limitations"],
+                    "alternatives": ["Node.js", "Java", "Go"]
+                },
+                "Java": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.95,
+                    "ecosystem_strength": 0.9,
+                    "cost": "medium",
+                    "best_for": [ApplicationType.API_SERVICE, ApplicationType.MICROSERVICES],
+                    "scale_fit": [UserScale.MEDIUM, UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["Enterprise-grade", "Excellent performance", "Strong typing", "Mature ecosystem"],
+                    "cons": ["Verbose syntax", "Longer development time", "Learning curve"],
+                    "alternatives": ["Python", "Node.js", "C#"]
+                },
+                "Go": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.9,
+                    "ecosystem_strength": 0.7,
+                    "cost": "low",
+                    "best_for": [ApplicationType.API_SERVICE, ApplicationType.MICROSERVICES],
+                    "scale_fit": [UserScale.MEDIUM, UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["Excellent performance", "Simple syntax", "Great for microservices", "Fast compilation"],
+                    "cons": ["Limited ecosystem", "Less mature", "Fewer developers"],
+                    "alternatives": ["Python", "Java", "Node.js"]
+                }
+            },
+            
+            TechCategory.DATABASE: {
+                "PostgreSQL": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.9,
+                    "ecosystem_strength": 0.9,
+                    "cost": "low",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.API_SERVICE],
+                    "scale_fit": [UserScale.SMALL, UserScale.MEDIUM, UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["ACID compliance", "Rich features", "JSON support", "Strong community"],
+                    "cons": ["Configuration complexity", "Write scaling challenges"],
+                    "alternatives": ["MySQL", "MongoDB", "SQLite"]
+                },
+                "MongoDB": {
+                    "learning_curve": ExperienceLevel.BEGINNER,
+                    "scalability": 0.85,
+                    "ecosystem_strength": 0.8,
+                    "cost": "medium",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.API_SERVICE, ApplicationType.REAL_TIME_APP],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM, UserScale.LARGE],
+                    "pros": ["Schema flexibility", "Easy to learn", "Horizontal scaling", "JSON-like documents"],
+                    "cons": ["Memory usage", "Consistency trade-offs", "Licensing costs"],
+                    "alternatives": ["PostgreSQL", "DynamoDB", "CouchDB"]
+                },
+                "MySQL": {
+                    "learning_curve": ExperienceLevel.BEGINNER,
+                    "scalability": 0.8,
+                    "ecosystem_strength": 0.85,
+                    "cost": "low",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.STATIC_SITE],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM],
+                    "pros": ["Wide adoption", "Easy to learn", "Good performance", "Mature ecosystem"],
+                    "cons": ["Limited features vs PostgreSQL", "Licensing considerations"],
+                    "alternatives": ["PostgreSQL", "SQLite", "MariaDB"]
+                },
+                "DynamoDB": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.95,
+                    "ecosystem_strength": 0.7,
+                    "cost": "high",
+                    "best_for": [ApplicationType.API_SERVICE, ApplicationType.REAL_TIME_APP],
+                    "scale_fit": [UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["Managed service", "Excellent scalability", "AWS integration", "Serverless-friendly"],
+                    "cons": ["Vendor lock-in", "Cost at scale", "Learning curve", "Query limitations"],
+                    "alternatives": ["MongoDB", "PostgreSQL", "Cassandra"]
+                }
+            },
+            
+            TechCategory.DEPLOYMENT: {
+                "Docker + Docker Compose": {
+                    "learning_curve": ExperienceLevel.BEGINNER,
+                    "scalability": 0.7,
+                    "ecosystem_strength": 0.9,
+                    "cost": "low",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.API_SERVICE],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM],
+                    "pros": ["Easy local development", "Consistent environments", "Quick setup"],
+                    "cons": ["Limited orchestration", "Single host limitation"],
+                    "alternatives": ["Kubernetes", "AWS ECS", "Heroku"]
+                },
+                "Kubernetes": {
+                    "learning_curve": ExperienceLevel.EXPERT,
+                    "scalability": 0.95,
+                    "ecosystem_strength": 0.9,
+                    "cost": "high",
+                    "best_for": [ApplicationType.MICROSERVICES, ApplicationType.API_SERVICE],
+                    "scale_fit": [UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["Enterprise-grade", "Auto-scaling", "Service mesh", "Cloud-native"],
+                    "cons": ["Steep learning curve", "Operational complexity", "Overkill for small apps"],
+                    "alternatives": ["Docker Swarm", "AWS ECS", "Nomad"]
+                },
+                "Vercel": {
+                    "learning_curve": ExperienceLevel.BEGINNER,
+                    "scalability": 0.8,
+                    "ecosystem_strength": 0.8,
+                    "cost": "medium",
+                    "best_for": [ApplicationType.WEB_APP, ApplicationType.STATIC_SITE],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM],
+                    "pros": ["Zero config", "Great for Next.js", "Automatic deployments", "CDN included"],
+                    "cons": ["Platform lock-in", "Limited backend support", "Cost scaling"],
+                    "alternatives": ["Netlify", "AWS Amplify", "Heroku"]
+                },
+                "AWS ECS": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.9,
+                    "ecosystem_strength": 0.8,
+                    "cost": "medium",
+                    "best_for": [ApplicationType.API_SERVICE, ApplicationType.MICROSERVICES],
+                    "scale_fit": [UserScale.MEDIUM, UserScale.LARGE, UserScale.ENTERPRISE],
+                    "pros": ["Managed containers", "AWS integration", "Auto-scaling", "Cost-effective"],
+                    "cons": ["AWS vendor lock-in", "Learning curve", "Configuration complexity"],
+                    "alternatives": ["Kubernetes", "Google Cloud Run", "Azure Container Instances"]
+                }
+            },
+            
+            TechCategory.AI_ML: {
+                "OpenAI API": {
+                    "learning_curve": ExperienceLevel.BEGINNER,
+                    "scalability": 0.9,
+                    "ecosystem_strength": 0.8,
+                    "cost": "high",
+                    "best_for": [ApplicationType.AI_SERVICE, ApplicationType.WEB_APP],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM, UserScale.LARGE],
+                    "pros": ["Easy integration", "State-of-the-art models", "No infrastructure", "Quick setup"],
+                    "cons": ["API costs", "External dependency", "Rate limits", "Data privacy"],
+                    "alternatives": ["Hugging Face", "Anthropic Claude", "Local models"]
+                },
+                "Hugging Face": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.8,
+                    "ecosystem_strength": 0.9,
+                    "cost": "medium",
+                    "best_for": [ApplicationType.AI_SERVICE, ApplicationType.DATA_PIPELINE],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM],
+                    "pros": ["Open source models", "Great ecosystem", "Self-hostable", "Active community"],
+                    "cons": ["Infrastructure requirements", "Model selection complexity"],
+                    "alternatives": ["OpenAI API", "Local deployment", "AWS SageMaker"]
+                },
+                "LangChain": {
+                    "learning_curve": ExperienceLevel.INTERMEDIATE,
+                    "scalability": 0.8,
+                    "ecosystem_strength": 0.85,
+                    "cost": "low",
+                    "best_for": [ApplicationType.AI_SERVICE, ApplicationType.WEB_APP],
+                    "scale_fit": [UserScale.PROTOTYPE, UserScale.SMALL, UserScale.MEDIUM],
+                    "pros": ["LLM orchestration", "Chain complex workflows", "Multi-provider support"],
+                    "cons": ["Rapidly changing API", "Complexity for simple tasks"],
+                    "alternatives": ["Direct API integration", "Custom orchestration"]
+                }
+            }
+        }
+    
+    async def generate_recommendations(self, requirements: ProjectRequirements) -> TechStackRecommendationSet:
+        """
+        Generate comprehensive tech stack recommendations.
+        
+        Args:
+            requirements: Project requirements and constraints
+            
+        Returns:
+            Complete tech stack recommendation set
+        """
+        
+        logger.info(f"Generating recommendations for {requirements.application_type} at {requirements.user_scale} scale")
+        
+        recommendations = []
+        
+        # Generate recommendations for each category
+        for category in TechCategory:
+            if category == TechCategory.AI_ML and not requirements.ai_integration:
+                continue  # Skip AI/ML if not needed
+            
+            recommendation = await self._recommend_for_category(category, requirements)
+            if recommendation:
+                recommendations.append(recommendation)
+        
+        # Calculate overall confidence
+        overall_confidence = await self._calculate_overall_confidence(recommendations, requirements)
+        
+        # Determine architecture pattern
+        architecture_pattern = await self._determine_architecture_pattern(requirements)
+        
+        # Generate additional insights
+        recommendation_set = TechStackRecommendationSet(
+            recommendations=recommendations,
+            overall_confidence=overall_confidence,
+            architecture_pattern=architecture_pattern
+        )
+        
+        # Add comprehensive analysis
+        await self._enhance_recommendation_set(recommendation_set, requirements)
+        
+        self.total_recommendations += 1
+        
+        logger.info(f"Generated {len(recommendations)} recommendations with {overall_confidence:.1%} confidence")
+        
+        return recommendation_set
+    
+    async def _recommend_for_category(self, category: TechCategory, requirements: ProjectRequirements) -> Optional[TechRecommendation]:
+        """Generate recommendation for a specific technology category"""
+        
+        if category not in self.tech_database:
+            return None
+        
+        technologies = self.tech_database[category]
+        best_tech = None
+        best_score = 0.0
+        
+        # Evaluate each technology in the category
+        for tech_name, tech_data in technologies.items():
+            score = await self._calculate_tech_score(tech_name, tech_data, requirements, category)
+            
+            if score > best_score:
+                best_score = score
+                best_tech = (tech_name, tech_data)
+        
+        if not best_tech:
+            return None
+        
+        tech_name, tech_data = best_tech
+        
+        # Generate recommendation
+        recommendation = TechRecommendation(
+            component=category,
+            technology=tech_name,
+            rationale=await self._generate_rationale(tech_name, tech_data, requirements, category),
+            confidence=max(0.70, min(0.95, best_score)),
+            learning_curve=tech_data["learning_curve"],
+            cost_impact=tech_data["cost"],
+            scalability_rating=tech_data["scalability"],
+            alternatives=tech_data.get("alternatives", []),
+            pros=tech_data.get("pros", []),
+            cons=tech_data.get("cons", [])
+        )
+        
+        return recommendation
+    
+    async def _calculate_tech_score(self, tech_name: str, tech_data: Dict[str, Any], 
+                                  requirements: ProjectRequirements, category: TechCategory) -> float:
+        """Calculate score for a specific technology option"""
+        
+        score = 0.0
+        
+        # Experience match scoring
+        experience_score = await self._calculate_experience_score(
+            tech_data["learning_curve"], 
+            requirements.user_experience.get(category.value, ExperienceLevel.BEGINNER)
+        )
+        score += experience_score * self.scoring_weights["experience_match"]
+        
+        # Scalability fit scoring
+        scalability_score = await self._calculate_scalability_score(
+            tech_data["scalability"], 
+            requirements.user_scale,
+            tech_data.get("scale_fit", [])
+        )
+        score += scalability_score * self.scoring_weights["scalability_fit"]
+        
+        # Ecosystem strength scoring
+        ecosystem_score = tech_data["ecosystem_strength"]
+        score += ecosystem_score * self.scoring_weights["ecosystem_strength"]
+        
+        # Learning curve scoring (inverse - easier is better)
+        learning_score = await self._calculate_learning_score(
+            tech_data["learning_curve"], 
+            requirements.user_experience.get(category.value, ExperienceLevel.BEGINNER)
+        )
+        score += learning_score * self.scoring_weights["learning_curve"]
+        
+        # Cost efficiency scoring
+        cost_score = await self._calculate_cost_score(tech_data["cost"], requirements)
+        score += cost_score * self.scoring_weights["cost_efficiency"]
+        
+        # Application type fit bonus
+        if requirements.application_type in tech_data.get("best_for", []):
+            score += 0.1  # 10% bonus for perfect fit
+        
+        return min(1.0, score)  # Cap at 1.0
+    
+    async def _calculate_experience_score(self, required_level: ExperienceLevel, team_level: ExperienceLevel) -> float:
+        """Calculate score based on experience level match"""
+        return self._calculate_experience_score_cached(required_level, team_level)
+    
+    @lru_cache(maxsize=128)
+    def _calculate_experience_score_cached(self, required_level: ExperienceLevel, team_level: ExperienceLevel) -> float:
+        """Calculate score based on experience level match"""
+        
+        level_values = {
+            ExperienceLevel.BEGINNER: 1,
+            ExperienceLevel.INTERMEDIATE: 2,
+            ExperienceLevel.ADVANCED: 3,
+            ExperienceLevel.EXPERT: 4
+        }
+        
+        required_val = level_values[required_level]
+        team_val = level_values[team_level]
+        
+        if team_val >= required_val:
+            return 1.0  # Team can handle this technology
+        else:
+            # Penalty for skill gap
+            gap = required_val - team_val
+            return max(0.3, 1.0 - (gap * 0.25))  # 25% penalty per level gap
+    
+    async def _calculate_scalability_score(self, tech_scalability: float, project_scale: UserScale, scale_fit: List[UserScale]) -> float:
+        """Calculate scalability fit score"""
+        
+        if project_scale in scale_fit:
+            return tech_scalability  # Perfect scale fit
+        else:
+            return tech_scalability * 0.7  # 30% penalty for scale mismatch
+    
+    async def _calculate_learning_score(self, required_level: ExperienceLevel, team_level: ExperienceLevel) -> float:
+        """Calculate learning curve score (easier is better for lower experience teams)"""
+        
+        level_values = {
+            ExperienceLevel.BEGINNER: 1,
+            ExperienceLevel.INTERMEDIATE: 2,
+            ExperienceLevel.ADVANCED: 3,
+            ExperienceLevel.EXPERT: 4
+        }
+        
+        required_val = level_values[required_level]
+        team_val = level_values[team_level]
+        
+        if team_val >= required_val:
+            return 1.0  # Team can easily handle this
+        else:
+            # Higher penalty for teams with lower experience
+            gap = required_val - team_val
+            return max(0.2, 1.0 - (gap * 0.3))
+    
+    async def _calculate_cost_score(self, tech_cost: str, requirements: ProjectRequirements) -> float:
+        """Calculate score based on cost considerations"""
+        return self._calculate_cost_score_cached(tech_cost, requirements.budget_range, requirements.user_scale)
+    
+    @lru_cache(maxsize=128)
+    def _calculate_cost_score_cached(self, tech_cost: str, budget_range: str, user_scale: UserScale) -> float:
+        """Calculate cost efficiency score"""
+        
+        cost_scores = {"low": 1.0, "medium": 0.7, "high": 0.4}
+        base_score = cost_scores.get(tech_cost, 0.7)
+        
+        # Adjust based on scale (higher scale can handle higher costs)
+        if requirements.user_scale in [UserScale.LARGE, UserScale.ENTERPRISE]:
+            return min(1.0, base_score + 0.2)  # Bonus for enterprise scale
+        elif requirements.user_scale == UserScale.PROTOTYPE:
+            return base_score * 1.1 if tech_cost == "low" else base_score * 0.8  # Favor low cost for prototypes
+        
+        return base_score
+    
+    async def _generate_rationale(self, tech_name: str, tech_data: Dict[str, Any], 
+                                requirements: ProjectRequirements, category: TechCategory) -> str:
+        """Generate human-readable rationale for technology choice"""
+        
+        rationale_parts = []
+        
+        # Main reason for choice
+        if requirements.application_type in tech_data.get("best_for", []):
+            rationale_parts.append(f"{tech_name} is specifically well-suited for {requirements.application_type.value} applications.")
+        else:
+            rationale_parts.append(f"{tech_name} provides solid capabilities for your {requirements.application_type.value} project.")
+        
+        # Experience level consideration
+        team_experience = requirements.user_experience.get(category.value, ExperienceLevel.BEGINNER)
+        required_experience = tech_data["learning_curve"]
+        
+        if team_experience.value == required_experience.value:
+            rationale_parts.append(f"It matches your team's {team_experience.value} experience level perfectly.")
+        elif team_experience.value > required_experience.value:
+            rationale_parts.append(f"Your {team_experience.value} experience level makes this an easy choice to implement.")
+        else:
+            rationale_parts.append(f"While it requires {required_experience.value} level skills, the learning investment is worthwhile for your project scale.")
+        
+        # Scale considerations
+        if requirements.user_scale in tech_data.get("scale_fit", []):
+            rationale_parts.append(f"It scales well for your expected {requirements.user_scale.value} user base.")
+        
+        # Top benefits
+        pros = tech_data.get("pros", [])
+        if pros:
+            top_pros = pros[:2]  # Top 2 benefits
+            rationale_parts.append(f"Key advantages include: {', '.join(top_pros).lower()}.")
+        
+        # AI integration consideration
+        if category == TechCategory.AI_ML and requirements.ai_integration:
+            rationale_parts.append("This choice aligns with your AI integration requirements.")
+        
+        return " ".join(rationale_parts)
+    
+    async def _calculate_overall_confidence(self, recommendations: List[TechRecommendation], requirements: ProjectRequirements) -> float:
+        """Calculate overall confidence in the recommendation set"""
+        
+        if not recommendations:
+            return 0.70  # Minimum AAI confidence
+        
+        # Average individual confidences
+        avg_confidence = sum(rec.confidence for rec in recommendations) / len(recommendations)
+        
+        # Adjust based on requirements completeness
+        completeness_bonus = 0.0
+        if requirements.user_experience:
+            completeness_bonus += 0.05
+        if requirements.team_size:
+            completeness_bonus += 0.03
+        if requirements.project_timeline:
+            completeness_bonus += 0.02
+        
+        # Adjust based on technology ecosystem fit
+        ecosystem_bonus = await self._calculate_ecosystem_fit(recommendations)
+        
+        overall_confidence = avg_confidence + completeness_bonus + ecosystem_bonus
+        
+        return max(0.70, min(0.95, overall_confidence))  # Ensure AAI compliance
+    
+    async def _calculate_ecosystem_fit(self, recommendations: List[TechRecommendation]) -> float:
+        """Calculate how well the recommended technologies work together"""
+        
+        # Define technology synergies
+        synergies = {
+            ("React.js", "Node.js"): 0.05,
+            ("Vue.js", "Node.js"): 0.03,
+            ("Python", "PostgreSQL"): 0.04,
+            ("Node.js", "MongoDB"): 0.04,
+            ("React.js", "Vercel"): 0.03,
+            ("Python", "Docker + Docker Compose"): 0.03
+        }
+        
+        ecosystem_bonus = 0.0
+        tech_names = [rec.technology for rec in recommendations]
+        
+        # Check for synergies
+        for tech1 in tech_names:
+            for tech2 in tech_names:
+                if tech1 != tech2:
+                    synergy_key = (tech1, tech2)
+                    if synergy_key in synergies:
+                        ecosystem_bonus += synergies[synergy_key]
+        
+        return min(0.1, ecosystem_bonus)  # Cap ecosystem bonus
+    
+    async def _determine_architecture_pattern(self, requirements: ProjectRequirements) -> str:
+        """Determine recommended overall architecture pattern"""
+        
+        if requirements.user_scale in [UserScale.LARGE, UserScale.ENTERPRISE]:
+            if requirements.application_type == ApplicationType.API_SERVICE:
+                return "Microservices Architecture"
+            else:
+                return "Distributed Monolith with Service Boundaries"
+        
+        elif requirements.user_scale == UserScale.MEDIUM:
+            if requirements.real_time_features:
+                return "Event-Driven Architecture"
+            else:
+                return "Modular Monolith"
+        
+        elif requirements.application_type == ApplicationType.STATIC_SITE:
+            return "JAMstack Architecture"
+        
+        elif requirements.application_type == ApplicationType.AI_SERVICE:
+            return "AI-First Architecture with API Gateway"
+        
+        else:
+            return "Traditional Three-Tier Architecture"
+    
+    async def _enhance_recommendation_set(self, recommendation_set: TechStackRecommendationSet, requirements: ProjectRequirements):
+        """Add comprehensive analysis to the recommendation set"""
+        
+        # Estimate costs
+        recommendation_set.total_cost_estimate = await self._estimate_costs(recommendation_set.recommendations, requirements)
+        
+        # Estimate timeline
+        recommendation_set.development_timeline = await self._estimate_timeline(recommendation_set.recommendations, requirements)
+        
+        # Identify skill gaps
+        recommendation_set.team_skill_gap = await self._identify_skill_gaps(recommendation_set.recommendations, requirements)
+        
+        # Generate implementation phases
+        recommendation_set.implementation_phases = await self._generate_implementation_phases(recommendation_set.recommendations, requirements)
+        
+        # Identify critical decisions
+        recommendation_set.critical_decisions = await self._identify_critical_decisions(recommendation_set.recommendations, requirements)
+        
+        # Assess risk factors
+        recommendation_set.risk_factors = await self._assess_risk_factors(recommendation_set.recommendations, requirements)
+        
+        # Generate next steps
+        recommendation_set.next_steps = await self._generate_next_steps(recommendation_set.recommendations, requirements)
+        
+        # Provide learning resources
+        recommendation_set.learning_resources = await self._generate_learning_resources(recommendation_set.recommendations)
+    
+    async def _estimate_costs(self, recommendations: List[TechRecommendation], requirements: ProjectRequirements) -> str:
+        """Estimate total cost for the recommended stack"""
+        
+        cost_levels = {"low": 1, "medium": 2, "high": 3}
+        total_cost_score = sum(cost_levels.get(rec.cost_impact, 2) for rec in recommendations)
+        avg_cost = total_cost_score / len(recommendations) if recommendations else 2
+        
+        if requirements.user_scale in [UserScale.PROTOTYPE, UserScale.SMALL]:
+            if avg_cost <= 1.5:
+                return "$0-500/month (mostly free tiers and open source)"
+            elif avg_cost <= 2.5:
+                return "$500-2000/month (some managed services)"
+            else:
+                return "$2000+/month (premium services and enterprise tools)"
+        else:
+            if avg_cost <= 1.5:
+                return "$1000-5000/month (efficient open source stack)"
+            elif avg_cost <= 2.5:
+                return "$5000-20000/month (mixed managed services)"
+            else:
+                return "$20000+/month (enterprise-grade managed services)"
+    
+    async def _estimate_timeline(self, recommendations: List[TechRecommendation], requirements: ProjectRequirements) -> str:
+        """Estimate development timeline"""
+        
+        # Base timeline by application type
+        base_timelines = {
+            ApplicationType.STATIC_SITE: 2,
+            ApplicationType.WEB_APP: 12,
+            ApplicationType.MOBILE_APP: 16,
+            ApplicationType.API_SERVICE: 8,
+            ApplicationType.AI_SERVICE: 20,
+            ApplicationType.DATA_PIPELINE: 16
+        }
+        
+        base_weeks = base_timelines.get(requirements.application_type, 12)
+        
+        # Adjust for experience levels
+        experience_multiplier = 1.0
+        for rec in recommendations:
+            if rec.learning_curve == ExperienceLevel.EXPERT:
+                experience_multiplier *= 1.3
+            elif rec.learning_curve == ExperienceLevel.ADVANCED:
+                experience_multiplier *= 1.15
+        
+        # Adjust for scale
+        scale_multipliers = {
+            UserScale.PROTOTYPE: 0.5,
+            UserScale.SMALL: 0.8,
+            UserScale.MEDIUM: 1.0,
+            UserScale.LARGE: 1.5,
+            UserScale.ENTERPRISE: 2.0
+        }
+        
+        scale_multiplier = scale_multipliers.get(requirements.user_scale, 1.0)
+        
+        total_weeks = base_weeks * experience_multiplier * scale_multiplier
+        
+        if total_weeks <= 4:
+            return "2-4 weeks (rapid prototype)"
+        elif total_weeks <= 12:
+            return "2-3 months (MVP development)"
+        elif total_weeks <= 24:
+            return "3-6 months (full feature development)"
+        else:
+            return "6+ months (complex enterprise development)"
+    
+    async def _identify_skill_gaps(self, recommendations: List[TechRecommendation], requirements: ProjectRequirements) -> Dict[str, ExperienceLevel]:
+        """Identify skill gaps in the team"""
+        
+        skill_gaps = {}
+        
+        for rec in recommendations:
+            category = rec.component.value
+            team_level = requirements.user_experience.get(category, ExperienceLevel.BEGINNER)
+            required_level = rec.learning_curve
+            
+            level_values = {
+                ExperienceLevel.BEGINNER: 1,
+                ExperienceLevel.INTERMEDIATE: 2,
+                ExperienceLevel.ADVANCED: 3,
+                ExperienceLevel.EXPERT: 4
+            }
+            
+            if level_values[required_level] > level_values[team_level]:
+                skill_gaps[category] = required_level
+        
+        return skill_gaps
+    
+    async def _generate_implementation_phases(self, recommendations: List[TechRecommendation], requirements: ProjectRequirements) -> List[str]:
+        """Generate recommended implementation phases"""
+        
+        phases = []
+        
+        # Phase 1: Foundation
+        foundation_techs = []
+        for rec in recommendations:
+            if rec.component in [TechCategory.BACKEND, TechCategory.DATABASE]:
+                foundation_techs.append(rec.technology)
+        
+        if foundation_techs:
+            phases.append(f"Phase 1: Foundation Setup - {', '.join(foundation_techs[:2])}")
+        
+        # Phase 2: Core Development
+        core_techs = []
+        for rec in recommendations:
+            if rec.component in [TechCategory.FRONTEND, TechCategory.BACKEND]:
+                core_techs.append(rec.technology)
+        
+        phases.append("Phase 2: Core Application Development - Frontend and API implementation")
+        
+        # Phase 3: Integration
+        if requirements.ai_integration:
+            phases.append("Phase 3: AI Integration - ML model integration and testing")
+        else:
+            phases.append("Phase 3: Feature Integration - Advanced features and third-party services")
+        
+        # Phase 4: Deployment
+        deployment_techs = []
+        for rec in recommendations:
+            if rec.component == TechCategory.DEPLOYMENT:
+                deployment_techs.append(rec.technology)
+        
+        if deployment_techs:
+            phases.append(f"Phase 4: Production Deployment - {deployment_techs[0]} setup and monitoring")
+        
+        return phases
+    
+    async def _identify_critical_decisions(self, recommendations: List[TechRecommendation], requirements: ProjectRequirements) -> List[str]:
+        """Identify critical architectural decisions"""
+        
+        decisions = []
+        
+        # Database choice
+        db_recs = [rec for rec in recommendations if rec.component == TechCategory.DATABASE]
+        if db_recs:
+            decisions.append(f"Database Architecture: {db_recs[0].technology} - impacts data consistency and scalability")
+        
+        # Deployment strategy
+        deploy_recs = [rec for rec in recommendations if rec.component == TechCategory.DEPLOYMENT]
+        if deploy_recs:
+            decisions.append(f"Deployment Strategy: {deploy_recs[0].technology} - affects operational complexity")
+        
+        # AI/ML approach
+        if requirements.ai_integration:
+            ai_recs = [rec for rec in recommendations if rec.component == TechCategory.AI_ML]
+            if ai_recs:
+                decisions.append(f"AI Integration: {ai_recs[0].technology} - impacts cost and data privacy")
+        
+        # Authentication strategy
+        decisions.append("Authentication: Choose between self-hosted (Auth0, Firebase) vs custom implementation")
+        
+        # State management (for frontend apps)
+        if requirements.application_type in [ApplicationType.WEB_APP, ApplicationType.MOBILE_APP]:
+            decisions.append("State Management: Client-side state architecture and data synchronization")
+        
+        return decisions
+    
+    async def _assess_risk_factors(self, recommendations: List[TechRecommendation], requirements: ProjectRequirements) -> List[str]:
+        """Assess potential risk factors"""
+        
+        risks = []
+        
+        # Experience-based risks
+        for rec in recommendations:
+            category = rec.component.value
+            team_level = requirements.user_experience.get(category, ExperienceLevel.BEGINNER)
+            
+            if rec.learning_curve.value > team_level.value:
+                risks.append(f"{rec.technology}: Team skill gap may slow development")
+        
+        # Scale-based risks
+        if requirements.user_scale in [UserScale.LARGE, UserScale.ENTERPRISE]:
+            low_scalability_recs = [rec for rec in recommendations if rec.scalability_rating < 0.8]
+            for rec in low_scalability_recs:
+                risks.append(f"{rec.technology}: May not scale well to {requirements.user_scale.value} requirements")
+        
+        # Cost risks
+        high_cost_recs = [rec for rec in recommendations if rec.cost_impact == "high"]
+        if high_cost_recs and requirements.user_scale in [UserScale.PROTOTYPE, UserScale.SMALL]:
+            risks.append("High-cost technologies may strain budget for early-stage projects")
+        
+        # Technology maturity risks
+        bleeding_edge_techs = ["Svelte", "Deno", "Bun"]  # Example bleeding edge techs
+        for rec in recommendations:
+            if rec.technology in bleeding_edge_techs:
+                risks.append(f"{rec.technology}: Newer technology with smaller ecosystem and community")
+        
+        return risks if risks else ["Low risk: Well-established technology choices with good team fit"]
+    
+    async def _generate_next_steps(self, recommendations: List[TechRecommendation], requirements: ProjectRequirements) -> List[str]:
+        """Generate recommended next steps"""
+        
+        steps = [
+            "Set up development environment with recommended tools",
+            "Create project scaffolding and basic architecture",
+            "Implement authentication and user management",
+            "Build core business logic and data models"
+        ]
+        
+        # Add technology-specific steps
+        for rec in recommendations:
+            if rec.component == TechCategory.DATABASE:
+                steps.append(f"Design and implement database schema in {rec.technology}")
+            elif rec.component == TechCategory.DEPLOYMENT:
+                steps.append(f"Set up CI/CD pipeline with {rec.technology}")
+        
+        if requirements.ai_integration:
+            steps.append("Integrate AI/ML capabilities and test with sample data")
+        
+        steps.extend([
+            "Implement comprehensive testing strategy",
+            "Set up monitoring and logging",
+            "Deploy to staging environment for testing",
+            "Plan production deployment and scaling strategy"
+        ])
+        
+        return steps
+    
+    async def _generate_learning_resources(self, recommendations: List[TechRecommendation]) -> Dict[str, List[str]]:
+        """Generate learning resources for recommended technologies"""
+        
+        resources = {}
+        
+        resource_database = {
+            "React.js": [
+                "Official React Documentation - https://react.dev",
+                "React Tutorial for Beginners - Codecademy",
+                "Advanced React Patterns - Epic React by Kent C. Dodds"
+            ],
+            "Node.js": [
+                "Node.js Official Guides - https://nodejs.org/en/docs/guides/",
+                "Node.js Best Practices - GitHub Repository",
+                "The Complete Node.js Developer Course - Udemy"
+            ],
+            "PostgreSQL": [
+                "PostgreSQL Official Tutorial - https://www.postgresql.org/docs/current/tutorial.html",
+                "PostgreSQL Up & Running - O'Reilly Book",
+                "Learn PostgreSQL - Codecademy"
+            ],
+            "Docker + Docker Compose": [
+                "Docker Official Getting Started - https://docs.docker.com/get-started/",
+                "Docker Deep Dive - Nigel Poulton",
+                "Docker Mastery Course - Udemy"
+            ],
+            "OpenAI API": [
+                "OpenAI API Documentation - https://platform.openai.com/docs",
+                "Building AI Applications with OpenAI - OpenAI Cookbook",
+                "LangChain + OpenAI Integration Guide"
+            ]
+        }
+        
+        for rec in recommendations:
+            tech_resources = resource_database.get(rec.technology, [
+                f"{rec.technology} Official Documentation",
+                f"{rec.technology} Tutorial - FreeCodeCamp",
+                f"{rec.technology} Best Practices Guide"
+            ])
+            resources[rec.technology] = tech_resources
+        
+        return resources
+    
+    def get_recommender_status(self) -> Dict[str, Any]:
+        """Get recommender status and performance metrics"""
+        
+        return {
+            "name": self.name,
+            "version": self.version,
+            "total_recommendations": self.total_recommendations,
+            "supported_categories": len(self.tech_database),
+            "total_technologies": sum(len(techs) for techs in self.tech_database.values()),
+            "scoring_weights": self.scoring_weights,
+            "feedback_count": len(self.recommendation_feedback)
+        }
+
+
+async def test_tech_stack_recommender():
+    """Test tech stack recommender functionality"""
+    
+    try:
+        from .models import EXAMPLE_PROJECT_REQUIREMENTS
+    except ImportError:
+        from agents.tech_expert.models import EXAMPLE_PROJECT_REQUIREMENTS
+    
+    recommender = TechStackRecommender()
+    
+    print("🧪 Testing Tech Stack Recommender")
+    print("=" * 33)
+    
+    # Test with example requirements
+    print(f"Generating recommendations for:")
+    print(f"  App Type: {EXAMPLE_PROJECT_REQUIREMENTS.application_type}")
+    print(f"  Scale: {EXAMPLE_PROJECT_REQUIREMENTS.user_scale}")
+    print(f"  AI Integration: {EXAMPLE_PROJECT_REQUIREMENTS.ai_integration}")
+    
+    # Generate recommendations
+    recommendations = await recommender.generate_recommendations(EXAMPLE_PROJECT_REQUIREMENTS)
+    
+    print(f"\n📋 Generated {len(recommendations.recommendations)} recommendations:")
+    for rec in recommendations.recommendations:
+        print(f"  {rec.component.value}: {rec.technology} (confidence: {rec.confidence:.1%})")
+        print(f"    Rationale: {rec.rationale[:100]}...")
+    
+    print(f"\n🏗️  Architecture Pattern: {recommendations.architecture_pattern}")
+    print(f"💰 Cost Estimate: {recommendations.total_cost_estimate}")
+    print(f"⏱️  Timeline: {recommendations.development_timeline}")
+    print(f"🎯 Overall Confidence: {recommendations.overall_confidence:.1%}")
+    
+    # Check status
+    status = recommender.get_recommender_status()
+    print(f"\n📊 Recommender Status:")
+    print(f"Total technologies: {status['total_technologies']}")
+    print(f"Total recommendations: {status['total_recommendations']}")
+    
+    print(f"\n✅ Tech Stack Recommender Testing Complete")
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(test_tech_stack_recommender())

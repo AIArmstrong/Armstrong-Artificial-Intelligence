@@ -8,7 +8,21 @@ import numpy as np
 from datetime import datetime
 from typing import List, Dict, Tuple, Optional
 from .router_client import get_openrouter_client
-from ..supabase_cache import SupabaseCache, cache_intent_pattern
+# Import with try/catch for optional dependency
+try:
+    from brain.modules.supabase_cache import SupabaseCache, cache_intent_pattern
+except ImportError:
+    try:
+        import sys
+        import os
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+        from supabase_cache import SupabaseCache, cache_intent_pattern
+    except ImportError:
+        # Create placeholder classes for when Supabase is not available
+        class SupabaseCache:
+            def store_intent_pattern(self, *args, **kwargs): pass
+            def find_similar_intents(self, *args, **kwargs): return []
+        def cache_intent_pattern(*args, **kwargs): pass
 
 class EmbeddingsEngine:
     """

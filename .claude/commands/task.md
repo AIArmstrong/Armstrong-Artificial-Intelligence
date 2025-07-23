@@ -149,12 +149,61 @@ Execute complex tasks with intelligent workflow management, cross-session persis
 /sc:task overview --source claude.md --validate status.md
 ...
 
-## Claude Code Integration
-- **TodoWrite Integration**: Seamless session-level task coordination
-- **Wave System**: Advanced multi-stage execution orchestration
-- **Hook System**: Real-time task monitoring and optimization
-- **MCP Coordination**: Intelligent server routing and resource utilization
-- **Performance Monitoring**: Sub-100ms execution targets with comprehensive metrics
+## Execution Enhancement
+
+### 🧠 ACTIVE INTELLIGENCE MODULES
+```yaml
+Intelligence_Layers:
+  - Memory: "Recall successful task patterns, user preferences, and cross-session context"
+  - Foundation: "Apply baseline task validation, quality gates, and completion criteria"
+  - Hybrid RAG: "Knowledge synthesis from project management methodologies and best practices"
+  - Research: "Auto-research similar projects, methodologies, and optimization techniques"
+  - Reasoning: "Apply WHY analysis for task decisions with 70-95% confidence scoring"
+  - Tool Selection: "Intelligently choose optimal tools and execution strategies per task type"
+  - Architecture: "Provide system-wide task organization and structural optimization"
+  - Orchestration: "Multi-agent coordination with intelligent delegation and resource allocation"
+```
+
+**MANDATORY FIRST STEP**: Reference `brain/CLAUDE.md → Command Protocol → Smart Module Loading` to activate task intelligence automatically based on context.
+
+### Supreme Task Management Mode (Enhanced)
+Smart Module Loading automatically activates supreme task capabilities when available, triggering the **8 Enhancement Layers**:
+
+1. **Memory Layer** - Recall successful task patterns, user preferences, and cross-session context
+2. **Foundation Layer** - Apply baseline task validation, quality gates, and completion criteria
+3. **Hybrid RAG Layer** - Knowledge synthesis from project management methodologies and best practices
+4. **Research Layer** - Auto-research similar projects, methodologies, and optimization techniques
+5. **Reasoning Layer** - Apply WHY analysis for task decisions with 70-95% confidence scoring
+6. **Tool Selection Layer** - Intelligently choose optimal tools and execution strategies per task type
+7. **Architecture Layer** - Provide system-wide task organization and structural optimization
+8. **Orchestration Layer** - Multi-agent coordination with intelligent delegation and resource allocation
+
+### Creative Cortex Integration (Phase 3)
+- **#Logic Mode** - Structured task validation and systematic execution planning
+- **#Critic Mode** - Critical analysis of task quality, dependencies, and risk assessment
+- **#Enhancer Mode** - Task optimization, efficiency improvements, and workflow enhancement
+- **#Innovator Mode** - Novel task approaches, creative problem-solving, and breakthrough strategies
+
+## Enhanced Claude Code Integration
+- **Supreme Mode**: Integrates with TaskIntelligence, WorkflowOptimizer, and QualityValidator
+- **Memory-Enhanced Coordination**: Advanced TodoWrite with cross-session context and pattern learning
+- **Intelligent Wave System**: Multi-stage execution with adaptive orchestration and performance optimization
+- **Smart Hook System**: Real-time monitoring with predictive analytics and proactive intervention
+- **Advanced MCP Coordination**: Intelligent server routing with load balancing and failover capabilities
+- **Performance Intelligence**: Sub-100ms targets with comprehensive metrics and continuous optimization
+- **Learning System**: Continuous improvement through task success correlation and user feedback integration
+
+## Intelligence Layer Auto-Triggers
+```yaml
+# Task Context Detection
+if (task_command_detected) → ACTIVATE: [memory, foundation, tool_selection, orchestration]
+if (complex_project_analysis) → ENHANCE_WITH: [hybrid_rag, research, architecture]
+if (cross_session_continuity_needed) → ENGAGE: [memory, reasoning, orchestration]
+if (multi_agent_coordination_required) → COORDINATE: [orchestration, architecture, tool_selection]
+if (quality_validation_needed) → VALIDATE_WITH: [foundation, reasoning, hybrid_rag]
+if (task_optimization_opportunity) → OPTIMIZE_VIA: [reasoning, architecture, tool_selection]
+if (task_success) → LEARN_FROM: [memory, foundation]
+```
 
 ## Success Criteria
 - **Task Completion Rate**: >95% successful task completion

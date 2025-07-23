@@ -1,0 +1,656 @@
+"""
+Fabric Integration for Tool Selection Enhancement
+
+Integrates with Fabric repository patterns and provides pattern
+discovery, categorization, and selection with AAI compliance.
+"""
+import os
+import logging
+import json
+import aiofiles
+from typing import List, Dict, Any, Optional, Set
+from pathlib import Path
+from datetime import datetime
+
+# HTTP client for Fabric repository access
+try:
+    import aiohttp
+    HTTP_AVAILABLE = True
+except ImportError:
+    try:
+        import requests
+        HTTP_AVAILABLE = True
+        USE_REQUESTS = True
+    except ImportError:
+        HTTP_AVAILABLE = False
+
+try:
+    from .models import FabricPattern, PromptContext, ToolCategory
+except ImportError:
+    from agents.tool_selection.models import FabricPattern, PromptContext, ToolCategory
+
+logger = logging.getLogger(__name__)
+
+
+class FabricIntegrator:
+    """
+    Fabric repository integration for pattern discovery and management.
+    
+    Features:
+    - Fabric repository pattern discovery
+    - Pattern metadata extraction and caching
+    - Context-aware pattern selection
+    - Pattern availability and health checking
+    - Performance optimization with caching
+    """
+    
+    def __init__(self,
+                 fabric_repo_url: str = "https://github.com/danielmiessler/fabric",
+                 cache_dir: Optional[str] = None,
+                 enable_local_fabric: bool = True):
+        """Initialize Fabric integrator"""
+        self.fabric_repo_url = fabric_repo_url
+        self.cache_dir = Path(cache_dir or "./cache/fabric")
+        self.enable_local_fabric = enable_local_fabric
+        
+        # Pattern cache
+        self.pattern_cache = {}
+        self.cache_timestamp = None
+        self.cache_ttl_hours = 24
+        
+        # Pattern mappings
+        self.context_to_patterns = {}
+        self.pattern_effectiveness = {}
+        
+        # Local Fabric path detection
+        self.local_fabric_path = self._detect_local_fabric()
+        
+        # HTTP session
+        self.session = None
+        self.http_available = HTTP_AVAILABLE
+        
+        # Initialize pattern database
+        self._pattern_database = self._initialize_pattern_database()
+        
+        # Ensure cache directory exists
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        
+        if not self.http_available:
+            logger.warning("HTTP client not available - limited to local patterns")
+    
+    def _detect_local_fabric(self) -> Optional[Path]:
+        """Detect local Fabric installation"""
+        
+        # Common Fabric installation paths
+        possible_paths = [
+            Path.home() / "fabric",
+            Path.home() / ".fabric",
+            Path.cwd() / "fabric",
+            Path("/opt/fabric"),
+            Path("/usr/local/fabric")
+        ]
+        
+        for path in possible_paths:
+            if path.exists() and (path / "patterns").exists():
+                logger.info(f"Found local Fabric installation: {path}")
+                return path
+        
+        logger.info("No local Fabric installation found")
+        return None
+    
+    def _initialize_pattern_database(self) -> Dict[str, FabricPattern]:
+        """Initialize built-in pattern database as fallback"""
+        
+        patterns = {}
+        
+        # Analysis patterns
+        patterns["analyze_claims"] = FabricPattern(
+            name="analyze_claims",
+            description="Analyze claims in content for accuracy and bias",
+            category="analysis",
+            input_format="text",
+            output_format="structured_analysis",
+            use_cases=["fact_checking", "content_analysis", "bias_detection"],
+            complexity_score=0.7,
+            effectiveness_score=0.85,
+            tags=["analysis", "claims", "bias", "fact-checking"]
+        )
+        
+        patterns["analyze_prose"] = FabricPattern(
+            name="analyze_prose",
+            description="Analyze prose for style, tone, and quality",
+            category="analysis",
+            input_format="text",
+            output_format="prose_analysis",
+            use_cases=["writing_analysis", "style_review", "quality_assessment"],
+            complexity_score=0.6,
+            effectiveness_score=0.80,
+            tags=["analysis", "prose", "style", "writing"]
+        )
+        
+        # Creation patterns
+        patterns["create_summary"] = FabricPattern(
+            name="create_summary",
+            description="Create concise summaries of content",
+            category="creation",
+            input_format="text",
+            output_format="summary",
+            use_cases=["summarization", "content_condensation", "key_points"],
+            complexity_score=0.5,
+            effectiveness_score=0.90,
+            tags=["creation", "summary", "condensation"]
+        )
+        
+        patterns["write_essay"] = FabricPattern(
+            name="write_essay",
+            description="Write structured essays on given topics",
+            category="creation",
+            input_format="topic",
+            output_format="essay",
+            use_cases=["content_creation", "academic_writing", "structured_writing"],
+            complexity_score=0.8,
+            effectiveness_score=0.75,
+            tags=["creation", "essay", "writing", "structured"]
+        )
+        
+        # Research patterns
+        patterns["research_topic"] = FabricPattern(
+            name="research_topic",
+            description="Research and gather information on topics",
+            category="research",
+            input_format="topic",
+            output_format="research_report",
+            use_cases=["topic_research", "information_gathering", "knowledge_compilation"],
+            complexity_score=0.7,
+            effectiveness_score=0.85,
+            tags=["research", "information", "gathering"]
+        )
+        
+        # Extraction patterns
+        patterns["extract_wisdom"] = FabricPattern(
+            name="extract_wisdom",
+            description="Extract key insights and wisdom from content",
+            category="extraction",
+            input_format="text",
+            output_format="wisdom_points",
+            use_cases=["insight_extraction", "key_learnings", "wisdom_distillation"],
+            complexity_score=0.6,
+            effectiveness_score=0.88,
+            tags=["extraction", "wisdom", "insights"]
+        )
+        
+        patterns["extract_ideas"] = FabricPattern(
+            name="extract_ideas",
+            description="Extract and organize ideas from content",
+            category="extraction",
+            input_format="text",
+            output_format="idea_list",
+            use_cases=["idea_extraction", "brainstorming", "concept_identification"],
+            complexity_score=0.5,
+            effectiveness_score=0.82,
+            tags=["extraction", "ideas", "concepts"]
+        )
+        
+        # Implementation patterns
+        patterns["create_coding_project"] = FabricPattern(
+            name="create_coding_project",
+            description="Create structured coding projects with best practices",
+            category="implementation",
+            input_format="project_requirements",
+            output_format="project_structure",
+            use_cases=["project_setup", "code_architecture", "development_planning"],
+            complexity_score=0.9,
+            effectiveness_score=0.78,
+            tags=["implementation", "coding", "project", "architecture"]
+        )
+        
+        # Documentation patterns
+        patterns["write_docs"] = FabricPattern(
+            name="write_docs",
+            description="Write comprehensive documentation",
+            category="documentation",
+            input_format="system_info",
+            output_format="documentation",
+            use_cases=["technical_docs", "user_guides", "api_documentation"],
+            complexity_score=0.7,
+            effectiveness_score=0.83,
+            tags=["documentation", "technical", "guides"]
+        )
+        
+        return patterns
+    
+    async def discover_patterns(self, refresh_cache: bool = False) -> List[FabricPattern]:
+        """
+        Discover available Fabric patterns.
+        
+        Args:
+            refresh_cache: Force refresh of pattern cache
+            
+        Returns:
+            List of discovered FabricPattern objects
+        """
+        try:
+            # Check cache first
+            if not refresh_cache and self._is_cache_valid():
+                patterns = await self._load_patterns_from_cache()
+                if patterns:
+                    logger.info(f"Loaded {len(patterns)} patterns from cache")
+                    return patterns
+            
+            # Discover patterns from sources
+            patterns = []
+            
+            # Try local Fabric first
+            if self.enable_local_fabric and self.local_fabric_path:
+                local_patterns = await self._discover_local_patterns()
+                patterns.extend(local_patterns)
+                logger.info(f"Discovered {len(local_patterns)} local patterns")
+            
+            # Try remote Fabric repository
+            if self.http_available:
+                remote_patterns = await self._discover_remote_patterns()
+                patterns.extend(remote_patterns)
+                logger.info(f"Discovered {len(remote_patterns)} remote patterns")
+            
+            # Use built-in patterns as fallback
+            if not patterns:
+                patterns = list(self._pattern_database.values())
+                logger.info(f"Using {len(patterns)} built-in patterns as fallback")
+            
+            # Cache the results
+            await self._cache_patterns(patterns)
+            
+            # Update pattern mappings
+            self._update_pattern_mappings(patterns)
+            
+            return patterns
+            
+        except Exception as e:
+            logger.error(f"Pattern discovery failed: {e}")
+            
+            # Return built-in patterns as ultimate fallback
+            return list(self._pattern_database.values())
+    
+    async def _discover_local_patterns(self) -> List[FabricPattern]:
+        """Discover patterns from local Fabric installation"""
+        
+        if not self.local_fabric_path:
+            return []
+        
+        patterns = []
+        patterns_dir = self.local_fabric_path / "patterns"
+        
+        try:
+            if not patterns_dir.exists():
+                return []
+            
+            # Scan pattern directories
+            for pattern_dir in patterns_dir.iterdir():
+                if pattern_dir.is_dir():
+                    pattern = await self._parse_local_pattern(pattern_dir)
+                    if pattern:
+                        patterns.append(pattern)
+            
+            return patterns
+            
+        except Exception as e:
+            logger.error(f"Local pattern discovery failed: {e}")
+            return []
+    
+    async def _parse_local_pattern(self, pattern_dir: Path) -> Optional[FabricPattern]:
+        """Parse local pattern directory"""
+        
+        try:
+            pattern_name = pattern_dir.name
+            
+            # Look for pattern files
+            system_file = pattern_dir / "system.md"
+            user_file = pattern_dir / "user.md"
+            
+            description = pattern_name.replace("_", " ").title()
+            
+            # Extract description from system file if available
+            if system_file.exists():
+                try:
+                    async with aiofiles.open(system_file, 'r', encoding='utf-8') as f:
+                        content = await f.read()
+                        # Extract first line as description
+                        lines = content.strip().split('\n')
+                        if lines:
+                            description = lines[0].strip()
+                except Exception:
+                    pass
+            
+            # Determine category from pattern name
+            category = self._categorize_pattern(pattern_name)
+            
+            return FabricPattern(
+                name=pattern_name,
+                description=description,
+                category=category,
+                input_format="text",
+                output_format="text",
+                use_cases=[category, "fabric_pattern"],
+                complexity_score=0.6,
+                effectiveness_score=0.8,
+                tags=["fabric", category, pattern_name]
+            )
+            
+        except Exception as e:
+            logger.warning(f"Failed to parse pattern {pattern_dir.name}: {e}")
+            return None
+    
+    async def _discover_remote_patterns(self) -> List[FabricPattern]:
+        """Discover patterns from remote Fabric repository"""
+        
+        if not self.http_available:
+            return []
+        
+        patterns = []
+        
+        try:
+            # GitHub API URL for Fabric patterns
+            api_url = "https://api.github.com/repos/danielmiessler/fabric/contents/patterns"
+            
+            # Ensure session is available for async operation
+            await self._ensure_session()
+            
+            if self.session:
+                # Use aiohttp
+                async with self.session.get(api_url) as response:
+                    if response.status == 200:
+                        data = await response.json()
+                        patterns = await self._parse_remote_patterns(data)
+                        return patterns
+            else:
+                # If aiohttp not available, skip remote patterns
+                logger.warning("HTTP client not available - skipping remote pattern discovery")
+                return []
+            
+        except Exception as e:
+            logger.error(f"Remote pattern discovery failed: {e}")
+            return []
+    
+    async def _parse_remote_patterns(self, github_data: List[Dict]) -> List[FabricPattern]:
+        """Parse patterns from GitHub API response"""
+        
+        patterns = []
+        
+        for item in github_data:
+            if item.get("type") == "dir":
+                pattern_name = item.get("name", "")
+                if pattern_name:
+                    category = self._categorize_pattern(pattern_name)
+                    
+                    pattern = FabricPattern(
+                        name=pattern_name,
+                        description=pattern_name.replace("_", " ").title(),
+                        category=category,
+                        input_format="text",
+                        output_format="text",
+                        use_cases=[category, "fabric_pattern"],
+                        complexity_score=0.6,
+                        effectiveness_score=0.8,
+                        tags=["fabric", category, pattern_name]
+                    )
+                    patterns.append(pattern)
+        
+        return patterns
+    
+    def _categorize_pattern(self, pattern_name: str) -> str:
+        """Categorize pattern based on name"""
+        
+        name_lower = pattern_name.lower()
+        
+        if any(word in name_lower for word in ["analyze", "analysis", "review", "examine"]):
+            return "analysis"
+        elif any(word in name_lower for word in ["create", "write", "generate", "build"]):
+            return "creation"
+        elif any(word in name_lower for word in ["research", "find", "search", "discover"]):
+            return "research"
+        elif any(word in name_lower for word in ["extract", "pull", "get", "mine"]):
+            return "extraction"
+        elif any(word in name_lower for word in ["summary", "summarize", "brief", "condense"]):
+            return "summarization"
+        elif any(word in name_lower for word in ["translate", "convert", "transform"]):
+            return "translation"
+        elif any(word in name_lower for word in ["implement", "code", "develop", "build"]):
+            return "implementation"
+        elif any(word in name_lower for word in ["debug", "fix", "troubleshoot"]):
+            return "debugging"
+        elif any(word in name_lower for word in ["optimize", "improve", "enhance"]):
+            return "optimization"
+        elif any(word in name_lower for word in ["document", "docs", "guide", "manual"]):
+            return "documentation"
+        elif any(word in name_lower for word in ["test", "verify", "validate"]):
+            return "testing"
+        else:
+            return "general"
+    
+    async def get_patterns_for_context(self, context: PromptContext) -> List[FabricPattern]:
+        """
+        Get patterns suitable for specific context.
+        
+        Args:
+            context: Prompt context type
+            
+        Returns:
+            List of suitable FabricPattern objects
+        """
+        try:
+            # Ensure patterns are loaded
+            if not self.pattern_cache:
+                await self.discover_patterns()
+            
+            # Get patterns from mapping
+            if context in self.context_to_patterns:
+                pattern_names = self.context_to_patterns[context]
+                patterns = [
+                    self.pattern_cache[name] 
+                    for name in pattern_names 
+                    if name in self.pattern_cache
+                ]
+                return patterns
+            
+            # Fallback: filter by category
+            category_map = {
+                PromptContext.ANALYSIS: "analysis",
+                PromptContext.CREATION: "creation",
+                PromptContext.RESEARCH: "research",
+                PromptContext.EXTRACTION: "extraction",
+                PromptContext.SUMMARIZATION: "summarization",
+                PromptContext.TRANSLATION: "translation",
+                PromptContext.IMPLEMENTATION: "implementation",
+                PromptContext.DEBUGGING: "debugging",
+                PromptContext.OPTIMIZATION: "optimization",
+                PromptContext.DOCUMENTATION: "documentation",
+                PromptContext.TESTING: "testing",
+                PromptContext.DEPLOYMENT: "implementation"
+            }
+            
+            target_category = category_map.get(context, "general")
+            patterns = [
+                pattern for pattern in self.pattern_cache.values()
+                if pattern.category == target_category
+            ]
+            
+            return patterns[:5]  # Limit to top 5
+            
+        except Exception as e:
+            logger.error(f"Failed to get patterns for context {context}: {e}")
+            return []
+    
+    async def get_pattern_by_name(self, pattern_name: str) -> Optional[FabricPattern]:
+        """Get specific pattern by name"""
+        
+        # Ensure patterns are loaded
+        if not self.pattern_cache:
+            await self.discover_patterns()
+        
+        return self.pattern_cache.get(pattern_name)
+    
+    async def check_pattern_availability(self, pattern_name: str) -> bool:
+        """Check if pattern is available"""
+        
+        # Check local Fabric
+        if self.local_fabric_path:
+            pattern_dir = self.local_fabric_path / "patterns" / pattern_name
+            if pattern_dir.exists():
+                return True
+        
+        # Check cache
+        if pattern_name in self.pattern_cache:
+            return True
+        
+        return False
+    
+    def _is_cache_valid(self) -> bool:
+        """Check if pattern cache is still valid"""
+        
+        if not self.cache_timestamp:
+            return False
+        
+        age_hours = (datetime.now() - self.cache_timestamp).total_seconds() / 3600
+        return age_hours < self.cache_ttl_hours
+    
+    async def _load_patterns_from_cache(self) -> List[FabricPattern]:
+        """Load patterns from cache file"""
+        
+        cache_file = self.cache_dir / "patterns.json"
+        
+        try:
+            if cache_file.exists():
+                async with aiofiles.open(cache_file, 'r', encoding='utf-8') as f:
+                    data = json.loads(await f.read())
+                
+                patterns = [FabricPattern(**pattern_data) for pattern_data in data["patterns"]]
+                self.cache_timestamp = datetime.fromisoformat(data["timestamp"])
+                self.pattern_cache = {pattern.name: pattern for pattern in patterns}
+                
+                return patterns
+        
+        except Exception as e:
+            logger.warning(f"Failed to load patterns from cache: {e}")
+        
+        return []
+    
+    async def _cache_patterns(self, patterns: List[FabricPattern]):
+        """Cache patterns to file"""
+        
+        try:
+            cache_data = {
+                "timestamp": datetime.now().isoformat(),
+                "patterns": [pattern.model_dump() for pattern in patterns]
+            }
+            
+            cache_file = self.cache_dir / "patterns.json"
+            async with aiofiles.open(cache_file, 'w', encoding='utf-8') as f:
+                await f.write(json.dumps(cache_data, indent=2))
+            
+            self.cache_timestamp = datetime.now()
+            self.pattern_cache = {pattern.name: pattern for pattern in patterns}
+            
+        except Exception as e:
+            logger.warning(f"Failed to cache patterns: {e}")
+    
+    def _update_pattern_mappings(self, patterns: List[FabricPattern]):
+        """Update context-to-pattern mappings"""
+        
+        self.context_to_patterns = {}
+        
+        for pattern in patterns:
+            # Map by category
+            category = pattern.category
+            
+            for context in PromptContext:
+                context_category = {
+                    PromptContext.ANALYSIS: "analysis",
+                    PromptContext.CREATION: "creation",
+                    PromptContext.RESEARCH: "research",
+                    PromptContext.EXTRACTION: "extraction",
+                    PromptContext.SUMMARIZATION: "summarization",
+                    PromptContext.TRANSLATION: "translation",
+                    PromptContext.IMPLEMENTATION: "implementation",
+                    PromptContext.DEBUGGING: "debugging",
+                    PromptContext.OPTIMIZATION: "optimization",
+                    PromptContext.DOCUMENTATION: "documentation",
+                    PromptContext.TESTING: "testing",
+                    PromptContext.DEPLOYMENT: "implementation"
+                }.get(context, "general")
+                
+                if category == context_category:
+                    if context not in self.context_to_patterns:
+                        self.context_to_patterns[context] = []
+                    self.context_to_patterns[context].append(pattern.name)
+    
+    async def update_pattern_effectiveness(self, pattern_name: str, effectiveness_score: float):
+        """Update pattern effectiveness based on usage"""
+        
+        if pattern_name in self.pattern_cache:
+            pattern = self.pattern_cache[pattern_name]
+            # Update with weighted average
+            current_score = pattern.effectiveness_score
+            pattern.effectiveness_score = (current_score * 0.8) + (effectiveness_score * 0.2)
+    
+    def get_integrator_status(self) -> Dict[str, Any]:
+        """Get integrator status and statistics"""
+        return {
+            "fabric_repo_url": self.fabric_repo_url,
+            "local_fabric_available": self.local_fabric_path is not None,
+            "local_fabric_path": str(self.local_fabric_path) if self.local_fabric_path else None,
+            "http_available": self.http_available,
+            "cache_valid": self._is_cache_valid(),
+            "cached_patterns": len(self.pattern_cache),
+            "context_mappings": len(self.context_to_patterns),
+            "built_in_patterns": len(self._pattern_database),
+            "cache_directory": str(self.cache_dir),
+            "ready": True
+        }
+
+
+async def test_fabric_integrator():
+    """Test Fabric integrator functionality"""
+    
+    integrator = FabricIntegrator()
+    
+    print("🧪 Testing Fabric Integrator")
+    print("=" * 35)
+    
+    # Check integrator status
+    status = integrator.get_integrator_status()
+    print(f"Local Fabric available: {status['local_fabric_available']}")
+    print(f"HTTP available: {status['http_available']}")
+    print(f"Built-in patterns: {status['built_in_patterns']}")
+    print(f"Cache directory: {status['cache_directory']}")
+    print(f"Ready: {status['ready']}")
+    
+    # Test pattern discovery
+    print(f"\n🔍 Discovering patterns...")
+    patterns = await integrator.discover_patterns()
+    print(f"Discovered {len(patterns)} patterns")
+    
+    # Show sample patterns
+    print(f"\n📋 Sample patterns:")
+    for i, pattern in enumerate(patterns[:5]):
+        print(f"  {i+1}. {pattern.name}")
+        print(f"     Category: {pattern.category}")
+        print(f"     Effectiveness: {pattern.effectiveness_score:.1%}")
+        print(f"     Description: {pattern.description[:50]}...")
+    
+    # Test context-based pattern selection
+    print(f"\n🎯 Testing context-based selection:")
+    test_contexts = [PromptContext.ANALYSIS, PromptContext.CREATION, PromptContext.RESEARCH]
+    
+    for context in test_contexts:
+        context_patterns = await integrator.get_patterns_for_context(context)
+        print(f"  {context.value}: {len(context_patterns)} patterns")
+        if context_patterns:
+            print(f"    Top pattern: {context_patterns[0].name}")
+    
+    print(f"\n✅ Fabric Integration Testing Complete")
+    print(f"Ready for intelligent pattern selection")
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(test_fabric_integrator())

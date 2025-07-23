@@ -5,6 +5,7 @@ The ultimate goal: idea -> evaluate -> actionize (PRP) -> implement (MCP tools, 
 """
 
 import json
+import logging
 import os
 import subprocess
 from pathlib import Path
@@ -58,6 +59,15 @@ class SeamlessOrchestrator:
         self.projects_path = self.base_path / "projects"
         self.brain_path = self.base_path / "brain"
         
+        # Initialize logging
+        self.logger = logging.getLogger(__name__)
+        if not self.logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            handler.setFormatter(formatter)
+            self.logger.addHandler(handler)
+            self.logger.setLevel(logging.INFO)
+        
         # Initialize subsystems
         self.analytics = UnifiedAnalytics(str(self.base_path))
         self.research_integration = ResearchPRPIntegration(str(self.base_path))
@@ -76,7 +86,8 @@ class SeamlessOrchestrator:
             try:
                 with open(state_file, 'r') as f:
                     return json.load(f)
-            except:
+            except (json.JSONDecodeError, IOError, OSError) as e:
+                logging.warning(f"Failed to load pipeline state from {state_file}: {e}")
                 pass
         
         return {"active_pipelines": [], "completed_pipelines": []}
@@ -247,7 +258,8 @@ class SeamlessOrchestrator:
             try:
                 with open(registry_file, 'r') as f:
                     registry = json.load(f)
-            except:
+            except (json.JSONDecodeError, IOError, OSError) as e:
+                logging.warning(f"Failed to load idea registry from {registry_file}: {e}")
                 pass
         
         # Add new idea
@@ -675,7 +687,8 @@ class SeamlessOrchestrator:
             try:
                 with open(success_file, 'r') as f:
                     metrics_data = json.load(f)
-            except:
+            except (json.JSONDecodeError, IOError, OSError) as e:
+                self.logger.debug(f"Could not load success metrics from {success_file}: {e}")
                 pass
         
         metrics_data["pipelines"].append(success_metrics)
@@ -743,8 +756,8 @@ def main():
         try:
             with open(sys.argv[2], 'r') as f:
                 context = json.load(f)
-        except:
-            print("Warning: Could not load context file")
+        except (json.JSONDecodeError, IOError, OSError) as e:
+            print(f"Warning: Could not load context file: {e}")
     
     print(f"🚀 Processing idea: {idea_text}")
     print("=" * 60)

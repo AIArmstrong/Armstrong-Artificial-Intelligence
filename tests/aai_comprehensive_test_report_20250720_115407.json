@@ -1,0 +1,1643 @@
+{
+  "timestamp": "2025-07-20T11:54:07.840088",
+  "total_modules": 52,
+  "modules_tested": 52,
+  "modules_passed": 32,
+  "modules_failed": 20,
+  "modules_skipped": 0,
+  "overall_effectiveness": 55.96153846153846,
+  "overall_efficiency": 100.0,
+  "overall_fallback_resilience": 52.30769230769231,
+  "category_scores": {
+    "core": {
+      "effectiveness": 31.666666666666668,
+      "efficiency": 100.0,
+      "fallback_resilience": 40.0,
+      "pass_rate": 33.33333333333333
+    },
+    "brain": {
+      "effectiveness": 22.5,
+      "efficiency": 100.0,
+      "fallback_resilience": 35.0,
+      "pass_rate": 25.0
+    },
+    "agent": {
+      "effectiveness": 56.19047619047619,
+      "efficiency": 100.0,
+      "fallback_resilience": 48.57142857142857,
+      "pass_rate": 61.904761904761905
+    },
+    "mcp": {
+      "effectiveness": 90.0,
+      "efficiency": 100.0,
+      "fallback_resilience": 80.0,
+      "pass_rate": 100.0
+    },
+    "enhancement": {
+      "effectiveness": 90.0,
+      "efficiency": 100.0,
+      "fallback_resilience": 80.0,
+      "pass_rate": 100.0
+    },
+    "interface": {
+      "effectiveness": 0.0,
+      "efficiency": 100.0,
+      "fallback_resilience": 20.0,
+      "pass_rate": 0.0
+    },
+    "ingestion": {
+      "effectiveness": 93.33333333333333,
+      "efficiency": 100.0,
+      "fallback_resilience": 73.33333333333333,
+      "pass_rate": 100.0
+    },
+    "inference": {
+      "effectiveness": 90.0,
+      "efficiency": 100.0,
+      "fallback_resilience": 80.0,
+      "pass_rate": 100.0
+    },
+    "vector_store": {
+      "effectiveness": 90.0,
+      "efficiency": 100.0,
+      "fallback_resilience": 66.66666666666667,
+      "pass_rate": 100.0
+    }
+  },
+  "test_results": [
+    {
+      "module_name": "enhanced_command_processor",
+      "category": "ModuleCategory.CORE",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 100,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 0.07163548469543457,
+        "init_time": 0.0002932548522949219,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "type": "processor",
+        "has_process_method": true,
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "unified_enhancement_coordinator",
+      "category": "ModuleCategory.CORE",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.02486419677734375,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: no running event loop"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "resource_optimization_manager",
+      "category": "ModuleCategory.CORE",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.01346898078918457,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: no running event loop"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "agent_interoperability_framework",
+      "category": "ModuleCategory.CORE",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.030401229858398438,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: no running event loop"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "realtime_orchestration_monitor",
+      "category": "ModuleCategory.CORE",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.05339789390563965,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: no running event loop"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "cache_manager",
+      "category": "ModuleCategory.CORE",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 0.01513361930847168,
+        "init_time": 7.581710815429688e-05,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "type": "manager",
+        "has_management_method": true,
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "unified_intelligence_coordinator",
+      "category": "ModuleCategory.BRAIN",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.02759099006652832,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: no running event loop"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "mcp_orchestrator",
+      "category": "ModuleCategory.BRAIN",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.0020418167114257812,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'brain.modules.mcp_orchestrator'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "tech_stack_expert",
+      "category": "ModuleCategory.BRAIN",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.0023565292358398438,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'brain.modules.tech_stack_expert'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "unified_enhancement_loader",
+      "category": "ModuleCategory.BRAIN",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.016143798828125,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: no running event loop"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "analyze_command_handler",
+      "category": "ModuleCategory.BRAIN",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 0.03430366516113281,
+        "init_time": 7.724761962890625e-05,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "analyze_orchestrator",
+      "category": "ModuleCategory.BRAIN",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.775161743164062e-06,
+        "init_time": 0.00010800361633300781,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "github_analyzer",
+      "category": "ModuleCategory.BRAIN",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.004429817199707031,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'brain.modules.github_analyzer'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "enhanced_repository_analyzer",
+      "category": "ModuleCategory.BRAIN",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.0018858909606933594,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'brain.modules.enhanced_repository_analyzer'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "delegation_engine",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 0.32207798957824707,
+        "init_time": 0.0009067058563232422,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate AgentCapability: 4 validation errors for AgentCapability\nname\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncomplexity_support\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_baseline\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate AgentProfile: 4 validation errors for AgentProfile\nagent_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nname\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncapabilities\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate DelegationRequest: 1 validation error for DelegationRequest\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate OrchestrationResult: 6 validation errors for OrchestrationResult\nsession_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noriginal_query\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndelegations\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noverall_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsuccess\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntotal_execution_time_ms\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TaskDelegation: 6 validation errors for TaskDelegation\ntask_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntask_description\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nassigned_agent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nestimated_complexity\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "primary_agent",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 100,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 1.1205673217773438e-05,
+        "init_time": 0.0006630420684814453,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate DelegationRequest: 1 validation error for DelegationRequest\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate DelegationResponse: 4 validation errors for DelegationResponse\nrequest_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\norchestration_result\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nexecution_ready\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nprocessing_time_ms\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate OrchestrationResult: 6 validation errors for OrchestrationResult\nsession_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noriginal_query\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndelegations\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noverall_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsuccess\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntotal_execution_time_ms\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate PrimaryOrchestrationAgent: no running event loop",
+        "Could not instantiate SystemStatus: 4 validation errors for SystemStatus\norchestration_active\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nmcp_servers_status\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nagent_health\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nperformance_metrics\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TaskDelegation: 6 validation errors for TaskDelegation\ntask_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntask_description\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nassigned_agent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nestimated_complexity\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TaskResult: 5 validation errors for TaskResult\ntask_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nagent_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsuccess\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nexecution_time_seconds\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_achieved\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "coroutine 'PrimaryOrchestrationAgent._initialize_components' was never awaited"
+      ],
+      "test_details": {
+        "type": "agent",
+        "has_execution_method": true,
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "models",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 1.0251998901367188e-05,
+        "init_time": 0.000446319580078125,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate AgentCapability: 4 validation errors for AgentCapability\nname\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncomplexity_support\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_baseline\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate AgentOverride: 4 validation errors for AgentOverride\ntask_pattern\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\npreferred_agent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nuser_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate AgentProfile: 4 validation errors for AgentProfile\nagent_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nname\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncapabilities\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate DelegationRequest: 1 validation error for DelegationRequest\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate DelegationResponse: 4 validation errors for DelegationResponse\nrequest_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\norchestration_result\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nexecution_ready\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nprocessing_time_ms\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate OrchestrationResult: 6 validation errors for OrchestrationResult\nsession_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noriginal_query\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndelegations\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noverall_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsuccess\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntotal_execution_time_ms\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate SystemStatus: 4 validation errors for SystemStatus\norchestration_active\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nmcp_servers_status\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nagent_health\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nperformance_metrics\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TaskDelegation: 6 validation errors for TaskDelegation\ntask_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntask_description\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nassigned_agent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nestimated_complexity\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TaskResult: 5 validation errors for TaskResult\ntask_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nagent_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsuccess\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nexecution_time_seconds\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_achieved\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "dual_model_agent",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.3751816749572754,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: expected an indented block after 'try' statement on line 36 (dual_model_agent.py, line 37)"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "reasoning_engine",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 7.152557373046875e-06,
+        "init_time": 0.0002663135528564453,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate AlternativePerspective: 4 validation errors for AlternativePerspective\nperspective\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nlikelihood\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ConfidenceAnalysis: 6 validation errors for ConfidenceAnalysis\noverall\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nevidence_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsource_reliability\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nassumption_certainty\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_coherence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate DocumentAnalysisRequest: 1 validation error for DocumentAnalysisRequest\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningChain: 4 validation errors for ReasoningChain\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsteps\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nfinal_conclusion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noverall_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningLimitation: 3 validation errors for ReasoningLimitation\nlimitation_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nimpact_level\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningResponse: 6 validation errors for ReasoningResponse\nanswer\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_chain\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_analysis\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nprocessing_time_ms\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nmodel_used\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrequest_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningStep: 4 validation errors for ReasoningStep\nstep_number\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "confidence_scorer",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 1.049041748046875e-05,
+        "init_time": 0.0001926422119140625,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate AlternativePerspective: 4 validation errors for AlternativePerspective\nperspective\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nlikelihood\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ConfidenceAnalysis: 6 validation errors for ConfidenceAnalysis\noverall\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nevidence_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsource_reliability\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nassumption_certainty\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_coherence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningChain: 4 validation errors for ReasoningChain\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsteps\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nfinal_conclusion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noverall_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningStep: 4 validation errors for ReasoningStep\nstep_number\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate VectorSearchResult: 5 validation errors for VectorSearchResult\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nfilename\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsimilarity_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "config",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.059906005859375e-06,
+        "init_time": 5.173683166503906e-05,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "models",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 1.5497207641601562e-05,
+        "init_time": 0.0004277229309082031,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate AlternativePerspective: 4 validation errors for AlternativePerspective\nperspective\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nlikelihood\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ConfidenceAnalysis: 6 validation errors for ConfidenceAnalysis\noverall\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nevidence_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsource_reliability\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nassumption_certainty\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_coherence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate DocumentAnalysisRequest: 1 validation error for DocumentAnalysisRequest\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate DocumentChunk: 4 validation errors for DocumentChunk\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndocument_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nchunk_index\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate JinaResearchRequest: 1 validation error for JinaResearchRequest\ntopic\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate JinaResearchResult: 6 validation errors for JinaResearchResult\nurl\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntitle\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nquality_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrelevance_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsource_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningChain: 4 validation errors for ReasoningChain\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsteps\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nfinal_conclusion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noverall_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningLimitation: 3 validation errors for ReasoningLimitation\nlimitation_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nimpact_level\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningMetrics: 3 validation errors for ReasoningMetrics\naverage_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_accuracy\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nuser_satisfaction\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningResponse: 6 validation errors for ReasoningResponse\nanswer\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning_chain\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_analysis\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nprocessing_time_ms\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nmodel_used\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrequest_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ReasoningStep: 4 validation errors for ReasoningStep\nstep_number\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndescription\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate SupportingDocument: 6 validation errors for SupportingDocument\nfilename\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent_preview\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrelevance_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsource_quality\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate SystemStatus: 6 validation errors for SystemStatus\nreasoning_engine_status\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntool_execution_status\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nvector_store_status\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ninference_backend_status\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncurrent_load\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsuccess_rate\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate VectorSearchRequest: 1 validation error for VectorSearchRequest\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate VectorSearchResult: 5 validation errors for VectorSearchResult\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nfilename\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsimilarity_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "filesystem_agent",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.09106707572937012,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'aiofiles'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "github_agent",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 8.58306884765625e-06,
+        "init_time": 0.00021338462829589844,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate GitHubAgent: no running event loop",
+        "coroutine 'GitHubAgent._initialize_session' was never awaited"
+      ],
+      "test_details": {
+        "type": "agent",
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "jina_search_agent",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 1.1682510375976562e-05,
+        "init_time": 0.00012183189392089844,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate JinaSearchAgent: no running event loop",
+        "coroutine 'JinaSearchAgent._initialize_session' was never awaited"
+      ],
+      "test_details": {
+        "type": "agent",
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "slack_agent",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.298324584960938e-06,
+        "init_time": 0.000347137451171875,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "type": "agent",
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "conversation_engine",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 0.08810281753540039,
+        "init_time": 0.0006504058837890625,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate ConversationMessage: 4 validation errors for ConversationMessage\nid\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsession_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nstage\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ConversationState: 2 validation errors for ConversationState\nsession_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nuser_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ProjectRequirements: 2 validation errors for ProjectRequirements\napplication_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nuser_scale\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "recommender",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 9.5367431640625e-06,
+        "init_time": 0.0005624294281005859,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate ProjectRequirements: 2 validation errors for ProjectRequirements\napplication_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nuser_scale\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TechRecommendation: 4 validation errors for TechRecommendation\ncomponent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntechnology\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrationale\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TechStackRecommendationSet: 3 validation errors for TechStackRecommendationSet\nrecommendations\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noverall_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\narchitecture_pattern\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "models",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 9.059906005859375e-06,
+        "init_time": 0.0001919269561767578,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate ConversationMessage: 4 validation errors for ConversationMessage\nid\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsession_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nstage\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ConversationState: 2 validation errors for ConversationState\nsession_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nuser_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate ProjectRequirements: 2 validation errors for ProjectRequirements\napplication_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nuser_scale\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TechRecommendation: 4 validation errors for TechRecommendation\ncomponent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntechnology\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrationale\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate TechStackRecommendationSet: 3 validation errors for TechStackRecommendationSet\nrecommendations\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\noverall_confidence\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\narchitecture_pattern\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "tool_selector",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.005722522735595703,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'agents.tool_selection'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "prompt_analyzer",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.0034558773040771484,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'agents.tool_selection'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "learning_engine",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.001969575881958008,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'agents.tool_selection'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "fabric_integrator",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.0017781257629394531,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'agents.tool_selection'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "confidence_scorer",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.0019617080688476562,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'agents.tool_selection'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "models",
+      "category": "ModuleCategory.AGENT",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.003463268280029297,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: No module named 'agents.tool_selection'"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "server_manager",
+      "category": "ModuleCategory.MCP",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.5367431640625e-06,
+        "init_time": 0.00012922286987304688,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "type": "manager",
+        "has_management_method": true,
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "health_monitor",
+      "category": "ModuleCategory.MCP",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.059906005859375e-06,
+        "init_time": 0.00011396408081054688,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "memory_layer",
+      "category": "ModuleCategory.ENHANCEMENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 0.18462181091308594,
+        "init_time": 0.00013208389282226562,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "command_enhancer",
+      "category": "ModuleCategory.ENHANCEMENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 8.821487426757812e-06,
+        "init_time": 0.00014925003051757812,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "workflow_memory",
+      "category": "ModuleCategory.ENHANCEMENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 1.6927719116210938e-05,
+        "init_time": 0.00021028518676757812,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "config",
+      "category": "ModuleCategory.ENHANCEMENT",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.298324584960938e-06,
+        "init_time": 3.361701965332031e-05,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "r1_reasoning_interface",
+      "category": "ModuleCategory.INTERFACE",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.09743094444274902,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: expected an indented block after 'try' statement on line 36 (dual_model_agent.py, line 37)"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "r1_reasoning_server",
+      "category": "ModuleCategory.INTERFACE",
+      "status": "TestStatus.FAIL",
+      "import_success": false,
+      "init_success": false,
+      "functionality_success": false,
+      "error_handling_success": false,
+      "integration_success": false,
+      "effectiveness_score": 0,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 20,
+      "performance": {
+        "import_time": 0.5004732608795166,
+        "init_time": 0.0,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [
+        "Import failed: expected an indented block after 'try' statement on line 36 (dual_model_agent.py, line 37)"
+      ],
+      "warnings": [],
+      "test_details": {}
+    },
+    {
+      "module_name": "jina_research_ingester",
+      "category": "ModuleCategory.INGESTION",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 0.12521028518676758,
+        "init_time": 0.0002694129943847656,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate DocumentChunk: 4 validation errors for DocumentChunk\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndocument_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nchunk_index\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate JinaResearchRequest: 1 validation error for JinaResearchRequest\ntopic\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate JinaResearchResult: 6 validation errors for JinaResearchResult\nurl\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntitle\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nquality_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrelevance_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsource_type\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "pdf_processor",
+      "category": "ModuleCategory.INGESTION",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 100,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 1.0251998901367188e-05,
+        "init_time": 0.0021381378173828125,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "type": "processor",
+        "has_process_method": true,
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "semantic_chunker",
+      "category": "ModuleCategory.INGESTION",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 1.239776611328125e-05,
+        "init_time": 0.00010967254638671875,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "model_router",
+      "category": "ModuleCategory.INFERENCE",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.5367431640625e-06,
+        "init_time": 0.00012135505676269531,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "huggingface_client",
+      "category": "ModuleCategory.INFERENCE",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.775161743164062e-06,
+        "init_time": 6.103515625e-05,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "ollama_client",
+      "category": "ModuleCategory.INFERENCE",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 9.775161743164062e-06,
+        "init_time": 0.00014066696166992188,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "chroma_manager",
+      "category": "ModuleCategory.VECTOR_STORE",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 0.11749720573425293,
+        "init_time": 0.003866434097290039,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate DocumentChunk: 4 validation errors for DocumentChunk\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndocument_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nchunk_index\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate VectorSearchRequest: 1 validation error for VectorSearchRequest\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate VectorSearchResult: 5 validation errors for VectorSearchResult\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nfilename\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsimilarity_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "type": "manager",
+        "has_management_method": true,
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "retrieval_ranker",
+      "category": "ModuleCategory.VECTOR_STORE",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 80,
+      "performance": {
+        "import_time": 8.58306884765625e-06,
+        "init_time": 0.0001609325408935547,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate VectorSearchResult: 5 validation errors for VectorSearchResult\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nfilename\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsimilarity_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    },
+    {
+      "module_name": "supabase_vector_store",
+      "category": "ModuleCategory.VECTOR_STORE",
+      "status": "TestStatus.PASS",
+      "import_success": true,
+      "init_success": true,
+      "functionality_success": true,
+      "error_handling_success": true,
+      "integration_success": true,
+      "effectiveness_score": 90,
+      "efficiency_score": 100,
+      "fallback_resilience_score": 60,
+      "performance": {
+        "import_time": 8.344650268554688e-06,
+        "init_time": 0.0007083415985107422,
+        "execution_time": 0.0,
+        "memory_usage_mb": 0.0,
+        "memory_peak_mb": 0.0,
+        "cpu_usage_percent": 0.0
+      },
+      "errors": [],
+      "warnings": [
+        "Could not instantiate DocumentChunk: 4 validation errors for DocumentChunk\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ndocument_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nchunk_index\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate VectorSearchRequest: 1 validation error for VectorSearchRequest\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+        "Could not instantiate VectorSearchResult: 5 validation errors for VectorSearchResult\nchunk_id\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ncontent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nfilename\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nsimilarity_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nconfidence_score\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+      ],
+      "test_details": {
+        "has_init": true,
+        "has_classes": true,
+        "has_functions": true
+      }
+    }
+  ],
+  "critical_issues": [
+    "CRITICAL: unified_enhancement_coordinator failed to import",
+    "LOW EFFECTIVENESS: unified_enhancement_coordinator scored 0/100",
+    "CRITICAL: resource_optimization_manager failed to import",
+    "LOW EFFECTIVENESS: resource_optimization_manager scored 0/100",
+    "CRITICAL: agent_interoperability_framework failed to import",
+    "LOW EFFECTIVENESS: agent_interoperability_framework scored 0/100",
+    "CRITICAL: realtime_orchestration_monitor failed to import",
+    "LOW EFFECTIVENESS: realtime_orchestration_monitor scored 0/100",
+    "CRITICAL: unified_intelligence_coordinator failed to import",
+    "LOW EFFECTIVENESS: unified_intelligence_coordinator scored 0/100",
+    "CRITICAL: mcp_orchestrator failed to import",
+    "LOW EFFECTIVENESS: mcp_orchestrator scored 0/100",
+    "CRITICAL: tech_stack_expert failed to import",
+    "LOW EFFECTIVENESS: tech_stack_expert scored 0/100",
+    "CRITICAL: unified_enhancement_loader failed to import",
+    "LOW EFFECTIVENESS: unified_enhancement_loader scored 0/100",
+    "CRITICAL: github_analyzer failed to import",
+    "LOW EFFECTIVENESS: github_analyzer scored 0/100",
+    "CRITICAL: enhanced_repository_analyzer failed to import",
+    "LOW EFFECTIVENESS: enhanced_repository_analyzer scored 0/100",
+    "CRITICAL: dual_model_agent failed to import",
+    "LOW EFFECTIVENESS: dual_model_agent scored 0/100",
+    "CRITICAL: filesystem_agent failed to import",
+    "LOW EFFECTIVENESS: filesystem_agent scored 0/100",
+    "CRITICAL: tool_selector failed to import",
+    "LOW EFFECTIVENESS: tool_selector scored 0/100",
+    "CRITICAL: prompt_analyzer failed to import",
+    "LOW EFFECTIVENESS: prompt_analyzer scored 0/100",
+    "CRITICAL: learning_engine failed to import",
+    "LOW EFFECTIVENESS: learning_engine scored 0/100",
+    "CRITICAL: fabric_integrator failed to import",
+    "LOW EFFECTIVENESS: fabric_integrator scored 0/100",
+    "CRITICAL: confidence_scorer failed to import",
+    "LOW EFFECTIVENESS: confidence_scorer scored 0/100",
+    "CRITICAL: models failed to import",
+    "LOW EFFECTIVENESS: models scored 0/100",
+    "CRITICAL: r1_reasoning_interface failed to import",
+    "LOW EFFECTIVENESS: r1_reasoning_interface scored 0/100",
+    "CRITICAL: r1_reasoning_server failed to import",
+    "LOW EFFECTIVENESS: r1_reasoning_server scored 0/100"
+  ],
+  "recommendations": [
+    "System effectiveness is below acceptable threshold (70%). Focus on improving core functionality.",
+    "CORE modules have low pass rate (33.3%). Requires immediate attention.",
+    "BRAIN modules have low pass rate (25.0%). Requires immediate attention.",
+    "INTERFACE modules have low pass rate (0.0%). Requires immediate attention."
+  ],
+  "performance_summary": {
+    "avg_import_time": 0.0426521530518165,
+    "avg_init_time": 0.0002680833523090069,
+    "avg_memory_usage": 0.0,
+    "total_test_time": 2.7379767894744873
+  }
+}

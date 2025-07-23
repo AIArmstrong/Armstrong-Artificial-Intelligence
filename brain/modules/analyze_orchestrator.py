@@ -12,6 +12,7 @@ from typing import List, Dict, Any, Optional
 from enum import Enum
 import os
 from pathlib import Path
+import aiofiles
 
 class AnalysisFocus(Enum):
     QUALITY = "quality"
@@ -79,6 +80,63 @@ class AnalysisOrchestrator:
         self.checkpoint_file = Path("/mnt/c/Users/Brandon/AAI/brain/cache/analysis-checkpoint.json")
         self.batch_size = 2  # Process max 2 agents at a time
         self.target_path = "."  # Will be set during analysis
+        
+        # Supreme integration flags
+        self.supreme_mode = False
+        self.supreme_session_id = None
+    
+    async def setup_analysis(self, target_path: str, session_id: str = None) -> Dict[str, Any]:
+        """Setup analysis for Supreme integration - foundation phase"""
+        self.target_path = target_path
+        self.supreme_mode = True
+        self.supreme_session_id = session_id
+        
+        target = Path(target_path)
+        
+        # Basic setup and validation
+        setup_result = {
+            "target_path": str(target),
+            "target_exists": target.exists(),
+            "target_type": "directory" if target.is_dir() else "file",
+            "analysis_ready": False,
+            "estimated_complexity": "unknown",
+            "recommended_agents": []
+        }
+        
+        if not target.exists():
+            setup_result["error"] = f"Target path does not exist: {target_path}"
+            return setup_result
+        
+        try:
+            # Analyze target complexity
+            if target.is_dir():
+                py_files = list(target.rglob("*.py"))
+                js_files = list(target.rglob("*.js"))
+                total_files = len(py_files) + len(js_files)
+                
+                if total_files < 10:
+                    setup_result["estimated_complexity"] = "low"
+                    setup_result["recommended_agents"] = ["quality"]
+                elif total_files < 50:
+                    setup_result["estimated_complexity"] = "medium"
+                    setup_result["recommended_agents"] = ["quality", "security"]
+                else:
+                    setup_result["estimated_complexity"] = "high"
+                    setup_result["recommended_agents"] = ["quality", "security", "architecture", "performance"]
+                
+                setup_result["file_count"] = total_files
+                setup_result["python_files"] = len(py_files)
+                setup_result["javascript_files"] = len(js_files)
+            else:
+                setup_result["estimated_complexity"] = "single_file"
+                setup_result["recommended_agents"] = ["quality"]
+                
+            setup_result["analysis_ready"] = True
+            
+        except Exception as e:
+            setup_result["error"] = f"Setup analysis failed: {str(e)}"
+            
+        return setup_result
         
     def get_agent_tasks(self, focus: AnalysisFocus, depth: AnalysisDepth) -> List[AnalysisTask]:
         """Get the list of agent tasks based on focus and depth"""
@@ -242,8 +300,8 @@ class AnalysisOrchestrator:
             
             for file_path in python_files[:10]:  # Limit to first 10 files
                 try:
-                    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
-                        content = f.read()
+                    async with aiofiles.open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                        content = await f.read()
                         
                     # Basic quality checks
                     lines = content.split('\n')
@@ -297,8 +355,8 @@ class AnalysisOrchestrator:
             for pattern in ["password", "secret", "key", "token", "api_key"]:
                 for file_path in Path(self.target_path).rglob("*.py"):
                     try:
-                        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
-                            content = f.read()
+                        async with aiofiles.open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                            content = await f.read()
                             
                         if pattern in content.lower():
                             findings.append(f"{file_path}: Potential hardcoded {pattern} detected")
@@ -334,8 +392,8 @@ class AnalysisOrchestrator:
             # Look for performance issues
             for file_path in Path(self.target_path).rglob("*.py"):
                 try:
-                    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
-                        content = f.read()
+                    async with aiofiles.open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                        content = await f.read()
                         
                     # Check for potential performance issues
                     if "import *" in content:
@@ -461,7 +519,7 @@ class AnalysisOrchestrator:
                 
                 # Mark as in progress
                 task.status = "in_progress"
-                self.save_checkpoint([task])
+                await self.save_checkpoint([task])
                 
                 # Simulate task execution (replace with actual API call)
                 print(f"Executing: {task.agent_name} - {task.command}")
@@ -476,7 +534,7 @@ class AnalysisOrchestrator:
                 task.status = "completed"
                 
                 self.rate_limiter.record_success()
-                self.save_checkpoint([task])
+                await self.save_checkpoint([task])
                 return task
                 
             except Exception as e:
@@ -495,7 +553,7 @@ class AnalysisOrchestrator:
                     
                 if not self.rate_limiter.should_retry(task.retry_count):
                     task.status = "failed"
-                    self.save_checkpoint([task])
+                    await self.save_checkpoint([task])
                     break
                     
         return task
@@ -515,7 +573,7 @@ class AnalysisOrchestrator:
                 
         return tasks
     
-    def save_checkpoint(self, tasks: List[AnalysisTask]):
+    async def save_checkpoint(self, tasks: List[AnalysisTask]):
         """Save checkpoint for resume functionality"""
         checkpoint_data = {
             "timestamp": time.time(),
@@ -533,15 +591,15 @@ class AnalysisOrchestrator:
         }
         
         self.checkpoint_file.parent.mkdir(parents=True, exist_ok=True)
-        with open(self.checkpoint_file, 'w') as f:
-            json.dump(checkpoint_data, f, indent=2)
+        async with aiofiles.open(self.checkpoint_file, 'w') as f:
+            await f.write(json.dumps(checkpoint_data, indent=2))
     
-    def load_checkpoint(self) -> Optional[List[AnalysisTask]]:
+    async def load_checkpoint(self) -> Optional[List[AnalysisTask]]:
         """Load checkpoint if exists and return resumable tasks"""
         if self.checkpoint_file.exists():
             try:
-                with open(self.checkpoint_file, 'r') as f:
-                    data = json.load(f)
+                async with aiofiles.open(self.checkpoint_file, 'r') as f:
+                    data = json.loads(await f.read())
                     
                 # Reconstruct tasks from checkpoint
                 tasks = []
@@ -582,7 +640,7 @@ class AnalysisOrchestrator:
         # Check for resumable tasks
         tasks = None
         if resume:
-            tasks = self.load_checkpoint()
+            tasks = await self.load_checkpoint()
             if tasks:
                 print(f"Resuming analysis with {len(tasks)} remaining tasks")
         

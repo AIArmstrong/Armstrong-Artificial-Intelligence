@@ -1,0 +1,109 @@
+{
+  "repository_url": "https://github.com/penwyp/ClaudePreference.git",
+  "analysis_timestamp": "2025-07-19T10:58:08.328565",
+  "analysis_results": {
+    "structure": {
+      "success": true,
+      "execution_time": 0.05,
+      "data": {
+        "total_files": 89,
+        "file_types": {
+          ".md": 60,
+          ".sample": 14,
+          ".pack": 1,
+          ".idx": 1,
+          ".rev": 1
+        },
+        "directories": [
+          "commands",
+          ".git",
+          "docs",
+          ".git/objects",
+          ".git/refs",
+          ".git/info",
+          ".git/hooks",
+          ".git/branches",
+          ".git/logs",
+          "docs/en",
+          "docs/zh",
+          ".git/objects/info",
+          ".git/objects/pack",
+          ".git/refs/heads",
+          ".git/refs/remotes",
+          ".git/refs/tags",
+          ".git/logs/refs",
+          ".git/refs/remotes/origin",
+          ".git/logs/refs/heads",
+          ".git/logs/refs/remotes",
+          ".git/logs/refs/remotes/origin",
+          "docs/en/commands",
+          "docs/zh/commands"
+        ],
+        "main_languages": [],
+        "project_structure": {},
+        "key_files": [
+          "README.md",
+          "docs/README.md",
+          "docs/en/README.md",
+          "docs/zh/README.md"
+        ]
+      }
+    },
+    "security": {
+      "success": true,
+      "execution_time": 0.03,
+      "data": {
+        "potential_secrets": [],
+        "sensitive_files": [],
+        "security_patterns": [],
+        "dependency_files": [],
+        "security_score": 0.8
+      }
+    },
+    "quality": {
+      "success": true,
+      "execution_time": 0.04,
+      "data": {
+        "documentation_score": 1.0,
+        "test_coverage_estimate": 0.0,
+        "code_organization": {},
+        "readme_quality": {
+          "exists": true,
+          "length": 14196,
+          "sections": 180,
+          "has_installation": true,
+          "has_usage": true
+        },
+        "license_present": false
+      }
+    },
+    "integration": {
+      "success": true,
+      "execution_time": 0.02,
+      "data": {
+        "compatibility_score": 0.2,
+        "integration_opportunities": [],
+        "required_adaptations": [],
+        "feature_extraction": {
+          "detected_features": [
+            "Documentation-rich"
+          ],
+          "repository_type": "documentation",
+          "complexity_level": "medium"
+        }
+      }
+    }
+  },
+  "summary": {
+    "total_files": 89,
+    "main_languages": {},
+    "documentation_score": 1.0,
+    "has_license": false,
+    "compatibility_score": 0.2,
+    "integration_opportunities": []
+  },
+  "recommendations": [
+    "Well-documented - good candidate for workflow template extraction"
+  ],
+  "success": true
+}

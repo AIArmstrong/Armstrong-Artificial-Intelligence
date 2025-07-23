@@ -9,7 +9,11 @@ import json
 import sys
 from typing import Dict, Any, List, Optional
 from pathlib import Path
-from analyze_orchestrator import AnalysisOrchestrator, AnalysisFocus, AnalysisDepth
+try:
+    from analyze_orchestrator import AnalysisOrchestrator, AnalysisFocus, AnalysisDepth
+except ImportError:
+    # Fallback if analyze_orchestrator is not available
+    from brain.modules.analyze_orchestrator import AnalysisOrchestrator, AnalysisFocus, AnalysisDepth
 
 class AnalyzeCommandHandler:
     """Handles the /analyze command execution with proper Claude tool integration"""

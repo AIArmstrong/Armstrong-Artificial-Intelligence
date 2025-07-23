@@ -1,0 +1,730 @@
+"""
+Learning Engine for Tool Selection Enhancement
+
+Implements continuous learning from selection results to improve
+future tool and pattern recommendations with AAI compliance.
+"""
+import logging
+import json
+import asyncio
+from typing import List, Dict, Any, Optional, Tuple
+from datetime import datetime, timedelta
+from pathlib import Path
+
+from .models import (
+    PromptContext, FabricPattern, ToolMetadata, ContextAnalysis,
+    ToolSelection, SelectionResult, LearningRecord, SelectionMetrics
+)
+
+logger = logging.getLogger(__name__)
+
+
+class SelectionLearningEngine:
+    """
+    Continuous learning engine for improving tool selection.
+    
+    Features:
+    - Selection outcome tracking and analysis
+    - Pattern effectiveness learning
+    - Context detection improvement
+    - User feedback integration
+    - Performance metrics collection
+    - AAI-compliant confidence adjustments
+    """
+    
+    def __init__(self, 
+                 learning_data_dir: Optional[str] = None,
+                 enable_auto_learning: bool = True):
+        """Initialize learning engine"""
+        
+        self.learning_data_dir = Path(learning_data_dir or "./data/learning")
+        self.enable_auto_learning = enable_auto_learning
+        
+        # Learning data storage
+        self.learning_records = []
+        self.selection_metrics = SelectionMetrics()
+        
+        # Pattern effectiveness tracking
+        self.pattern_effectiveness = {}
+        self.tool_effectiveness = {}
+        self.context_accuracy = {}
+        
+        # Learning parameters
+        self.learning_params = {
+            "effectiveness_weight": 0.3,
+            "user_feedback_weight": 0.4,
+            "success_rate_weight": 0.3,
+            "learning_rate": 0.1,
+            "min_samples_for_learning": 3
+        }
+        
+        # Improvement suggestions
+        self.improvement_suggestions = {}
+        
+        # Ensure data directory exists
+        self.learning_data_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Load existing learning data
+        asyncio.create_task(self._load_learning_data())
+    
+    async def record_selection_outcome(self,
+                                     selection_result: SelectionResult,
+                                     execution_success: bool,
+                                     user_satisfaction: float,
+                                     execution_time_actual: int,
+                                     user_feedback: Optional[Dict[str, Any]] = None) -> str:
+        """
+        Record outcome of a tool selection for learning.
+        
+        Args:
+            selection_result: Original selection result
+            execution_success: Whether execution was successful
+            user_satisfaction: User satisfaction score (0.0-1.0)
+            execution_time_actual: Actual execution time in minutes
+            user_feedback: Optional user feedback data
+            
+        Returns:
+            Learning record ID
+        """
+        try:
+            # Create learning record
+            record_id = f"lr_{int(datetime.now().timestamp())}"
+            
+            learning_record = LearningRecord(
+                selection_id=record_id,
+                prompt_context=selection_result.context_analysis.detected_context,
+                tools_selected=[t.name for t in selection_result.tool_selection.selected_tools],
+                patterns_selected=[p.name for p in selection_result.tool_selection.selected_patterns],
+                execution_success=execution_success,
+                user_satisfaction=user_satisfaction,
+                execution_time_actual=execution_time_actual,
+                confidence_accuracy=self._calculate_confidence_accuracy(
+                    selection_result.tool_selection.confidence_score,
+                    execution_success,
+                    user_satisfaction
+                ),
+                improvement_suggestions=await self._generate_improvement_suggestions(
+                    selection_result, execution_success, user_satisfaction
+                )
+            )
+            
+            # Store learning record
+            self.learning_records.append(learning_record)
+            
+            # Update metrics
+            await self._update_selection_metrics(learning_record)
+            
+            # Update effectiveness tracking
+            await self._update_effectiveness_tracking(learning_record)
+            
+            # Update context accuracy
+            await self._update_context_accuracy(selection_result, execution_success, user_satisfaction)
+            
+            # Trigger learning if enabled
+            if self.enable_auto_learning:
+                await self._trigger_learning_updates(learning_record)
+            
+            # Save learning data
+            await self._save_learning_data()
+            
+            logger.info(f"Recorded selection outcome: {record_id}, success: {execution_success}, satisfaction: {user_satisfaction:.1%}")
+            
+            return record_id
+            
+        except Exception as e:
+            logger.error(f"Failed to record selection outcome: {e}")
+            return "error"
+    
+    async def get_pattern_effectiveness(self, pattern_name: str) -> float:
+        """Get learned effectiveness score for pattern"""
+        
+        if pattern_name in self.pattern_effectiveness:
+            records = self.pattern_effectiveness[pattern_name]
+            if len(records) >= self.learning_params["min_samples_for_learning"]:
+                # Calculate weighted effectiveness
+                effectiveness = sum(
+                    r["user_satisfaction"] * self.learning_params["user_feedback_weight"] +
+                    (1.0 if r["execution_success"] else 0.0) * self.learning_params["success_rate_weight"]
+                    for r in records
+                ) / len(records)
+                
+                return min(0.95, max(0.5, effectiveness))
+        
+        return 0.75  # Default effectiveness
+    
+    async def get_tool_effectiveness(self, tool_name: str) -> float:
+        """Get learned effectiveness score for tool"""
+        
+        if tool_name in self.tool_effectiveness:
+            records = self.tool_effectiveness[tool_name]
+            if len(records) >= self.learning_params["min_samples_for_learning"]:
+                # Calculate weighted effectiveness
+                effectiveness = sum(
+                    r["user_satisfaction"] * self.learning_params["user_feedback_weight"] +
+                    (1.0 if r["execution_success"] else 0.0) * self.learning_params["success_rate_weight"]
+                    for r in records
+                ) / len(records)
+                
+                return min(0.95, max(0.5, effectiveness))
+        
+        return 0.75  # Default effectiveness
+    
+    async def get_context_accuracy(self, context: PromptContext) -> float:
+        """Get learned accuracy for context detection"""
+        
+        if context in self.context_accuracy:
+            records = self.context_accuracy[context]
+            if len(records) >= self.learning_params["min_samples_for_learning"]:
+                # Calculate average accuracy
+                accuracy = sum(r["accuracy"] for r in records) / len(records)
+                return min(0.95, max(0.7, accuracy))
+        
+        return 0.80  # Default accuracy
+    
+    async def get_selection_recommendations(self, 
+                                          context: PromptContext,
+                                          complexity_indicators: List[str]) -> Dict[str, Any]:
+        """Get recommendations based on learned patterns"""
+        
+        recommendations = {
+            "preferred_patterns": [],
+            "preferred_tools": [],
+            "avoid_patterns": [],
+            "avoid_tools": [],
+            "confidence_adjustments": {},
+            "execution_time_estimates": {}
+        }
+        
+        try:
+            # Find relevant learning records
+            relevant_records = [
+                record for record in self.learning_records
+                if record.prompt_context == context
+            ]
+            
+            if len(relevant_records) < 2:
+                return recommendations
+            
+            # Analyze successful selections
+            successful_records = [r for r in relevant_records if r.execution_success and r.user_satisfaction >= 0.7]
+            unsuccessful_records = [r for r in relevant_records if not r.execution_success or r.user_satisfaction < 0.5]
+            
+            # Extract preferred patterns
+            if successful_records:
+                pattern_counts = {}
+                for record in successful_records:
+                    for pattern in record.patterns_selected:
+                        pattern_counts[pattern] = pattern_counts.get(pattern, 0) + 1
+                
+                # Sort by frequency and success rate
+                preferred_patterns = sorted(
+                    pattern_counts.items(), 
+                    key=lambda x: x[1], 
+                    reverse=True
+                )[:3]
+                
+                recommendations["preferred_patterns"] = [p[0] for p in preferred_patterns]
+            
+            # Extract preferred tools
+            if successful_records:
+                tool_counts = {}
+                for record in successful_records:
+                    for tool in record.tools_selected:
+                        tool_counts[tool] = tool_counts.get(tool, 0) + 1
+                
+                preferred_tools = sorted(
+                    tool_counts.items(), 
+                    key=lambda x: x[1], 
+                    reverse=True
+                )[:3]
+                
+                recommendations["preferred_tools"] = [t[0] for t in preferred_tools]
+            
+            # Extract patterns/tools to avoid
+            if unsuccessful_records:
+                avoid_pattern_counts = {}
+                avoid_tool_counts = {}
+                
+                for record in unsuccessful_records:
+                    for pattern in record.patterns_selected:
+                        avoid_pattern_counts[pattern] = avoid_pattern_counts.get(pattern, 0) + 1
+                    for tool in record.tools_selected:
+                        avoid_tool_counts[tool] = avoid_tool_counts.get(tool, 0) + 1
+                
+                # Only suggest avoidance if pattern/tool appears frequently in failures
+                recommendations["avoid_patterns"] = [
+                    p for p, count in avoid_pattern_counts.items() 
+                    if count >= 2 and p not in recommendations["preferred_patterns"]
+                ]
+                
+                recommendations["avoid_tools"] = [
+                    t for t, count in avoid_tool_counts.items() 
+                    if count >= 2 and t not in recommendations["preferred_tools"]
+                ]
+            
+            # Generate execution time estimates
+            if successful_records:
+                avg_time = sum(r.execution_time_actual for r in successful_records) / len(successful_records)
+                recommendations["execution_time_estimates"]["average"] = avg_time
+                
+                # Adjust for complexity
+                if len(complexity_indicators) > 3:
+                    recommendations["execution_time_estimates"]["adjusted"] = avg_time * 1.5
+                elif len(complexity_indicators) < 2:
+                    recommendations["execution_time_estimates"]["adjusted"] = avg_time * 0.8
+                else:
+                    recommendations["execution_time_estimates"]["adjusted"] = avg_time
+            
+            return recommendations
+            
+        except Exception as e:
+            logger.error(f"Failed to generate recommendations: {e}")
+            return recommendations
+    
+    async def analyze_learning_trends(self) -> Dict[str, Any]:
+        """Analyze learning trends and patterns"""
+        
+        analysis = {
+            "total_records": len(self.learning_records),
+            "success_rate_trend": [],
+            "satisfaction_trend": [],
+            "context_performance": {},
+            "pattern_performance": {},
+            "tool_performance": {},
+            "improvement_opportunities": []
+        }
+        
+        try:
+            if len(self.learning_records) < 5:
+                return analysis
+            
+            # Sort records by date
+            sorted_records = sorted(self.learning_records, key=lambda r: r.created_at)
+            
+            # Calculate trends (last 10 records vs previous 10)
+            recent_records = sorted_records[-10:]
+            previous_records = sorted_records[-20:-10] if len(sorted_records) >= 20 else []
+            
+            # Success rate trend
+            recent_success = sum(1 for r in recent_records if r.execution_success) / len(recent_records)
+            analysis["success_rate_trend"].append({"period": "recent", "rate": recent_success})
+            
+            if previous_records:
+                previous_success = sum(1 for r in previous_records if r.execution_success) / len(previous_records)
+                analysis["success_rate_trend"].append({"period": "previous", "rate": previous_success})
+            
+            # Satisfaction trend
+            recent_satisfaction = sum(r.user_satisfaction for r in recent_records) / len(recent_records)
+            analysis["satisfaction_trend"].append({"period": "recent", "satisfaction": recent_satisfaction})
+            
+            if previous_records:
+                previous_satisfaction = sum(r.user_satisfaction for r in previous_records) / len(previous_records)
+                analysis["satisfaction_trend"].append({"period": "previous", "satisfaction": previous_satisfaction})
+            
+            # Context performance analysis
+            context_stats = {}
+            for record in sorted_records:
+                context = record.prompt_context
+                if context not in context_stats:
+                    context_stats[context] = {"success": 0, "total": 0, "satisfaction": []}
+                
+                context_stats[context]["total"] += 1
+                if record.execution_success:
+                    context_stats[context]["success"] += 1
+                context_stats[context]["satisfaction"].append(record.user_satisfaction)
+            
+            for context, stats in context_stats.items():
+                analysis["context_performance"][context.value] = {
+                    "success_rate": stats["success"] / stats["total"],
+                    "avg_satisfaction": sum(stats["satisfaction"]) / len(stats["satisfaction"]),
+                    "total_selections": stats["total"]
+                }
+            
+            # Pattern performance analysis
+            pattern_stats = {}
+            for record in sorted_records:
+                for pattern in record.patterns_selected:
+                    if pattern not in pattern_stats:
+                        pattern_stats[pattern] = {"success": 0, "total": 0, "satisfaction": []}
+                    
+                    pattern_stats[pattern]["total"] += 1
+                    if record.execution_success:
+                        pattern_stats[pattern]["success"] += 1
+                    pattern_stats[pattern]["satisfaction"].append(record.user_satisfaction)
+            
+            for pattern, stats in pattern_stats.items():
+                if stats["total"] >= 3:  # Only include patterns with enough data
+                    analysis["pattern_performance"][pattern] = {
+                        "success_rate": stats["success"] / stats["total"],
+                        "avg_satisfaction": sum(stats["satisfaction"]) / len(stats["satisfaction"]),
+                        "total_uses": stats["total"]
+                    }
+            
+            # Tool performance analysis
+            tool_stats = {}
+            for record in sorted_records:
+                for tool in record.tools_selected:
+                    if tool not in tool_stats:
+                        tool_stats[tool] = {"success": 0, "total": 0, "satisfaction": []}
+                    
+                    tool_stats[tool]["total"] += 1
+                    if record.execution_success:
+                        tool_stats[tool]["success"] += 1
+                    tool_stats[tool]["satisfaction"].append(record.user_satisfaction)
+            
+            for tool, stats in tool_stats.items():
+                if stats["total"] >= 3:  # Only include tools with enough data
+                    analysis["tool_performance"][tool] = {
+                        "success_rate": stats["success"] / stats["total"],
+                        "avg_satisfaction": sum(stats["satisfaction"]) / len(stats["satisfaction"]),
+                        "total_uses": stats["total"]
+                    }
+            
+            # Identify improvement opportunities
+            
+            # Low performing patterns
+            low_patterns = [
+                pattern for pattern, perf in analysis["pattern_performance"].items()
+                if perf["success_rate"] < 0.7 or perf["avg_satisfaction"] < 0.6
+            ]
+            if low_patterns:
+                analysis["improvement_opportunities"].append({
+                    "type": "pattern_performance",
+                    "description": f"Patterns with low performance: {', '.join(low_patterns)}"
+                })
+            
+            # Low performing tools
+            low_tools = [
+                tool for tool, perf in analysis["tool_performance"].items()
+                if perf["success_rate"] < 0.7 or perf["avg_satisfaction"] < 0.6
+            ]
+            if low_tools:
+                analysis["improvement_opportunities"].append({
+                    "type": "tool_performance",
+                    "description": f"Tools with low performance: {', '.join(low_tools)}"
+                })
+            
+            # Context accuracy issues
+            low_contexts = [
+                context for context, perf in analysis["context_performance"].items()
+                if perf["success_rate"] < 0.8
+            ]
+            if low_contexts:
+                analysis["improvement_opportunities"].append({
+                    "type": "context_accuracy",
+                    "description": f"Contexts with low success: {', '.join(low_contexts)}"
+                })
+            
+            return analysis
+            
+        except Exception as e:
+            logger.error(f"Failed to analyze learning trends: {e}")
+            return analysis
+    
+    def _calculate_confidence_accuracy(self, 
+                                     predicted_confidence: float,
+                                     execution_success: bool,
+                                     user_satisfaction: float) -> float:
+        """Calculate how accurate the confidence prediction was"""
+        
+        # Calculate actual success score
+        actual_success = (0.6 if execution_success else 0.0) + (user_satisfaction * 0.4)
+        
+        # Calculate accuracy as inverse of prediction error
+        error = abs(predicted_confidence - actual_success)
+        accuracy = max(0.0, 1.0 - (error * 2))  # Scale error to accuracy
+        
+        return accuracy
+    
+    async def _generate_improvement_suggestions(self,
+                                              selection_result: SelectionResult,
+                                              execution_success: bool,
+                                              user_satisfaction: float) -> List[str]:
+        """Generate improvement suggestions based on outcome"""
+        
+        suggestions = []
+        
+        # Low success rate suggestions
+        if not execution_success:
+            suggestions.append("Consider alternative tool combinations for better execution success")
+            
+            if len(selection_result.tool_selection.selected_patterns) > 2:
+                suggestions.append("Reduce pattern complexity for more reliable execution")
+        
+        # Low satisfaction suggestions
+        if user_satisfaction < 0.6:
+            suggestions.append("Improve context detection accuracy for better user satisfaction")
+            suggestions.append("Consider user feedback integration for personalized selections")
+        
+        # Confidence calibration suggestions
+        confidence = selection_result.tool_selection.confidence_score
+        actual_success = (0.6 if execution_success else 0.0) + (user_satisfaction * 0.4)
+        
+        if abs(confidence - actual_success) > 0.2:
+            if confidence > actual_success:
+                suggestions.append("Reduce confidence scoring for similar selections")
+            else:
+                suggestions.append("Increase confidence scoring for similar selections")
+        
+        # Execution time suggestions
+        estimated_time = selection_result.tool_selection.estimated_time_minutes
+        if hasattr(selection_result, 'execution_time_actual'):
+            actual_time = getattr(selection_result, 'execution_time_actual', estimated_time)
+            
+            if actual_time > estimated_time * 1.5:
+                suggestions.append("Improve execution time estimation accuracy")
+        
+        return suggestions
+    
+    async def _update_selection_metrics(self, learning_record: LearningRecord):
+        """Update overall selection metrics"""
+        
+        self.selection_metrics.total_selections += 1
+        
+        if learning_record.execution_success:
+            self.selection_metrics.successful_selections += 1
+        
+        # Update average confidence (would need to track this)
+        # For now, maintain the current average
+        
+        # Update user satisfaction average
+        total = self.selection_metrics.total_selections
+        current_avg = self.selection_metrics.user_satisfaction_avg
+        new_satisfaction = learning_record.user_satisfaction
+        
+        self.selection_metrics.user_satisfaction_avg = (
+            (current_avg * (total - 1) + new_satisfaction) / total
+        )
+        
+        # Calculate improvement rate
+        if total >= 10:
+            recent_records = self.learning_records[-10:]
+            recent_success = sum(1 for r in recent_records if r.execution_success) / len(recent_records)
+            
+            if total >= 20:
+                previous_records = self.learning_records[-20:-10]
+                previous_success = sum(1 for r in previous_records if r.execution_success) / len(previous_records)
+                self.selection_metrics.improvement_rate = recent_success - previous_success
+        
+        self.selection_metrics.last_updated = datetime.now()
+    
+    async def _update_effectiveness_tracking(self, learning_record: LearningRecord):
+        """Update pattern and tool effectiveness tracking"""
+        
+        # Update pattern effectiveness
+        for pattern_name in learning_record.patterns_selected:
+            if pattern_name not in self.pattern_effectiveness:
+                self.pattern_effectiveness[pattern_name] = []
+            
+            self.pattern_effectiveness[pattern_name].append({
+                "execution_success": learning_record.execution_success,
+                "user_satisfaction": learning_record.user_satisfaction,
+                "timestamp": learning_record.created_at
+            })
+            
+            # Keep only recent data (last 20 records)
+            if len(self.pattern_effectiveness[pattern_name]) > 20:
+                self.pattern_effectiveness[pattern_name] = self.pattern_effectiveness[pattern_name][-20:]
+        
+        # Update tool effectiveness
+        for tool_name in learning_record.tools_selected:
+            if tool_name not in self.tool_effectiveness:
+                self.tool_effectiveness[tool_name] = []
+            
+            self.tool_effectiveness[tool_name].append({
+                "execution_success": learning_record.execution_success,
+                "user_satisfaction": learning_record.user_satisfaction,
+                "timestamp": learning_record.created_at
+            })
+            
+            # Keep only recent data
+            if len(self.tool_effectiveness[tool_name]) > 20:
+                self.tool_effectiveness[tool_name] = self.tool_effectiveness[tool_name][-20:]
+    
+    async def _update_context_accuracy(self,
+                                     selection_result: SelectionResult,
+                                     execution_success: bool,
+                                     user_satisfaction: float):
+        """Update context detection accuracy tracking"""
+        
+        context = selection_result.context_analysis.detected_context
+        
+        if context not in self.context_accuracy:
+            self.context_accuracy[context] = []
+        
+        # Calculate accuracy based on execution success and user satisfaction
+        accuracy = selection_result.context_analysis.confidence_score * (
+            0.4 + (0.3 if execution_success else 0.0) + (user_satisfaction * 0.3)
+        )
+        
+        self.context_accuracy[context].append({
+            "accuracy": accuracy,
+            "timestamp": datetime.now()
+        })
+        
+        # Keep only recent data
+        if len(self.context_accuracy[context]) > 15:
+            self.context_accuracy[context] = self.context_accuracy[context][-15:]
+    
+    async def _trigger_learning_updates(self, learning_record: LearningRecord):
+        """Trigger learning-based updates to system components"""
+        
+        # This would integrate with other components to apply learned improvements
+        # For now, just log the learning trigger
+        
+        logger.info(f"Learning triggered for context: {learning_record.prompt_context.value}")
+        
+        # Could trigger:
+        # - Pattern effectiveness updates in FabricIntegrator
+        # - Tool reliability updates in ToolSelector
+        # - Confidence scoring adjustments in ConfidenceScorer
+        # - Context detection improvements in PromptAnalyzer
+    
+    async def _save_learning_data(self):
+        """Save learning data to persistent storage"""
+        
+        try:
+            # Save learning records
+            records_file = self.learning_data_dir / "learning_records.json"
+            records_data = [record.model_dump() for record in self.learning_records[-100:]]  # Keep last 100
+            
+            with open(records_file, 'w') as f:
+                json.dump({
+                    "records": records_data,
+                    "last_updated": datetime.now().isoformat()
+                }, f, indent=2)
+            
+            # Save metrics
+            metrics_file = self.learning_data_dir / "selection_metrics.json"
+            with open(metrics_file, 'w') as f:
+                json.dump(self.selection_metrics.model_dump(), f, indent=2)
+            
+            # Save effectiveness data
+            effectiveness_file = self.learning_data_dir / "effectiveness_data.json"
+            with open(effectiveness_file, 'w') as f:
+                json.dump({
+                    "pattern_effectiveness": self.pattern_effectiveness,
+                    "tool_effectiveness": self.tool_effectiveness,
+                    "context_accuracy": self.context_accuracy
+                }, f, indent=2)
+            
+        except Exception as e:
+            logger.warning(f"Failed to save learning data: {e}")
+    
+    async def _load_learning_data(self):
+        """Load existing learning data from storage"""
+        
+        try:
+            # Load learning records
+            records_file = self.learning_data_dir / "learning_records.json"
+            if records_file.exists():
+                with open(records_file, 'r') as f:
+                    data = json.load(f)
+                    self.learning_records = [
+                        LearningRecord(**record_data) 
+                        for record_data in data.get("records", [])
+                    ]
+            
+            # Load metrics
+            metrics_file = self.learning_data_dir / "selection_metrics.json"
+            if metrics_file.exists():
+                with open(metrics_file, 'r') as f:
+                    metrics_data = json.load(f)
+                    self.selection_metrics = SelectionMetrics(**metrics_data)
+            
+            # Load effectiveness data
+            effectiveness_file = self.learning_data_dir / "effectiveness_data.json"
+            if effectiveness_file.exists():
+                with open(effectiveness_file, 'r') as f:
+                    data = json.load(f)
+                    self.pattern_effectiveness = data.get("pattern_effectiveness", {})
+                    self.tool_effectiveness = data.get("tool_effectiveness", {})
+                    self.context_accuracy = data.get("context_accuracy", {})
+            
+            logger.info(f"Loaded {len(self.learning_records)} learning records")
+            
+        except Exception as e:
+            logger.warning(f"Failed to load learning data: {e}")
+    
+    def get_learning_status(self) -> Dict[str, Any]:
+        """Get learning engine status and statistics"""
+        
+        return {
+            "total_records": len(self.learning_records),
+            "metrics": self.selection_metrics.model_dump(),
+            "pattern_tracking": len(self.pattern_effectiveness),
+            "tool_tracking": len(self.tool_effectiveness),
+            "context_tracking": len(self.context_accuracy),
+            "auto_learning_enabled": self.enable_auto_learning,
+            "data_directory": str(self.learning_data_dir),
+            "ready": True
+        }
+
+
+async def test_learning_engine():
+    """Test learning engine functionality"""
+    
+    engine = SelectionLearningEngine()
+    
+    print("🧪 Testing Learning Engine")
+    print("=" * 27)
+    
+    # Check learning status
+    status = engine.get_learning_status()
+    print(f"Total records: {status['total_records']}")
+    print(f"Pattern tracking: {status['pattern_tracking']}")
+    print(f"Tool tracking: {status['tool_tracking']}")
+    print(f"Auto learning: {status['auto_learning_enabled']}")
+    print(f"Ready: {status['ready']}")
+    
+    # Create test selection result
+    from .models import ContextAnalysis, ToolSelection, SelectionResult, PromptContext
+    
+    context_analysis = ContextAnalysis(
+        original_prompt="Analyze this business proposal",
+        prompt_snippet="analyze this business proposal",
+        detected_context=PromptContext.ANALYSIS,
+        confidence_score=0.85
+    )
+    
+    tool_selection = ToolSelection(
+        prompt_snippet="analyze this business proposal",
+        detected_context=PromptContext.ANALYSIS,
+        confidence_score=0.85,
+        reasoning="Selected analysis tools based on context"
+    )
+    
+    selection_result = SelectionResult(
+        context_analysis=context_analysis,
+        tool_selection=tool_selection,
+        session_id="test_session"
+    )
+    
+    # Test recording outcome
+    print(f"\n📊 Testing outcome recording...")
+    
+    record_id = await engine.record_selection_outcome(
+        selection_result=selection_result,
+        execution_success=True,
+        user_satisfaction=0.85,
+        execution_time_actual=3
+    )
+    
+    print(f"Recorded outcome: {record_id}")
+    
+    # Test effectiveness queries
+    pattern_eff = await engine.get_pattern_effectiveness("analyze_claims")
+    tool_eff = await engine.get_tool_effectiveness("claude_analysis")
+    context_acc = await engine.get_context_accuracy(PromptContext.ANALYSIS)
+    
+    print(f"Pattern effectiveness: {pattern_eff:.1%}")
+    print(f"Tool effectiveness: {tool_eff:.1%}")
+    print(f"Context accuracy: {context_acc:.1%}")
+    
+    print(f"\n✅ Learning Engine Testing Complete")
+    print(f"Continuous learning system working")
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(test_learning_engine())

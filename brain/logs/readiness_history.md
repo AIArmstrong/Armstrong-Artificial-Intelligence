@@ -92,3 +92,66 @@ Based on historical patterns:
 - **Time to Resolution**: 0 minutes
 - **Category Scores**: Infrastructure: 100%, Credentials: 100%, Dependencies: 0%, Environment: 100%
 
+
+## [2025-07-19 12:13:38] PRP: enhanced-repository-analyzer
+- **Readiness**: 24% (🛑 HALT - Fix critical blockers first)
+- **Critical Failures**: Credential: OPENROUTER_API_KEY, Credential: GITHUB_TOKEN
+- **Time to Resolution**: 5m
+- **Category Scores**: Infrastructure: 0%, Credentials: 25%, Dependencies: 25%, Environment: 80%
+
+
+## [2025-07-19 12:28:27] PRP: enhanced-repository-analyzer
+- **Readiness**: 24% (🛑 HALT - Fix critical blockers first)
+- **Critical Failures**: Credential: OPENROUTER_API_KEY, Credential: GITHUB_TOKEN
+- **Time to Resolution**: 5m
+- **Category Scores**: Infrastructure: 0%, Credentials: 25%, Dependencies: 25%, Environment: 80%
+
+
+## [2025-07-19 12:34:12] PRP: enhanced-repository-analyzer
+- **Readiness**: 35% (🛑 HALT - Fix critical blockers first)
+- **Critical Failures**: Credential: OPENROUTER_API_KEY, Credential: GITHUB_TOKEN
+- **Time to Resolution**: 5m
+- **Category Scores**: Infrastructure: 0%, Credentials: 25%, Dependencies: 77%, Environment: 80%
+
+
+## [2025-07-19 12:35:06] PRP: enhanced-repository-analyzer
+- **Readiness**: 28% (🛑 HALT - Fix critical blockers first)
+- **Critical Failures**: Credential: OPENROUTER_API_KEY, Credential: GITHUB_TOKEN
+- **Time to Resolution**: 0 minutes
+- **Category Scores**: Infrastructure: 0%, Credentials: 0%, Dependencies: 77%, Environment: 80%
+
+
+## [2025-07-20 21:28:29] PRP: supreme-generate-prp-enhancement
+- **Readiness**: 22% (🛑 HALT - Fix critical blockers first)
+- **Critical Failures**: Credential: OPENROUTER_API_KEY, Credential: ANTHROPIC_API_KEY
+- **Time to Resolution**: 5m
+- **Category Scores**: Infrastructure: 0%, Credentials: 25%, Dependencies: 0%, Environment: 100%
+
+
+## [2025-07-20 21:28:37] PRP: supreme-improve-command-implementation
+- **Readiness**: 27% (🛑 HALT - Fix critical blockers first)
+- **Critical Failures**: Credential: OPENROUTER_API_KEY
+- **Time to Resolution**: 0 minutes
+- **Category Scores**: Infrastructure: 0%, Credentials: 50%, Dependencies: 0%, Environment: 80%
+
+
+## [2025-07-20 21:28:43] PRP: supreme-analyze-command-implementation
+- **Readiness**: 22% (🛑 HALT - Fix critical blockers first)
+- **Critical Failures**: Credential: OPENROUTER_API_KEY, Credential: ANTHROPIC_API_KEY
+- **Time to Resolution**: 5m
+- **Category Scores**: Infrastructure: 0%, Credentials: 25%, Dependencies: 0%, Environment: 100%
+
+
+## [2025-07-20 21:43:19] PRP: supreme-generate-prp-enhancement
+- **Readiness**: 22% (🛑 HALT - Fix critical blockers first)
+- **Critical Failures**: Credential: OPENROUTER_API_KEY, Credential: ANTHROPIC_API_KEY
+- **Time to Resolution**: 5m
+- **Category Scores**: Infrastructure: 0%, Credentials: 25%, Dependencies: 0%, Environment: 100%
+
+
+## [2025-07-22 11:34:24] PRP: cok-cantalar-ecommerce-platform
+- **Readiness**: 74% (⚠️  PARTIAL IMPLEMENTATION - Critical path only)
+- **Critical Failures**: Credential: DATABASE_URL, Credential: SUPABASE_URL
+- **Time to Resolution**: 4m
+- **Category Scores**: Infrastructure: 100%, Credentials: 60%, Dependencies: 50%, Environment: 75%
+

@@ -13,6 +13,16 @@ from datetime import datetime
 import re
 import sqlite3
 from dataclasses import dataclass
+import logging
+
+# Jina research automation
+try:
+    from ingestion.r1_reasoning.jina_research_ingester import JinaResearchIngester
+    JINA_RESEARCH_AVAILABLE = True
+except ImportError:
+    JINA_RESEARCH_AVAILABLE = False
+    
+logger = logging.getLogger(__name__)
 
 @dataclass
 class ResearchMatch:

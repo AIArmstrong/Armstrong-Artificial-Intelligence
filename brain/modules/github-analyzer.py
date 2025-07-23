@@ -338,13 +338,13 @@ class CodeStructureAnalyzer:
 class SecurityAuditAnalyzer:
     """Security vulnerability analysis"""
     
-    def analyze_security(self, repo_path: Path) -> Tuple[List[SecurityFinding], float]:
+    async def analyze_security(self, repo_path: Path) -> Tuple[List[SecurityFinding], float]:
         """Analyze repository for security issues"""
         findings = []
         
         # Use bandit for Python security analysis
         try:
-            findings.extend(self._run_bandit(repo_path))
+            findings.extend(await self._run_bandit(repo_path))
         except Exception as e:
             logging.error(f"Bandit analysis failed: {e}")
         
@@ -353,7 +353,7 @@ class SecurityAuditAnalyzer:
         
         return findings, security_score
     
-    def _run_bandit(self, repo_path: Path) -> List[SecurityFinding]:
+    async def _run_bandit(self, repo_path: Path) -> List[SecurityFinding]:
         """Run bandit security scanner with safe subprocess execution"""
         findings = []
         
@@ -361,27 +361,38 @@ class SecurityAuditAnalyzer:
             # Sanitize path to prevent command injection
             safe_path = shlex.quote(str(repo_path))
             
-            result = subprocess.run([
-                'bandit', '-r', safe_path, '-f', 'json'
-            ], capture_output=True, text=True, timeout=60)
+            proc = await asyncio.create_subprocess_exec(
+                'bandit', '-r', safe_path, '-f', 'json',
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE
+            )
             
-            if result.returncode == 0 and result.stdout:
-                bandit_results = json.loads(result.stdout)
-                
-                for result_item in bandit_results.get('results', []):
-                    findings.append(SecurityFinding(
-                        severity=result_item['issue_severity'].lower(),
-                        type=result_item['test_name'],
-                        description=result_item['issue_text'],
-                        file_path=result_item['filename'],
-                        line_number=result_item['line_number'],
-                        remediation=result_item.get('more_info', '')
-                    ))
-            elif result.stderr:
-                logging.warning(f"Bandit stderr: {result.stderr}")
-                
-        except subprocess.TimeoutExpired:
-            logging.error(f"Bandit scan timed out for {repo_path}")
+            try:
+                stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=60)
+                if proc.returncode == 0 and stdout:
+                    bandit_results = json.loads(stdout.decode('utf-8'))
+                    
+                    for result_item in bandit_results.get('results', []):
+                        findings.append(SecurityFinding(
+                            severity=result_item['issue_severity'].lower(),
+                            type=result_item['test_name'],
+                            description=result_item['issue_text'],
+                            file_path=result_item['filename'],
+                            line_number=result_item['line_number'],
+                            remediation=result_item.get('more_info', '')
+                        ))
+                elif stderr:
+                    logging.warning(f"Bandit stderr: {stderr.decode('utf-8')}")
+            except asyncio.TimeoutError:
+                logging.error(f"Bandit scan timed out for {repo_path}")
+                try:
+                    proc.terminate()
+                    await proc.wait()
+                except (ProcessLookupError, asyncio.CancelledError):
+                    # Process already terminated or task cancelled
+                    pass
+                except Exception as e:
+                    logging.warning(f"Failed to terminate bandit process: {e}")
         except json.JSONDecodeError as e:
             logging.error(f"Failed to parse Bandit JSON output: {e}")
         except Exception as e:
@@ -532,7 +543,7 @@ class GitHubRepositoryAnalyzer:
         features = self.structure_analyzer.analyze_structure(repo_path)
         
         # 3. Security analysis
-        security_findings, security_score = self.security_analyzer.analyze_security(repo_path)
+        security_findings, security_score = await self.security_analyzer.analyze_security(repo_path)
         
         # 4. Compatibility scoring
         compatibility_scores = await self._calculate_compatibility_scores(features)
@@ -575,7 +586,8 @@ class GitHubRepositoryAnalyzer:
                 try:
                     with open(file_path, 'r', encoding='utf-8') as f:
                         total_lines += len(f.readlines())
-                except:
+                except (UnicodeDecodeError, IOError, OSError) as e:
+                    logging.debug(f"Could not read file {file_path} for line counting: {e}")
                     pass
         
         return {
@@ -624,7 +636,8 @@ class GitHubRepositoryAnalyzer:
                             return 'GPL'
                         else:
                             return 'Custom'
-                except:
+                except (UnicodeDecodeError, IOError, OSError) as e:
+                    logging.debug(f"Could not read license file {license_path}: {e}")
                     pass
         
         return None
@@ -666,7 +679,8 @@ class GitHubRepositoryAnalyzer:
                     content = f.read()
                     if '"""' in content or "'''" in content:
                         documented_files += 1
-            except:
+            except (UnicodeDecodeError, IOError, OSError) as e:
+                logging.debug(f"Could not read Python file {py_file} for documentation check: {e}")
                 pass
         
         if python_files:

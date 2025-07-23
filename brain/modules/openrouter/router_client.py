@@ -74,11 +74,21 @@ class OpenRouterClient:
             "cost": cost
         })
         
-        # Save to file for persistence
+        # Save to file for persistence (async version will be used when called from async context)
         cost_file = "brain/logs/openrouter_costs.json"
         try:
-            with open(cost_file, 'w') as f:
-                json.dump(self.cost_log, f, indent=2, default=str)
+            # Use asyncio.to_thread for non-blocking file I/O when called from async context
+            import asyncio
+            if asyncio.current_task():
+                # We're in an async context, use thread pool
+                def _sync_write():
+                    with open(cost_file, 'w') as f:
+                        json.dump(self.cost_log, f, indent=2, default=str)
+                asyncio.create_task(asyncio.to_thread(_sync_write))
+            else:
+                # Synchronous context, use direct file I/O
+                with open(cost_file, 'w') as f:
+                    json.dump(self.cost_log, f, indent=2, default=str)
         except Exception as e:
             print(f"Cost logging error: {e}")
     

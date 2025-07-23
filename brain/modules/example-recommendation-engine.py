@@ -16,8 +16,8 @@ from typing import List, Dict, Optional, Tuple
 sys.path.append(str(Path(__file__).parent / "openrouter"))
 
 try:
-    from openrouter.embeddings import EmbeddingGenerator
-    from openrouter.router_client import OpenRouterClient
+    from .openrouter.embeddings import EmbeddingsEngine
+    from .openrouter.router_client import OpenRouterClient
 except ImportError:
     print("OpenRouter modules not found. Using placeholder implementation.")
     

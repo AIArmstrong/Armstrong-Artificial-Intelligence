@@ -1,0 +1,491 @@
+Module,PRP,Status,Severity,Issue Type,Details
+mcp-orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 13, 'type': 'Try without except', 'content': 'try:'}"
+mcp-orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 23, 'type': 'Try without except', 'content': 'try:'}"
+mcp-orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 101, 'type': 'Try without except', 'content': 'try:'}"
+mcp-orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 130, 'type': 'Try without except', 'content': 'try:'}"
+mcp-orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 224, 'type': 'Try without except', 'content': 'try:'}"
+mcp-orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 337, 'type': 'Try without except', 'content': 'try:'}"
+mcp-orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 386, 'type': 'Try without except', 'content': 'try:'}"
+mcp-orchestrator,BRAIN,WARN,High,Async Pattern Issue,Async function without await
+mcp-orchestrator,BRAIN,WARN,High,Async Pattern Issue,Await in non-async function
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 14, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 24, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 130, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 161, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 273, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 356, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 398, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 434, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 464, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 495, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 687, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,missing_error_handling,"{'line': 762, 'type': 'Try without except', 'content': 'try:'}"
+tech-stack-expert,BRAIN,WARN,High,Async Pattern Issue,Async function without await
+tech-stack-expert,BRAIN,WARN,High,Async Pattern Issue,Await in non-async function
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 17, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 27, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 109, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 270, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 353, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 449, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 539, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 602, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,missing_error_handling,"{'line': 649, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_loader,BRAIN,WARN,High,Async Pattern Issue,Async function without await
+unified_enhancement_loader,BRAIN,WARN,High,Async Pattern Issue,Await in non-async function
+unified_intelligence_coordinator,BRAIN,FAIL,Critical,Import Failure,"NameError: name 'defaultdict' is not defined
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_module_test.py"", line 290, in test_module_import
+    spec.loader.ex"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 17, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 27, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 146, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 289, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 339, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 416, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 500, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 530, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 554, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 583, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 627, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 663, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 700, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 732, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 823, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 857, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 910, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 948, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 975, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 987, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 999, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 1011, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,missing_error_handling,"{'line': 1026, 'type': 'Try without except', 'content': 'try:'}"
+unified_intelligence_coordinator,BRAIN,FAIL,High,Async Pattern Issue,Async function without await
+unified_intelligence_coordinator,BRAIN,FAIL,High,Async Pattern Issue,Await in non-async function
+analyze_command_handler,BRAIN,WARN,High,missing_error_handling,"{'line': 12, 'type': 'Try without except', 'content': 'try:'}"
+analyze_command_handler,BRAIN,WARN,High,missing_error_handling,"{'line': 51, 'type': 'Try without except', 'content': 'try:'}"
+analyze_command_handler,BRAIN,WARN,High,missing_error_handling,"{'line': 57, 'type': 'Try without except', 'content': 'try:'}"
+analyze_command_handler,BRAIN,WARN,High,missing_error_handling,"{'line': 201, 'type': 'Try without except', 'content': 'try:'}"
+analyze_command_handler,BRAIN,WARN,High,missing_error_handling,"{'line': 247, 'type': 'Try without except', 'content': 'try:'}"
+analyze_command_handler,BRAIN,WARN,Medium,fallback_patterns,"{'line': 14, 'type': 'Exception triggering fallback', 'content': 'except ImportError:     # Fallback'}"
+analyze_command_handler,BRAIN,WARN,High,Async Pattern Issue,Async function without await
+analyze_command_handler,BRAIN,WARN,High,Async Pattern Issue,Await in non-async function
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 170, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 209, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 237, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 244, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 295, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 299, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 333, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 336, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 375, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 421, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 458, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,missing_error_handling,"{'line': 542, 'type': 'Try without except', 'content': 'try:'}"
+analyze_orchestrator,BRAIN,WARN,High,blocking_operations,"{'function': 'async def analyze_code_quality', 'line': 231, 'type': 'Synchronous file I/O in async function'}"
+analyze_orchestrator,BRAIN,WARN,High,blocking_operations,"{'function': 'async def analyze_code_quality', 'line': 231, 'type': 'Synchronous I/O operations'}"
+analyze_orchestrator,BRAIN,WARN,High,blocking_operations,"{'function': 'async def analyze_security', 'line': 290, 'type': 'Synchronous file I/O in async function'}"
+analyze_orchestrator,BRAIN,WARN,High,blocking_operations,"{'function': 'async def analyze_security', 'line': 290, 'type': 'Synchronous I/O operations'}"
+analyze_orchestrator,BRAIN,WARN,High,blocking_operations,"{'function': 'async def analyze_performance', 'line': 328, 'type': 'Synchronous file I/O in async function'}"
+analyze_orchestrator,BRAIN,WARN,High,blocking_operations,"{'function': 'async def analyze_performance', 'line': 328, 'type': 'Synchronous I/O operations'}"
+analyze_orchestrator,BRAIN,WARN,High,Async Pattern Issue,Async function without await
+analyze_orchestrator,BRAIN,WARN,High,Async Pattern Issue,Await in non-async function
+analyze_orchestrator,BRAIN,WARN,High,Resource Leak,Unclosed file handle
+anthropic-docs-integration,BRAIN,WARN,High,missing_error_handling,"{'line': 44, 'type': 'Try without except', 'content': 'try:'}"
+anthropic-docs-integration,BRAIN,WARN,High,Resource Leak,Unclosed file handle
+dashboard-visualizer,BRAIN,FAIL,Critical,Import Failure,"ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_module_test.py"", line 290, in test_module_import
+    spec.load"
+dashboard-visualizer,BRAIN,FAIL,High,missing_error_handling,"{'line': 59, 'type': 'Bare except clause', 'content': 'except:'}"
+dashboard-visualizer,BRAIN,FAIL,Medium,Integration Issue,Missing comprehensive error handling for AAI integration
+enhanced-repository-analyzer,BRAIN,FAIL,Critical,Import Failure,"ModuleNotFoundError: No module named 'core.pattern_registry'
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_module_test.py"", line 290, in test_module_import
+  "
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 161, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 170, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 231, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 267, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 360, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 459, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 484, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 511, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 552, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 576, 'type': 'Try without except', 'content': 'try:'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,blocking_operations,"{'function': 'async def _generate_integration_recommendations', 'line': 356, 'type': 'Synchronous file I/O in async function'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,blocking_operations,"{'function': 'async def _generate_integration_recommendations', 'line': 356, 'type': 'Synchronous I/O operations'}"
+enhanced-repository-analyzer,BRAIN,FAIL,Medium,resource_management,"{'line': 91, 'type': 'Connection without context manager', 'content': 'connect(self.db_path)'}"
+enhanced-repository-analyzer,BRAIN,FAIL,Medium,resource_management,"{'line': 460, 'type': 'Connection without context manager', 'content': 'connect(self.db_path)'}"
+enhanced-repository-analyzer,BRAIN,FAIL,Medium,resource_management,"{'line': 485, 'type': 'Connection without context manager', 'content': 'connect(self.db_path)'}"
+enhanced-repository-analyzer,BRAIN,FAIL,Medium,resource_management,"{'line': 512, 'type': 'Connection without context manager', 'content': 'connect(self.db_path)'}"
+enhanced-repository-analyzer,BRAIN,FAIL,Medium,resource_management,"{'line': 577, 'type': 'Connection without context manager', 'content': 'connect(self.db_path)'}"
+enhanced-repository-analyzer,BRAIN,FAIL,High,Async Pattern Issue,Async function without await
+enhanced-repository-analyzer,BRAIN,FAIL,High,Async Pattern Issue,Await outside async function
+enhanced-repository-analyzer,BRAIN,FAIL,High,Async Pattern Issue,Await in non-async function
+github-analyzer,BRAIN,FAIL,Critical,Import Failure,"ModuleNotFoundError: No module named 'docker'
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_module_test.py"", line 290, in test_module_import
+    spec.loader.e"
+github-analyzer,BRAIN,FAIL,High,hardcoded_values,"{'line': 908, 'type': 'Hardcoded URL', 'content': '""https://github.com/octocat/Hello-World.git""'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 134, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 172, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 195, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 244, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 256, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 346, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 360, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 474, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 578, 'type': 'Bare except clause', 'content': 'except:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 627, 'type': 'Bare except clause', 'content': 'except:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 669, 'type': 'Bare except clause', 'content': 'except:'}"
+github-analyzer,BRAIN,FAIL,High,missing_error_handling,"{'line': 910, 'type': 'Try without except', 'content': 'try:'}"
+github-analyzer,BRAIN,FAIL,High,Circular Import Risk,Potential circular import with git
+github-analyzer,BRAIN,FAIL,High,Async Pattern Issue,Async function without await
+github-analyzer,BRAIN,FAIL,High,Async Pattern Issue,Await in non-async function
+github-analyzer,BRAIN,FAIL,High,Resource Leak,Unclosed file handle
+github-analyzer,BRAIN,FAIL,High,Resource Leak,Unclosed connection
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 13, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 23, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 85, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 133, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 140, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 223, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 263, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 270, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 310, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,missing_error_handling,"{'line': 379, 'type': 'Try without except', 'content': 'try:'}"
+smart-tool-selector,BRAIN,WARN,High,Async Pattern Issue,Async function without await
+smart-tool-selector,BRAIN,WARN,High,Async Pattern Issue,Await in non-async function
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 17, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 29, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 207, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 244, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 389, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 482, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 496, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 522, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 568, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 586, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 604, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 619, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 646, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 675, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 707, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 743, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,High,missing_error_handling,"{'line': 777, 'type': 'Try without except', 'content': 'try:'}"
+enhanced_command_processor,CORE,WARN,Medium,fallback_patterns,"{'line': 577, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             return await self._fallback'}"
+enhanced_command_processor,CORE,WARN,Medium,fallback_patterns,"{'line': 595, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             return await self._fallback'}"
+enhanced_command_processor,CORE,WARN,Medium,fallback_patterns,"{'line': 613, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             return await self._fallback'}"
+enhanced_command_processor,CORE,WARN,Medium,fallback_patterns,"{'line': 640, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             return await self._fallback'}"
+enhanced_command_processor,CORE,WARN,Medium,fallback_patterns,"{'line': 669, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             return await self._fallback'}"
+enhanced_command_processor,CORE,WARN,Medium,fallback_patterns,"{'line': 701, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             return await self._fallback'}"
+enhanced_command_processor,CORE,WARN,Medium,fallback_patterns,"{'line': 737, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             return await self._fallback'}"
+enhanced_command_processor,CORE,WARN,Medium,fallback_patterns,"{'line': 769, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             return await self._fallback'}"
+enhanced_command_processor,CORE,WARN,High,Async Pattern Issue,Async function without await
+enhanced_command_processor,CORE,WARN,High,Async Pattern Issue,Await in non-async function
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 19, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 30, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 193, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 232, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 311, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 352, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 535, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 572, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 709, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 749, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 783, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 805, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 827, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 898, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,missing_error_handling,"{'line': 1161, 'type': 'Try without except', 'content': 'try:'}"
+unified_enhancement_coordinator,CORE,WARN,High,Async Pattern Issue,Async function without await
+unified_enhancement_coordinator,CORE,WARN,High,Async Pattern Issue,Await in non-async function
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 65, 'type': 'Try without except', 'content': 'class CacheEntry:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 154, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 220, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 254, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 310, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 355, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 398, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 429, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 463, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 526, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 572, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 620, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 670, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 742, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 881, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 952, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,missing_error_handling,"{'line': 956, 'type': 'Try without except', 'content': 'try:'}"
+resource_optimization_manager,CORE,WARN,High,Async Pattern Issue,Async function without await
+resource_optimization_manager,CORE,WARN,High,Async Pattern Issue,Await in non-async function
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 181, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 212, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 252, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 290, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 325, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 375, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 423, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 452, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 477, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 510, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 576, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 623, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 662, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 702, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 729, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 756, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 790, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 806, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 845, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 874, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 916, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 959, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 963, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,missing_error_handling,"{'line': 970, 'type': 'Try without except', 'content': 'try:'}"
+agent_interoperability_framework,CORE,WARN,High,Async Pattern Issue,Async function without await
+agent_interoperability_framework,CORE,WARN,High,Async Pattern Issue,Await in non-async function
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 22, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 191, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 335, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 387, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 475, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 530, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 574, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 628, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 671, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 712, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 744, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 767, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 801, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 837, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 852, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 883, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 935, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 952, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 963, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 984, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 995, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 998, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 1009, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 1011, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 1030, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 1045, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 1119, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,missing_error_handling,"{'line': 1128, 'type': 'Try without except', 'content': 'try:'}"
+realtime_orchestration_monitor,CORE,WARN,High,Circular Import Risk,Potential circular import with time
+realtime_orchestration_monitor,CORE,WARN,High,Async Pattern Issue,Async function without await
+realtime_orchestration_monitor,CORE,WARN,High,Async Pattern Issue,Await in non-async function
+server_manager,MCP,WARN,High,hardcoded_values,"{'line': 423, 'type': 'Hardcoded URL', 'content': '""http://example.com""'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 15, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 26, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 180, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 215, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 221, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 240, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 292, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 306, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 339, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 390, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,missing_error_handling,"{'line': 399, 'type': 'Try without except', 'content': 'try:'}"
+server_manager,MCP,WARN,High,Async Pattern Issue,Async function without await
+server_manager,MCP,WARN,High,Async Pattern Issue,Await in non-async function
+health_monitor,MCP,WARN,High,missing_error_handling,"{'line': 97, 'type': 'Try without except', 'content': 'try:'}"
+health_monitor,MCP,WARN,High,missing_error_handling,"{'line': 127, 'type': 'Try without except', 'content': 'try:'}"
+health_monitor,MCP,WARN,High,missing_error_handling,"{'line': 134, 'type': 'Try without except', 'content': 'try:'}"
+health_monitor,MCP,WARN,High,missing_error_handling,"{'line': 148, 'type': 'Try without except', 'content': 'try:'}"
+health_monitor,MCP,WARN,High,missing_error_handling,"{'line': 169, 'type': 'Try without except', 'content': 'try:'}"
+health_monitor,MCP,WARN,High,missing_error_handling,"{'line': 326, 'type': 'Try without except', 'content': 'try:'}"
+health_monitor,MCP,WARN,High,Async Pattern Issue,Async function without await
+health_monitor,MCP,WARN,High,Async Pattern Issue,Await in non-async function
+delegation_engine,AGENTS_ORCH,WARN,High,missing_error_handling,"{'line': 14, 'type': 'Try without except', 'content': 'try:'}"
+delegation_engine,AGENTS_ORCH,WARN,High,missing_error_handling,"{'line': 95, 'type': 'Try without except', 'content': 'try:'}"
+delegation_engine,AGENTS_ORCH,WARN,High,missing_error_handling,"{'line': 525, 'type': 'Try without except', 'content': 'try:'}"
+delegation_engine,AGENTS_ORCH,WARN,High,Async Pattern Issue,Async function without await
+delegation_engine,AGENTS_ORCH,WARN,High,Async Pattern Issue,Await in non-async function
+primary_agent,AGENTS_ORCH,FAIL,Critical,Import Failure,"ModuleNotFoundError: No module named 'agents.orchestration.models.models'; 'agents.orchestration.models' is not a package
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comp"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 14, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 29, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 39, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 137, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 156, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 219, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 277, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 316, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 372, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,missing_error_handling,"{'line': 391, 'type': 'Try without except', 'content': 'try:'}"
+primary_agent,AGENTS_ORCH,FAIL,High,blocking_operations,"{'function': 'async def orchestrate', 'line': 206, 'type': 'Synchronous HTTP in async function'}"
+primary_agent,AGENTS_ORCH,FAIL,Medium,fallback_patterns,"{'line': 380, 'type': 'Exception triggering fallback', 'content': 'except Exception as e:             logger.error(f""Fallback'}"
+primary_agent,AGENTS_ORCH,FAIL,High,Async Pattern Issue,Async function without await
+primary_agent,AGENTS_ORCH,FAIL,High,Async Pattern Issue,Await in non-async function
+slack_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 13, 'type': 'Try without except', 'content': 'try:'}"
+slack_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 88, 'type': 'Try without except', 'content': 'try:'}"
+slack_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 226, 'type': 'Try without except', 'content': 'try:'}"
+slack_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 426, 'type': 'Try without except', 'content': 'try:'}"
+slack_agent,AGENTS_SPEC,WARN,High,Async Pattern Issue,Async function without await
+slack_agent,AGENTS_SPEC,WARN,High,Async Pattern Issue,Await in non-async function
+github_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 37, 'type': 'Hardcoded URL', 'content': '""https://api.github.com""'}"
+github_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 506, 'type': 'Hardcoded URL', 'content': '""https://github.com/{operation[\''}"
+github_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 519, 'type': 'Hardcoded URL', 'content': '""https://github.com/{operation[\''}"
+github_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 526, 'type': 'Hardcoded URL', 'content': '""https://github.com/{operation[\''}"
+github_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 542, 'type': 'Hardcoded URL', 'content': '""https://github.com/{operation[\''}"
+github_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 14, 'type': 'Try without except', 'content': 'try:'}"
+github_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 107, 'type': 'Try without except', 'content': 'try:'}"
+github_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 381, 'type': 'Try without except', 'content': 'try:'}"
+github_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 591, 'type': 'Try without except', 'content': 'try:'}"
+github_agent,AGENTS_SPEC,WARN,High,Async Pattern Issue,Async function without await
+github_agent,AGENTS_SPEC,WARN,High,Async Pattern Issue,Await in non-async function
+filesystem_agent,AGENTS_SPEC,FAIL,Critical,Import Failure,"ModuleNotFoundError: No module named 'aiofiles'
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_module_test.py"", line 290, in test_module_import
+    spec.loader"
+filesystem_agent,AGENTS_SPEC,FAIL,High,missing_error_handling,"{'line': 99, 'type': 'Try without except', 'content': 'try:'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,missing_error_handling,"{'line': 423, 'type': 'Try without except', 'content': 'try:'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,missing_error_handling,"{'line': 438, 'type': 'Try without except', 'content': 'try:'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,missing_error_handling,"{'line': 765, 'type': 'Try without except', 'content': 'try:'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,blocking_operations,"{'function': 'async def _read_file', 'line': 492, 'type': 'Synchronous file I/O in async function'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,blocking_operations,"{'function': 'async def _read_file', 'line': 492, 'type': 'Synchronous I/O operations'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,blocking_operations,"{'function': 'async def _write_file', 'line': 518, 'type': 'Synchronous file I/O in async function'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,blocking_operations,"{'function': 'async def _write_file', 'line': 518, 'type': 'Synchronous I/O operations'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,blocking_operations,"{'function': 'async def _search_files', 'line': 742, 'type': 'Synchronous file I/O in async function'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,blocking_operations,"{'function': 'async def _search_files', 'line': 742, 'type': 'Synchronous I/O operations'}"
+filesystem_agent,AGENTS_SPEC,FAIL,High,Async Pattern Issue,Async function without await
+filesystem_agent,AGENTS_SPEC,FAIL,High,Async Pattern Issue,Await in non-async function
+filesystem_agent,AGENTS_SPEC,FAIL,High,Resource Leak,Unclosed file handle
+jina_search_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 41, 'type': 'Hardcoded URL', 'content': '""https://s.jina.ai""'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 383, 'type': 'Hardcoded URL', 'content': '""https://r.jina.ai/{target_url}""'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 427, 'type': 'Hardcoded URL', 'content': '""https://example-{i+1}.com/search-result""'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 445, 'type': 'Hardcoded URL', 'content': '""https://news-{i+1}.com/article""'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 464, 'type': 'Hardcoded URL', 'content': '""https://images.example.com/image{i+1}.jpg""'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 465, 'type': 'Hardcoded URL', 'content': '""https://images.example.com/thumb{i+1}.jpg""'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 479, 'type': 'Hardcoded URL', 'content': '""https://example.com""'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,hardcoded_values,"{'line': 714, 'type': 'Hardcoded URL', 'content': '""https://example.com/article""'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 14, 'type': 'Try without except', 'content': 'try:'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 119, 'type': 'Try without except', 'content': 'try:'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 325, 'type': 'Try without except', 'content': 'try:'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 600, 'type': 'Try without except', 'content': 'try:'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,missing_error_handling,"{'line': 639, 'type': 'Try without except', 'content': 'try:'}"
+jina_search_agent,AGENTS_SPEC,WARN,High,Async Pattern Issue,Async function without await
+jina_search_agent,AGENTS_SPEC,WARN,High,Async Pattern Issue,Await in non-async function
+conversation_engine,AGENTS_TECH,WARN,High,missing_error_handling,"{'line': 14, 'type': 'Try without except', 'content': 'try:'}"
+conversation_engine,AGENTS_TECH,WARN,High,missing_error_handling,"{'line': 594, 'type': 'Try without except', 'content': 'try:'}"
+conversation_engine,AGENTS_TECH,WARN,High,Async Pattern Issue,Async function without await
+conversation_engine,AGENTS_TECH,WARN,High,Async Pattern Issue,Await in non-async function
+recommender,AGENTS_TECH,FAIL,Critical,Import Failure,"ModuleNotFoundError: No module named 'agents.tech_expert.models.models'; 'agents.tech_expert.models' is not a package
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehe"
+recommender,AGENTS_TECH,FAIL,High,missing_error_handling,"{'line': 13, 'type': 'Try without except', 'content': 'try:'}"
+recommender,AGENTS_TECH,FAIL,High,missing_error_handling,"{'line': 901, 'type': 'Try without except', 'content': 'try:'}"
+recommender,AGENTS_TECH,FAIL,High,Async Pattern Issue,Async function without await
+recommender,AGENTS_TECH,FAIL,High,Async Pattern Issue,Await in non-async function
+recommender,AGENTS_TECH,FAIL,Medium,Integration Issue,Missing comprehensive error handling for AAI integration
+dual_model_agent,AGENTS_R1,FAIL,Critical,Import Failure,"IndentationError: expected an indented block after 'try' statement on line 36 (dual_model_agent.py, line 37)
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_mod"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 15, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 23, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 35, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 36, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 43, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 44, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 51, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 57, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 108, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 153, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 227, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 272, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 325, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 345, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 395, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 462, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 559, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 580, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 697, 'type': 'Try without except', 'content': 'try:'}"
+dual_model_agent,AGENTS_R1,FAIL,High,Async Pattern Issue,Async function without await
+dual_model_agent,AGENTS_R1,FAIL,High,Async Pattern Issue,Await in non-async function
+reasoning_engine,AGENTS_R1,FAIL,Critical,Import Failure,"IndentationError: expected an indented block after 'try' statement on line 36 (dual_model_agent.py, line 37)
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/agents/r1_reasoning/rea"
+reasoning_engine,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 15, 'type': 'Try without except', 'content': 'try:'}"
+reasoning_engine,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 27, 'type': 'Try without except', 'content': 'try:'}"
+reasoning_engine,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 85, 'type': 'Try without except', 'content': 'try:'}"
+reasoning_engine,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 163, 'type': 'Try without except', 'content': 'try:'}"
+reasoning_engine,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 417, 'type': 'Try without except', 'content': 'try:'}"
+reasoning_engine,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 598, 'type': 'Try without except', 'content': 'try:'}"
+reasoning_engine,AGENTS_R1,FAIL,High,missing_error_handling,"{'line': 628, 'type': 'Try without except', 'content': 'try:'}"
+reasoning_engine,AGENTS_R1,FAIL,High,Circular Import Risk,Potential circular import with re
+reasoning_engine,AGENTS_R1,FAIL,High,Async Pattern Issue,Async function without await
+reasoning_engine,AGENTS_R1,FAIL,High,Async Pattern Issue,Await in non-async function
+confidence_scorer,AGENTS_TOOL,FAIL,Critical,Import Failure,"IndentationError: expected an indented block after 'try' statement on line 439 (confidence_scorer.py, line 440)
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_"
+confidence_scorer,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 12, 'type': 'Try without except', 'content': 'try:'}"
+confidence_scorer,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 81, 'type': 'Try without except', 'content': 'try:'}"
+confidence_scorer,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 439, 'type': 'Try without except', 'content': 'try:'}"
+confidence_scorer,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Async function without await
+confidence_scorer,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Await in non-async function
+tool_selector,AGENTS_TOOL,FAIL,Critical,Import Failure,"IndentationError: expected an indented block after 'try' statement on line 294 (tool_selector.py, line 295)
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_modu"
+tool_selector,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 12, 'type': 'Try without except', 'content': 'try:'}"
+tool_selector,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 22, 'type': 'Try without except', 'content': 'try:'}"
+tool_selector,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 26, 'type': 'Try without except', 'content': 'try:'}"
+tool_selector,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 30, 'type': 'Try without except', 'content': 'try:'}"
+tool_selector,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 216, 'type': 'Try without except', 'content': 'try:'}"
+tool_selector,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 294, 'type': 'Try without except', 'content': 'try:'}"
+tool_selector,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 644, 'type': 'Try without except', 'content': 'try:'}"
+tool_selector,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Async function without await
+tool_selector,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Await in non-async function
+learning_engine,AGENTS_TOOL,FAIL,Critical,Import Failure,"IndentationError: expected an indented block after 'try' statement on line 687 (learning_engine.py, line 688)
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_mo"
+learning_engine,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 14, 'type': 'Try without except', 'content': 'try:'}"
+learning_engine,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 95, 'type': 'Try without except', 'content': 'try:'}"
+learning_engine,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 204, 'type': 'Try without except', 'content': 'try:'}"
+learning_engine,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 303, 'type': 'Try without except', 'content': 'try:'}"
+learning_engine,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 592, 'type': 'Try without except', 'content': 'try:'}"
+learning_engine,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 623, 'type': 'Try without except', 'content': 'try:'}"
+learning_engine,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 687, 'type': 'Try without except', 'content': 'try:'}"
+learning_engine,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _save_learning_data', 'line': 589, 'type': 'Synchronous file I/O in async function'}"
+learning_engine,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _load_learning_data', 'line': 620, 'type': 'Synchronous file I/O in async function'}"
+learning_engine,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Async function without await
+learning_engine,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Await in non-async function
+learning_engine,AGENTS_TOOL,FAIL,High,Resource Leak,Unclosed file handle
+fabric_integrator,AGENTS_TOOL,FAIL,Critical,Import Failure,"ModuleNotFoundError: No module named 'aiofiles'
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/tests/comprehensive_module_test.py"", line 290, in test_module_import
+    spec.loader"
+fabric_integrator,AGENTS_TOOL,FAIL,High,hardcoded_values,"{'line': 48, 'type': 'Hardcoded URL', 'content': '""https://github.com/danielmiessler/fabric""'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,hardcoded_values,"{'line': 353, 'type': 'Hardcoded URL', 'content': '""https://api.github.com/repos/danielmiessler/fabric/contents/patterns""'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 16, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 20, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 27, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 232, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 283, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 303, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 314, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 351, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 441, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 522, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 541, 'type': 'Try without except', 'content': 'try:'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _parse_local_pattern', 'line': 300, 'type': 'Synchronous file I/O in async function'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _parse_local_pattern', 'line': 300, 'type': 'Synchronous I/O operations'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _discover_remote_patterns', 'line': 343, 'type': 'Synchronous HTTP in async function'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _load_patterns_from_cache', 'line': 517, 'type': 'Synchronous file I/O in async function'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _load_patterns_from_cache', 'line': 517, 'type': 'Synchronous I/O operations'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _cache_patterns', 'line': 538, 'type': 'Synchronous file I/O in async function'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,blocking_operations,"{'function': 'async def _cache_patterns', 'line': 538, 'type': 'Synchronous I/O operations'}"
+fabric_integrator,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Async function without await
+fabric_integrator,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Await in non-async function
+fabric_integrator,AGENTS_TOOL,FAIL,High,Resource Leak,Unclosed file handle
+prompt_analyzer,AGENTS_TOOL,FAIL,Critical,Import Failure,"ModuleNotFoundError: No module named 'agents.tool_selection'
+Traceback (most recent call last):
+  File ""/mnt/c/Users/Brandon/AAI/agents/tool-selection/prompt_analyzer.py"", line 13, in <module>
+    fro"
+prompt_analyzer,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 12, 'type': 'Try without except', 'content': 'try:'}"
+prompt_analyzer,AGENTS_TOOL,FAIL,High,missing_error_handling,"{'line': 177, 'type': 'Try without except', 'content': 'try:'}"
+prompt_analyzer,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Async function without await
+prompt_analyzer,AGENTS_TOOL,FAIL,High,Async Pattern Issue,Await in non-async function

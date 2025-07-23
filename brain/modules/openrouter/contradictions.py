@@ -7,7 +7,20 @@ import asyncio
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 from .router_client import get_openrouter_client
-from ..supabase_cache import SupabaseCache
+# Import with try/catch for optional dependency
+try:
+    from brain.modules.supabase_cache import SupabaseCache
+except ImportError:
+    try:
+        import sys
+        import os
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+        from supabase_cache import SupabaseCache
+    except ImportError:
+        # Create placeholder class for when Supabase is not available
+        class SupabaseCache:
+            def store_contradiction_check(self, *args, **kwargs): pass
+            def get_conversation_history(self, *args, **kwargs): return []
 
 class ContradictionEngine:
     """

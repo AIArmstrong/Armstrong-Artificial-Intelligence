@@ -1,0 +1,566 @@
+"""
+Confidence Scoring System for R1 Reasoning Engine
+
+Implements AAI-compliant confidence scoring with reasoning-based
+evidence quality assessment and assumption risk analysis.
+"""
+import re
+import math
+from typing import List, Dict, Any, Optional, Tuple
+from datetime import datetime
+import logging
+
+try:
+    from .models import (
+        ReasoningStep, ReasoningChain, ConfidenceAnalysis,
+        AlternativePerspective, VectorSearchResult
+    )
+except ImportError:
+    from agents.r1_reasoning.models.models import (
+        ReasoningStep, ReasoningChain, ConfidenceAnalysis,
+        AlternativePerspective, VectorSearchResult
+    )
+try:
+    from .config import R1ReasoningConfig
+except ImportError:
+    from agents.r1_reasoning.config import R1ReasoningConfig
+
+logger = logging.getLogger(__name__)
+
+
+class ConfidenceScorer:
+    """
+    AAI-compliant confidence scoring system for reasoning chains.
+    
+    Features:
+    - Evidence quality assessment
+    - Assumption risk analysis  
+    - Reasoning coherence evaluation
+    - Source reliability scoring
+    - Calibration and feedback learning
+    - Confidence range enforcement (70-95%)
+    """
+    
+    def __init__(self, config: R1ReasoningConfig = None):
+        """Initialize confidence scorer"""
+        self.config = config or R1ReasoningConfig()
+        
+        # Confidence calibration data
+        self.calibration_history: List[Dict[str, Any]] = []
+        self.domain_adjustments: Dict[str, float] = {
+            "technical": 0.02,
+            "business": 0.01,
+            "strategic": -0.01,
+            "research": -0.02
+        }
+        
+        # Quality indicators for different types of content
+        self.evidence_indicators = {
+            "high_quality": [
+                "peer-reviewed", "published", "verified", "validated", 
+                "empirical", "measured", "quantified", "documented"
+            ],
+            "medium_quality": [
+                "reported", "observed", "estimated", "analyzed",
+                "compared", "evaluated", "assessed"
+            ],
+            "low_quality": [
+                "rumored", "alleged", "assumed", "speculated",
+                "believed", "supposed", "anecdotal"
+            ]
+        }
+        
+        # Reasoning strength indicators
+        self.reasoning_indicators = {
+            "strong": [
+                "therefore", "consequently", "because", "since",
+                "due to", "as a result", "proven", "demonstrated"
+            ],
+            "moderate": [
+                "suggests", "indicates", "implies", "appears",
+                "seems", "likely", "probable", "supports"
+            ],
+            "weak": [
+                "possibly", "maybe", "might", "could",
+                "uncertain", "unclear", "ambiguous"
+            ]
+        }
+    
+    async def assess_reasoning_chain(self, reasoning_chain: ReasoningChain) -> ConfidenceAnalysis:
+        """
+        Assess confidence for a complete reasoning chain.
+        
+        Args:
+            reasoning_chain: The reasoning chain to assess
+            
+        Returns:
+            Detailed confidence analysis with component scores
+        """
+        try:
+            # Assess individual components
+            reasoning_confidence = self._assess_reasoning_quality(reasoning_chain)
+            evidence_confidence = self._assess_evidence_quality(reasoning_chain)
+            reasoning_coherence = self._assess_reasoning_coherence(reasoning_chain)
+            assumption_certainty = self._assess_assumption_certainty(reasoning_chain)
+            
+            # Calculate overall confidence using weighted average
+            overall_confidence = self._calculate_overall_confidence(
+                reasoning_confidence=reasoning_confidence,
+                evidence_confidence=evidence_confidence,
+                reasoning_coherence=reasoning_coherence,
+                assumption_certainty=assumption_certainty
+            )
+            
+            # Source reliability (placeholder - would integrate with actual source data)
+            source_reliability = min(1.0, evidence_confidence * 1.1)
+            
+            # Ensure AAI compliance
+            overall_confidence = self._enforce_aai_range(overall_confidence)
+            reasoning_confidence = self._enforce_aai_range(reasoning_confidence)
+            
+            return ConfidenceAnalysis(
+                overall=overall_confidence,
+                reasoning_confidence=reasoning_confidence,
+                evidence_confidence=evidence_confidence,
+                source_reliability=source_reliability,
+                assumption_certainty=assumption_certainty,
+                reasoning_coherence=reasoning_coherence
+            )
+            
+        except Exception as e:
+            logger.error(f"Confidence assessment failed: {e}")
+            
+            # Return safe default values
+            return ConfidenceAnalysis(
+                overall=0.70,
+                reasoning_confidence=0.70,
+                evidence_confidence=0.50,
+                source_reliability=0.50,
+                assumption_certainty=0.50,
+                reasoning_coherence=0.50
+            )
+    
+    def _assess_reasoning_quality(self, reasoning_chain: ReasoningChain) -> float:
+        """Assess the quality of reasoning logic and structure"""
+        
+        if not reasoning_chain.steps:
+            return 0.70  # AAI minimum
+        
+        quality_score = 0.0
+        total_weight = 0.0
+        
+        for step in reasoning_chain.steps:
+            step_quality = self._assess_step_reasoning_quality(step)
+            step_weight = 1.0
+            
+            # Weight steps by their position (later steps often more important)
+            step_weight += step.step_number * 0.1
+            
+            quality_score += step_quality * step_weight
+            total_weight += step_weight
+        
+        base_quality = quality_score / total_weight if total_weight > 0 else 0.7
+        
+        # Bonus for reasoning method
+        method_bonus = {
+            "deductive": 0.05,
+            "inductive": 0.03,
+            "abductive": 0.02,
+            "comparative": 0.04,
+            "causal": 0.04
+        }.get(reasoning_chain.reasoning_method.value, 0.0)
+        
+        base_quality += method_bonus
+        
+        # Bonus for multiple reasoning steps (shows thoroughness)
+        if len(reasoning_chain.steps) >= 4:
+            base_quality += 0.03
+        elif len(reasoning_chain.steps) >= 6:
+            base_quality += 0.05
+        
+        return self._enforce_aai_range(base_quality)
+    
+    def _assess_step_reasoning_quality(self, step: ReasoningStep) -> float:
+        """Assess quality of reasoning for a single step"""
+        
+        base_score = 0.70
+        reasoning_text = step.reasoning.lower()
+        
+        # Check for reasoning strength indicators
+        strong_count = sum(1 for indicator in self.reasoning_indicators["strong"] 
+                          if indicator in reasoning_text)
+        moderate_count = sum(1 for indicator in self.reasoning_indicators["moderate"] 
+                           if indicator in reasoning_text)
+        weak_count = sum(1 for indicator in self.reasoning_indicators["weak"] 
+                        if indicator in reasoning_text)
+        
+        # Adjust score based on reasoning indicators
+        base_score += strong_count * 0.03
+        base_score += moderate_count * 0.02
+        base_score -= weak_count * 0.02
+        
+        # Length and detail bonus
+        if len(step.reasoning) > 100:
+            base_score += 0.02
+        if len(step.reasoning) > 200:
+            base_score += 0.02
+        
+        # Evidence and assumption consideration
+        if step.evidence:
+            base_score += min(0.05, len(step.evidence) * 0.02)
+        
+        if step.assumptions:
+            # Explicit assumptions are good (shows awareness) but increase uncertainty
+            base_score += 0.02  # Awareness bonus
+            base_score -= min(0.03, len(step.assumptions) * 0.01)  # Uncertainty penalty
+        
+        # Use step's own confidence as input
+        if hasattr(step, 'confidence') and step.confidence > 0:
+            base_score = (base_score + step.confidence) / 2
+        
+        return self._enforce_aai_range(base_score)
+    
+    def _assess_evidence_quality(self, reasoning_chain: ReasoningChain) -> float:
+        """Assess quality of evidence supporting the reasoning"""
+        
+        if not reasoning_chain.steps:
+            return 0.50  # Neutral when no evidence
+        
+        total_evidence_score = 0.0
+        evidence_count = 0
+        
+        for step in reasoning_chain.steps:
+            if step.evidence:
+                for evidence in step.evidence:
+                    evidence_score = self._assess_single_evidence_quality(evidence)
+                    total_evidence_score += evidence_score
+                    evidence_count += 1
+        
+        if evidence_count == 0:
+            return 0.50  # Neutral score for no evidence
+        
+        average_evidence_quality = total_evidence_score / evidence_count
+        
+        # Bonus for having evidence across multiple steps
+        steps_with_evidence = sum(1 for step in reasoning_chain.steps if step.evidence)
+        evidence_distribution_bonus = min(0.1, steps_with_evidence / len(reasoning_chain.steps) * 0.1)
+        
+        final_score = average_evidence_quality + evidence_distribution_bonus
+        return min(1.0, max(0.0, final_score))
+    
+    def _assess_single_evidence_quality(self, evidence: str) -> float:
+        """Assess quality of a single piece of evidence"""
+        
+        evidence_lower = evidence.lower()
+        base_score = 0.5
+        
+        # Check for quality indicators
+        high_quality_count = sum(1 for indicator in self.evidence_indicators["high_quality"] 
+                               if indicator in evidence_lower)
+        medium_quality_count = sum(1 for indicator in self.evidence_indicators["medium_quality"] 
+                                 if indicator in evidence_lower)
+        low_quality_count = sum(1 for indicator in self.evidence_indicators["low_quality"] 
+                              if indicator in evidence_lower)
+        
+        # Adjust score based on quality indicators
+        base_score += high_quality_count * 0.15
+        base_score += medium_quality_count * 0.08
+        base_score -= low_quality_count * 0.1
+        
+        # Specific source types
+        if any(indicator in evidence_lower for indicator in ["study", "research", "data", "statistics"]):
+            base_score += 0.1
+        
+        if any(indicator in evidence_lower for indicator in ["citation", "reference", "source"]):
+            base_score += 0.05
+        
+        # Length consideration (longer evidence descriptions often better)
+        if len(evidence) > 50:
+            base_score += 0.05
+        if len(evidence) > 100:
+            base_score += 0.05
+        
+        return min(1.0, max(0.0, base_score))
+    
+    def _assess_reasoning_coherence(self, reasoning_chain: ReasoningChain) -> float:
+        """Assess coherence and logical flow of reasoning steps"""
+        
+        if len(reasoning_chain.steps) < 2:
+            return 0.8  # Single step is coherent by definition
+        
+        # Check confidence consistency across steps
+        confidences = [step.confidence for step in reasoning_chain.steps]
+        confidence_mean = sum(confidences) / len(confidences)
+        confidence_variance = sum((c - confidence_mean) ** 2 for c in confidences) / len(confidences)
+        confidence_std = math.sqrt(confidence_variance)
+        
+        # Lower variance indicates more coherent reasoning
+        coherence_score = max(0.5, 1.0 - confidence_std)
+        
+        # Check for logical progression
+        progression_bonus = 0.0
+        for i in range(1, len(reasoning_chain.steps)):
+            prev_step = reasoning_chain.steps[i-1]
+            curr_step = reasoning_chain.steps[i]
+            
+            # Look for logical connectors between steps
+            if any(connector in curr_step.reasoning.lower() 
+                   for connector in ["therefore", "thus", "consequently", "building on", "following from"]):
+                progression_bonus += 0.02
+        
+        coherence_score += progression_bonus
+        
+        # Penalty for contradictory statements
+        contradiction_penalty = 0.0
+        step_texts = [step.reasoning.lower() for step in reasoning_chain.steps]
+        
+        contradiction_indicators = [
+            ("positive", "negative"), ("benefit", "disadvantage"), 
+            ("advantage", "problem"), ("increase", "decrease"),
+            ("support", "oppose"), ("agree", "disagree")
+        ]
+        
+        for step_text in step_texts:
+            for pos, neg in contradiction_indicators:
+                if pos in step_text and neg in step_text:
+                    contradiction_penalty += 0.01
+        
+        coherence_score -= contradiction_penalty
+        
+        return min(1.0, max(0.0, coherence_score))
+    
+    def _assess_assumption_certainty(self, reasoning_chain: ReasoningChain) -> float:
+        """Assess certainty level of assumptions made in reasoning"""
+        
+        total_assumptions = 0
+        assumption_risk_score = 0.0
+        
+        for step in reasoning_chain.steps:
+            if step.assumptions:
+                total_assumptions += len(step.assumptions)
+                
+                for assumption in step.assumptions:
+                    risk = self._assess_assumption_risk(assumption)
+                    assumption_risk_score += risk
+        
+        if total_assumptions == 0:
+            return 0.8  # High certainty when no explicit assumptions
+        
+        average_risk = assumption_risk_score / total_assumptions
+        certainty = 1.0 - average_risk
+        
+        # Penalty for having many assumptions
+        assumption_density = total_assumptions / len(reasoning_chain.steps)
+        if assumption_density > 2:
+            certainty -= (assumption_density - 2) * 0.05
+        
+        return min(1.0, max(0.0, certainty))
+    
+    def _assess_assumption_risk(self, assumption: str) -> float:
+        """Assess risk level of a single assumption"""
+        
+        assumption_lower = assumption.lower()
+        base_risk = 0.3  # Moderate risk by default
+        
+        # High-risk assumption indicators
+        high_risk_indicators = [
+            "assume", "likely", "probably", "expect", "predict",
+            "estimate", "approximate", "roughly", "about"
+        ]
+        
+        # Low-risk assumption indicators
+        low_risk_indicators = [
+            "established", "proven", "documented", "verified",
+            "confirmed", "validated", "standard", "typical"
+        ]
+        
+        # Uncertainty indicators
+        uncertainty_indicators = [
+            "uncertain", "unclear", "unknown", "ambiguous",
+            "variable", "depends", "varies", "complex"
+        ]
+        
+        # Adjust risk based on indicators
+        high_risk_count = sum(1 for indicator in high_risk_indicators 
+                            if indicator in assumption_lower)
+        low_risk_count = sum(1 for indicator in low_risk_indicators 
+                           if indicator in assumption_lower)
+        uncertainty_count = sum(1 for indicator in uncertainty_indicators 
+                              if indicator in assumption_lower)
+        
+        base_risk += high_risk_count * 0.1
+        base_risk -= low_risk_count * 0.1
+        base_risk += uncertainty_count * 0.15
+        
+        return min(1.0, max(0.0, base_risk))
+    
+    def _calculate_overall_confidence(self,
+                                    reasoning_confidence: float,
+                                    evidence_confidence: float,
+                                    reasoning_coherence: float,
+                                    assumption_certainty: float) -> float:
+        """Calculate overall confidence using weighted components"""
+        
+        # Component weights (must sum to 1.0)
+        weights = {
+            "reasoning": 0.35,
+            "evidence": 0.25,
+            "coherence": 0.20,
+            "assumptions": 0.20
+        }
+        
+        overall = (
+            reasoning_confidence * weights["reasoning"] +
+            evidence_confidence * weights["evidence"] + 
+            reasoning_coherence * weights["coherence"] +
+            assumption_certainty * weights["assumptions"]
+        )
+        
+        return overall
+    
+    def _enforce_aai_range(self, confidence: float) -> float:
+        """Enforce AAI confidence range (70-95%)"""
+        return max(self.config.AAI_MIN_CONFIDENCE, 
+                  min(self.config.AAI_MAX_CONFIDENCE, confidence))
+    
+    def calibrate_with_feedback(self,
+                               reasoning_chain: ReasoningChain,
+                               actual_outcome: bool,
+                               user_rating: float):
+        """Update confidence calibration based on feedback"""
+        
+        predicted_confidence = reasoning_chain.overall_confidence
+        
+        # Simple calibration adjustment
+        if actual_outcome and predicted_confidence < 0.9:
+            # Successful outcome - we could have been more confident
+            adjustment = min(0.02, (0.9 - predicted_confidence) * 0.1)
+        elif not actual_outcome and predicted_confidence > 0.75:
+            # Failed outcome - we were overconfident
+            adjustment = -min(0.02, (predicted_confidence - 0.75) * 0.1)
+        else:
+            adjustment = 0.0
+        
+        # Store calibration data
+        self.calibration_history.append({
+            "predicted_confidence": predicted_confidence,
+            "actual_outcome": actual_outcome,
+            "user_rating": user_rating,
+            "adjustment": adjustment,
+            "timestamp": datetime.now().isoformat()
+        })
+        
+        # Keep only recent calibration data
+        self.calibration_history = self.calibration_history[-100:]
+        
+        logger.info(f"Confidence calibration updated: adjustment={adjustment:.3f}")
+    
+    def get_calibration_metrics(self) -> Dict[str, Any]:
+        """Get confidence calibration performance metrics"""
+        
+        if not self.calibration_history:
+            return {"message": "No calibration data available"}
+        
+        recent = self.calibration_history[-20:]  # Last 20 calibrations
+        
+        # Calculate calibration accuracy
+        correct_predictions = sum(
+            1 for item in recent 
+            if (item["actual_outcome"] and item["predicted_confidence"] > 0.8) or
+               (not item["actual_outcome"] and item["predicted_confidence"] <= 0.8)
+        )
+        
+        calibration_accuracy = correct_predictions / len(recent) if recent else 0.0
+        
+        # Calculate average adjustments
+        avg_adjustment = sum(abs(item["adjustment"]) for item in recent) / len(recent) if recent else 0.0
+        avg_user_rating = sum(item["user_rating"] for item in recent) / len(recent) if recent else 0.0
+        
+        return {
+            "total_calibrations": len(self.calibration_history),
+            "calibration_accuracy": calibration_accuracy,
+            "average_adjustment": avg_adjustment,
+            "average_user_rating": avg_user_rating,
+            "recent_adjustments": [item["adjustment"] for item in recent[-5:]]
+        }
+
+
+async def test_confidence_scorer():
+    """Test confidence scorer functionality"""
+    
+    scorer = ConfidenceScorer()
+    
+    # Create a test reasoning chain
+    test_steps = [
+        ReasoningStep(
+            step_number=1,
+            description="Analyze current system performance",
+            reasoning="The current monolithic system shows signs of scaling challenges with response times increasing under load. Database queries are taking longer and the application becomes unresponsive during peak hours.",
+            confidence=0.85,
+            evidence=["Performance monitoring data shows 95th percentile response time of 2.5 seconds", "Database query logs indicate increasing execution times"],
+            assumptions=["Current traffic patterns will continue to grow"]
+        ),
+        ReasoningStep(
+            step_number=2,
+            description="Evaluate microservices benefits",
+            reasoning="Microservices architecture would allow independent scaling of components, reduce coupling between services, and enable technology diversity. However, it introduces complexity in service coordination and monitoring.",
+            confidence=0.80,
+            evidence=["Industry studies show 30% improvement in deployment frequency", "Netflix and Amazon case studies demonstrate scalability benefits"],
+            assumptions=["Team has sufficient expertise to manage distributed systems", "Current infrastructure can support service mesh"]
+        ),
+        ReasoningStep(
+            step_number=3,
+            description="Consider implementation costs",
+            reasoning="Migration to microservices requires significant upfront investment in infrastructure, tooling, and team training. The learning curve could temporarily reduce development velocity.",
+            confidence=0.75,
+            evidence=["Migration cost estimates from similar companies", "Training time estimates for development team"],
+            assumptions=["Management supports 6-month learning curve", "Budget available for infrastructure upgrades"]
+        )
+    ]
+    
+    test_chain = ReasoningChain(
+        query="Should our company adopt microservices architecture?",
+        steps=test_steps,
+        final_conclusion="Based on analysis of performance needs, team capabilities, and implementation costs, a gradual migration to microservices is recommended starting with the most problematic components.",
+        overall_confidence=0.80,
+        reasoning_method="comparative",
+        evidence_quality=0.7,
+        assumption_risk=0.4
+    )
+    
+    # Test confidence assessment
+    print("Testing confidence assessment...")
+    
+    confidence_analysis = await scorer.assess_reasoning_chain(test_chain)
+    
+    print(f"Overall confidence: {confidence_analysis.overall:.2%}")
+    print(f"Reasoning confidence: {confidence_analysis.reasoning_confidence:.2%}")
+    print(f"Evidence confidence: {confidence_analysis.evidence_confidence:.2%}")
+    print(f"Source reliability: {confidence_analysis.source_reliability:.2%}")
+    print(f"Assumption certainty: {confidence_analysis.assumption_certainty:.2%}")
+    print(f"Reasoning coherence: {confidence_analysis.reasoning_coherence:.2%}")
+    
+    # Test calibration
+    print("\nTesting calibration...")
+    
+    scorer.calibrate_with_feedback(
+        reasoning_chain=test_chain,
+        actual_outcome=True,  # Assume the recommendation was successful
+        user_rating=4.2
+    )
+    
+    scorer.calibrate_with_feedback(
+        reasoning_chain=test_chain,
+        actual_outcome=False,  # Assume another recommendation failed
+        user_rating=2.8
+    )
+    
+    calibration_metrics = scorer.get_calibration_metrics()
+    print("Calibration metrics:")
+    for key, value in calibration_metrics.items():
+        print(f"  {key}: {value}")
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(test_confidence_scorer())

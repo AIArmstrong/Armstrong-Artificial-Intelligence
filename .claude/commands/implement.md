@@ -30,20 +30,74 @@ Implement features, components, and code functionality with intelligent expert a
 5. Apply security and quality validation
 6. Provide testing recommendations and next steps
 
-## Claude Code Integration
-- Uses Write/Edit/MultiEdit for code generation and modification
-- Leverages Read and Glob for codebase analysis and context understanding
-- Applies TodoWrite for implementation progress tracking
-- Integrates Task tool for complex multi-step implementations
-- Coordinates with MCP servers for specialized functionality
-- Auto-activates appropriate personas based on implementation type
+## 🔗 SUPREME CLAUDE CODE INTEGRATION
 
-## Auto-Activation Patterns
-- **Frontend**: UI components, React/Vue/Angular development
-- **Backend**: APIs, services, database integration
-- **Security**: Authentication, authorization, data protection
-- **Architecture**: System design, module structure
-- **Performance**: Optimization, scalability considerations
+### Enhanced Tool Orchestration
+```yaml
+Core_Tools:
+  Write_MultiEdit: "Intelligent code generation with pattern recognition"
+  Read_Glob: "Advanced codebase analysis with semantic understanding"
+  TodoWrite: "Smart progress tracking with dependency awareness"
+  Task: "Complex multi-step orchestration with failure recovery"
+  WebFetch_Search: "Real-time documentation and best practice research"
+  
+MCP_Integration:
+  Magic: "Enhanced UI generation with component intelligence"
+  Context7: "Advanced pattern recognition and code suggestions"
+  Sequential: "Complex logic orchestration with reasoning chains"
+  
+AI_Coordination:
+  parallel_execution: "Coordinate multiple AI agents simultaneously"
+  context_sharing: "Share context and learning across tool interactions"
+  failure_recovery: "Intelligent fallback and error recovery strategies"
+```
+
+### 🎭 SUPREME AUTO-ACTIVATION PATTERNS
+
+#### Frontend Excellence
+```yaml
+Frontend_Supremacy:
+  triggers: ["UI", "component", "React", "Vue", "Angular", "interface"]
+  personas: ["UI/UX Expert", "Accessibility Specialist", "Performance Optimizer"]
+  tools: ["Magic MCP", "Component Library", "Style Guide"]
+  enhancements: ["Responsive Design", "Accessibility", "Performance"]
+```
+
+#### Backend Mastery
+```yaml
+Backend_Intelligence:
+  triggers: ["API", "service", "database", "server", "microservice"]
+  personas: ["Backend Architect", "Database Expert", "API Designer"]
+  tools: ["Sequential MCP", "Database Tools", "API Testing"]
+  enhancements: ["Scalability", "Security", "Performance"]
+```
+
+#### Security Fortress
+```yaml
+Security_Supremacy:
+  triggers: ["auth", "security", "encryption", "privacy", "compliance"]
+  personas: ["Security Expert", "Compliance Officer", "Crypto Specialist"]
+  tools: ["Security Scanner", "Vulnerability Assessment", "Audit Tools"]
+  enhancements: ["Zero Trust", "Defense in Depth", "Compliance"]
+```
+
+#### Architecture Wisdom
+```yaml
+Architecture_Excellence:
+  triggers: ["system", "architecture", "design", "pattern", "structure"]
+  personas: ["Solution Architect", "Design Pattern Expert", "System Designer"]
+  tools: ["Context7 MCP", "Pattern Library", "Architecture Tools"]
+  enhancements: ["Modularity", "Extensibility", "Maintainability"]
+```
+
+#### Performance Optimization
+```yaml
+Performance_Supremacy:
+  triggers: ["performance", "optimization", "speed", "efficiency", "scale"]
+  personas: ["Performance Engineer", "Optimization Expert", "Scalability Specialist"]
+  tools: ["Profiling Tools", "Benchmark Suite", "Monitoring"]
+  enhancements: ["Speed", "Memory Efficiency", "Scalability"]
+```
 
 ## Examples
 ```

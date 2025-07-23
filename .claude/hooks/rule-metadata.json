@@ -1,105 +1,123 @@
 {
   "RULE-001": {
     "rule_id": "RULE-001",
-    "content": "Documentation is source of truth - Your knowledge is out of date, freshly scraped documentation is absolute truth, NOT your own knowledge",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
+    "content": "*BEFORE PERFORMING ANY TASK**: Always read and reference this Claude.md file to understand current system capabilities, triggers, and protocols. This file is the definitive guide for all AAI operations and must be consulted before task execution.",
+    "section": "\u26a0\ufe0f MANDATORY PRE-TASK PROTOCOL",
     "alert_level": "\u2757",
-    "last_used": "2025-07-19T10:41:57.432570",
-    "usage_count": 154,
+    "last_used": "2025-07-23T08:05:47.116873",
+    "usage_count": 2508,
     "compliance_score": 1.0,
-    "version_hash": "a6743632",
+    "version_hash": "8f000f6e",
     "created_date": "2025-07-18T20:03:51.340609",
-    "last_updated": "2025-07-18T20:03:51.340614",
-    "tags": [
-      "#docs"
-    ],
+    "last_updated": "2025-07-20T17:30:58.231584",
+    "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
   "RULE-002": {
     "rule_id": "RULE-002",
+    "content": "Documentation is source of truth - Your knowledge is out of date, freshly scraped documentation is absolute truth, NOT your own knowledge",
+    "section": "\ud83d\udd27 Core Rules & Triggers",
+    "alert_level": "\u2757",
+    "last_used": "2025-07-23T08:05:47.131939",
+    "usage_count": 2508,
+    "compliance_score": 1.0,
+    "version_hash": "a6743632",
+    "created_date": "2025-07-18T20:03:51.340717",
+    "last_updated": "2025-07-20T17:30:58.232027",
+    "tags": [
+      "#docs"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-003": {
+    "rule_id": "RULE-003",
     "content": "Docker & Self-testing - Must use Docker CLI, unit tests, everything confirmed working perfectly before delivery",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
-    "last_used": "2025-07-19T10:41:57.448808",
-    "usage_count": 154,
+    "last_used": "2025-07-23T08:05:47.146245",
+    "usage_count": 2508,
     "compliance_score": 1.0,
     "version_hash": "701dffb4",
-    "created_date": "2025-07-18T20:03:51.340717",
-    "last_updated": "2025-07-18T20:03:51.340719",
+    "created_date": "2025-07-18T20:03:51.340764",
+    "last_updated": "2025-07-20T17:30:58.232081",
     "tags": [
-      "#docker",
-      "#testing"
+      "#testing",
+      "#docker"
     ],
     "phase_relevance": [
       "testing"
     ]
   },
-  "RULE-003": {
-    "rule_id": "RULE-003",
+  "RULE-004": {
+    "rule_id": "RULE-004",
     "content": "Check all Jina scrapes - Retry failed scrapes until you get actual content, scrape 30-100 pages total",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
-    "last_used": "2025-07-19T10:41:57.462721",
-    "usage_count": 154,
+    "last_used": "2025-07-23T08:05:47.159429",
+    "usage_count": 2508,
     "compliance_score": 1.0,
     "version_hash": "d510e726",
-    "created_date": "2025-07-18T20:03:51.340764",
-    "last_updated": "2025-07-18T20:03:51.340765",
+    "created_date": "2025-07-18T20:03:51.340806",
+    "last_updated": "2025-07-20T17:30:58.232135",
     "tags": [
       "#jina"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-004": {
-    "rule_id": "RULE-004",
+  "RULE-005": {
+    "rule_id": "RULE-005",
     "content": "Refer to research - Before implementing features using third-party APIs, use research documentation for accuracy, never assume knowledge",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
-    "last_used": "2025-07-19T10:41:57.477739",
-    "usage_count": 154,
+    "last_used": "2025-07-23T08:05:47.173190",
+    "usage_count": 2508,
     "compliance_score": 1.0,
     "version_hash": "17d6888e",
-    "created_date": "2025-07-18T20:03:51.340806",
-    "last_updated": "2025-07-18T20:03:51.340807",
+    "created_date": "2025-07-18T20:03:51.340834",
+    "last_updated": "2025-07-20T17:30:58.232184",
     "tags": [
-      "#api",
+      "#docs",
       "#research",
-      "#docs"
+      "#api"
     ],
     "phase_relevance": [
       "research"
     ]
   },
-  "RULE-005": {
-    "rule_id": "RULE-005",
+  "RULE-006": {
+    "rule_id": "RULE-006",
     "content": "Examples are memory bank - Use `examples/` recommendations before implementing",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
-    "last_used": "2025-07-19T10:41:57.491066",
-    "usage_count": 154,
+    "last_used": null,
+    "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "b0c416d9",
-    "created_date": "2025-07-18T20:03:51.340834",
-    "last_updated": "2025-07-18T20:03:51.340835",
+    "created_date": "2025-07-18T20:03:51.340858",
+    "last_updated": "2025-07-20T17:30:58.232226",
     "tags": [
       "#examples"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-006": {
-    "rule_id": "RULE-006",
+  "RULE-007": {
+    "rule_id": "RULE-007",
     "content": "Neural reasoning required - Include WHY rationale + confidence score (70-95%) for decisions",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -107,20 +125,20 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "5770816d",
-    "created_date": "2025-07-18T20:03:51.340858",
-    "last_updated": "2025-07-18T20:03:51.340859",
+    "created_date": "2025-07-18T20:03:51.340881",
+    "last_updated": "2025-07-20T17:30:58.232272",
     "tags": [
-      "#decision",
-      "#neural"
+      "#neural",
+      "#decision"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-007": {
-    "rule_id": "RULE-007",
+  "RULE-008": {
+    "rule_id": "RULE-008",
     "content": "Auto-learning active - Systems capture patterns from successful implementations",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -128,17 +146,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "9bd4cdad",
-    "created_date": "2025-07-18T20:03:51.340881",
-    "last_updated": "2025-07-18T20:03:51.340882",
+    "created_date": "2025-07-18T20:03:51.340935",
+    "last_updated": "2025-07-20T17:30:58.232314",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-008": {
-    "rule_id": "RULE-008",
+  "RULE-009": {
+    "rule_id": "RULE-009",
     "content": "Context Engineering - Follow established PRP workflow (.claude/commands/)",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -146,17 +164,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "3eb938a9",
-    "created_date": "2025-07-18T20:03:51.340935",
-    "last_updated": "2025-07-18T20:03:51.340936",
+    "created_date": "2025-07-18T20:03:51.340970",
+    "last_updated": "2025-07-20T17:30:58.232377",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-009": {
-    "rule_id": "RULE-009",
+  "RULE-010": {
+    "rule_id": "RULE-010",
     "content": "Modular Architecture - Keep files <500 lines, extract complexity to modules",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -164,19 +182,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "c5ad0a14",
-    "created_date": "2025-07-18T20:03:51.340970",
-    "last_updated": "2025-07-18T20:03:51.340971",
+    "created_date": "2025-07-18T20:03:51.341249",
+    "last_updated": "2025-07-20T17:30:58.232425",
     "tags": [
       "#module"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-010": {
-    "rule_id": "RULE-010",
+  "RULE-011": {
+    "rule_id": "RULE-011",
     "content": "CRITICAL: Module Creation Protocol - Before creating ANY new module:\n  1. **Search existing modules** - Check if functionality already exists in `/brain/modules/` and `/brain/workflows/`\n  2. **Enhancement over creation** - If similar functionality exists, enhance the existing module instead of creating new\n  3. **Collaboration requirement** - If new module needed, design it to collaborate with supporting/related existing modules\n  4. **Integration validation** - Ensure new module integrates with existing scoring, tagging, and intelligence systems\n  5. **Auto-trigger setup** - Add appropriate triggers to Smart Module Loading for automatic activation",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -184,18 +202,18 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "7ffdbda8",
-    "created_date": "2025-07-18T20:03:51.341249",
-    "last_updated": "2025-07-18T20:03:51.341251",
+    "created_date": "2025-07-18T20:03:51.341296",
+    "last_updated": "2025-07-20T17:30:58.232532",
     "tags": [
-      "#scoring",
-      "#module"
+      "#module",
+      "#scoring"
     ],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-011": {
-    "rule_id": "RULE-011",
+  "RULE-012": {
+    "rule_id": "RULE-012",
     "content": "Always reference recent learning events - Before executing any new task, you must:",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -203,238 +221,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "e30a4fbc",
-    "created_date": "2025-07-18T20:03:51.341296",
-    "last_updated": "2025-07-18T20:03:51.341297",
+    "created_date": "2025-07-18T20:03:51.341341",
+    "last_updated": "2025-07-20T17:30:58.232569",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-012": {
-    "rule_id": "RULE-012",
-    "content": "Seamless Flow Priority - Use orchestrated pipeline for idea-to-implementation",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "b0bb5021",
-    "created_date": "2025-07-18T20:03:51.341341",
-    "last_updated": "2025-07-18T20:03:51.341342",
-    "tags": [
-      "#pipeline"
-    ],
-    "phase_relevance": [
       "intelligence",
-      "foundation",
       "optimization"
     ]
   },
   "RULE-013": {
     "rule_id": "RULE-013",
-    "content": "Research-Driven Implementation - Auto-integrate research findings into PRPs and projects",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "453f54a3",
-    "created_date": "2025-07-18T20:03:51.341384",
-    "last_updated": "2025-07-18T20:03:51.341385",
-    "tags": [
-      "#research"
-    ],
-    "phase_relevance": [
-      "research"
-    ]
-  },
-  "RULE-014": {
-    "rule_id": "RULE-014",
-    "content": "Integration Intelligence - Auto-recommend integrations based on PRP analysis",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "2e0548ff",
-    "created_date": "2025-07-18T20:03:51.341424",
-    "last_updated": "2025-07-18T20:03:51.341425",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-015": {
-    "rule_id": "RULE-015",
-    "content": "Pipeline Contradiction Check - Run /log status at every stage transition",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "07f9adb3",
-    "created_date": "2025-07-18T20:03:51.341462",
-    "last_updated": "2025-07-18T20:03:51.341463",
-    "tags": [
-      "#pipeline"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-016": {
-    "rule_id": "RULE-016",
-    "content": "Quality Thresholds - General \u22650.90, Project \u22650.75, validate before implementation",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "6d094cea",
-    "created_date": "2025-07-18T20:03:51.341512",
-    "last_updated": "2025-07-18T20:03:51.341513",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-017": {
-    "rule_id": "RULE-017",
-    "content": "Pattern Promotion - Auto-upgrade project patterns to general when quality threshold met",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "16b8af1f",
-    "created_date": "2025-07-18T20:03:51.341550",
-    "last_updated": "2025-07-18T20:03:51.341551",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-018": {
-    "rule_id": "RULE-018",
-    "content": "Dashboard Real-Time Updates - dashboards/status.md serves as single source of truth for task status",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "b64adda2",
-    "created_date": "2025-07-18T20:03:51.341592",
-    "last_updated": "2025-07-18T20:03:51.341593",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-019": {
-    "rule_id": "RULE-019",
-    "content": "Task Verification Protocol - Always verify file system state before presenting task lists",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "cef3f497",
-    "created_date": "2025-07-18T20:03:51.341655",
-    "last_updated": "2025-07-18T20:03:51.341657",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-020": {
-    "rule_id": "RULE-020",
-    "content": "API Token Management - Break large requests into smaller pieces to avoid token limits",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "aedec612",
-    "created_date": "2025-07-18T20:03:51.341716",
-    "last_updated": "2025-07-18T20:03:51.341718",
-    "tags": [
-      "#api"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-021": {
-    "rule_id": "RULE-021",
-    "content": "Growth Metrics Monitoring - Track system expansion (files, capabilities, intelligence)",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "e05d5c29",
-    "created_date": "2025-07-18T20:03:51.341760",
-    "last_updated": "2025-07-18T20:03:51.341761",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-022": {
-    "rule_id": "RULE-022",
-    "content": "Auto-Offload Protocols - When brain cache >80%, automatically offload older conversations, research docs, and examples to Supabase for searchable persistence",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "539326f4",
-    "created_date": "2025-07-18T20:03:51.341807",
-    "last_updated": "2025-07-18T20:03:51.341808",
-    "tags": [
-      "#examples",
-      "#research"
-    ],
-    "phase_relevance": [
-      "research"
-    ]
-  },
-  "RULE-023": {
-    "rule_id": "RULE-023",
-    "content": "Database-First Storage - Store completed PRPs, research findings, and successful examples in Supabase for cross-session intelligence and pattern detection",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "139991e9",
-    "created_date": "2025-07-18T20:03:51.341863",
-    "last_updated": "2025-07-18T20:03:51.341864",
-    "tags": [
-      "#examples",
-      "#research"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "research"
-    ]
-  },
-  "RULE-024": {
-    "rule_id": "RULE-024",
     "content": "Search existing modules - Check if functionality already exists in `/brain/modules/` and `/brain/workflows/`",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -442,19 +239,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "9096e755",
-    "created_date": "2025-07-18T20:03:51.342037",
-    "last_updated": "2025-07-18T20:03:51.342039",
+    "created_date": "2025-07-18T20:03:51.341384",
+    "last_updated": "2025-07-20T17:30:58.232685",
     "tags": [
       "#module"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-025": {
-    "rule_id": "RULE-025",
+  "RULE-014": {
+    "rule_id": "RULE-014",
     "content": "Enhancement over creation - If similar functionality exists, enhance the existing module instead of creating new",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -462,19 +259,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "bcc8cd62",
-    "created_date": "2025-07-18T20:03:51.342086",
-    "last_updated": "2025-07-18T20:03:51.342087",
+    "created_date": "2025-07-18T20:03:51.341424",
+    "last_updated": "2025-07-20T17:30:58.232767",
     "tags": [
       "#module"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-026": {
-    "rule_id": "RULE-026",
+  "RULE-015": {
+    "rule_id": "RULE-015",
     "content": "Collaboration requirement - If new module needed, design it to collaborate with supporting/related existing modules",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -482,19 +279,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "eeefb7e7",
-    "created_date": "2025-07-18T20:03:51.342130",
-    "last_updated": "2025-07-18T20:03:51.342132",
+    "created_date": "2025-07-18T20:03:51.341462",
+    "last_updated": "2025-07-20T17:30:58.232816",
     "tags": [
       "#module"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-027": {
-    "rule_id": "RULE-027",
+  "RULE-016": {
+    "rule_id": "RULE-016",
     "content": "Integration validation - Ensure new module integrates with existing scoring, tagging, and intelligence systems",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -502,42 +299,39 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "071fd583",
-    "created_date": "2025-07-18T20:03:51.342176",
-    "last_updated": "2025-07-18T20:03:51.342177",
+    "created_date": "2025-07-18T20:03:51.341512",
+    "last_updated": "2025-07-20T17:30:58.232870",
     "tags": [
-      "#scoring",
-      "#module"
+      "#module",
+      "#scoring"
     ],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-028": {
-    "rule_id": "RULE-028",
-    "content": "Auto-trigger setup - Add appropriate triggers to Smart Module Loading for automatic activation\n- **Always reference recent learning events** - Before executing any new task, you must:\n  - Check `/brain/workflows/feedback-learning.md` for relevant corrections in the past 3 days\n  - If a similar error occurred previously, adjust your plan and include a \"Lesson Considered\" note in your rationale\n  - If no relevant entries exist, proceed\u2014but tag the task for possible later review (#learn)\n- **Seamless Flow Priority** - Use orchestrated pipeline for idea-to-implementation\n- **Research-Driven Implementation** - Auto-integrate research findings into PRPs and projects\n- **Integration Intelligence** - Auto-recommend integrations based on PRP analysis\n- **Pipeline Contradiction Check** - Run /log status at every stage transition\n- **Quality Thresholds** - General \u22650.90, Project \u22650.75, validate before implementation\n- **Pattern Promotion** - Auto-upgrade project patterns to general when quality threshold met\n- **Dashboard Real-Time Updates** - dashboards/status.md serves as single source of truth for task status\n- **Task Verification Protocol** - Always verify file system state before presenting task lists\n- **API Token Management** - Break large requests into smaller pieces to avoid token limits\n- **Growth Metrics Monitoring** - Track system expansion (files, capabilities, intelligence)\n- **Auto-Offload Protocols** - When brain cache >80%, automatically offload older conversations, research docs, and examples to Supabase for searchable persistence\n- **Database-First Storage** - Store completed PRPs, research findings, and successful examples in Supabase for cross-session intelligence and pattern detection",
+  "RULE-017": {
+    "rule_id": "RULE-017",
+    "content": "Auto-trigger setup - Add appropriate triggers to Smart Module Loading for automatic activation\n- **Always reference recent learning events** - Before executing any new task, you must:\n  - Check `/brain/workflows/feedback-learning.md` for relevant corrections in the past 3 days\n  - If a similar error occurred previously, adjust your plan and include a \"Lesson Considered\" note in your rationale\n  - If no relevant entries exist, proceed\u2014but tag the task for possible later review (#learn)",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "f410999c",
-    "created_date": "2025-07-18T20:03:51.342426",
-    "last_updated": "2025-07-18T20:03:51.342428",
+    "version_hash": "360bd889",
+    "created_date": "2025-07-18T20:03:51.341550",
+    "last_updated": "2025-07-20T17:30:58.232979",
     "tags": [
-      "#examples",
-      "#learn",
-      "#research",
-      "#pipeline",
-      "#api",
-      "#module"
+      "#module",
+      "#learn"
     ],
     "phase_relevance": [
+      "foundation",
       "intelligence",
-      "research"
+      "optimization"
     ]
   },
-  "RULE-029": {
-    "rule_id": "RULE-029",
+  "RULE-018": {
+    "rule_id": "RULE-018",
     "content": "**Documentation is source of truth** - Your knowledge is out of date, freshly scraped documentation is absolute truth, NOT your own knowledge",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -545,19 +339,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "7b84db6a",
-    "created_date": "2025-07-18T20:03:51.342501",
-    "last_updated": "2025-07-18T20:03:51.342502",
+    "created_date": "2025-07-18T20:03:51.341592",
+    "last_updated": "2025-07-20T17:30:58.233081",
     "tags": [
       "#docs"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-030": {
-    "rule_id": "RULE-030",
+  "RULE-019": {
+    "rule_id": "RULE-019",
     "content": "**Docker & Self-testing** - Must use Docker CLI, unit tests, everything confirmed working perfectly before delivery",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -565,18 +359,18 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "c9a1c65f",
-    "created_date": "2025-07-18T20:03:51.342526",
-    "last_updated": "2025-07-18T20:03:51.342527",
+    "created_date": "2025-07-18T20:03:51.341655",
+    "last_updated": "2025-07-20T17:30:58.233123",
     "tags": [
-      "#docker",
-      "#testing"
+      "#testing",
+      "#docker"
     ],
     "phase_relevance": [
       "testing"
     ]
   },
-  "RULE-031": {
-    "rule_id": "RULE-031",
+  "RULE-020": {
+    "rule_id": "RULE-020",
     "content": "**Check all Jina scrapes** - Retry failed scrapes until you get actual content, scrape 30-100 pages total",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -584,19 +378,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "4411385a",
-    "created_date": "2025-07-18T20:03:51.342551",
-    "last_updated": "2025-07-18T20:03:51.342551",
+    "created_date": "2025-07-18T20:03:51.341716",
+    "last_updated": "2025-07-20T17:30:58.233168",
     "tags": [
       "#jina"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-032": {
-    "rule_id": "RULE-032",
+  "RULE-021": {
+    "rule_id": "RULE-021",
     "content": "**Refer to research** - Before implementing features using third-party APIs, use research documentation for accuracy, never assume knowledge",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -604,19 +398,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "c6695259",
-    "created_date": "2025-07-18T20:03:51.342575",
-    "last_updated": "2025-07-18T20:03:51.342576",
+    "created_date": "2025-07-18T20:03:51.341760",
+    "last_updated": "2025-07-20T17:30:58.233212",
     "tags": [
-      "#api",
+      "#docs",
       "#research",
-      "#docs"
+      "#api"
     ],
     "phase_relevance": [
       "research"
     ]
   },
-  "RULE-033": {
-    "rule_id": "RULE-033",
+  "RULE-022": {
+    "rule_id": "RULE-022",
     "content": "**Examples are memory bank** - Use `examples/` recommendations before implementing",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -624,19 +418,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "c31ac1b6",
-    "created_date": "2025-07-18T20:03:51.342597",
-    "last_updated": "2025-07-18T20:03:51.342597",
+    "created_date": "2025-07-18T20:03:51.341807",
+    "last_updated": "2025-07-20T17:30:58.233255",
     "tags": [
       "#examples"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-034": {
-    "rule_id": "RULE-034",
+  "RULE-023": {
+    "rule_id": "RULE-023",
     "content": "**Neural reasoning required** - Include WHY rationale + confidence score (70-95%) for decisions",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -644,20 +438,20 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "2f25222a",
-    "created_date": "2025-07-18T20:03:51.342676",
-    "last_updated": "2025-07-18T20:03:51.342678",
+    "created_date": "2025-07-18T20:03:51.341863",
+    "last_updated": "2025-07-20T17:30:58.233297",
     "tags": [
-      "#decision",
-      "#neural"
+      "#neural",
+      "#decision"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-035": {
-    "rule_id": "RULE-035",
+  "RULE-024": {
+    "rule_id": "RULE-024",
     "content": "**Auto-learning active** - Systems capture patterns from successful implementations",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -665,17 +459,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "277646e8",
-    "created_date": "2025-07-18T20:03:51.342711",
-    "last_updated": "2025-07-18T20:03:51.342712",
+    "created_date": "2025-07-18T20:03:51.342037",
+    "last_updated": "2025-07-20T17:30:58.233337",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-036": {
-    "rule_id": "RULE-036",
+  "RULE-025": {
+    "rule_id": "RULE-025",
     "content": "**Context Engineering** - Follow established PRP workflow (.claude/commands/)",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -683,17 +477,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "436ed74f",
-    "created_date": "2025-07-18T20:03:51.342735",
-    "last_updated": "2025-07-18T20:03:51.342736",
+    "created_date": "2025-07-18T20:03:51.342086",
+    "last_updated": "2025-07-20T17:30:58.233376",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-037": {
-    "rule_id": "RULE-037",
+  "RULE-026": {
+    "rule_id": "RULE-026",
     "content": "**Modular Architecture** - Keep files <500 lines, extract complexity to modules",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -701,19 +495,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "04589342",
-    "created_date": "2025-07-18T20:03:51.342784",
-    "last_updated": "2025-07-18T20:03:51.342786",
+    "created_date": "2025-07-18T20:03:51.342130",
+    "last_updated": "2025-07-20T17:30:58.233414",
     "tags": [
       "#module"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-038": {
-    "rule_id": "RULE-038",
+  "RULE-027": {
+    "rule_id": "RULE-027",
     "content": "**CRITICAL: Module Creation Protocol** - Before creating ANY new module:\n  1. **Search existing modules** - Check if functionality already exists in `/brain/modules/` and `/brain/workflows/`\n  2. **Enhancement over creation** - If similar functionality exists, enhance the existing module instead of creating new\n  3. **Collaboration requirement** - If new module needed, design it to collaborate with supporting/related existing modules\n  4. **Integration validation** - Ensure new module integrates with existing scoring, tagging, and intelligence systems\n  5. **Auto-trigger setup** - Add appropriate triggers to Smart Module Loading for automatic activation",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -721,18 +515,18 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "d18901d1",
-    "created_date": "2025-07-18T20:03:51.342887",
-    "last_updated": "2025-07-18T20:03:51.342889",
+    "created_date": "2025-07-18T20:03:51.342176",
+    "last_updated": "2025-07-20T17:30:58.233518",
     "tags": [
-      "#scoring",
-      "#module"
+      "#module",
+      "#scoring"
     ],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-039": {
-    "rule_id": "RULE-039",
+  "RULE-028": {
+    "rule_id": "RULE-028",
     "content": "**Always reference recent learning events** - Before executing any new task, you must:",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -740,17 +534,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "21ded1da",
-    "created_date": "2025-07-18T20:03:51.342934",
-    "last_updated": "2025-07-18T20:03:51.342935",
+    "created_date": "2025-07-18T20:03:51.342426",
+    "last_updated": "2025-07-20T17:30:58.233554",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-040": {
-    "rule_id": "RULE-040",
+  "RULE-029": {
+    "rule_id": "RULE-029",
     "content": "Check `/brain/workflows/feedback-learning.md` for relevant corrections in the past 3 days",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -758,17 +552,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "14da79a7",
-    "created_date": "2025-07-18T20:03:51.342969",
-    "last_updated": "2025-07-18T20:03:51.342970",
+    "created_date": "2025-07-18T20:03:51.342501",
+    "last_updated": "2025-07-20T17:30:58.233590",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-041": {
-    "rule_id": "RULE-041",
+  "RULE-030": {
+    "rule_id": "RULE-030",
     "content": "If a similar error occurred previously, adjust your plan and include a \"Lesson Considered\" note in your rationale",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -776,17 +570,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "1efdddd0",
-    "created_date": "2025-07-18T20:03:51.343010",
-    "last_updated": "2025-07-18T20:03:51.343011",
+    "created_date": "2025-07-18T20:03:51.342526",
+    "last_updated": "2025-07-20T17:30:58.233631",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-042": {
-    "rule_id": "RULE-042",
+  "RULE-031": {
+    "rule_id": "RULE-031",
     "content": "If no relevant entries exist, proceed\u2014but tag the task for possible later review (#learn)",
     "section": "\ud83d\udd27 Core Rules & Triggers",
     "alert_level": "\u2757",
@@ -794,342 +588,499 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "969567eb",
-    "created_date": "2025-07-18T20:03:51.343055",
-    "last_updated": "2025-07-18T20:03:51.343056",
+    "created_date": "2025-07-18T20:03:51.342551",
+    "last_updated": "2025-07-20T17:30:58.233677",
     "tags": [
       "#learn"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
+    ]
+  },
+  "RULE-032": {
+    "rule_id": "RULE-032",
+    "content": "intent-engine \u2192 understand idea context and requirements",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "65fa28e3",
+    "created_date": "2025-07-18T20:03:51.342575",
+    "last_updated": "2025-07-20T17:30:58.233935",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-033": {
+    "rule_id": "RULE-033",
+    "content": "idea-evaluator \u2192 assess feasibility and approach options",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "8501c1b3",
+    "created_date": "2025-07-18T20:03:51.342597",
+    "last_updated": "2025-07-20T17:30:58.233980",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-034": {
+    "rule_id": "RULE-034",
+    "content": "r1-reasoning \u2192 deep analysis with WHY rationale",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "70a972de",
+    "created_date": "2025-07-18T20:03:51.342676",
+    "last_updated": "2025-07-20T17:30:58.234035",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-035": {
+    "rule_id": "RULE-035",
+    "content": "memory-enhancement \u2192 recall similar ideas and patterns\n  \n  output: STRUCTURED_IDEA_BLUEPRINT with confidence scoring\n```",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u26a0\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "4c780ec8",
+    "created_date": "2025-07-18T20:03:51.342711",
+    "last_updated": "2025-07-20T17:30:58.234092",
+    "tags": [
+      "#scoring"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-036": {
+    "rule_id": "RULE-036",
+    "content": "research-prp-integration \u2192 automated documentation discovery",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "56e24114",
+    "created_date": "2025-07-18T20:03:51.342735",
+    "last_updated": "2025-07-20T17:30:58.234135",
+    "tags": [
+      "#docs",
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-037": {
+    "rule_id": "RULE-037",
+    "content": "jina-api \u2192 scrape 30-100 pages of official documentation",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "cb420f6e",
+    "created_date": "2025-07-18T20:03:51.342784",
+    "last_updated": "2025-07-20T17:30:58.234182",
+    "tags": [
+      "#jina",
+      "#docs",
+      "#api"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-038": {
+    "rule_id": "RULE-038",
+    "content": "foundational-rag-agent \u2192 knowledge synthesis from multiple sources",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "9fa43886",
+    "created_date": "2025-07-18T20:03:51.342887",
+    "last_updated": "2025-07-20T17:30:58.234224",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "research"
+    ]
+  },
+  "RULE-039": {
+    "rule_id": "RULE-039",
+    "content": "openrouter-integration \u2192 multi-model consensus building",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "c7ef43e6",
+    "created_date": "2025-07-18T20:03:51.342934",
+    "last_updated": "2025-07-20T17:30:58.234262",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-040": {
+    "rule_id": "RULE-040",
+    "content": "github-analyzer \u2192 find existing implementations",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "4503d931",
+    "created_date": "2025-07-18T20:03:51.342969",
+    "last_updated": "2025-07-20T17:30:58.234298",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-041": {
+    "rule_id": "RULE-041",
+    "content": "enhanced-repository-analyzer \u2192 understand code patterns\n  \n  parallel_learning:",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u26a0\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "5444cf92",
+    "created_date": "2025-07-18T20:03:51.343010",
+    "last_updated": "2025-07-20T17:30:58.234342",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-042": {
+    "rule_id": "RULE-042",
+    "content": "example-engine \u2192 find relevant patterns",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "1ee1655c",
+    "created_date": "2025-07-18T20:03:51.343055",
+    "last_updated": "2025-07-20T17:30:58.234377",
+    "tags": [
+      "#examples"
+    ],
+    "phase_relevance": [
+      "research"
     ]
   },
   "RULE-043": {
     "rule_id": "RULE-043",
-    "content": "**Seamless Flow Priority** - Use orchestrated pipeline for idea-to-implementation",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "prompt-recipes \u2192 apply proven research strategies",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "6280bd65",
+    "version_hash": "96beedd5",
     "created_date": "2025-07-18T20:03:51.343090",
-    "last_updated": "2025-07-18T20:03:51.343091",
+    "last_updated": "2025-07-20T17:30:58.234413",
     "tags": [
-      "#pipeline"
+      "#research"
     ],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-044": {
     "rule_id": "RULE-044",
-    "content": "**Research-Driven Implementation** - Auto-integrate research findings into PRPs and projects",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "tech-stack-expert \u2192 architectural recommendations\n  \n  output: COMPREHENSIVE_KNOWLEDGE_BASE with validated insights\n```",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u26a0\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "c87dfffb",
+    "version_hash": "3e1e5ccc",
     "created_date": "2025-07-18T20:03:51.343127",
-    "last_updated": "2025-07-18T20:03:51.343128",
-    "tags": [
-      "#research"
-    ],
+    "last_updated": "2025-07-20T17:30:58.234460",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-045": {
     "rule_id": "RULE-045",
-    "content": "**Integration Intelligence** - Auto-recommend integrations based on PRP analysis",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "trace-mapping \u2192 map decision pathways",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "e7537190",
+    "version_hash": "ed492e07",
     "created_date": "2025-07-18T20:03:51.343161",
-    "last_updated": "2025-07-18T20:03:51.343162",
-    "tags": [],
+    "last_updated": "2025-07-20T17:30:58.234496",
+    "tags": [
+      "#decision"
+    ],
     "phase_relevance": [
-      "intelligence"
+      "research"
     ]
   },
   "RULE-046": {
     "rule_id": "RULE-046",
-    "content": "**Pipeline Contradiction Check** - Run /log status at every stage transition",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "decision-neural \u2192 architectural implications",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "964da38a",
+    "version_hash": "87fb3efd",
     "created_date": "2025-07-18T20:03:51.343205",
-    "last_updated": "2025-07-18T20:03:51.343206",
+    "last_updated": "2025-07-20T17:30:58.234531",
     "tags": [
-      "#pipeline"
+      "#neural",
+      "#decision"
     ],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-047": {
     "rule_id": "RULE-047",
-    "content": "**Quality Thresholds** - General \u22650.90, Project \u22650.75, validate before implementation",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "r1-reasoning \u2192 step-by-step implementation plan",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "ee337ccb",
+    "version_hash": "63325a09",
     "created_date": "2025-07-18T20:03:51.343245",
-    "last_updated": "2025-07-18T20:03:51.343246",
+    "last_updated": "2025-07-20T17:30:58.234567",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-048": {
     "rule_id": "RULE-048",
-    "content": "**Pattern Promotion** - Auto-upgrade project patterns to general when quality threshold met",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
+    "content": "smart-tool-selector \u2192 identify required tools\n  \n  planning_synthesis:",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
     "alert_level": "\u2757",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "59f511be",
+    "version_hash": "fb105dbb",
     "created_date": "2025-07-18T20:03:51.343281",
-    "last_updated": "2025-07-18T20:03:51.343282",
+    "last_updated": "2025-07-20T17:30:58.234604",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-049": {
     "rule_id": "RULE-049",
-    "content": "**Dashboard Real-Time Updates** - dashboards/status.md serves as single source of truth for task status",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "seamless-orchestrator \u2192 workflow design",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "e82f0b11",
+    "version_hash": "d4288660",
     "created_date": "2025-07-18T20:03:51.343319",
-    "last_updated": "2025-07-18T20:03:51.343320",
+    "last_updated": "2025-07-20T17:30:58.234639",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-050": {
     "rule_id": "RULE-050",
-    "content": "**Task Verification Protocol** - Always verify file system state before presenting task lists",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "prp-scaffold \u2192 project structure planning",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "a35e2cf5",
+    "version_hash": "1763bb24",
     "created_date": "2025-07-18T20:03:51.343359",
-    "last_updated": "2025-07-18T20:03:51.343360",
+    "last_updated": "2025-07-20T17:30:58.234678",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-051": {
     "rule_id": "RULE-051",
-    "content": "**API Token Management** - Break large requests into smaller pieces to avoid token limits",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "mcp-orchestrator \u2192 external service requirements\n  \n  output: EXECUTABLE_IMPLEMENTATION_PLAN with risk assessment\n```",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "afbe7dd2",
+    "version_hash": "515e4b58",
     "created_date": "2025-07-18T20:03:51.343394",
-    "last_updated": "2025-07-18T20:03:51.343395",
-    "tags": [
-      "#api"
-    ],
+    "last_updated": "2025-07-20T17:30:58.234730",
+    "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-052": {
     "rule_id": "RULE-052",
-    "content": "**Growth Metrics Monitoring** - Track system expansion (files, capabilities, intelligence)",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "smart-tool-selector \u2192 optimal tool chain activation",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "4b121d22",
+    "version_hash": "0dc58225",
     "created_date": "2025-07-18T20:03:51.343435",
-    "last_updated": "2025-07-18T20:03:51.343436",
+    "last_updated": "2025-07-20T17:30:58.234771",
     "tags": [],
     "phase_relevance": [
-      "intelligence"
+      "research"
     ]
   },
   "RULE-053": {
     "rule_id": "RULE-053",
-    "content": "**Auto-Offload Protocols** - When brain cache >80%, automatically offload older conversations, research docs, and examples to Supabase for searchable persistence",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "mcp-orchestrator \u2192 multi-agent task distribution",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "00d91bd1",
+    "version_hash": "315fc5b0",
     "created_date": "2025-07-18T20:03:51.343480",
-    "last_updated": "2025-07-18T20:03:51.343481",
-    "tags": [
-      "#examples",
-      "#research"
-    ],
+    "last_updated": "2025-07-20T17:30:58.234808",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-054": {
     "rule_id": "RULE-054",
-    "content": "**Database-First Storage** - Store completed PRPs, research findings, and successful examples in Supabase for cross-session intelligence and pattern detection",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "seamless-orchestrator \u2192 workflow automation",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "89a7e297",
+    "version_hash": "de771d77",
     "created_date": "2025-07-18T20:03:51.343523",
-    "last_updated": "2025-07-18T20:03:51.343525",
-    "tags": [
-      "#examples",
-      "#research"
-    ],
+    "last_updated": "2025-07-20T17:30:58.234844",
+    "tags": [],
     "phase_relevance": [
-      "intelligence",
       "research"
     ]
   },
   "RULE-055": {
     "rule_id": "RULE-055",
-    "content": "**Logs** \u2192 `/brain/logs/` (interactions, improvements, agent-history)",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "prp-scaffold \u2192 project materialization\n  \n  continuous_validation:",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "f15e0642",
+    "version_hash": "f388d5d9",
     "created_date": "2025-07-18T20:03:51.343582",
-    "last_updated": "2025-07-18T20:03:51.343583",
+    "last_updated": "2025-07-20T17:30:58.234925",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-056": {
     "rule_id": "RULE-056",
-    "content": "**States** \u2192 `/brain/states/` (conversation-state.json, project contexts)",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "score-tracker \u2192 quality metrics",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "0bd9576d",
+    "version_hash": "68db9ebf",
     "created_date": "2025-07-18T20:03:51.343676",
-    "last_updated": "2025-07-18T20:03:51.343678",
+    "last_updated": "2025-07-20T17:30:58.234969",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-057": {
     "rule_id": "RULE-057",
-    "content": "**Workflows** \u2192 `/brain/workflows/` (intent-registry.md, prompt-history.md)",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "unified-analytics \u2192 performance tracking",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "5037d9db",
+    "version_hash": "51258bcb",
     "created_date": "2025-07-18T20:03:51.343734",
-    "last_updated": "2025-07-18T20:03:51.343762",
+    "last_updated": "2025-07-20T17:30:58.235005",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-058": {
     "rule_id": "RULE-058",
-    "content": "**Modules** \u2192 `/brain/modules/` (intelligence capabilities)",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "memory-enhancement \u2192 pattern capture\n  \n  output: WORKING_IMPLEMENTATION with documentation\n```",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u26a0\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "e1efafb6",
+    "version_hash": "11207e68",
     "created_date": "2025-07-18T20:03:51.343814",
-    "last_updated": "2025-07-18T20:03:51.343815",
+    "last_updated": "2025-07-20T17:30:58.235050",
     "tags": [
-      "#module"
+      "#docs"
     ],
     "phase_relevance": [
-      "intelligence"
+      "research"
     ]
   },
   "RULE-059": {
     "rule_id": "RULE-059",
-    "content": "**Cache** \u2192 `/brain/cache/` (Supabase-backed volatile memory)",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "sop-generator \u2192 capture successful patterns",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "76fa9464",
+    "version_hash": "5d324562",
     "created_date": "2025-07-18T20:03:51.343853",
-    "last_updated": "2025-07-18T20:03:51.343855",
+    "last_updated": "2025-07-20T17:30:58.235094",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "research"
     ]
   },
   "RULE-060": {
     "rule_id": "RULE-060",
-    "content": "**Research** \u2192 `/research/` (documentation findings - will be structured when implemented)",
-    "section": "\ud83d\udd27 Core Rules & Triggers",
-    "alert_level": "\u2757",
+    "content": "example-engine \u2192 store reusable components",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "7856acc1",
+    "version_hash": "6cef8c11",
     "created_date": "2025-07-18T20:03:51.343895",
-    "last_updated": "2025-07-18T20:03:51.343896",
+    "last_updated": "2025-07-20T17:30:58.235131",
     "tags": [
-      "#research",
-      "#docs"
+      "#examples"
     ],
     "phase_relevance": [
       "research"
@@ -1137,35 +1088,31 @@
   },
   "RULE-061": {
     "rule_id": "RULE-061",
-    "content": "Always scrape 30-100 pages total** when doing research\n- **Put successful Jina scrapes** in research with tech-named directories and .md/.txt files\n- **Stick to OFFICIAL DOCUMENTATION PAGES ONLY - No outdated tutorials",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
-    "alert_level": "\u2757",
+    "content": "tag-taxonomy \u2192 evolve concept organization",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "ae8803e4",
+    "version_hash": "83ea15b1",
     "created_date": "2025-07-18T20:03:51.344015",
-    "last_updated": "2025-07-18T20:03:51.344017",
-    "tags": [
-      "#jina",
-      "#research",
-      "#docs"
-    ],
+    "last_updated": "2025-07-20T17:30:58.235168",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-062": {
     "rule_id": "RULE-062",
-    "content": "For maximum efficiency - Invoke multiple tools simultaneously for independent operations",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "supabase-integration \u2192 persist learnings\n  \n  innovation_cycle:",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "96064aea",
+    "version_hash": "f04a027f",
     "created_date": "2025-07-18T20:03:51.344075",
-    "last_updated": "2025-07-18T20:03:51.344077",
+    "last_updated": "2025-07-20T17:30:58.235210",
     "tags": [],
     "phase_relevance": [
       "research"
@@ -1173,58 +1120,49 @@
   },
   "RULE-063": {
     "rule_id": "RULE-063",
-    "content": "Take user's tech specifications as sacred truth - Research exact model names, API versions specified",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "cross-folder-analytics \u2192 identify improvement opportunities",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "07fa97f9",
+    "version_hash": "5c587340",
     "created_date": "2025-07-18T20:03:51.344123",
-    "last_updated": "2025-07-18T20:03:51.344124",
-    "tags": [
-      "#api",
-      "#research"
-    ],
+    "last_updated": "2025-07-20T17:30:58.235251",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-064": {
     "rule_id": "RULE-064",
-    "content": "Hybrid Architecture**: Single source of truth with organized symlink access\n- **Dual Quality System**: General research \u22650.90, Project research \u22650.75\n- **Multi-Agent Intelligence**: GeneralResearcher + ProjectResearcher with auto-promotion\n- **Semantic Search**: OpenRouter embeddings with keyword fallback\n- **Docker + MCP Integration**: Containerized research delegation\n\n### Agent Design Philosophy\n- **Agents as intelligent human beings - Give them decision making, detailed Jina research capabilities",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
-    "alert_level": "\u2139\ufe0f",
+    "content": "memory-enhancement \u2192 strengthen pattern recognition",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u26a0\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "3a9f3ae4",
+    "version_hash": "c49fa09d",
     "created_date": "2025-07-18T20:03:51.344216",
-    "last_updated": "2025-07-18T20:03:51.344217",
-    "tags": [
-      "#jina",
-      "#research",
-      "#decision",
-      "#docker"
-    ],
+    "last_updated": "2025-07-20T17:30:58.235289",
+    "tags": [],
     "phase_relevance": [
-      "intelligence",
       "research"
     ]
   },
   "RULE-065": {
     "rule_id": "RULE-065",
-    "content": "Never use programmatic solutions - Use reasoning and AI decision making for all problems",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
-    "alert_level": "\u2757",
+    "content": "idea-evaluator \u2192 generate enhancement ideas\n  \n  output: EVOLVED_CAPABILITIES for future research\n```",
+    "section": "\ud83e\udde0 The Research Engine Architecture",
+    "alert_level": "\u26a0\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "e4307994",
+    "version_hash": "3a9892f9",
     "created_date": "2025-07-18T20:03:51.344253",
-    "last_updated": "2025-07-18T20:03:51.344254",
+    "last_updated": "2025-07-20T17:30:58.235340",
     "tags": [
-      "#decision"
+      "#research"
     ],
     "phase_relevance": [
       "research"
@@ -1232,33 +1170,36 @@
   },
   "RULE-066": {
     "rule_id": "RULE-066",
-    "content": "Every agent needs 5+ prompts** in agentic workflow to create unique content\n- **Context continuity - Each agent should have context of previous iterations",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
-    "alert_level": "\u26a0\ufe0f",
+    "content": "*ALL modules work together** - not as isolated tools but as a coordinated research organism:",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "b7c7771a",
+    "version_hash": "2fe6de67",
     "created_date": "2025-07-18T20:03:51.344311",
-    "last_updated": "2025-07-18T20:03:51.344312",
-    "tags": [],
+    "last_updated": "2025-07-20T17:30:58.235606",
+    "tags": [
+      "#module",
+      "#research"
+    ],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-067": {
     "rule_id": "RULE-067",
-    "content": "Dynamic prompts - Never hardcode examples, make everything dynamic/contextual",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
-    "alert_level": "\u2757",
+    "content": "Research findings \u2192 enhance reasoning analysis",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
+    "alert_level": "\u26a0\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "af9170a6",
+    "version_hash": "5abb4bf0",
     "created_date": "2025-07-18T20:03:51.344342",
-    "last_updated": "2025-07-18T20:03:51.344343",
+    "last_updated": "2025-07-20T17:30:58.235657",
     "tags": [
-      "#examples"
+      "#research"
     ],
     "phase_relevance": [
       "research"
@@ -1266,36 +1207,33 @@
   },
   "RULE-068": {
     "rule_id": "RULE-068",
-    "content": "**Always scrape 30-100 pages total** when doing research",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
-    "alert_level": "\u2757",
+    "content": "Reasoning insights \u2192 guide tool selection",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "2a3cf5a9",
+    "version_hash": "17a6ca66",
     "created_date": "2025-07-18T20:03:51.344421",
-    "last_updated": "2025-07-18T20:03:51.344422",
-    "tags": [
-      "#research"
-    ],
+    "last_updated": "2025-07-20T17:30:58.235698",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-069": {
     "rule_id": "RULE-069",
-    "content": "**Put successful Jina scrapes** in research with tech-named directories and .md/.txt files",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "Tool results \u2192 inform architecture decisions",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "67e2129e",
+    "version_hash": "0cf2173c",
     "created_date": "2025-07-18T20:03:51.344468",
-    "last_updated": "2025-07-18T20:03:51.344469",
+    "last_updated": "2025-07-20T17:30:58.235736",
     "tags": [
-      "#jina",
-      "#research"
+      "#decision"
     ],
     "phase_relevance": [
       "research"
@@ -1303,52 +1241,54 @@
   },
   "RULE-070": {
     "rule_id": "RULE-070",
-    "content": "**Stick to OFFICIAL DOCUMENTATION PAGES ONLY** - No outdated tutorials",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "Architecture choices \u2192 update learning patterns",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "cf2c660f",
+    "version_hash": "19b9c8eb",
     "created_date": "2025-07-18T20:03:51.344509",
-    "last_updated": "2025-07-18T20:03:51.344510",
-    "tags": [
-      "#docs"
-    ],
+    "last_updated": "2025-07-20T17:30:58.235774",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-071": {
     "rule_id": "RULE-071",
-    "content": "**For maximum efficiency** - Invoke multiple tools simultaneously for independent operations",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "Learning patterns \u2192 improve future research\n```",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "43bd79ba",
+    "version_hash": "3ad90631",
     "created_date": "2025-07-18T20:03:51.344551",
-    "last_updated": "2025-07-18T20:03:51.344552",
-    "tags": [],
+    "last_updated": "2025-07-20T17:30:58.235811",
+    "tags": [
+      "#research"
+    ],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-072": {
     "rule_id": "RULE-072",
-    "content": "**Take user's tech specifications as sacred truth** - Research exact model names, API versions specified",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Leave no stone unturned**: 30-100 pages of documentation per research topic via Jina API",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "07e0d062",
+    "version_hash": "e0bea0f7",
     "created_date": "2025-07-18T20:03:51.344593",
-    "last_updated": "2025-07-18T20:03:51.344594",
+    "last_updated": "2025-07-20T17:30:58.235852",
     "tags": [
-      "#api",
-      "#research"
+      "#jina",
+      "#docs",
+      "#research",
+      "#api"
     ],
     "phase_relevance": [
       "research"
@@ -1356,15 +1296,15 @@
   },
   "RULE-073": {
     "rule_id": "RULE-073",
-    "content": "**Hybrid Architecture**: Single source of truth with organized symlink access",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Multi-source validation**: Cross-reference findings across sources",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "f91695dc",
+    "version_hash": "460d12a1",
     "created_date": "2025-07-18T20:03:51.344657",
-    "last_updated": "2025-07-18T20:03:51.344659",
+    "last_updated": "2025-07-20T17:30:58.236083",
     "tags": [],
     "phase_relevance": [
       "research"
@@ -1372,52 +1312,47 @@
   },
   "RULE-074": {
     "rule_id": "RULE-074",
-    "content": "**Dual Quality System**: General research \u22650.90, Project research \u22650.75",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Pattern recognition**: Identify connections others miss",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "cd998d4c",
+    "version_hash": "462fee68",
     "created_date": "2025-07-18T20:03:51.344703",
-    "last_updated": "2025-07-18T20:03:51.344704",
-    "tags": [
-      "#research"
-    ],
+    "last_updated": "2025-07-20T17:30:58.236130",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-075": {
     "rule_id": "RULE-075",
-    "content": "**Multi-Agent Intelligence**: GeneralResearcher + ProjectResearcher with auto-promotion",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Quality over quantity**: 95% accuracy threshold for all findings",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "9c3ced36",
+    "version_hash": "0d760f41",
     "created_date": "2025-07-18T20:03:51.344765",
-    "last_updated": "2025-07-18T20:03:51.344767",
-    "tags": [
-      "#research"
-    ],
+    "last_updated": "2025-07-20T17:30:58.236166",
+    "tags": [],
     "phase_relevance": [
-      "intelligence",
       "research"
     ]
   },
   "RULE-076": {
     "rule_id": "RULE-076",
-    "content": "**Semantic Search**: OpenRouter embeddings with keyword fallback",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Cross-domain insights**: Connect ideas from disparate fields",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "c4aee67c",
+    "version_hash": "bbad7496",
     "created_date": "2025-07-18T20:03:51.344805",
-    "last_updated": "2025-07-18T20:03:51.344806",
+    "last_updated": "2025-07-20T17:30:58.236210",
     "tags": [],
     "phase_relevance": [
       "research"
@@ -1425,38 +1360,33 @@
   },
   "RULE-077": {
     "rule_id": "RULE-077",
-    "content": "**Docker + MCP Integration**: Containerized research delegation",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Reasoning chains**: O1-style step-by-step analysis with evidence",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "30ea3b4b",
+    "version_hash": "83d1a5c9",
     "created_date": "2025-07-18T20:03:51.344844",
-    "last_updated": "2025-07-18T20:03:51.344846",
-    "tags": [
-      "#research",
-      "#docker"
-    ],
+    "last_updated": "2025-07-20T17:30:58.236250",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-078": {
     "rule_id": "RULE-078",
-    "content": "**Agents as intelligent human beings** - Give them decision making, detailed Jina research capabilities",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Confidence scoring**: 70-95% range with clear rationale",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "28ef9f3f",
+    "version_hash": "800ef166",
     "created_date": "2025-07-18T20:03:51.344887",
-    "last_updated": "2025-07-18T20:03:51.344888",
+    "last_updated": "2025-07-20T17:30:58.236291",
     "tags": [
-      "#jina",
-      "#research",
-      "#decision"
+      "#scoring"
     ],
     "phase_relevance": [
       "research"
@@ -1464,33 +1394,31 @@
   },
   "RULE-079": {
     "rule_id": "RULE-079",
-    "content": "**Never use programmatic solutions** - Use reasoning and AI decision making for all problems",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Alternative perspectives**: Always consider multiple approaches",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2757",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "d8e06a51",
+    "version_hash": "0ac1cedf",
     "created_date": "2025-07-18T20:03:51.344917",
-    "last_updated": "2025-07-18T20:03:51.344918",
-    "tags": [
-      "#decision"
-    ],
+    "last_updated": "2025-07-20T17:30:58.236323",
+    "tags": [],
     "phase_relevance": [
       "research"
     ]
   },
   "RULE-080": {
     "rule_id": "RULE-080",
-    "content": "**Every agent needs 5+ prompts** in agentic workflow to create unique content",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "content": "**Tool mastery**: Select optimal tools for each task",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "9269c836",
+    "version_hash": "62a52cf8",
     "created_date": "2025-07-18T20:03:51.344968",
-    "last_updated": "2025-07-18T20:03:51.344969",
+    "last_updated": "2025-07-20T17:30:58.236357",
     "tags": [],
     "phase_relevance": [
       "research"
@@ -1498,15 +1426,15 @@
   },
   "RULE-081": {
     "rule_id": "RULE-081",
-    "content": "**Context continuity** - Each agent should have context of previous iterations",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
-    "alert_level": "\u26a0\ufe0f",
+    "content": "**Parallel processing**: Maximize efficiency through coordination",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "f1dac7a2",
+    "version_hash": "71ba6125",
     "created_date": "2025-07-18T20:03:51.345049",
-    "last_updated": "2025-07-18T20:03:51.345051",
+    "last_updated": "2025-07-20T17:30:58.236411",
     "tags": [],
     "phase_relevance": [
       "research"
@@ -1514,17 +1442,17 @@
   },
   "RULE-082": {
     "rule_id": "RULE-082",
-    "content": "**Dynamic prompts** - Never hardcode examples, make everything dynamic/contextual",
-    "section": "\ud83d\udd2c Research & Documentation Protocols",
-    "alert_level": "\u2757",
+    "content": "**Continuous validation**: Test and verify at every step",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "270783d8",
+    "version_hash": "b5a55d6d",
     "created_date": "2025-07-18T20:03:51.345090",
-    "last_updated": "2025-07-18T20:03:51.345091",
+    "last_updated": "2025-07-20T17:30:58.236452",
     "tags": [
-      "#examples"
+      "#testing"
     ],
     "phase_relevance": [
       "research"
@@ -1532,6 +1460,577 @@
   },
   "RULE-083": {
     "rule_id": "RULE-083",
+    "content": "**Learning integration**: Every execution improves the system",
+    "section": "\ud83d\udd27 Core Research Engine Principles",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "5850cb51",
+    "created_date": "2025-07-18T20:03:51.345155",
+    "last_updated": "2025-07-20T17:30:58.236488",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-084": {
+    "rule_id": "RULE-084",
+    "content": "Always scrape 30-100 pages total** using Jina API for comprehensive research\n- **Put successful Jina scrapes** in research/ with tech-named directories and .md/.txt files\n- **Stick to OFFICIAL DOCUMENTATION PAGES ONLY - No outdated tutorials",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "ee77db8e",
+    "created_date": "2025-07-18T20:03:51.345220",
+    "last_updated": "2025-07-20T17:30:58.236555",
+    "tags": [
+      "#jina",
+      "#docs",
+      "#research",
+      "#api"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-085": {
+    "rule_id": "RULE-085",
+    "content": "For maximum efficiency - Invoke multiple tools simultaneously for independent operations",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "96064aea",
+    "created_date": "2025-07-18T20:03:51.345295",
+    "last_updated": "2025-07-20T17:30:58.236599",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-086": {
+    "rule_id": "RULE-086",
+    "content": "Take user's tech specifications as sacred truth - Research exact model names, API versions specified",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "07fa97f9",
+    "created_date": "2025-07-18T20:03:51.345365",
+    "last_updated": "2025-07-20T17:30:58.236640",
+    "tags": [
+      "#research",
+      "#api"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-087": {
+    "rule_id": "RULE-087",
+    "content": "Hybrid Architecture**: Single source of truth with organized symlink access\n- **Dual Quality System**: General research \u22650.90, Project research \u22650.75\n- **Multi-Agent Intelligence**: GeneralResearcher + ProjectResearcher with auto-promotion\n- **Semantic Search**: OpenRouter embeddings with keyword fallback\n- **Docker + MCP Integration**: Containerized research delegation\n\n### The Sacred Research Commandments\n1. **Research First, Always**: Never assume - research everything thoroughly\n2. **Documentation is Truth**: Fresh documentation overrides all assumptions\n3. **Jina Scraping Excellence**: Always scrape 30-100 pages with Jina API for comprehensive research\n4. **Synthesize Everything**: Connect findings across all sources and modules\n5. **Validate Ruthlessly**: 95% confidence or iterate until achieved\n6. **Learn Continuously**: Every task must improve the system\n\n### Agent Design Philosophy\n- **Agents as intelligent human beings - Give them decision making, detailed Jina research capabilities",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "490d16c4",
+    "created_date": "2025-07-18T20:03:51.345408",
+    "last_updated": "2025-07-20T17:30:58.236777",
+    "tags": [
+      "#docs",
+      "#docker",
+      "#research",
+      "#api",
+      "#jina",
+      "#module",
+      "#decision"
+    ],
+    "phase_relevance": [
+      "research",
+      "intelligence"
+    ]
+  },
+  "RULE-088": {
+    "rule_id": "RULE-088",
+    "content": "Never use programmatic solutions - Use reasoning and AI decision making for all problems",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "e4307994",
+    "created_date": "2025-07-18T20:03:51.345447",
+    "last_updated": "2025-07-20T17:30:58.236816",
+    "tags": [
+      "#decision"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-089": {
+    "rule_id": "RULE-089",
+    "content": "Every agent needs 5+ prompts** in agentic workflow to create unique content\n- **Context continuity - Each agent should have context of previous iterations",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u26a0\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "b7c7771a",
+    "created_date": "2025-07-18T20:03:51.345484",
+    "last_updated": "2025-07-20T17:30:58.236864",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-090": {
+    "rule_id": "RULE-090",
+    "content": "Dynamic prompts - Never hardcode examples, make everything dynamic/contextual",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "af9170a6",
+    "created_date": "2025-07-18T20:03:51.345518",
+    "last_updated": "2025-07-20T17:30:58.236909",
+    "tags": [
+      "#examples"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-091": {
+    "rule_id": "RULE-091",
+    "content": "Research First, Always**: Never assume - research everything thoroughly\n2. **Documentation is Truth**: Fresh documentation overrides all assumptions\n3. **Jina Scraping Excellence**: Always scrape 30-100 pages with Jina API for comprehensive research\n4. **Synthesize Everything**: Connect findings across all sources and modules\n5. **Validate Ruthlessly**: 95% confidence or iterate until achieved\n6. **Learn Continuously**: Every task must improve the system\n\n### Agent Design Philosophy\n- **Agents as intelligent human beings - Give them decision making, detailed Jina research capabilities\n- **Never use programmatic solutions** - Use reasoning and AI decision making for all problems\n- **Every agent needs 5+ prompts** in agentic workflow to create unique content\n- **Context continuity** - Each agent should have context of previous iterations\n- **Dynamic prompts** - Never hardcode examples, make everything dynamic/contextual",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "fe959578",
+    "created_date": "2025-07-18T20:03:51.345557",
+    "last_updated": "2025-07-20T17:30:58.237074",
+    "tags": [
+      "#docs",
+      "#examples",
+      "#research",
+      "#api",
+      "#jina",
+      "#module",
+      "#decision"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-092": {
+    "rule_id": "RULE-092",
+    "content": "**Always scrape 30-100 pages total** using Jina API for comprehensive research",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "7a7fdc05",
+    "created_date": "2025-07-18T20:03:51.345602",
+    "last_updated": "2025-07-20T17:30:58.237126",
+    "tags": [
+      "#jina",
+      "#research",
+      "#api"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-093": {
+    "rule_id": "RULE-093",
+    "content": "**Put successful Jina scrapes** in research/ with tech-named directories and .md/.txt files",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "db4da5a2",
+    "created_date": "2025-07-18T20:03:51.345671",
+    "last_updated": "2025-07-20T17:30:58.237165",
+    "tags": [
+      "#jina",
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-094": {
+    "rule_id": "RULE-094",
+    "content": "**Stick to OFFICIAL DOCUMENTATION PAGES ONLY** - No outdated tutorials",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "cf2c660f",
+    "created_date": "2025-07-18T20:03:51.345722",
+    "last_updated": "2025-07-20T17:30:58.237200",
+    "tags": [
+      "#docs"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-095": {
+    "rule_id": "RULE-095",
+    "content": "**For maximum efficiency** - Invoke multiple tools simultaneously for independent operations",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "43bd79ba",
+    "created_date": "2025-07-18T20:03:51.345758",
+    "last_updated": "2025-07-20T17:30:58.237237",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-096": {
+    "rule_id": "RULE-096",
+    "content": "**Take user's tech specifications as sacred truth** - Research exact model names, API versions specified",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "07e0d062",
+    "created_date": "2025-07-18T20:03:51.345791",
+    "last_updated": "2025-07-20T17:30:58.237275",
+    "tags": [
+      "#research",
+      "#api"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-097": {
+    "rule_id": "RULE-097",
+    "content": "minimum_pages: 30",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2b79bc3d",
+    "created_date": "2025-07-18T20:03:51.345829",
+    "last_updated": "2025-07-20T17:30:58.237305",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-098": {
+    "rule_id": "RULE-098",
+    "content": "maximum_pages: 100",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "b839acc7",
+    "created_date": "2025-07-18T20:03:51.345874",
+    "last_updated": "2025-07-20T17:30:58.237331",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-099": {
+    "rule_id": "RULE-099",
+    "content": "target_content: \"official documentation only\"",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "58621458",
+    "created_date": "2025-07-18T20:03:51.345929",
+    "last_updated": "2025-07-20T17:30:58.237361",
+    "tags": [
+      "#docs"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-100": {
+    "rule_id": "RULE-100",
+    "content": "storage_format: \"markdown with metadata\"\n    \n  quality_validation:",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "284ac72c",
+    "created_date": "2025-07-18T20:03:51.345966",
+    "last_updated": "2025-07-20T17:30:58.237395",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-101": {
+    "rule_id": "RULE-101",
+    "content": "verify_official_source: true",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "7d8f3482",
+    "created_date": "2025-07-18T20:03:51.346015",
+    "last_updated": "2025-07-20T17:30:58.237425",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-102": {
+    "rule_id": "RULE-102",
+    "content": "check_content_relevance: 95%",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "80fea2f3",
+    "created_date": "2025-07-18T20:03:51.346554",
+    "last_updated": "2025-07-20T17:30:58.237453",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-103": {
+    "rule_id": "RULE-103",
+    "content": "retry_failed_scrapes: true",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "848fb598",
+    "created_date": "2025-07-18T20:03:51.346606",
+    "last_updated": "2025-07-20T17:30:58.237481",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-104": {
+    "rule_id": "RULE-104",
+    "content": "organize_by_topic: true\n```",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "343656a1",
+    "created_date": "2025-07-18T20:03:51.346699",
+    "last_updated": "2025-07-20T17:30:58.237510",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-105": {
+    "rule_id": "RULE-105",
+    "content": "**Hybrid Architecture**: Single source of truth with organized symlink access",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "f91695dc",
+    "created_date": "2025-07-18T20:03:51.346759",
+    "last_updated": "2025-07-20T17:30:58.237546",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-106": {
+    "rule_id": "RULE-106",
+    "content": "**Dual Quality System**: General research \u22650.90, Project research \u22650.75",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "cd998d4c",
+    "created_date": "2025-07-18T20:03:51.346797",
+    "last_updated": "2025-07-20T17:30:58.237586",
+    "tags": [
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-107": {
+    "rule_id": "RULE-107",
+    "content": "**Multi-Agent Intelligence**: GeneralResearcher + ProjectResearcher with auto-promotion",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "9c3ced36",
+    "created_date": "2025-07-18T20:03:51.346833",
+    "last_updated": "2025-07-20T17:30:58.237622",
+    "tags": [
+      "#research"
+    ],
+    "phase_relevance": [
+      "research",
+      "intelligence"
+    ]
+  },
+  "RULE-108": {
+    "rule_id": "RULE-108",
+    "content": "**Semantic Search**: OpenRouter embeddings with keyword fallback",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "c4aee67c",
+    "created_date": "2025-07-18T20:03:51.346871",
+    "last_updated": "2025-07-20T17:30:58.237655",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-109": {
+    "rule_id": "RULE-109",
+    "content": "**Docker + MCP Integration**: Containerized research delegation",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "30ea3b4b",
+    "created_date": "2025-07-18T20:03:51.346918",
+    "last_updated": "2025-07-20T17:30:58.237688",
+    "tags": [
+      "#docker",
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-110": {
+    "rule_id": "RULE-110",
+    "content": "**Agents as intelligent human beings** - Give them decision making, detailed Jina research capabilities",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "28ef9f3f",
+    "created_date": "2025-07-18T20:03:51.347002",
+    "last_updated": "2025-07-20T17:30:58.237734",
+    "tags": [
+      "#jina",
+      "#decision",
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-111": {
+    "rule_id": "RULE-111",
+    "content": "**Never use programmatic solutions** - Use reasoning and AI decision making for all problems",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "d8e06a51",
+    "created_date": "2025-07-18T20:03:51.347052",
+    "last_updated": "2025-07-20T17:30:58.237764",
+    "tags": [
+      "#decision"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-112": {
+    "rule_id": "RULE-112",
+    "content": "**Every agent needs 5+ prompts** in agentic workflow to create unique content",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "9269c836",
+    "created_date": "2025-07-18T20:03:51.347098",
+    "last_updated": "2025-07-20T17:30:58.237798",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-113": {
+    "rule_id": "RULE-113",
+    "content": "**Context continuity** - Each agent should have context of previous iterations",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u26a0\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "f1dac7a2",
+    "created_date": "2025-07-18T20:03:51.347146",
+    "last_updated": "2025-07-20T17:30:58.237831",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-114": {
+    "rule_id": "RULE-114",
+    "content": "**Dynamic prompts** - Never hardcode examples, make everything dynamic/contextual",
+    "section": "\ud83d\udd2c Research & Documentation Protocols",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "270783d8",
+    "created_date": "2025-07-18T20:03:51.347187",
+    "last_updated": "2025-07-20T17:30:58.237859",
+    "tags": [
+      "#examples"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-115": {
+    "rule_id": "RULE-115",
     "content": "Never create files longer than 500 lines - Refactor into modules/helpers",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2757",
@@ -1539,19 +2038,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "88f74024",
-    "created_date": "2025-07-18T20:03:51.345155",
-    "last_updated": "2025-07-18T20:03:51.345156",
+    "created_date": "2025-07-18T20:03:51.347216",
+    "last_updated": "2025-07-20T17:30:58.237902",
     "tags": [
       "#module"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-084": {
-    "rule_id": "RULE-084",
+  "RULE-116": {
+    "rule_id": "RULE-116",
     "content": "Organize by feature/responsibility** with clear separation:\n  - `agent.py` - Main agent definition and execution logic\n  - `tools.py` - Tool functions used by the agent\n  - `prompts.py` - System prompts\n- **Use clear, consistent imports** (prefer relative imports within packages)\n- **Use python_dotenv and load_env()** for environment variables\n\n### Testing & Reliability\n- **Always create Pytest unit tests** for new features (functions, classes, routes)\n- **After updating logic - Check and update existing unit tests",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2757",
@@ -1559,8 +2058,8 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "55d8e468",
-    "created_date": "2025-07-18T20:03:51.345220",
-    "last_updated": "2025-07-18T20:03:51.345222",
+    "created_date": "2025-07-18T20:03:51.347251",
+    "last_updated": "2025-07-20T17:30:58.237961",
     "tags": [
       "#testing"
     ],
@@ -1568,8 +2067,8 @@
       "testing"
     ]
   },
-  "RULE-085": {
-    "rule_id": "RULE-085",
+  "RULE-117": {
+    "rule_id": "RULE-117",
     "content": "Tests live in `/tests` folder** mirroring main app structure\n- **Include at least**: 1 expected use test, 1 edge case, 1 failure case\n- **Use Docker commands** for all Python execution including unit tests\n\n### Style & Conventions\n- **Use Python** as primary language\n- **Follow PEP8**, use type hints, format with `black`\n- **Use `pydantic` for data validation - **Ultrathink capabilities** - Use before PRP generation and code generation stages",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1577,20 +2076,20 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "a003d693",
-    "created_date": "2025-07-18T20:03:51.345295",
-    "last_updated": "2025-07-18T20:03:51.345297",
+    "created_date": "2025-07-18T20:03:51.347287",
+    "last_updated": "2025-07-20T17:30:58.238026",
     "tags": [
-      "#docker",
-      "#testing"
+      "#testing",
+      "#docker"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-086": {
-    "rule_id": "RULE-086",
+  "RULE-118": {
+    "rule_id": "RULE-118",
     "content": "**Never create files longer than 500 lines** - Refactor into modules/helpers",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2757",
@@ -1598,19 +2097,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "c3cec08f",
-    "created_date": "2025-07-18T20:03:51.345365",
-    "last_updated": "2025-07-18T20:03:51.345366",
+    "created_date": "2025-07-18T20:03:51.347325",
+    "last_updated": "2025-07-20T17:30:58.238084",
     "tags": [
       "#module"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-087": {
-    "rule_id": "RULE-087",
+  "RULE-119": {
+    "rule_id": "RULE-119",
     "content": "**Organize by feature/responsibility** with clear separation:",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1618,17 +2117,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "6924b65c",
-    "created_date": "2025-07-18T20:03:51.345408",
-    "last_updated": "2025-07-18T20:03:51.345410",
+    "created_date": "2025-07-18T20:03:51.347398",
+    "last_updated": "2025-07-20T17:30:58.238138",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-088": {
-    "rule_id": "RULE-088",
+  "RULE-120": {
+    "rule_id": "RULE-120",
     "content": "`agent.py` - Main agent definition and execution logic",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1636,17 +2135,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "a23d0253",
-    "created_date": "2025-07-18T20:03:51.345447",
-    "last_updated": "2025-07-18T20:03:51.345448",
+    "created_date": "2025-07-18T20:03:51.347443",
+    "last_updated": "2025-07-20T17:30:58.238222",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-089": {
-    "rule_id": "RULE-089",
+  "RULE-121": {
+    "rule_id": "RULE-121",
     "content": "`tools.py` - Tool functions used by the agent",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1654,17 +2153,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "87928e51",
-    "created_date": "2025-07-18T20:03:51.345484",
-    "last_updated": "2025-07-18T20:03:51.345486",
+    "created_date": "2025-07-18T20:03:51.347485",
+    "last_updated": "2025-07-20T17:30:58.238263",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-090": {
-    "rule_id": "RULE-090",
+  "RULE-122": {
+    "rule_id": "RULE-122",
     "content": "`prompts.py` - System prompts",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1672,17 +2171,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "4043f756",
-    "created_date": "2025-07-18T20:03:51.345518",
-    "last_updated": "2025-07-18T20:03:51.345520",
+    "created_date": "2025-07-18T20:03:51.347516",
+    "last_updated": "2025-07-20T17:30:58.238298",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-091": {
-    "rule_id": "RULE-091",
+  "RULE-123": {
+    "rule_id": "RULE-123",
     "content": "**Use clear, consistent imports** (prefer relative imports within packages)",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u26a0\ufe0f",
@@ -1690,17 +2189,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "8c72f02c",
-    "created_date": "2025-07-18T20:03:51.345557",
-    "last_updated": "2025-07-18T20:03:51.345558",
+    "created_date": "2025-07-18T20:03:51.347556",
+    "last_updated": "2025-07-20T17:30:58.238348",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-092": {
-    "rule_id": "RULE-092",
+  "RULE-124": {
+    "rule_id": "RULE-124",
     "content": "**Use python_dotenv and load_env()** for environment variables",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1708,17 +2207,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "72d915f4",
-    "created_date": "2025-07-18T20:03:51.345602",
-    "last_updated": "2025-07-18T20:03:51.345603",
+    "created_date": "2025-07-18T20:03:51.347656",
+    "last_updated": "2025-07-20T17:30:58.238400",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-093": {
-    "rule_id": "RULE-093",
+  "RULE-125": {
+    "rule_id": "RULE-125",
     "content": "**Always create Pytest unit tests** for new features (functions, classes, routes)",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2757",
@@ -1726,19 +2225,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "8f9aca9b",
-    "created_date": "2025-07-18T20:03:51.345671",
-    "last_updated": "2025-07-18T20:03:51.345673",
+    "created_date": "2025-07-18T20:03:51.347711",
+    "last_updated": "2025-07-20T17:30:58.238647",
     "tags": [
       "#testing"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-094": {
-    "rule_id": "RULE-094",
+  "RULE-126": {
+    "rule_id": "RULE-126",
     "content": "**After updating logic** - Check and update existing unit tests",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1746,19 +2245,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "b1978267",
-    "created_date": "2025-07-18T20:03:51.345722",
-    "last_updated": "2025-07-18T20:03:51.345724",
+    "created_date": "2025-07-18T20:03:51.347765",
+    "last_updated": "2025-07-20T17:30:58.238740",
     "tags": [
       "#testing"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-095": {
-    "rule_id": "RULE-095",
+  "RULE-127": {
+    "rule_id": "RULE-127",
     "content": "**Tests live in `/tests` folder** mirroring main app structure",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1766,19 +2265,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "22a1cc7c",
-    "created_date": "2025-07-18T20:03:51.345758",
-    "last_updated": "2025-07-18T20:03:51.345759",
+    "created_date": "2025-07-18T20:03:51.347885",
+    "last_updated": "2025-07-20T17:30:58.238780",
     "tags": [
       "#testing"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-096": {
-    "rule_id": "RULE-096",
+  "RULE-128": {
+    "rule_id": "RULE-128",
     "content": "**Include at least**: 1 expected use test, 1 edge case, 1 failure case",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1786,19 +2285,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "7984379b",
-    "created_date": "2025-07-18T20:03:51.345791",
-    "last_updated": "2025-07-18T20:03:51.345792",
+    "created_date": "2025-07-18T20:03:51.347922",
+    "last_updated": "2025-07-20T17:30:58.238817",
     "tags": [
       "#testing"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-097": {
-    "rule_id": "RULE-097",
+  "RULE-129": {
+    "rule_id": "RULE-129",
     "content": "**Use Docker commands** for all Python execution including unit tests",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1806,20 +2305,20 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "92c9cef6",
-    "created_date": "2025-07-18T20:03:51.345829",
-    "last_updated": "2025-07-18T20:03:51.345830",
+    "created_date": "2025-07-18T20:03:51.347968",
+    "last_updated": "2025-07-20T17:30:58.238853",
     "tags": [
-      "#docker",
-      "#testing"
+      "#testing",
+      "#docker"
     ],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-098": {
-    "rule_id": "RULE-098",
+  "RULE-130": {
+    "rule_id": "RULE-130",
     "content": "**Use Python** as primary language",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1827,17 +2326,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "d25c30e3",
-    "created_date": "2025-07-18T20:03:51.345874",
-    "last_updated": "2025-07-18T20:03:51.345876",
+    "created_date": "2025-07-18T20:03:51.348028",
+    "last_updated": "2025-07-20T17:30:58.238889",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-099": {
-    "rule_id": "RULE-099",
+  "RULE-131": {
+    "rule_id": "RULE-131",
     "content": "**Follow PEP8**, use type hints, format with `black`",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1845,17 +2344,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "112a96b9",
-    "created_date": "2025-07-18T20:03:51.345929",
-    "last_updated": "2025-07-18T20:03:51.345931",
+    "created_date": "2025-07-18T20:03:51.348081",
+    "last_updated": "2025-07-20T17:30:58.238923",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-100": {
-    "rule_id": "RULE-100",
+  "RULE-132": {
+    "rule_id": "RULE-132",
     "content": "**Use `pydantic` for data validation**",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1863,17 +2362,17 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "431066c5",
-    "created_date": "2025-07-18T20:03:51.345966",
-    "last_updated": "2025-07-18T20:03:51.345968",
+    "created_date": "2025-07-18T20:03:51.348116",
+    "last_updated": "2025-07-20T17:30:58.238953",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-101": {
-    "rule_id": "RULE-101",
+  "RULE-133": {
+    "rule_id": "RULE-133",
     "content": "**Ultrathink capabilities** - Use before PRP generation and code generation stages",
     "section": "\ud83c\udfd7\ufe0f Code Structure & Quality",
     "alert_level": "\u2139\ufe0f",
@@ -1881,17 +2380,37 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "20d4258b",
-    "created_date": "2025-07-18T20:03:51.346015",
-    "last_updated": "2025-07-18T20:03:51.346016",
+    "created_date": "2025-07-18T20:03:51.348154",
+    "last_updated": "2025-07-20T17:30:58.238990",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-102": {
-    "rule_id": "RULE-102",
+  "RULE-134": {
+    "rule_id": "RULE-134",
+    "content": "*ALL COMMANDS must reference this protocol to guarantee module usage**",
+    "section": "\ud83d\ude80 COMMAND PROTOCOL - Direct Module Integration",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "4f022ff6",
+    "created_date": "2025-07-18T20:03:51.348191",
+    "last_updated": "2025-07-21T07:58:25.217385",
+    "tags": [
+      "#module"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-135": {
+    "rule_id": "RULE-135",
     "content": "**Intent Analysis**: Every command \u2192 intent-engine classification",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
@@ -1899,15 +2418,15 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "a3e2422f",
-    "created_date": "2025-07-18T20:03:51.346554",
-    "last_updated": "2025-07-18T20:03:51.346556",
+    "created_date": "2025-07-18T20:03:51.348233",
+    "last_updated": "2025-07-21T08:03:06.516171",
     "tags": [],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-103": {
-    "rule_id": "RULE-103",
+  "RULE-136": {
+    "rule_id": "RULE-136",
     "content": "**Pattern Matching**: Recipe selection \u2192 prompt-recipes consultation",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
@@ -1915,15 +2434,15 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "cf721544",
-    "created_date": "2025-07-18T20:03:51.346606",
-    "last_updated": "2025-07-18T20:03:51.346615",
+    "created_date": "2025-07-18T20:03:51.348365",
+    "last_updated": "2025-07-21T08:03:06.516210",
     "tags": [],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-104": {
-    "rule_id": "RULE-104",
+  "RULE-137": {
+    "rule_id": "RULE-137",
     "content": "**Tag Evolution**: Auto-taxonomy \u2192 tag-taxonomy management",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
@@ -1931,15 +2450,15 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "6b06d27a",
-    "created_date": "2025-07-18T20:03:51.346699",
-    "last_updated": "2025-07-18T20:03:51.346701",
+    "created_date": "2025-07-18T20:03:51.348404",
+    "last_updated": "2025-07-21T08:03:06.516237",
     "tags": [],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-105": {
-    "rule_id": "RULE-105",
+  "RULE-138": {
+    "rule_id": "RULE-138",
     "content": "**Correlation Mapping**: Decision networks \u2192 trace-mapping analysis",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
@@ -1947,8 +2466,8 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "e567843d",
-    "created_date": "2025-07-18T20:03:51.346759",
-    "last_updated": "2025-07-18T20:03:51.346760",
+    "created_date": "2025-07-18T20:03:51.348438",
+    "last_updated": "2025-07-21T08:03:06.516264",
     "tags": [
       "#decision"
     ],
@@ -1956,8 +2475,8 @@
       "intelligence"
     ]
   },
-  "RULE-106": {
-    "rule_id": "RULE-106",
+  "RULE-139": {
+    "rule_id": "RULE-139",
     "content": "**Performance Tracking**: Success metrics \u2192 score-tracker updates",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
@@ -1965,15 +2484,15 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "cabc210f",
-    "created_date": "2025-07-18T20:03:51.346797",
-    "last_updated": "2025-07-18T20:03:51.346798",
+    "created_date": "2025-07-18T20:03:51.348474",
+    "last_updated": "2025-07-21T08:03:06.516289",
     "tags": [],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-107": {
-    "rule_id": "RULE-107",
+  "RULE-140": {
+    "rule_id": "RULE-140",
     "content": "**Documentation Intelligence**: Task completion (score \u22654.0) \u2192 auto-generate SOP",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
@@ -1981,8 +2500,8 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "8b5c0a97",
-    "created_date": "2025-07-18T20:03:51.346833",
-    "last_updated": "2025-07-18T20:03:51.346834",
+    "created_date": "2025-07-18T20:03:51.348730",
+    "last_updated": "2025-07-21T08:03:06.516315",
     "tags": [
       "#docs"
     ],
@@ -1990,8 +2509,8 @@
       "intelligence"
     ]
   },
-  "RULE-108": {
-    "rule_id": "RULE-108",
+  "RULE-141": {
+    "rule_id": "RULE-141",
     "content": "**Examples Intelligence**: Before tasks \u2192 check recommendations, after tasks \u2192 update scoring",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u26a0\ufe0f",
@@ -1999,18 +2518,18 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "ab1906b8",
-    "created_date": "2025-07-18T20:03:51.346871",
-    "last_updated": "2025-07-18T20:03:51.346872",
+    "created_date": "2025-07-18T20:03:51.348786",
+    "last_updated": "2025-07-21T08:03:06.516343",
     "tags": [
-      "#examples",
-      "#scoring"
+      "#scoring",
+      "#examples"
     ],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-109": {
-    "rule_id": "RULE-109",
+  "RULE-142": {
+    "rule_id": "RULE-142",
     "content": "**Neural Reasoning**: Decision required \u2192 apply WHY analysis + confidence scoring",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2757",
@@ -2018,19 +2537,19 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "bcee4abf",
-    "created_date": "2025-07-18T20:03:51.346918",
-    "last_updated": "2025-07-18T20:03:51.346920",
+    "created_date": "2025-07-18T20:03:51.348833",
+    "last_updated": "2025-07-21T08:03:06.516365",
     "tags": [
-      "#scoring",
+      "#neural",
       "#decision",
-      "#neural"
+      "#scoring"
     ],
     "phase_relevance": [
       "intelligence"
     ]
   },
-  "RULE-110": {
-    "rule_id": "RULE-110",
+  "RULE-143": {
+    "rule_id": "RULE-143",
     "content": "**Creative Optimization**: Ideation sessions \u2192 cognitive mode switching (#Innovator/#Critic/#Enhancer/#Logic)",
     "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u26a0\ufe0f",
@@ -2038,636 +2557,13 @@
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "db0fba22",
-    "created_date": "2025-07-18T20:03:51.347002",
-    "last_updated": "2025-07-18T20:03:51.347004",
-    "tags": [
-      "#Logic",
-      "#Innovator",
-      "#Enhancer",
-      "#Critic"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "optimization"
-    ]
-  },
-  "RULE-111": {
-    "rule_id": "RULE-111",
-    "content": "**Architectural Decisions**: Before making architectural or strategic decisions:",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "d11e0f0e",
-    "created_date": "2025-07-18T20:03:51.347052",
-    "last_updated": "2025-07-18T20:03:51.347053",
-    "tags": [
-      "#decision"
-    ],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-112": {
-    "rule_id": "RULE-112",
-    "content": "Review `/brain/docs/explain.md` for prior rationale",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "bac3e71c",
-    "created_date": "2025-07-18T20:03:51.347098",
-    "last_updated": "2025-07-18T20:03:51.347098",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-113": {
-    "rule_id": "RULE-113",
-    "content": "Use `/brain/docs/decision-trace.mmd` to visualize existing decision flows",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "47988902",
-    "created_date": "2025-07-18T20:03:51.347146",
-    "last_updated": "2025-07-18T20:03:51.347147",
-    "tags": [
-      "#decision"
-    ],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-114": {
-    "rule_id": "RULE-114",
-    "content": "If unclear, trigger auto-generation of updated trace (via trace-mapping module)",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "426c09a9",
-    "created_date": "2025-07-18T20:03:51.347187",
-    "last_updated": "2025-07-18T20:03:51.347188",
-    "tags": [
-      "#module"
-    ],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-115": {
-    "rule_id": "RULE-115",
-    "content": "**SOP Generation**: After task completion:",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "150163d2",
-    "created_date": "2025-07-18T20:03:51.347216",
-    "last_updated": "2025-07-18T20:03:51.347217",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-116": {
-    "rule_id": "RULE-116",
-    "content": "If task score \u22654.0, generate or update SOP in `/docs/sops/`",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "087573a3",
-    "created_date": "2025-07-18T20:03:51.347251",
-    "last_updated": "2025-07-18T20:03:51.347252",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-117": {
-    "rule_id": "RULE-117",
-    "content": "Use patterns from `examples/` and `PRPs/` to auto-fill SOP steps",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "24924995",
-    "created_date": "2025-07-18T20:03:51.347287",
-    "last_updated": "2025-07-18T20:03:51.347289",
-    "tags": [
-      "#examples"
-    ],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-118": {
-    "rule_id": "RULE-118",
-    "content": "Cross-reference official guidance from `/docs/official/` before finalizing",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "aeb9445e",
-    "created_date": "2025-07-18T20:03:51.347325",
-    "last_updated": "2025-07-18T20:03:51.347326",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-119": {
-    "rule_id": "RULE-119",
-    "content": "**Ideation Intelligence**: During ideation or strategic planning:",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "2fd7730a",
-    "created_date": "2025-07-18T20:03:51.347398",
-    "last_updated": "2025-07-18T20:03:51.347401",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-120": {
-    "rule_id": "RULE-120",
-    "content": "Use `/ideas/idea_registry.md` to:",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "d79ed937",
-    "created_date": "2025-07-18T20:03:51.347443",
-    "last_updated": "2025-07-18T20:03:51.347445",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-121": {
-    "rule_id": "RULE-121",
-    "content": "Generate prompts via innovation modes: #Innovator, #Critic, #Enhancer, #Logic",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u26a0\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "57d277ab",
-    "created_date": "2025-07-18T20:03:51.347485",
-    "last_updated": "2025-07-18T20:03:51.347486",
-    "tags": [
-      "#Logic",
-      "#Innovator",
-      "#Enhancer",
-      "#Critic"
-    ],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-122": {
-    "rule_id": "RULE-122",
-    "content": "Score feasibility using success-scoring.md",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "dadf1c52",
-    "created_date": "2025-07-18T20:03:51.347516",
-    "last_updated": "2025-07-18T20:03:51.347517",
-    "tags": [
-      "#scoring"
-    ],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-123": {
-    "rule_id": "RULE-123",
-    "content": "Auto-trigger research if idea meets confidence threshold",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "8eacbad8",
-    "created_date": "2025-07-18T20:03:51.347556",
-    "last_updated": "2025-07-18T20:03:51.347557",
-    "tags": [
-      "#research"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "research"
-    ]
-  },
-  "RULE-124": {
-    "rule_id": "RULE-124",
-    "content": "**Examples Intelligence**: Before any new task:\n  \u2192 Claude must check `/examples/` for matching implementation patterns\n  \u2192 Prioritize high-scoring examples from `score-tracker.md`\n  After task completion:\n  \u2192 If successful outcome, log implementation snippet to `/examples/` with tags and task type\n  \u2192 If it involved testing, update or create test in `/examples/tests/`\n  Claude must distinguish:",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "5e735902",
-    "created_date": "2025-07-18T20:03:51.347656",
-    "last_updated": "2025-07-18T20:03:51.347658",
-    "tags": [
-      "#examples",
-      "#scoring",
-      "#testing"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "testing"
-    ]
-  },
-  "RULE-125": {
-    "rule_id": "RULE-125",
-    "content": "`/examples/core/` \u2192 Reusable patterns and validated code",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "87deb91a",
-    "created_date": "2025-07-18T20:03:51.347711",
-    "last_updated": "2025-07-18T20:03:51.347712",
-    "tags": [
-      "#examples"
-    ],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-126": {
-    "rule_id": "RULE-126",
-    "content": "`/examples/tests/` \u2192 Test suites for functional accuracy (linked to PRPs)",
-    "section": "\ud83c\udfaf Intelligence Triggers",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "9b7ecb82",
-    "created_date": "2025-07-18T20:03:51.347765",
-    "last_updated": "2025-07-18T20:03:51.347766",
-    "tags": [
-      "#examples",
-      "#testing"
-    ],
-    "phase_relevance": [
-      "intelligence"
-    ]
-  },
-  "RULE-127": {
-    "rule_id": "RULE-127",
-    "content": "`/brain/workflows/feedback-learning.md` \u2192 tracks user feedback and corrections",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "faf712b7",
-    "created_date": "2025-07-18T20:03:51.347885",
-    "last_updated": "2025-07-18T20:03:51.347886",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-128": {
-    "rule_id": "RULE-128",
-    "content": "`/brain/modules/success-scoring.md` \u2192 stores pattern accuracy over time",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "6b471aa7",
-    "created_date": "2025-07-18T20:03:51.347922",
-    "last_updated": "2025-07-18T20:03:51.347923",
-    "tags": [
-      "#scoring",
-      "#module"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-129": {
-    "rule_id": "RULE-129",
-    "content": "`/brain/workflows/tagging-evolution.md` \u2192 tracks tag accuracy and learning",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "932634a8",
-    "created_date": "2025-07-18T20:03:51.347968",
-    "last_updated": "2025-07-18T20:03:51.347970",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-130": {
-    "rule_id": "RULE-130",
-    "content": "Search `/brain/workflows/feedback-learning.md` for similar past mistakes (#learn tag)",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "b3e63ae4",
-    "created_date": "2025-07-18T20:03:51.348028",
-    "last_updated": "2025-07-18T20:03:51.348029",
-    "tags": [
-      "#learn"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-131": {
-    "rule_id": "RULE-131",
-    "content": "If found, adjust approach and annotate rationale: \"Lesson Considered: <summary>\"",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u26a0\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "011a3f91",
-    "created_date": "2025-07-18T20:03:51.348081",
-    "last_updated": "2025-07-18T20:03:51.348082",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-132": {
-    "rule_id": "RULE-132",
-    "content": "If none, tag this task with `#learn` for future analysis",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "3f1a9691",
-    "created_date": "2025-07-18T20:03:51.348116",
-    "last_updated": "2025-07-18T20:03:51.348117",
-    "tags": [
-      "#learn"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-133": {
-    "rule_id": "RULE-133",
-    "content": "Claude should auto-score examples based on usage frequency and success validation",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u26a0\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "2e80f409",
-    "created_date": "2025-07-18T20:03:51.348154",
-    "last_updated": "2025-07-18T20:03:51.348155",
-    "tags": [
-      "#examples"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-134": {
-    "rule_id": "RULE-134",
-    "content": "High-performing examples get tagged as \"preferred patterns\" and suggested automatically",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u26a0\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "e33a3bc8",
-    "created_date": "2025-07-18T20:03:51.348191",
-    "last_updated": "2025-07-18T20:03:51.348192",
-    "tags": [
-      "#examples"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-135": {
-    "rule_id": "RULE-135",
-    "content": "If a test fails \u2192 trigger log entry and prompt Claude to refine example or flag mismatch",
-    "section": "\ud83e\udde0 Active Learning Behavior",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "4cfcb39a",
-    "created_date": "2025-07-18T20:03:51.348233",
-    "last_updated": "2025-07-18T20:03:51.348235",
-    "tags": [
-      "#examples",
-      "#testing"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-136": {
-    "rule_id": "RULE-136",
-    "content": "**Archive-First Protocol**: Backup before any major changes",
-    "section": "\ud83d\udee1\ufe0f Protection & Safety",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "fa43a9cf",
-    "created_date": "2025-07-18T20:03:51.348365",
-    "last_updated": "2025-07-18T20:03:51.348366",
-    "tags": [
-      "#backup"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-137": {
-    "rule_id": "RULE-137",
-    "content": "**Compatibility-First**: Preserve existing functionality while enhancing",
-    "section": "\ud83d\udee1\ufe0f Protection & Safety",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "b61079a6",
-    "created_date": "2025-07-18T20:03:51.348404",
-    "last_updated": "2025-07-18T20:03:51.348406",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-138": {
-    "rule_id": "RULE-138",
-    "content": "**Phase-Aware Loading**: Only load needed modules per phase",
-    "section": "\ud83d\udee1\ufe0f Protection & Safety",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "7a11fdb4",
-    "created_date": "2025-07-18T20:03:51.348438",
-    "last_updated": "2025-07-18T20:03:51.348440",
-    "tags": [
-      "#module"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-139": {
-    "rule_id": "RULE-139",
-    "content": "**Version Control**: Auto-backup brain/Claude.md before modifications",
-    "section": "\ud83d\udee1\ufe0f Protection & Safety",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "6aee9b88",
-    "created_date": "2025-07-18T20:03:51.348474",
-    "last_updated": "2025-07-18T20:03:51.348475",
-    "tags": [
-      "#backup"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-140": {
-    "rule_id": "RULE-140",
-    "content": "**#architecture, #security, #data-safety** \u2192 Red alert, mandatory backup",
-    "section": "\ud83d\udee1\ufe0f Protection & Safety",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "8c76cbb6",
-    "created_date": "2025-07-18T20:03:51.348730",
-    "last_updated": "2025-07-18T20:03:51.348733",
-    "tags": [
-      "#architecture",
-      "#data",
-      "#backup",
-      "#security"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-141": {
-    "rule_id": "RULE-141",
-    "content": "**#performance, #compatibility, #workflow** \u2192 Extended review, impact assessment",
-    "section": "\ud83d\udee1\ufe0f Protection & Safety",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "0806fa60",
-    "created_date": "2025-07-18T20:03:51.348786",
-    "last_updated": "2025-07-18T20:03:51.348787",
-    "tags": [
-      "#workflow",
-      "#compatibility",
-      "#performance"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-142": {
-    "rule_id": "RULE-142",
-    "content": "**#research, #decision, #insight** \u2192 Standard processing, batch optimization",
-    "section": "\ud83d\udee1\ufe0f Protection & Safety",
-    "alert_level": "\u2757",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "2d8b7b65",
-    "created_date": "2025-07-18T20:03:51.348833",
-    "last_updated": "2025-07-18T20:03:51.348835",
-    "tags": [
-      "#insight",
-      "#research",
-      "#decision"
-    ],
-    "phase_relevance": [
-      "optimization",
-      "research"
-    ]
-  },
-  "RULE-143": {
-    "rule_id": "RULE-143",
-    "content": "**Phase**: 3 (Optimization Complete) + Seamless Pipeline Intelligence Active",
-    "section": "\ud83c\udfaf Current System Status",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "25ae6dff",
     "created_date": "2025-07-18T20:03:51.349419",
-    "last_updated": "2025-07-18T20:03:51.349423",
+    "last_updated": "2025-07-21T08:03:06.516397",
     "tags": [
-      "#pipeline"
+      "#Enhancer",
+      "#Critic",
+      "#Logic",
+      "#Innovator"
     ],
     "phase_relevance": [
       "intelligence",
@@ -2676,17 +2572,17 @@
   },
   "RULE-144": {
     "rule_id": "RULE-144",
-    "content": "**Intelligence Maturity**: 96% (Enhanced with pipeline orchestration + growth tracking + idea grading)",
-    "section": "\ud83c\udfaf Current System Status",
-    "alert_level": "\u26a0\ufe0f",
+    "content": "**Architectural Decisions**: Before making architectural or strategic decisions:",
+    "section": "\ud83c\udfaf Intelligence Triggers",
+    "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "f5572d8b",
+    "version_hash": "d11e0f0e",
     "created_date": "2025-07-18T20:03:51.349474",
-    "last_updated": "2025-07-18T20:03:51.349476",
+    "last_updated": "2025-07-21T08:03:06.516421",
     "tags": [
-      "#pipeline"
+      "#decision"
     ],
     "phase_relevance": [
       "intelligence"
@@ -2694,226 +2590,711 @@
   },
   "RULE-145": {
     "rule_id": "RULE-145",
-    "content": "**System Growth**: 397.8% file expansion (46\u2192229 files, 0\u219234 Python modules)",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "Review `/brain/docs/explain.md` for prior rationale",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "e634a68a",
+    "version_hash": "bac3e71c",
     "created_date": "2025-07-18T20:03:51.349537",
-    "last_updated": "2025-07-18T20:03:51.349539",
-    "tags": [
-      "#module"
-    ],
+    "last_updated": "2025-07-21T08:03:06.516444",
+    "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
     ]
   },
   "RULE-146": {
     "rule_id": "RULE-146",
-    "content": "**Active Modules**: All 15 modules (10 original + 5 pipeline orchestration)",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "Use `/brain/docs/decision-trace.mmd` to visualize existing decision flows",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "ae031809",
+    "version_hash": "47988902",
     "created_date": "2025-07-18T20:03:51.349591",
-    "last_updated": "2025-07-18T20:03:51.349593",
+    "last_updated": "2025-07-21T08:03:06.516467",
     "tags": [
-      "#pipeline",
-      "#module"
+      "#decision"
     ],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
     ]
   },
   "RULE-147": {
     "rule_id": "RULE-147",
-    "content": "**Task Management**: Unified tracking with real-time dashboard accuracy",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "If unclear, trigger auto-generation of updated trace (via trace-mapping module)",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "402b3577",
+    "version_hash": "426c09a9",
     "created_date": "2025-07-18T20:03:51.349636",
-    "last_updated": "2025-07-18T20:03:51.349638",
-    "tags": [],
+    "last_updated": "2025-07-21T08:03:06.516491",
+    "tags": [
+      "#module"
+    ],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
     ]
   },
   "RULE-148": {
     "rule_id": "RULE-148",
-    "content": "**Pipeline Capabilities**: Idea\u2192evaluate\u2192grade\u2192actionize\u2192implement automation",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "**SOP Generation**: After task completion:",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "1d43562f",
+    "version_hash": "150163d2",
     "created_date": "2025-07-18T20:03:51.349693",
-    "last_updated": "2025-07-18T20:03:51.349695",
-    "tags": [
-      "#pipeline"
-    ],
+    "last_updated": "2025-07-21T08:03:06.516511",
+    "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
     ]
   },
   "RULE-149": {
     "rule_id": "RULE-149",
-    "content": "**Pattern Recognition**: 95% accuracy (Architecture decisions with WHY reasoning)",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "If task score \u22654.0, generate or update SOP in `/docs/sops/`",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "f3af032d",
+    "version_hash": "087573a3",
     "created_date": "2025-07-18T20:03:51.349748",
-    "last_updated": "2025-07-18T20:03:51.349750",
-    "tags": [
-      "#decision"
-    ],
+    "last_updated": "2025-07-21T08:03:06.516535",
+    "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
     ]
   },
   "RULE-150": {
     "rule_id": "RULE-150",
-    "content": "**Learning Velocity**: 75% improvement rate + Auto-learning from successes",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "Use patterns from `examples/` and `PRPs/` to auto-fill SOP steps",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "28e4aabe",
+    "version_hash": "24924995",
     "created_date": "2025-07-18T20:03:51.349788",
-    "last_updated": "2025-07-18T20:03:51.349789",
-    "tags": [],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-151": {
-    "rule_id": "RULE-151",
-    "content": "**Decision Accuracy**: 88% predicted vs actual outcomes",
-    "section": "\ud83c\udfaf Current System Status",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "28781873",
-    "created_date": "2025-07-18T20:03:51.349847",
-    "last_updated": "2025-07-18T20:03:51.349849",
-    "tags": [
-      "#decision"
-    ],
-    "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
-    ]
-  },
-  "RULE-152": {
-    "rule_id": "RULE-152",
-    "content": "**Example Effectiveness**: Auto-scored based on usage feedback",
-    "section": "\ud83c\udfaf Current System Status",
-    "alert_level": "\u2139\ufe0f",
-    "last_used": null,
-    "usage_count": 0,
-    "compliance_score": 1.0,
-    "version_hash": "0ab0f4f8",
-    "created_date": "2025-07-18T20:03:51.349891",
-    "last_updated": "2025-07-18T20:03:51.349893",
+    "last_updated": "2025-07-21T08:03:06.516558",
     "tags": [
       "#examples"
     ],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
+    ]
+  },
+  "RULE-151": {
+    "rule_id": "RULE-151",
+    "content": "Cross-reference official guidance from `/docs/official/` before finalizing",
+    "section": "\ud83c\udfaf Intelligence Triggers",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "aeb9445e",
+    "created_date": "2025-07-18T20:03:51.349847",
+    "last_updated": "2025-07-21T08:03:06.516581",
+    "tags": [],
+    "phase_relevance": [
+      "intelligence"
+    ]
+  },
+  "RULE-152": {
+    "rule_id": "RULE-152",
+    "content": "**Ideation Intelligence**: During ideation or strategic planning:",
+    "section": "\ud83c\udfaf Intelligence Triggers",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2fd7730a",
+    "created_date": "2025-07-18T20:03:51.349891",
+    "last_updated": "2025-07-21T08:03:06.516604",
+    "tags": [],
+    "phase_relevance": [
+      "intelligence"
     ]
   },
   "RULE-153": {
     "rule_id": "RULE-153",
-    "content": "--",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "Use `/ideas/idea_registry.md` to:",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "cfab1ba8",
+    "version_hash": "d79ed937",
     "created_date": "2025-07-18T20:03:51.349942",
-    "last_updated": "2025-07-18T20:03:51.349943",
+    "last_updated": "2025-07-21T08:03:06.516623",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
     ]
   },
   "RULE-154": {
     "rule_id": "RULE-154",
-    "content": "*Auto-Loading Triggers**: Agent architecture, complex workflows (3+ files), error recovery",
-    "section": "\ud83c\udfaf Current System Status",
-    "alert_level": "\u2139\ufe0f",
+    "content": "Generate prompts via innovation modes: #Innovator, #Critic, #Enhancer, #Logic",
+    "section": "\ud83c\udfaf Intelligence Triggers",
+    "alert_level": "\u26a0\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "3e7bd817",
+    "version_hash": "57d277ab",
     "created_date": "2025-07-18T20:03:51.349993",
-    "last_updated": "2025-07-18T20:03:51.349994",
-    "tags": [],
+    "last_updated": "2025-07-21T08:03:06.516649",
+    "tags": [
+      "#Enhancer",
+      "#Critic",
+      "#Logic",
+      "#Innovator"
+    ],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
     ]
   },
   "RULE-155": {
     "rule_id": "RULE-155",
-    "content": "*Auto-Loading Triggers**: Idea input, PRP creation, project scaffolding, success tracking",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "Score feasibility using success-scoring.md",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "b3ff56b9",
+    "version_hash": "dadf1c52",
     "created_date": "2025-07-18T20:03:51.350045",
-    "last_updated": "2025-07-18T20:03:51.350046",
-    "tags": [],
+    "last_updated": "2025-07-21T08:03:06.516669",
+    "tags": [
+      "#scoring"
+    ],
     "phase_relevance": [
-      "intelligence",
-      "foundation",
-      "optimization"
+      "intelligence"
     ]
   },
   "RULE-156": {
     "rule_id": "RULE-156",
-    "content": "*Auto-Loading Triggers**: Research needed, PRP creation, pattern detection, quality validation",
-    "section": "\ud83c\udfaf Current System Status",
+    "content": "Auto-trigger research if idea meets confidence threshold",
+    "section": "\ud83c\udfaf Intelligence Triggers",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "2a507e16",
+    "version_hash": "8eacbad8",
     "created_date": "2025-07-18T20:03:51.350107",
-    "last_updated": "2025-07-18T20:03:51.350108",
+    "last_updated": "2025-07-21T08:03:06.516691",
+    "tags": [
+      "#research"
+    ],
+    "phase_relevance": [
+      "research",
+      "intelligence"
+    ]
+  },
+  "RULE-157": {
+    "rule_id": "RULE-157",
+    "content": "**Examples Intelligence**: Before any new task:\n  \u2192 Claude must check `/examples/` for matching implementation patterns\n  \u2192 Prioritize high-scoring examples from `score-tracker.md`\n  After task completion:\n  \u2192 If successful outcome, log implementation snippet to `/examples/` with tags and task type\n  \u2192 If it involved testing, update or create test in `/examples/tests/`\n  Claude must distinguish:",
+    "section": "\ud83c\udfaf Intelligence Triggers",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "5e735902",
+    "created_date": "2025-07-18T20:03:51.350189",
+    "last_updated": "2025-07-21T08:03:06.516778",
+    "tags": [
+      "#testing",
+      "#scoring",
+      "#examples"
+    ],
+    "phase_relevance": [
+      "testing",
+      "intelligence"
+    ]
+  },
+  "RULE-158": {
+    "rule_id": "RULE-158",
+    "content": "`/examples/core/` \u2192 Reusable patterns and validated code",
+    "section": "\ud83c\udfaf Intelligence Triggers",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "87deb91a",
+    "created_date": "2025-07-18T20:03:51.350220",
+    "last_updated": "2025-07-21T08:03:06.516837",
+    "tags": [
+      "#examples"
+    ],
+    "phase_relevance": [
+      "intelligence"
+    ]
+  },
+  "RULE-159": {
+    "rule_id": "RULE-159",
+    "content": "`/examples/tests/` \u2192 Test suites for functional accuracy (linked to PRPs)",
+    "section": "\ud83c\udfaf Intelligence Triggers",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "9b7ecb82",
+    "created_date": "2025-07-18T20:03:51.350258",
+    "last_updated": "2025-07-21T08:03:06.516879",
+    "tags": [
+      "#testing",
+      "#examples"
+    ],
+    "phase_relevance": [
+      "intelligence"
+    ]
+  },
+  "RULE-160": {
+    "rule_id": "RULE-160",
+    "content": "`/brain/workflows/feedback-learning.md` \u2192 tracks user feedback and corrections",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "faf712b7",
+    "created_date": "2025-07-20T15:19:00.986383",
+    "last_updated": "2025-07-21T08:03:06.516944",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-161": {
+    "rule_id": "RULE-161",
+    "content": "`/brain/modules/success-scoring.md` \u2192 stores pattern accuracy over time",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "6b471aa7",
+    "created_date": "2025-07-20T15:19:00.986429",
+    "last_updated": "2025-07-21T08:03:06.516971",
+    "tags": [
+      "#module",
+      "#scoring"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-162": {
+    "rule_id": "RULE-162",
+    "content": "`/brain/workflows/tagging-evolution.md` \u2192 tracks tag accuracy and learning",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "932634a8",
+    "created_date": "2025-07-20T15:19:00.986509",
+    "last_updated": "2025-07-21T08:03:06.516996",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-163": {
+    "rule_id": "RULE-163",
+    "content": "Search `/brain/workflows/feedback-learning.md` for similar past mistakes (#learn tag)",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "b3e63ae4",
+    "created_date": "2025-07-20T15:19:00.986538",
+    "last_updated": "2025-07-21T08:03:06.517025",
+    "tags": [
+      "#learn"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-164": {
+    "rule_id": "RULE-164",
+    "content": "If found, adjust approach and annotate rationale: \"Lesson Considered: <summary>\"",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u26a0\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "011a3f91",
+    "created_date": "2025-07-20T15:19:00.986559",
+    "last_updated": "2025-07-21T08:03:06.517049",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-165": {
+    "rule_id": "RULE-165",
+    "content": "If none, tag this task with `#learn` for future analysis",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "3f1a9691",
+    "created_date": "2025-07-20T15:19:00.986584",
+    "last_updated": "2025-07-21T08:03:06.517071",
+    "tags": [
+      "#learn"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-166": {
+    "rule_id": "RULE-166",
+    "content": "Claude should auto-score examples based on usage frequency and success validation",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u26a0\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2e80f409",
+    "created_date": "2025-07-20T15:19:00.986606",
+    "last_updated": "2025-07-21T08:03:06.517094",
+    "tags": [
+      "#examples"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-167": {
+    "rule_id": "RULE-167",
+    "content": "High-performing examples get tagged as \"preferred patterns\" and suggested automatically",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u26a0\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "e33a3bc8",
+    "created_date": "2025-07-20T15:19:00.986629",
+    "last_updated": "2025-07-21T08:03:06.517117",
+    "tags": [
+      "#examples"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-168": {
+    "rule_id": "RULE-168",
+    "content": "If a test fails \u2192 trigger log entry and prompt Claude to refine example or flag mismatch",
+    "section": "\ud83e\udde0 Active Learning Behavior",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "4cfcb39a",
+    "created_date": "2025-07-20T15:19:00.986650",
+    "last_updated": "2025-07-21T08:03:06.517144",
+    "tags": [
+      "#testing",
+      "#examples"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-169": {
+    "rule_id": "RULE-169",
+    "content": "**Archive-First Protocol**: Backup before any major changes",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "fa43a9cf",
+    "created_date": "2025-07-20T15:19:00.986673",
+    "last_updated": "2025-07-21T08:03:06.517340",
+    "tags": [
+      "#backup"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-170": {
+    "rule_id": "RULE-170",
+    "content": "**Compatibility-First**: Preserve existing functionality while enhancing",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "b61079a6",
+    "created_date": "2025-07-20T15:19:00.986696",
+    "last_updated": "2025-07-21T08:03:06.517365",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-171": {
+    "rule_id": "RULE-171",
+    "content": "**Phase-Aware Loading**: Only load needed modules per phase",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "7a11fdb4",
+    "created_date": "2025-07-20T15:19:00.986799",
+    "last_updated": "2025-07-21T08:03:06.517387",
+    "tags": [
+      "#module"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-172": {
+    "rule_id": "RULE-172",
+    "content": "**Version Control**: Auto-backup brain/Claude.md before modifications",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "6aee9b88",
+    "created_date": "2025-07-20T15:19:00.986839",
+    "last_updated": "2025-07-21T08:03:06.517406",
+    "tags": [
+      "#backup"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-173": {
+    "rule_id": "RULE-173",
+    "content": "**#architecture, #security, #data-safety** \u2192 Red alert, mandatory backup",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "8c76cbb6",
+    "created_date": "2025-07-20T15:19:00.986864",
+    "last_updated": "2025-07-21T08:03:06.517432",
+    "tags": [
+      "#architecture",
+      "#security",
+      "#data",
+      "#backup"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-174": {
+    "rule_id": "RULE-174",
+    "content": "**#performance, #compatibility, #workflow** \u2192 Extended review, impact assessment",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "0806fa60",
+    "created_date": "2025-07-20T17:30:58.241763",
+    "last_updated": "2025-07-21T08:03:06.517480",
+    "tags": [
+      "#performance",
+      "#compatibility",
+      "#workflow"
+    ],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-175": {
+    "rule_id": "RULE-175",
+    "content": "**#research, #decision, #insight** \u2192 Standard processing, batch optimization",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2d8b7b65",
+    "created_date": "2025-07-20T17:30:58.241808",
+    "last_updated": "2025-07-21T08:03:06.517515",
+    "tags": [
+      "#insight",
+      "#decision",
+      "#research"
+    ],
+    "phase_relevance": [
+      "research",
+      "optimization"
+    ]
+  },
+  "RULE-176": {
+    "rule_id": "RULE-176",
+    "content": "**Logs** \u2192 `/brain/logs/` (interactions, improvements, agent-history)",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "f15e0642",
+    "created_date": "2025-07-20T17:30:58.241853",
+    "last_updated": "2025-07-21T08:03:06.517542",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-177": {
+    "rule_id": "RULE-177",
+    "content": "**States** \u2192 `/brain/states/` (conversation-state.json, project contexts)",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "0bd9576d",
+    "created_date": "2025-07-20T17:30:58.241896",
+    "last_updated": "2025-07-21T08:03:06.517567",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-178": {
+    "rule_id": "RULE-178",
+    "content": "**Workflows** \u2192 `/brain/workflows/` (intent-registry.md, prompt-history.md)",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "5037d9db",
+    "created_date": "2025-07-20T17:30:58.241936",
+    "last_updated": "2025-07-21T08:03:06.517589",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-179": {
+    "rule_id": "RULE-179",
+    "content": "**Modules** \u2192 `/brain/modules/` (intelligence capabilities)",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "e1efafb6",
+    "created_date": "2025-07-20T17:30:58.241980",
+    "last_updated": "2025-07-21T08:03:06.517611",
+    "tags": [
+      "#module"
+    ],
+    "phase_relevance": [
+      "intelligence"
+    ]
+  },
+  "RULE-180": {
+    "rule_id": "RULE-180",
+    "content": "**Cache** \u2192 `/brain/cache/` (Supabase-backed volatile memory)",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "76fa9464",
+    "created_date": "2025-07-20T17:30:58.242035",
+    "last_updated": "2025-07-21T08:03:06.517632",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-181": {
+    "rule_id": "RULE-181",
+    "content": "**Research** \u2192 `/research/` (Jina-scraped documentation findings - organized by tech)",
+    "section": "\ud83d\udee1\ufe0f Protection & Safety",
+    "alert_level": "\u2757",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "0c377e86",
+    "created_date": "2025-07-20T17:30:58.242216",
+    "last_updated": "2025-07-21T08:03:06.517656",
+    "tags": [
+      "#jina",
+      "#docs",
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-182": {
+    "rule_id": "RULE-182",
+    "content": "**Research Capability**: Can research, understand, and implement ANY idea",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2d90cf64",
+    "created_date": "2025-07-20T17:30:58.242262",
+    "last_updated": "2025-07-21T08:03:06.517769",
     "tags": [
       "#research"
     ],
@@ -2921,56 +3302,571 @@
       "research"
     ]
   },
-  "RULE-157": {
-    "rule_id": "RULE-157",
+  "RULE-183": {
+    "rule_id": "RULE-183",
+    "content": "**Intelligence Maturity**: 96% - Near-human collaborative intelligence",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "4569c0c7",
+    "created_date": "2025-07-20T17:30:58.242302",
+    "last_updated": "2025-07-21T08:03:06.517792",
+    "tags": [],
+    "phase_relevance": [
+      "research",
+      "intelligence"
+    ]
+  },
+  "RULE-184": {
+    "rule_id": "RULE-184",
+    "content": "**Module Coordination**: 100% - All modules work as unified system",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "915ae911",
+    "created_date": "2025-07-20T17:30:58.242342",
+    "last_updated": "2025-07-21T08:03:06.517816",
+    "tags": [
+      "#module"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-185": {
+    "rule_id": "RULE-185",
+    "content": "**Learning Velocity**: Continuous improvement with every task",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "0472f336",
+    "created_date": "2025-07-20T17:30:58.242377",
+    "last_updated": "2025-07-21T08:03:06.517839",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-186": {
+    "rule_id": "RULE-186",
+    "content": "**Success Rate**: 95%+ implementation success",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "8b6493f3",
+    "created_date": "2025-07-20T17:30:58.242418",
+    "last_updated": "2025-07-21T08:03:06.517882",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-187": {
+    "rule_id": "RULE-187",
+    "content": "**Innovation Capacity**: Generates novel solutions through cross-domain synthesis",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2e8b1b01",
+    "created_date": "2025-07-20T17:30:58.242477",
+    "last_updated": "2025-07-21T08:03:06.517921",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-188": {
+    "rule_id": "RULE-188",
+    "content": "**Research Speed**: 10x faster than manual research (Jina-powered)",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "032359f5",
+    "created_date": "2025-07-20T17:30:58.242526",
+    "last_updated": "2025-07-21T08:03:06.517953",
+    "tags": [
+      "#jina",
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-189": {
+    "rule_id": "RULE-189",
+    "content": "**Analysis Depth**: O1-style reasoning with multi-perspective synthesis",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "1a789842",
+    "created_date": "2025-07-20T17:30:58.242564",
+    "last_updated": "2025-07-21T08:03:06.517985",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-190": {
+    "rule_id": "RULE-190",
+    "content": "**Implementation Success**: 95%+ first-attempt success rate",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "7b0e6c05",
+    "created_date": "2025-07-20T17:30:58.242603",
+    "last_updated": "2025-07-21T08:03:06.518015",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-191": {
+    "rule_id": "RULE-191",
+    "content": "**Learning Integration**: Every task improves future performance",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "c42d76ba",
+    "created_date": "2025-07-20T17:30:58.242642",
+    "last_updated": "2025-07-21T08:03:06.518046",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-192": {
+    "rule_id": "RULE-192",
+    "content": "**Innovation Generation**: Creates solutions beyond initial requirements",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "f4f6daa8",
+    "created_date": "2025-07-20T17:30:58.242814",
+    "last_updated": "2025-07-21T08:03:06.518072",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-193": {
+    "rule_id": "RULE-193",
+    "content": "*Auto-Loading Triggers**: Agent architecture, complex workflows (3+ files), error recovery",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "3e7bd817",
+    "created_date": "2025-07-20T17:30:58.242872",
+    "last_updated": "2025-07-21T08:03:06.518180",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-194": {
+    "rule_id": "RULE-194",
+    "content": "*Auto-Loading Triggers**: Idea input, PRP creation, project scaffolding, success tracking",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "b3ff56b9",
+    "created_date": "2025-07-20T17:30:58.242930",
+    "last_updated": "2025-07-21T08:03:06.518208",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-195": {
+    "rule_id": "RULE-195",
+    "content": "*Auto-Loading Triggers**: Research needed, PRP creation, pattern detection, quality validation",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2a507e16",
+    "created_date": "2025-07-20T17:30:58.242984",
+    "last_updated": "2025-07-21T08:03:06.518260",
+    "tags": [
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-196": {
+    "rule_id": "RULE-196",
     "content": "*Auto-Loading Triggers**: Task updates, system growth, completion verification",
-    "section": "\ud83c\udfaf Current System Status",
+    "section": "\ud83c\udfaa System Integration Architecture",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "0f42b281",
-    "created_date": "2025-07-18T20:03:51.350189",
-    "last_updated": "2025-07-18T20:03:51.350191",
+    "created_date": "2025-07-20T17:30:58.243056",
+    "last_updated": "2025-07-21T08:03:06.518293",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-158": {
-    "rule_id": "RULE-158",
+  "RULE-197": {
+    "rule_id": "RULE-197",
     "content": "--",
-    "section": "\ud83c\udfaf Current System Status",
+    "section": "\ud83c\udfaa System Integration Architecture",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
     "version_hash": "cfab1ba8",
-    "created_date": "2025-07-18T20:03:51.350220",
-    "last_updated": "2025-07-18T20:03:51.350221",
+    "created_date": "2025-07-20T17:30:58.243116",
+    "last_updated": "2025-07-21T08:03:06.518310",
     "tags": [],
     "phase_relevance": [
-      "intelligence",
       "foundation",
+      "intelligence",
       "optimization"
     ]
   },
-  "RULE-159": {
-    "rule_id": "RULE-159",
-    "content": "AAI Master Brain v3.0 | Modular Intelligence | Jarvis-Level Cognition | Context Engineering Enabled*",
-    "section": "\ud83c\udfaf Current System Status",
+  "RULE-198": {
+    "rule_id": "RULE-198",
+    "content": "*AAI Research Engine v3.0 | Where Ideas Become Reality | The Ultimate III: Idea \u2192 Implementation \u2192 Innovation**",
+    "section": "\ud83c\udfaa System Integration Architecture",
     "alert_level": "\u2139\ufe0f",
     "last_used": null,
     "usage_count": 0,
     "compliance_score": 1.0,
-    "version_hash": "40957e1d",
-    "created_date": "2025-07-18T20:03:51.350258",
-    "last_updated": "2025-07-18T20:03:51.350259",
+    "version_hash": "f68c3b10",
+    "created_date": "2025-07-20T17:30:58.243189",
+    "last_updated": "2025-07-21T08:03:06.518342",
+    "tags": [
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-199": {
+    "rule_id": "RULE-199",
+    "content": "There is nothing that cannot be thought of, learned, and implemented by this system.*",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "4b9585b0",
+    "created_date": "2025-07-21T07:58:25.220328",
+    "last_updated": "2025-07-21T08:03:06.518365",
     "tags": [],
     "phase_relevance": [
-      "intelligence"
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-200": {
+    "rule_id": "RULE-200",
+    "content": "**Module Coordination**: 100% - All modules work as unified system",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "915ae911",
+    "created_date": "2025-07-21T07:58:25.220351",
+    "last_updated": "2025-07-21T07:58:25.220352",
+    "tags": [
+      "#module"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-201": {
+    "rule_id": "RULE-201",
+    "content": "**Learning Velocity**: Continuous improvement with every task",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "0472f336",
+    "created_date": "2025-07-21T07:58:25.220373",
+    "last_updated": "2025-07-21T07:58:25.220373",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-202": {
+    "rule_id": "RULE-202",
+    "content": "**Success Rate**: 95%+ implementation success",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "8b6493f3",
+    "created_date": "2025-07-21T07:58:25.220393",
+    "last_updated": "2025-07-21T07:58:25.220394",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-203": {
+    "rule_id": "RULE-203",
+    "content": "**Innovation Capacity**: Generates novel solutions through cross-domain synthesis",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2e8b1b01",
+    "created_date": "2025-07-21T07:58:25.220417",
+    "last_updated": "2025-07-21T07:58:25.220417",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-204": {
+    "rule_id": "RULE-204",
+    "content": "**Research Speed**: 10x faster than manual research (Jina-powered)",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "032359f5",
+    "created_date": "2025-07-21T07:58:25.220439",
+    "last_updated": "2025-07-21T07:58:25.220439",
+    "tags": [
+      "#jina",
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-205": {
+    "rule_id": "RULE-205",
+    "content": "**Analysis Depth**: O1-style reasoning with multi-perspective synthesis",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "1a789842",
+    "created_date": "2025-07-21T07:58:25.220461",
+    "last_updated": "2025-07-21T07:58:25.220461",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-206": {
+    "rule_id": "RULE-206",
+    "content": "**Implementation Success**: 95%+ first-attempt success rate",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "7b0e6c05",
+    "created_date": "2025-07-21T07:58:25.220485",
+    "last_updated": "2025-07-21T07:58:25.220486",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-207": {
+    "rule_id": "RULE-207",
+    "content": "**Learning Integration**: Every task improves future performance",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "c42d76ba",
+    "created_date": "2025-07-21T07:58:25.220519",
+    "last_updated": "2025-07-21T07:58:25.220520",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-208": {
+    "rule_id": "RULE-208",
+    "content": "**Innovation Generation**: Creates solutions beyond initial requirements",
+    "section": "\ud83c\udfaf Current System Status - Research Engine Metrics",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "f4f6daa8",
+    "created_date": "2025-07-21T07:58:25.221063",
+    "last_updated": "2025-07-21T07:58:25.221066",
+    "tags": [],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-209": {
+    "rule_id": "RULE-209",
+    "content": "*Auto-Loading Triggers**: Agent architecture, complex workflows (3+ files), error recovery",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "3e7bd817",
+    "created_date": "2025-07-21T07:58:25.221256",
+    "last_updated": "2025-07-21T07:58:25.221258",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-210": {
+    "rule_id": "RULE-210",
+    "content": "*Auto-Loading Triggers**: Idea input, PRP creation, project scaffolding, success tracking",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "b3ff56b9",
+    "created_date": "2025-07-21T07:58:25.221547",
+    "last_updated": "2025-07-21T07:58:25.221549",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-211": {
+    "rule_id": "RULE-211",
+    "content": "*Auto-Loading Triggers**: Research needed, PRP creation, pattern detection, quality validation",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "2a507e16",
+    "created_date": "2025-07-21T07:58:25.221737",
+    "last_updated": "2025-07-21T07:58:25.221739",
+    "tags": [
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-212": {
+    "rule_id": "RULE-212",
+    "content": "*Auto-Loading Triggers**: Task updates, system growth, completion verification",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "0f42b281",
+    "created_date": "2025-07-21T07:58:25.221790",
+    "last_updated": "2025-07-21T07:58:25.221790",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-213": {
+    "rule_id": "RULE-213",
+    "content": "--",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "cfab1ba8",
+    "created_date": "2025-07-21T07:58:25.221884",
+    "last_updated": "2025-07-21T07:58:25.221886",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
+    ]
+  },
+  "RULE-214": {
+    "rule_id": "RULE-214",
+    "content": "*AAI Research Engine v3.0 | Where Ideas Become Reality | The Ultimate III: Idea \u2192 Implementation \u2192 Innovation**",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "f68c3b10",
+    "created_date": "2025-07-21T07:58:25.222008",
+    "last_updated": "2025-07-21T07:58:25.222009",
+    "tags": [
+      "#research"
+    ],
+    "phase_relevance": [
+      "research"
+    ]
+  },
+  "RULE-215": {
+    "rule_id": "RULE-215",
+    "content": "There is nothing that cannot be thought of, learned, and implemented by this system.*",
+    "section": "\ud83c\udfaa System Integration Architecture",
+    "alert_level": "\u2139\ufe0f",
+    "last_used": null,
+    "usage_count": 0,
+    "compliance_score": 1.0,
+    "version_hash": "4b9585b0",
+    "created_date": "2025-07-21T07:58:25.222049",
+    "last_updated": "2025-07-21T07:58:25.222050",
+    "tags": [],
+    "phase_relevance": [
+      "foundation",
+      "intelligence",
+      "optimization"
     ]
   }
 }
